@@ -595,3 +595,7 @@ footer{
         padding-top: 220px; /* evita que el header tape el carrusel */
     }
 }
+
+body {
+    background: red !important;
+}
