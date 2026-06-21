@@ -503,7 +503,7 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
+    padding: 40px 40px;
     z-index: 1000;
     background: #ffffff;   /* 👈 blanco sólido */
     color: #333;
