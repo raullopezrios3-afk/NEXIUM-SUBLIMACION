@@ -529,7 +529,8 @@ footer{
     gap: 20px;
 }
 
-.menu a {
+.menu a:hover {
+    color: #ff6600;  /* mantiene efecto visual */
     text-decoration: none;
     color: white;
     font-weight: 500;
