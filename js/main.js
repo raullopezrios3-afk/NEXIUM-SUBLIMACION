@@ -1,12 +1,16 @@
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
 
     const slides = document.querySelectorAll(".slide");
 
-    if (slides.length === 0) return;
+    if (!slides || slides.length === 0) {
+        console.log("No hay slides");
+        return;
+    }
 
     let index = 0;
 
-    // activar primera imagen
+    // 🔥 FORZAR primera imagen visible
+    slides.forEach(s => s.classList.remove("active"));
     slides[0].classList.add("active");
 
     setInterval(() => {
@@ -18,4 +22,5 @@ window.addEventListener("DOMContentLoaded", () => {
         slides[index].classList.add("active");
 
     }, 4000);
+
 });
