@@ -505,7 +505,8 @@ footer{
     align-items: center;
     padding: 15px 40px;
     z-index: 1000;
-    background: transparent;
+    background: #ffffff;   /* 👈 blanco sólido */
+    color: #333;
     transition: 0.3s;
 }
 
