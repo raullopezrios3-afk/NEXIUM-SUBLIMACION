@@ -371,8 +371,8 @@ footer{
 }
 
 .eslogan-img {
-    height: 25px;
-    width: auto;
+    height: 10px !important;
+    width: auto !important;
 }
 
 .logo-texto img {
