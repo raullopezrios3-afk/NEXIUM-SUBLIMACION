@@ -389,19 +389,20 @@ footer{
 .slider {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 500px;   /* 👈 más controlado que 60vh */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
     background: #000;
 }
 
 .slide {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    width: 85%;      /* 👈 reduce el “marco” */
+    height: 85%;
     opacity: 0;
-   transition: opacity 1.2s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 .slide.active {
@@ -412,8 +413,10 @@ footer{
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;   /* 👈 clave para que no se vea gigante */
     object-position: center;
+    background: #000;
+    border-radius: 10px;
 }
 
 .banner-overlay{
