@@ -397,7 +397,7 @@ footer{
 .slide {
     position: absolute;
     inset: 0;
-    opacity: 0;
+    opacity: 0.3;
     transition: opacity 1s ease;
 }
 
