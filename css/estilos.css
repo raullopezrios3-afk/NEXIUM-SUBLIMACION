@@ -391,9 +391,13 @@ footer{
     width: 100%;
     height: 500px;
 
-    background: #000; /* fondo negro completo */
+    background: #000;   /* 👈 fondo negro a lo ancho */
 
     overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slide {
