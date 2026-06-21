@@ -559,43 +559,54 @@ footer{
     padding: 10px 40px;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
     #header {
-        padding: 15px 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        padding: 10px;
+
+        background: #fff;
+        z-index: 9999;
     }
 
     .logo {
+        display: flex;
         flex-direction: column;
-        gap: 8px;
-        text-align: center;
+        align-items: center;
+        gap: 5px;
     }
 
     .logo-principal {
-        height: 110px;   /* reduce logo */
+        height: 90px !important;
     }
 
     .eslogan-img {
-        height: 28px !important; /* reduce eslogan */
+        height: 25px !important;
     }
 
     .menu {
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
-        margin-top: 10px;
+        gap: 8px;
+        margin-top: 8px;
     }
 
     .menu a {
-        font-size: 13px;
-        padding: 5px 8px;
+        font-size: 12px;
+        padding: 4px 6px;
     }
 
     body {
-        padding-top: 220px; /* evita que el header tape el carrusel */
+        padding-top: 200px !important;
     }
-}
-
-body {
-    background: red !important;
 }
