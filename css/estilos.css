@@ -362,7 +362,19 @@ footer{
 .logo {
     display: flex;
     align-items: center;
-    gap: 0;
+    justify-content: flex-start;
+    gap: 25px;
+}
+
+.logo-principal {
+    height: 170px;
+    width: auto;
+}
+
+.eslogan-img {
+    height: 70px;
+    width: auto;
+    display: block;
 }
 
 .logo img {
