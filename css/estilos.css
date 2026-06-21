@@ -391,7 +391,11 @@ footer{
     width: 100%;
     height: 60vh;
     overflow: hidden;
-    background: transparent; /* 👈 QUITA el negro */
+    background: transparent; /* 👈 elimina fondo negro */
+    padding: 0;
+    margin: 0;
+    border-radius: 0; /* 👈 elimina esquinas redondeadas */
+    box-shadow: none; /* 👈 elimina efecto de “tarjeta” */
 }
 
 .slide {
@@ -402,6 +406,10 @@ footer{
     height: 100%;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+
+    background: transparent; /* 👈 clave */
+    border-radius: 0;        /* 👈 elimina esquinas */
+    box-shadow: none;        /* 👈 elimina sombra */
 }
 
 .slide.active {
@@ -412,10 +420,13 @@ footer{
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* 👈 imagen llena sin marco */
+    object-fit: cover;
     object-position: center;
+
     display: block;
+
     background: transparent;
+    border-radius: 0;  /* 👈 elimina esquinas redondeadas */
 }
 
 .banner-overlay {
