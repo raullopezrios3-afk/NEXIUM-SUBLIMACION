@@ -387,22 +387,25 @@ footer{
 /* ========================= */
 
 .slider {
-    position: relative;
     width: 100%;
-    height: 500px;   /* 👈 más controlado que 60vh */
+    height: 500px;
+    background: #000;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background: #000;
+    padding: 20px;
 }
 
 .slide {
     position: absolute;
-    width: 85%;      /* 👈 reduce el “marco” */
+    width: 70%;   /* 👈 aquí está el cambio real */
     height: 85%;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slide.active {
@@ -413,10 +416,9 @@ footer{
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain;   /* 👈 clave para que no se vea gigante */
-    object-position: center;
-    background: #000;
-    border-radius: 10px;
+    object-fit: contain;  /* 👈 evita zoom gigante */
+    background: #111;
+    border-radius: 12px;
 }
 
 .banner-overlay{
