@@ -2,22 +2,23 @@ window.addEventListener("load", () => {
 
     const slides = document.querySelectorAll(".slide");
 
-    if (!slides || slides.length === 0) {
-        console.log("No hay slides");
-        return;
-    }
+    if (!slides.length) return;
 
     let index = 0;
 
-    // 🔥 FORZAR primera imagen visible
-    slides.forEach(s => s.classList.remove("active"));
+    // 🔥 FORZAR SOLO UNA IMAGEN VISIBLE AL INICIO
+    slides.forEach(slide => slide.classList.remove("active"));
     slides[0].classList.add("active");
 
     setInterval(() => {
 
         slides[index].classList.remove("active");
 
-        index = (index + 1) % slides.length;
+        index++;
+
+        if (index >= slides.length) {
+            index = 0;
+        }
 
         slides[index].classList.add("active");
 
