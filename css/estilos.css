@@ -428,16 +428,17 @@ footer{
     transform: translate(-50%, -50%);
 
     text-align: center;
+
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+
+    width: auto;
+    max-width: none;
+
     color: white;
-
-    padding: 25px 30px;
-    border-radius: 12px;
-
-    background: rgba(0, 0, 0, 0.55); /* 👈 clave */
-    backdrop-filter: blur(6px);       /* 👈 efecto moderno */
-
     z-index: 10;
-    max-width: 80%;
 }
 
 .banner-overlay h2 {
@@ -447,7 +448,7 @@ footer{
 
 .banner-overlay p {
     font-size: 1.2rem;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .botones-banner {
