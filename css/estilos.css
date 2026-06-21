@@ -372,15 +372,10 @@ footer{
     border-radius:10px;
 }
 
-.logo-texto h1{
-    margin:0;
-    color:white;
-}
-
-.logo-texto p{
-    margin:0;
-    font-size:0.8rem;
-    color:#FFD700;
+.logo-texto img {
+    height: 65px;
+    width: auto;
+    display: block;
 }
 
 /* ========================= */
