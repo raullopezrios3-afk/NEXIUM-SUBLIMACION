@@ -368,6 +368,9 @@ footer{
 .logo img {
     height: 170px;
     width: auto;
+
+    background: transparent;
+    display: block;
 }
 
 .logo-texto img {
@@ -514,7 +517,7 @@ footer{
 }
 
 .logo img {
-    height: 160px;   /* 👈 más grande */
+    height: 140px;   /* 👈 más grande */
     width: auto;
 }
 
