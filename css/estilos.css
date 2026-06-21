@@ -529,11 +529,14 @@ footer{
     gap: 20px;
 }
 
-.menu a:hover {
-    color: #ff6600;  /* mantiene efecto visual */
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
+.menu a {
+    color: #003366;          /* azul corporativo */
+    font-weight: bold;
+    font-size: 15px;
+
+    padding: 8px 12px;
+    border-radius: 6px;
+
     transition: 0.3s;
 }
 
