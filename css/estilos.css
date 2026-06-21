@@ -368,8 +368,13 @@ footer{
 .logo img {
     height: 170px;
     width: auto;
-
     background: transparent;
+    display: block;
+}
+
+.eslogan-img {
+    height: 70px;
+    width: auto;
     display: block;
 }
 
