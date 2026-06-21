@@ -359,17 +359,15 @@ footer{
 /* LOGO NEXIUM */
 /* ========================= */
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:15px;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0;
 }
 
-.logo img{
-   height: 95px;   /* más grande */
+.logo img {
+    height: 170px;
     width: auto;
-    object-fit:cover;
-    border-radius:10px;
 }
 
 .logo-texto img {
