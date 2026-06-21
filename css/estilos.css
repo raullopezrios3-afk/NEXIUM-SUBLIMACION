@@ -17,6 +17,7 @@ body{
     line-height:1.6;
     color:#333;
     background:#f4f4f4;
+    padding-top: 110px;
 }
 
 /* ========================= */
@@ -32,7 +33,7 @@ header{
     justify-content:space-between;
     align-items:center;
 
-    padding:15px 40px;
+    padding: 25px 40px;
 
     background:#003366;
     color:white;
@@ -365,8 +366,8 @@ footer{
 }
 
 .logo img{
-    width:80px;
-    height:80px;
+   height: 95px;   /* más grande */
+    width: auto;
     object-fit:cover;
     border-radius:10px;
 }
