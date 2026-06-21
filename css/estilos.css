@@ -400,10 +400,16 @@ footer{
 
 .slide {
     position: absolute;
-    width: 100%;
-    height: 100%;
+
+    width: 80%;     /* 👈 esto la hace más pequeña */
+    height: 85%;    /* 👈 esto evita que llene todo */
+
     opacity: 0;
     transition: opacity 1s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     background: transparent;
     border: none;
@@ -418,13 +424,14 @@ footer{
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain;   /* 👈 clave para que NO se vea recortada */
+
+    object-fit: contain;   /* 👈 no recorta */
     object-position: center;
 
     display: block;
 
     background: transparent;
-    border-radius: 0;      /* 👈 elimina esquinas redondeadas */
+    border-radius: 0;
 }
 
 .banner-overlay {
