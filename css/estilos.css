@@ -421,71 +421,47 @@ footer{
     border-radius: 12px;
 }
 
-.banner-overlay{
+.banner-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    position:absolute;
+    text-align: center;
+    color: white;
 
-    top:50%;
-    left:50%;
+    padding: 25px 30px;
+    border-radius: 12px;
 
-    transform:translate(-50%,-50%);
+    background: rgba(0, 0, 0, 0.55); /* 👈 clave */
+    backdrop-filter: blur(6px);       /* 👈 efecto moderno */
 
-    text-align:center;
-
-    background:none;
-
-    padding:0;
-
-    border-radius:0;
-
-    box-shadow:none;
-
-    width:auto;
-
-    max-width:none;
-
-    color:white;
-
-    z-index:10;
-}
-.banner-overlay h2{
-
-    font-size:3rem;
-
-    margin-bottom:10px;
+    z-index: 10;
+    max-width: 80%;
 }
 
-.banner-overlay p{
-
-    font-size:1.2rem;
-
-    margin-bottom:20px;
+.banner-overlay h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
 }
 
-.botones-banner{
-
-    display:flex;
-
-    gap:15px;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
+.banner-overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
 }
 
-.btn-whatsapp{
+.botones-banner {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-    background:#25D366;
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:12px 25px;
-
-    border-radius:5px;
-
-    font-weight:bold;
+.btn,
+.btn-whatsapp {
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: bold;
 }
 
 .btn-whatsapp:hover{
