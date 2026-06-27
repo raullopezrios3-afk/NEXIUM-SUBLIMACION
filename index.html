@@ -208,35 +208,38 @@
 
 <section id="cotizacion">
 
-    <div class="contenedor">
+    <div class="formulario-cotizacion">
 
-    <h2>Solicita tu Cotización</h2>
+        <h2>Solicita tu Cotización</h2>
 
-    <form id="formCotizacion">
+        <form id="formCotizacion">
 
-        <input type="text" id="nombre" placeholder="Nombre">
-        <input type="tel" id="telefono" placeholder="Teléfono">
-        <input type="email" id="correo" placeholder="Correo">
+            <input type="text" id="nombre" placeholder="Nombre" required>
 
-        <select id="producto">
-            <option value="">Producto</option>
-            <option>Tazas</option>
-            <option>Termos</option>
-        </select>
+            <input type="tel" id="telefono" placeholder="Teléfono" required>
 
-        <input type="number" id="cantidad" placeholder="Cantidad">
-        <input type="date" id="fecha">
+            <input type="email" id="correo" placeholder="Correo" required>
 
-        <textarea id="descripcion" placeholder="Descripción"></textarea>
+            <select id="producto" required>
+                <option value="">Producto</option>
+                <option value="Tazas">Tazas</option>
+                <option value="Termos">Termos</option>
+            </select>
 
-        <button type="button" onclick="enviarWhatsApp()">
-            Solicitar Cotización
-        </button>
+            <input type="number" id="cantidad" placeholder="Cantidad" required>
 
-    </form>
+            <input type="date" id="fecha" required>
 
-  </div>
-        
+            <textarea id="descripcion" placeholder="Descripción del pedido" rows="4"></textarea>
+
+            <button type="button" onclick="enviarWhatsApp()">
+                Solicitar Cotización
+            </button>
+
+        </form>
+
+    </div>
+
 </section>
 
 <!-- ========================= -->
