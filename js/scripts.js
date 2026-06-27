@@ -1,6 +1,6 @@
 
 /* =============================
-   1. WHATSAPP (COTIZACIÓN)
+   WHATSAPP (COTIZACIÓN)
 ============================= */
 
 function enviarWhatsApp() {
@@ -35,31 +35,45 @@ ${descripcion}`;
 
 
 /* =============================
-   2. CARRUSEL AUTOMÁTICO LIMPIO
+   FUNCIONALIDAD GENERAL
 ============================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* =========================
+       CARRUSEL
+    ========================= */
+
     const slides = document.querySelectorAll(".slide");
-
-    if (!slides || slides.length === 0) return;
-
     let index = 0;
 
-    // activar primer slide
-    slides.forEach(s => s.classList.remove("active"));
-    slides[0].classList.add("active");
+    if (slides.length > 0) {
+        slides[0].classList.add("active");
+    }
 
     function showNextSlide() {
-
         slides.forEach(slide => slide.classList.remove("active"));
-
         index = (index + 1) % slides.length;
-
         slides[index].classList.add("active");
-
     }
 
     setInterval(showNextSlide, 4000);
+
+
+    /* =========================
+       HEADER SCROLL EFFECT
+    ========================= */
+
+    const header = document.querySelector("header");
+
+    if (header) {
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 80) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    }
 
 });
