@@ -742,3 +742,104 @@ footer{
     font-weight:bold;
 
 }
+
+/*================================*/
+/* FORMULARIO COTIZACIÓN */
+/*================================*/
+
+#cotizacion{
+
+    padding:90px 30px;
+
+    background:#eef3fa;
+
+}
+
+#formCotizacion{
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.fila{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-bottom:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.fila input,
+.fila select{
+
+    flex:1;
+
+}
+
+#formCotizacion input,
+#formCotizacion select,
+#formCotizacion textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    border:1px solid #ccc;
+
+    font-size:16px;
+
+}
+
+#formCotizacion textarea{
+
+    margin-top:20px;
+
+    resize:vertical;
+
+}
+
+#formCotizacion button{
+
+    margin-top:30px;
+
+    width:100%;
+
+    background:#ff7a00;
+
+    color:white;
+
+    border:none;
+
+    padding:18px;
+
+    font-size:18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#formCotizacion button:hover{
+
+    background:#0b1635;
+
+}
