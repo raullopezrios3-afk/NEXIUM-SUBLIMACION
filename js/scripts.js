@@ -1,17 +1,15 @@
+// =============================
+// 1. WHATSAPP (YA LO TIENES)
+// =============================
+
 function enviarWhatsApp(){
 
     let nombre=document.getElementById("nombre").value;
-
     let telefono=document.getElementById("telefono").value;
-
     let correo=document.getElementById("correo").value;
-
     let producto=document.getElementById("producto").value;
-
     let cantidad=document.getElementById("cantidad").value;
-
     let fecha=document.getElementById("fecha").value;
-
     let descripcion=document.getElementById("descripcion").value;
 
     let mensaje=
@@ -36,5 +34,36 @@ ${descripcion}`;
     let numero="5215512345678";
 
     window.open("https://wa.me/"+numero+"?text="+encodeURIComponent(mensaje));
-
 }
+
+
+// =============================
+// 2. CARRUSEL AUTOMÁTICO (NUEVO)
+// =============================
+
+let index = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide() {
+
+    // Si no existen slides, no hace nada (evita errores)
+    if (slides.length === 0) return;
+
+    // Quitamos clase active a todos
+    slides.forEach(slide => slide.classList.remove("active"));
+
+    // Avanzamos al siguiente
+    index = (index + 1) % slides.length;
+
+    // Activamos el actual
+    slides[index].classList.add("active");
+}
+
+// Inicia solo cuando cargue la página
+window.addEventListener("DOMContentLoaded", function () {
+
+    // Seguridad: solo corre si hay slider
+    if (slides.length > 0) {
+        setInterval(showSlide, 4000);
+    }
+});
