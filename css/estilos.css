@@ -1,335 +1,229 @@
 /* ========================= */
-/* CONFIGURACIÓN GENERAL */
+/* RESET GENERAL */
 /* ========================= */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    line-height:1.6;
-    color:#333;
-    background:#ffffff;
-    padding-top: 180px;
-}
-
-/* ========================= */
-/* HEADER */
-/* ========================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding: 25px 40px;
-
-    background:#003366;
-    color:white;
-}
-
-.logo h1{
-    font-size:1.8rem;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #ffffff;
+    padding-top: 80px; /* espacio para header fijo */
 }
 
 /* ========================= */
-/* MENÚ */
+/* HEADER (BLANCO FIJO) */
 /* ========================= */
 
-.menu{
-    display:flex;
-    list-style:none;
-    gap:20px;
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
-.menu a{
-    text-decoration:none;
-    color:white;
-    font-weight:bold;
-    transition:.3s;
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.menu a:hover{
-    color:#ffd700;
+.logo img {
+    height: 50px;
+    object-fit: contain;
+}
+
+/* MENU */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #0077ff;
 }
 
 /* ========================= */
-/* CARRUSEL / BANNER CORREGIDO */
+/* BOTÓN WHATSAPP */
 /* ========================= */
 
-.slider,
-.banner{
-    width:100%;
-    height:500px;
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-decoration: none;
+}
 
-    background:#000;
+.whatsapp-float img {
+    width: 35px;
+}
 
-    position:relative;
-    overflow:hidden;
+/* ========================= */
+/* HERO / CARRUSEL */
+/* ========================= */
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.slider {
+    width: 100%;
+    height: 520px;
+    background: #000; /* CONTENEDOR NEGRO */
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* SLIDES */
-.slide{
-    position:absolute;
-    inset:0;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    opacity:0;
-    transition:opacity 1s ease;
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    transform: scale(1.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* IMAGENES CENTRADAS */
-.slide img{
-    max-width:100%;
-    max-height:100%;
-
-    object-fit:contain;
-
-    display:block;
-    margin:auto;
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
 }
 
-/* ========================= */
-/* TEXTO DEL BANNER */
-/* ========================= */
-
-.banner-texto{
-    position:absolute;
-    top:50%;
-    left:50%;
-
-    transform:translate(-50%, -50%);
-
-    text-align:center;
-
-    background:rgba(0,0,0,.55);
-
-    padding:30px;
-    border-radius:10px;
-
-    color:white;
+/* IMÁGENES CENTRADAS */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 🔥 clave para que NO se deforme */
+    background: #000;
 }
 
 /* ========================= */
-/* BOTONES */
+/* OVERLAY TEXTO (OPCIONAL) */
 /* ========================= */
 
-.btn{
-    display:inline-block;
-    background:#ff6600;
-    color:white;
-    text-decoration:none;
-    padding:12px 25px;
-    border-radius:5px;
-    transition:.3s;
+.slider-overlay {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    background: rgba(0,0,0,0.35);
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.btn:hover{
-    background:#e65c00;
+.slider-overlay h1 {
+    font-size: 32px;
 }
 
-/* ========================= */
-/* SECCIONES */
-/* ========================= */
-
-section{
-    padding:60px 30px;
-}
-
-section h2{
-    text-align:center;
-    margin-bottom:30px;
-    color:#003366;
+.slider-overlay p {
+    font-size: 18px;
 }
 
 /* ========================= */
-/* PRODUCTOS */
+/* SECCIONES GENERALES */
 /* ========================= */
 
-.contenedor-productos{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.producto{
-    background:white;
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 4px 10px rgba(0,0,0,.15);
-    transition:.3s;
-}
-
-.producto:hover{
-    transform:translateY(-5px);
-}
-
-.producto img{
-    width:100%;
-    height:220px;
-    object-fit:contain;
-    background:white;
-}
-
-.producto h3{
-    padding:15px;
-}
-
-.producto p{
-    padding:0 15px 20px;
+section {
+    padding: 60px 20px;
 }
 
 /* ========================= */
-/* GALERÍA */
+/* FORMULARIO DE COTIZACIÓN */
 /* ========================= */
 
-#galeria{
-    background:#f5f5f5;
-    padding:80px 40px;
+.form-cotizacion {
+    max-width: 600px;
+    margin: auto;
+    background: #f7f7f7;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
-/* ========================= */
-/* VIDEO */
-/* ========================= */
-
-.video-contenedor{
-    max-width:1000px;
-    margin:auto;
+.form-cotizacion input,
+.form-cotizacion textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
-/* ========================= */
-/* FORMULARIO */
-/* ========================= */
-
-form{
-    max-width:700px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+.form-cotizacion button {
+    width: 100%;
+    padding: 12px;
+    background: #0077ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-form input,
-form textarea{
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:5px;
-}
-
-form button{
-    background:#003366;
-    color:white;
-    border:none;
-    padding:15px;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-form button:hover{
-    background:#00509e;
-}
-
-/* ========================= */
-/* CONTACTO */
-/* ========================= */
-
-#contacto{
-    background:#e9eef5;
-    text-align:center;
-}
-
-/* ========================= */
-/* FOOTER */
-/* ========================= */
-
-footer{
-    background:#003366;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-
-/* ========================= */
-/* WHATSAPP */
-/* ========================= */
-
-.whatsapp{
-    position:fixed;
-    right:25px;
-    bottom:25px;
-
-    width:65px;
-    height:65px;
-
-    background:#25D366;
-    border-radius:50%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    text-decoration:none;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.3);
-
-    z-index:9999;
-
-    transition:.3s;
-}
-
-.whatsapp:hover{
-    transform:scale(1.1);
-}
-
-.whatsapp i{
-    color:white;
-    font-size:36px;
+.form-cotizacion button:hover {
+    background: #005fd1;
 }
 
 /* ========================= */
 /* RESPONSIVE */
 /* ========================= */
 
-@media(max-width:768px){
+@media (max-width: 768px) {
 
-    header{
-        flex-direction:column;
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
     }
 
-    .menu{
-        flex-wrap:wrap;
-        justify-content:center;
-        margin-top:10px;
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
     }
 
-    .slider,
-    .banner{
-        height:300px;
+    .slider {
+        height: 380px;
     }
 
-    .banner-texto h2{
-        font-size:1.5rem;
-    }
-
-    body{
-        padding-top:200px !important;
+    .slider-overlay h1 {
+        font-size: 22px;
     }
 }
