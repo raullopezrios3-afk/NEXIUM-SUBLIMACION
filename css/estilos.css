@@ -223,3 +223,7 @@ section {
     overflow: hidden;
     background: #000;
 }
+
+html {
+    scroll-behavior: smooth;
+}
