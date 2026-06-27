@@ -11,18 +11,15 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/estilos.css?v=2">
-
-    <!-- Iconos -->
+</head>
 
 <body>
 
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
 
-
-    <!-- ========================= -->
-    <!-- HEADER -->
-    <!-- ========================= -->
-
-   <header>
+<header>
 
     <div class="logo">
         <img src="imagenes/logo.jpg" alt="NEXIUM Logo">
@@ -34,397 +31,119 @@
 
     <nav>
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Galería</a></li>
-            <li><a href="#">Videos</a></li>
-            <li><a href="#">Cotización</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#cotizacion">Cotización</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
 
 </header>
 
-    <!-- ========================= -->
-    <!-- BANNER PRINCIPAL -->
-    <!-- ========================= -->
+<!-- ========================= -->
+<!-- BANNER -->
+<!-- ========================= -->
 
-    <section id="inicio">
+<section id="inicio">
 
     <div class="slider">
-    <div class="slide active">
-        <img src="imagenes/banner-1.jpg">
+
+        <div class="slide active">
+            <img src="imagenes/banner-1.jpg">
+        </div>
+
+        <div class="slide">
+            <img src="imagenes/banner-2.jpg">
+        </div>
+
+        <div class="slide">
+            <img src="imagenes/banner-3.jpg">
+        </div>
+
     </div>
 
-    <div class="slide">
-        <img src="imagenes/banner-2.jpg">
-    </div>
+</section>
 
-    <div class="slide">
-        <img src="imagenes/banner-3.jpg">
-    </div>
-</div>
+<!-- ========================= -->
+<!-- PRODUCTOS -->
+<!-- ========================= -->
 
-        <div class="banner-overlay">
+<section id="productos">
+    <h2>Productos Destacados</h2>
+</section>
 
-           <!--
-<a href="https://wa.me/521..."
-   class="btn-whatsapp">
-    WhatsApp
+<!-- ========================= -->
+<!-- GALERIA -->
+<!-- ========================= -->
+
+<section id="galeria">
+    <h2>Galería</h2>
+</section>
+
+<!-- ========================= -->
+<!-- VIDEOS -->
+<!-- ========================= -->
+
+<section id="videos">
+    <h2>Video Promocional</h2>
+</section>
+
+<!-- ========================= -->
+<!-- COTIZACION -->
+<!-- ========================= -->
+
+<section id="cotizacion">
+
+    <h2>Solicita tu Cotización</h2>
+
+    <form id="formCotizacion">
+
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="tel" id="telefono" placeholder="Teléfono">
+        <input type="email" id="correo" placeholder="Correo">
+
+        <select id="producto">
+            <option value="">Producto</option>
+            <option>Tazas</option>
+            <option>Termos</option>
+        </select>
+
+        <input type="number" id="cantidad" placeholder="Cantidad">
+        <input type="date" id="fecha">
+
+        <textarea id="descripcion" placeholder="Descripción"></textarea>
+
+        <button type="button" onclick="enviarWhatsApp()">
+            Solicitar Cotización
+        </button>
+
+    </form>
+
+</section>
+
+<!-- ========================= -->
+<!-- CONTACTO -->
+<!-- ========================= -->
+
+<section id="contacto">
+    <h2>Contacto</h2>
+    <p>Ciudad de México</p>
+</section>
+
+<!-- ========================= -->
+<!-- WHATSAPP -->
+<!-- ========================= -->
+
+<a href="https://wa.me/5215512345678"
+   class="whatsapp-float"
+   target="_blank">
+   💬
 </a>
--->            </div>
 
-        </div>
-
-    </div>
-
-</section>
-
-    <!-- ========================= -->
-    <!-- PRODUCTOS DESTACADOS -->
-    <!-- ========================= -->
-
-    <section id="productos">
-
-        <h2>Productos Destacados</h2>
-
-        <div class="contenedor-productos">
-
-            <article class="producto">
-
-                <img src="img/productos/taza.jpg"
-                    alt="Taza personalizada">
-
-                <h3>Tazas Personalizadas</h3>
-
-                <p>
-                    Sublimación de alta calidad.
-                </p>
-
-            </article>
-
-            <article class="producto">
-
-                <img src="img/productos/termo.jpg"
-                    alt="Termo personalizado">
-
-                <h3>Termos</h3>
-
-                <p>
-                    Ideales para regalos corporativos.
-                </p>
-
-            </article>
-
-            <article class="producto">
-
-                <img src="img/productos/playera.jpg"
-                    alt="Playera personalizada">
-
-                <h3>Playeras</h3>
-
-                <p>
-                    Personalización completa.
-                </p>
-
-            </article>
-
-        </div>
-
-    </section>
-
-    <!-- ========================= -->
-    <!-- GALERIA -->
-    <!-- ========================= -->
-
-   <section id="galeria">
-
-    <div class="contenedor">
-
-        <h2 class="titulo-seccion">
-
-            Nuestra Galería
-
-        </h2>
-
-        <p class="subtitulo">
-
-            Algunos de nuestros trabajos realizados.
-
-        </p>
-
-        <div class="filtros">
-
-            <button class="activo">Todos</button>
-
-            <button>Tazas</button>
-
-            <button>Termos</button>
-
-            <button>Playeras</button>
-
-            <button>Bolsas</button>
-
-            <button>Promocionales</button>
-
-        </div>
-
-        <div class="galeria-grid">
-
-            <div class="item-galeria">
-
-                <img src="imagenes/banner-8.jpg">
-
-                <div class="texto-galeria">
-
-                    Tazas
-
-                </div>
-
-            </div>
-
-            <div class="item-galeria">
-
-                <img src="imagenes/banner-9.jpg">
-
-                <div class="texto-galeria">
-
-                    Termos
-
-                </div>
-
-            </div>
-
-            <div class="item-galeria">
-
-                <img src="imagenes/banner-10.jpg">
-
-                <div class="texto-galeria">
-
-                    Playeras
-
-                </div>
-
-            </div>
-
-            <div class="item-galeria">
-
-    <img src="imagenes/productos/bolsas/bolsa-01.jpg"
-         alt="Bolsa personalizada">
-
-    <div class="texto-galeria">
-
-        Bolsas Personalizadas
-
-    </div>
-
-</div>
-
-            <div class="item-galeria">
-
-                <img src="imagenes/banner-11.jpg">
-
-                <div class="texto-galeria">
-
-                    Promocionales
-
-                </div>
-
-            </div>
-
-            <div class="item-galeria">
-
-                <img src="imagenes/banner-12.jpg">
-
-                <div class="texto-galeria">
-
-                    Sublimación
-
-                </div>
-
-            </div>
-
-            <div class="item-galeria">
-
-                <img src="imagenes/banner-13.jpg">
-
-                <div class="texto-galeria">
-
-                    Personalizados
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-    <!-- ========================= -->
-    <!-- VIDEO -->
-    <!-- ========================= -->
-
-    <section id="videos">
-
-        <h2>Video Promocional</h2>
-
-        <div class="video-contenedor">
-
-            <video controls width="100%">
-
-                <source src="videos/promocional.mp4"
-                    type="video/mp4">
-
-            </video>
-
-        </div>
-
-    </section>
-
-    <!-- ========================= -->
-    <!-- COTIZACION -->
-    <!-- ========================= -->
-
-   <section id="cotizacion">
-
-    <div class="contenedor">
-
-        <h2 class="titulo-seccion">
-            Solicita tu Cotización
-        </h2>
-
-        <p class="subtitulo">
-            Completa el formulario y recibe atención personalizada.
-        </p>
-
-        <form id="formCotizacion">
-
-            <div class="fila">
-
-                <input
-                    type="text"
-                    id="nombre"
-                    placeholder="Nombre completo"
-                    required>
-
-                <input
-                    type="tel"
-                    id="telefono"
-                    placeholder="Teléfono"
-                    required>
-
-            </div>
-
-            <div class="fila">
-
-                <input
-                    type="email"
-                    id="correo"
-                    placeholder="Correo electrónico">
-
-                <select id="producto">
-
-                    <option value="">Seleccione un producto</option>
-
-                    <option>Tazas</option>
-
-                    <option>Termos</option>
-
-                    <option>Playeras</option>
-                    
-                    <option>Bolsas</option>
-
-                    <option>Gorras</option>
-
-                    <option>Llaveros</option>
-
-                    <option>Mouse Pad</option>
-
-                    <option>Promocionales</option>
-
-                    <option>Otro</option>
-
-                </select>
-
-            </div>
-
-            <div class="fila">
-
-                <input
-                    type="number"
-                    id="cantidad"
-                    placeholder="Cantidad">
-
-                <input
-                    type="date"
-                    id="fecha">
-
-            </div>
-
-            <textarea
-                id="descripcion"
-                rows="6"
-                placeholder="Describe tu proyecto..."></textarea>
-
-            <button
-                type="button"
-                onclick="enviarWhatsApp()">
-
-                Solicitar Cotización
-
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-    <!-- ========================= -->
-    <!-- CONTACTO -->
-    <!-- ========================= -->
-
-    <section id="contacto">
-
-        <h2>Contacto</h2>
-
-        <p>Teléfono: (56) 1006-6522</p>
-
-        <p>Email: nexiumsublimacion@gmail.com</p>
-
-        <p>Ciudad de México</p>
-
-    </section>
-
-    <!-- ========================= -->
-    <!-- FOOTER -->
-    <!-- ========================= -->
-
-    <footer>
-
-        <p>
-            © 2026 Todos los derechos reservados.
-        </p>
-
-    </footer>
-
-    <!-- ========================= -->
-    <!-- BOTON WHATSAPP -->
-    <!-- ========================= -->
-
-    <a href="https://wa.me/5215512345678"
-        class="whatsapp"
-        target="_blank">
-
-        <i class="fab fa-whatsapp"></i>
-
-    </a>
-
-    <!-- JAVASCRIPT -->
-
-    <script src="js/main.js"></script>
+<!-- JS -->
+<script src="js/scripts.js"></script>
 
 </body>
-
 </html>
