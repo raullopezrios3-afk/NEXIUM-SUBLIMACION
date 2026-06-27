@@ -38,26 +38,28 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 30px;
 }
 
-.logo img {
-    height: 55px;
+/* Bloque izquierdo (logo + nombre) */
+.logo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.logo-box img {
+    height: 50px;
     width: auto;
     object-fit: contain;
 }
 
-/* Contenedor vertical del nombre y eslogan */
-.brand-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-}
-
-/* Ajuste de imágenes internas */
-.brand-text img {
-    height: 20px;   /* puedes ajustar aquí */
+/* Eslogan a la derecha */
+.eslogan {
+    height: 40px;
     width: auto;
     object-fit: contain;
 }
