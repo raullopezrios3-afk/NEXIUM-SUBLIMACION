@@ -289,34 +289,98 @@
     <!-- COTIZACION -->
     <!-- ========================= -->
 
-    <section id="cotizacion">
+   <section id="cotizacion">
 
-        <h2>Solicita una Cotización</h2>
+    <div class="contenedor">
 
-        <form>
+        <h2 class="titulo-seccion">
+            Solicita tu Cotización
+        </h2>
 
-            <input type="text"
-                placeholder="Nombre Completo"
-                required>
+        <p class="subtitulo">
+            Completa el formulario y recibe atención personalizada.
+        </p>
 
-            <input type="email"
-                placeholder="Correo Electrónico"
-                required>
+        <form id="formCotizacion">
 
-            <input type="tel"
-                placeholder="Teléfono">
+            <div class="fila">
+
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Nombre completo"
+                    required>
+
+                <input
+                    type="tel"
+                    id="telefono"
+                    placeholder="Teléfono"
+                    required>
+
+            </div>
+
+            <div class="fila">
+
+                <input
+                    type="email"
+                    id="correo"
+                    placeholder="Correo electrónico">
+
+                <select id="producto">
+
+                    <option value="">Seleccione un producto</option>
+
+                    <option>Tazas</option>
+
+                    <option>Termos</option>
+
+                    <option>Playeras</option>
+
+                    <option>Gorras</option>
+
+                    <option>Llaveros</option>
+
+                    <option>Mouse Pad</option>
+
+                    <option>Promocionales</option>
+
+                    <option>Otro</option>
+
+                </select>
+
+            </div>
+
+            <div class="fila">
+
+                <input
+                    type="number"
+                    id="cantidad"
+                    placeholder="Cantidad">
+
+                <input
+                    type="date"
+                    id="fecha">
+
+            </div>
 
             <textarea
-                placeholder="Describe tu proyecto"
-                rows="5"></textarea>
+                id="descripcion"
+                rows="6"
+                placeholder="Describe tu proyecto..."></textarea>
 
-            <button type="submit">
-                Enviar Solicitud
+            <button
+                type="button"
+                onclick="enviarWhatsApp()">
+
+                Solicitar Cotización
+
             </button>
 
         </form>
 
-    </section>
+    </div>
+
+</section>
 
     <!-- ========================= -->
     <!-- CONTACTO -->
