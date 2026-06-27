@@ -284,3 +284,11 @@ html {
     opacity: 1;
     transform: translateY(0);
 }
+
+nav ul li a.active {
+    color: #0077ff;
+}
+
+nav ul li a.active::after {
+    width: 100%;
+}
