@@ -207,23 +207,91 @@ section {
 
 @media (max-width: 768px) {
 
-    header {
-        flex-direction: column;
-        height: auto;
-        padding: 15px;
-    }
+  /* ========================= */
+/* HEADER REESTRUCTURADO */
+/* ========================= */
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-    }
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
 
-    .slider {
-        height: 380px;
-    }
+/* Fila superior: logo + eslogan */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
 
-    .slider-overlay h1 {
-        font-size: 22px;
-    }
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* Texto NEXIUM + eslogan */
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.brand-text h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #111;
+}
+
+.brand-text span {
+    font-size: 12px;
+    color: #666;
+}
+
+/* ========================= */
+/* MENÚ ABAJO */
+/* ========================= */
+
+nav {
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid #eee;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    padding: 10px 0;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #0077ff;
+}
+
+/* ========================= */
+/* ESPACIO PARA HEADER DOBLE */
+/* ========================= */
+
+body {
+    padding-top: 140px;
 }
