@@ -35,33 +35,57 @@ header {
 }
 
 /* CONTENEDOR SUPERIOR */
+
 .logo {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 10px 30px;
 }
 
-/* Bloque izquierdo (logo + nombre) */
-.logo-box {
+/* IZQUIERDA: logo arriba + nombre abajo */
+.left-block {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
+    justify-content: center;
 }
 
-.logo-box img {
+/* MISMO TAMAÑO VISUAL */
+.logo-img,
+.nombre-img {
     height: 50px;
     width: auto;
     object-fit: contain;
 }
 
-/* Eslogan a la derecha */
-.eslogan {
-    height: 40px;
+/* DERECHA: eslogan centrado verticalmente */
+.right-block {
+    display: flex;
+    align-items: center;   /* 🔥 clave: centra verticalmente */
+}
+
+.eslogan-img {
+    height: 50px;
     width: auto;
     object-fit: contain;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .logo {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .right-block {
+        justify-content: center;
+    }
+
+    .eslogan-img {
+        height: 40px;
+    }
 }
 
 /* MENÚ */
