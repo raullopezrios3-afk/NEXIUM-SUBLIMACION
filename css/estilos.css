@@ -394,118 +394,83 @@ footer{
     display: block;
 }
 
-/* ========================= */
-/* BANNER NEXIUM */
-/* ========================= */
+/*==============================*/
+/* BOTONES DEL BANNER */
+/*==============================*/
 
-.slider {
-    position: relative;
-    width: 100%;
-    height: 500px;
+.banner-overlay{
 
-    background: #000;   /* 👈 fondo negro a lo ancho */
+    position:absolute;
 
-    overflow: hidden;
+    bottom:40px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:5;
+
 }
 
-.slide {
-    position: absolute;
-    inset: 0;
+.botones-banner{
 
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    display:flex;
 
-    background: transparent;
+    gap:20px;
+
 }
 
-.slide.active {
-    opacity: 1;
-    z-index: 1;
+.btn-cotizar{
+
+    background:#ff6a00;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px 35px;
+
+    border-radius:12px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
 }
 
-.slide img {
-    width: 100%;
-    height: 100%;
+.btn-cotizar:hover{
 
-    object-fit: contain;   /* 👈 NO zoom */
-    object-position: center;
+    background:#d95c00;
 
-    display: block;
-
-    background: transparent;
 }
 
-.banner-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.btn-whatsapp{
 
-    text-align: center;
+    background:#25D366;
 
-    background: none;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
+    color:white;
 
-    width: auto;
-    max-width: none;
+    text-decoration:none;
 
-    color: white;
-    z-index: 10;
-}
+    padding:18px 35px;
 
-.banner-overlay h2 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
+    border-radius:12px;
 
-.banner-overlay p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
+    font-size:20px;
 
-.botones-banner {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+    font-weight:bold;
 
-.btn,
-.btn-whatsapp {
-    padding: 12px 20px;
-    border-radius: 6px;
-    font-weight: bold;
+    transition:.3s;
+
 }
 
 .btn-whatsapp:hover{
 
-    opacity:.9;
+    background:#1fa851;
+
 }
-
-@media(max-width:768px){
-
-    .slider{
-
-        height:450px;
-    }
-
-    .banner-overlay h2{
-
-        font-size:2rem;
-    }
-
-    .banner-overlay p{
-
-        font-size:1rem;
-    }
-}
-
 /* =========================
    HEADER PROFESIONAL NEXIUM
 ========================= */
