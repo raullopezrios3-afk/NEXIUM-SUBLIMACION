@@ -130,7 +130,7 @@ nav ul li a:hover {
 }
 
 /* ========================= */
-/* WHATSAPP */
+/* BOTÓN WHATSAPP FLOTANTE */
 /* ========================= */
 
 .whatsapp-float {
@@ -144,8 +144,13 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2000;
-    text-decoration: none;
+    z-index: 9999;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
 }
 
 /* ========================= */
