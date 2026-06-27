@@ -36,58 +36,37 @@ header {
 
 /* CONTENEDOR SUPERIOR */
 
+
 .logo {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: flex-start; /* 🔥 clave: NO space-between */
+    gap: 30px;
     width: 100%;
     padding: 10px 30px;
 }
 
-/* IZQUIERDA: logo arriba + nombre abajo */
-.left-block {
+/* BLOQUE IZQUIERDO */
+.brand-block {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
 }
 
-/* MISMO TAMAÑO VISUAL */
+/* 🔥 MISMO ANCHO VISUAL */
 .logo-img,
 .nombre-img {
-    height: 50px;
-    width: auto;
+    width: 180px;   /* MISMO ANCHO */
+    height: auto;
     object-fit: contain;
 }
 
-/* DERECHA: eslogan centrado verticalmente */
-.right-block {
-    display: flex;
-    align-items: center;   /* 🔥 clave: centra verticalmente */
-}
-
+/* ESLOGAN A LA DERECHA DEL BLOQUE */
 .eslogan-img {
-    height: 50px;
+    height: 60px;
     width: auto;
     object-fit: contain;
 }
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .logo {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
-    .right-block {
-        justify-content: center;
-    }
-
-    .eslogan-img {
-        height: 40px;
-    }
-}
-
 /* MENÚ */
 nav {
     border-top: 1px solid #eee;
