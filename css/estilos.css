@@ -22,6 +22,8 @@ body {
     line-height: 1.6;
     color: #333;
     background: #fff;
+
+    padding-top: 120px; /* 👈 ESTO ES LO IMPORTANTE */
 }
 
 /* ========================= */
