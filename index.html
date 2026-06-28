@@ -119,93 +119,79 @@
 
 </section>
 
+
 <!-- ========================= -->
-<!-- GALERIA -->
+<!-- GALERIA + VIDEOS -->
 <!-- ========================= -->
 
-<section id="galeria" class="reveal">
+<section class="media-section reveal">
 
     <div class="contenedor">
 
-        <h2 class="titulo-seccion">
-            Nuestra Galería
-        </h2>
+        <div class="media-grid">
 
-        <p class="subtitulo">
-            Algunos trabajos realizados por NEXIUM.
-        </p>
+            <!-- GALERÍA -->
+            <div id="galeria" class="media-box">
 
-        <div class="galeria-grid">
+                <h2 class="titulo-seccion">Nuestra Galería</h2>
 
-            <!-- Aquí irán las imágenes -->
+                <p class="subtitulo">
+                    Algunos trabajos realizados por NEXIUM.
+                </p>
 
-        </div>
+                <div class="galeria-grid">
+                    <!-- imágenes -->
+                </div>
 
-    </div>
+            </div>
 
-</section>
+            <!-- VIDEOS -->
+            <div id="videos" class="media-box">
 
-<!-- ========================= -->
-<!-- VIDEOS -->
-<!-- ========================= -->
+                <h2 class="titulo-seccion">Videos</h2>
 
-<section id="videos">
+                <p class="subtitulo">
+                    Conoce más sobre nuestro trabajo.
+                </p>
 
-    <div class="contenedor">
+                <div class="video-contenedor">
+                    <!-- video -->
+                </div>
 
-        <h2 class="titulo-seccion">
-            Videos
-        </h2>
-
-        <p class="subtitulo">
-            Conoce más sobre nuestro trabajo.
-        </p>
-
-        <div class="video-contenedor">
-
-            <!-- Aquí irá el video -->
+            </div>
 
         </div>
 
-    </div>
+        <!-- CTA COTIZACIÓN -->
+        <div id="cotizacion" class="cta-cotizacion reveal">
 
-</section>
+            <h2 class="titulo-seccion">Solicita tu Cotización</h2>
 
-<!-- ========================= -->
-<!-- COTIZACION -->
-<!-- ========================= -->
+            <form id="formCotizacion" class="formulario-cotizacion">
 
-<section id="cotizacion">
+                <input type="text" id="nombre" placeholder="Nombre" required>
+                <input type="tel" id="telefono" placeholder="Teléfono" required>
+                <input type="email" id="correo" placeholder="Correo" required>
 
-    <div class="formulario-cotizacion">
+                <select id="producto" required>
+                    <option value="">Producto</option>
+                    <option value="Tazas">Tazas</option>
+                    <option value="Termos">Termos</option>
+                    <option value="Bolsas">Bolsas</option>
+                </select>
 
-        <h2>Solicita tu Cotización</h2>
+                <input type="number" id="cantidad" placeholder="Cantidad" required>
+                <input type="date" id="fecha" required>
 
-        <form id="formCotizacion">
+                <textarea id="descripcion" placeholder="Descripción del pedido" rows="4"></textarea>
 
-            <input type="text" id="nombre" placeholder="Nombre" required>
+                <button type="button" onclick="enviarWhatsApp()">
+                    Solicitar Cotización
+                </button>
 
-            <input type="tel" id="telefono" placeholder="Teléfono" required>
+            </form>
 
-            <input type="email" id="correo" placeholder="Correo" required>
-
-            <select id="producto" required>
-                <option value="">Producto</option>
-                <option value="Tazas">Tazas</option>
-                <option value="Termos">Termos</option>
-            </select>
-
-            <input type="number" id="cantidad" placeholder="Cantidad" required>
-
-            <input type="date" id="fecha" required>
-
-            <textarea id="descripcion" placeholder="Descripción del pedido" rows="4"></textarea>
-
-            <button type="button" onclick="enviarWhatsApp()">
-                Solicitar Cotización
-            </button>
-
-        </form>
+        </div>
 
     </div>
 
