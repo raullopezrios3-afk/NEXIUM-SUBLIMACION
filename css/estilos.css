@@ -296,3 +296,20 @@ section {
         width: 120px;
     }
 }
+
+/* ========================= */
+/* 🔥 BLOQUE FINAL: FORZAR TAMAÑO LOGO */
+/* ========================= */
+
+.header-left .logo-img{
+    width: 60px !important;
+    height: auto !important;
+    display: block !important;
+}
+
+.header-left .nombre-img{
+    width: 95px !important;
+    height: auto !important;
+    display: block !important;
+    margin-top: 3px !important;
+}
