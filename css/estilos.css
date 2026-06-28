@@ -50,13 +50,13 @@ body {
 
 /* LOGO + NOMBRE (SIN CONFLICTOS) */
 .logo-img{
-    width: 75px;
+    width: 85px;
     height: auto;
     display: block;
 }
 
 .nombre-img{
-    width: 110px;
+    width: 85px;
     height: auto;
     display: block;
     margin-top: 3px;
