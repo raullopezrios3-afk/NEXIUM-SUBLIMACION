@@ -214,8 +214,11 @@ function enviarCotizacionCorreo() {
 
         alert("Cotización enviada correctamente ✅");
 
-        document.getElementById("formCotizacion").reset();
+      let form = document.getElementById("formCotizacion");
 
+if (form) {
+    form.reset();
+}
     })
     .catch((error) => {
         console.log("ERROR EMAILJS:", error);
