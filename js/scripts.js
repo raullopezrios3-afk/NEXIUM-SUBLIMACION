@@ -37,6 +37,8 @@ Me gustaría recibir información sobre sus productos promocionales y servicios 
 
 Quedo atento(a) a su respuesta.
 
+${descripcion}`;
+
     window.open(
         "https://wa.me/525610066522?text=" + encodeURIComponent(mensaje),
         "_blank"
