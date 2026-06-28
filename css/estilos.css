@@ -520,3 +520,137 @@ nav ul li a.active::after {
     font-size: 22px;
     cursor: pointer;
 }
+
+/* =========================
+   RESPONSIVE TABLET / IPAD
+========================= */
+@media (max-width: 1024px) {
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .header-right {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .header-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .slider-overlay {
+        top: 100px;
+        right: 10px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .brand-block {
+        align-items: center;
+    }
+
+    .eslogan-img {
+        height: 40px;
+    }
+
+    /* BOTONES */
+    .header-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* CARRUSEL */
+    .slider {
+        height: 300px;
+    }
+
+    .slider-overlay {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .slider-text {
+        text-align: center;
+        max-width: 90%;
+    }
+
+    .slider-buttons {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* PRODUCTOS */
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* GALERÍA */
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .slider {
+        height: 250px;
+    }
+
+    .slider-text h1 {
+        font-size: 20px;
+    }
+
+    .slider-text p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .modal-content input,
+    .modal-content select,
+    .modal-content textarea {
+        font-size: 14px;
+    }
+}
