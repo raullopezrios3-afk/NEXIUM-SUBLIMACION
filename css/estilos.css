@@ -288,7 +288,7 @@ nav ul li a.active::after {
 
 .slider-overlay {
     position: absolute;
-    top: 20px;
+    top: 140px;  /* 🔥 clave del fix */
     right: 20px;
 
     z-index: 10;
