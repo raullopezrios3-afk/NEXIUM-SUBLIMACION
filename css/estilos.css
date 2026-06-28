@@ -9,7 +9,14 @@
 }
 
 header.header {
-    border-bottom: 1px solid #eee;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* 🔥 siempre arriba */
+
+    background: #ffffff; /* blanco sólido */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
 html {
@@ -22,7 +29,7 @@ body {
     color: #333;
     background: #fff;
 
-    padding-top: 180px; /* 👈 ESTO ES LO IMPORTANTE */
+    padding-top: 120px; /* 👈 ESTO ES LO IMPORTANTE */
 }
 
 /* ========================= */
@@ -138,6 +145,7 @@ nav ul li a:hover::after {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1; /* 🔥 evita que se monte sobre el header */
 }
 
 .slide {
