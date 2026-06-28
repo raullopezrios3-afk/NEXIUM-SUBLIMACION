@@ -27,7 +27,18 @@ function enviarWhatsApp() {
     let fecha = document.getElementById("fecha").value;
     let descripcion = document.getElementById("descripcion").value;
 
-    let mensaje = `SOLICITUD DE COTIZACIÓN
+    let mensaje = `¡Hola!
+
+Gracias por comunicarte con NEXIUM SUBLIMACION.
+
+¡HACEMOS REALIDAD TUS IDEAS BRILLANTES!
+
+Me gustaría recibir información sobre sus productos promocionales y servicios de personalización.
+
+Quedo atento(a) a su respuesta.
+
+
+SOLICITUD DE COTIZACIÓN
 
 Nombre: ${nombre}
 Tel: ${telefono}
@@ -36,6 +47,7 @@ Producto: ${producto}
 Cantidad: ${cantidad}
 Fecha: ${fecha}
 
+Descripción:
 ${descripcion}`;
 
     window.open(
