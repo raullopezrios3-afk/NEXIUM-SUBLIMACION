@@ -304,4 +304,10 @@ MODAL
 }
 .eslogan {
     color: #c5a879;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+
+    /* ✨ efecto elegante como branding */
+    text-shadow: 0 1px 1px rgba(0,0,0,0.08);
 }
