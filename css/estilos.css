@@ -269,21 +269,25 @@ MODAL
     color: #333;
     font-weight: bold;
 }
+
+
 /* =========================
    AJUSTE LOGO + NOMBRE
 ========================= */
 
 .logo-img {
-    width: 110px;   /* antes 80px */
+    width: 160px;
     height: auto;
 }
 
 .nombre-img {
-    width: 160px;   /* antes no definido o 80px */
+    width: 160px;
     height: auto;
 }
 
-/* opcional: separación más limpia */
 .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 5px;
 }
