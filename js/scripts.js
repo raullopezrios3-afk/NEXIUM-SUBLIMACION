@@ -201,7 +201,7 @@ ${descripcion}`;
 
 function enviarCotizacionCorreo() {
 
-    emailjs.send("Tservice_e8slvmi", "template_ams0res", {
+    emailjs.send("service_e8slvmi", "template_ams0res", {
         nombre: document.getElementById("nombre").value,
         telefono: document.getElementById("telefono").value,
         correo: document.getElementById("correo").value,
