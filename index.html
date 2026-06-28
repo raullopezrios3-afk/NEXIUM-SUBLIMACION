@@ -242,30 +242,36 @@
 
         <h2>Solicita tu Cotización</h2>
 
-        <input type="text" id="nombre" placeholder="Nombre" required>
-        <input type="tel" id="telefono" placeholder="Teléfono" required>
-        <input type="email" id="correo" placeholder="Correo" required>
+<form id="formCotizacion">
 
-        <select id="producto" required>
-            <option value="">Producto</option>
-            <option value="Tazas">Tazas</option>
-            <option value="Termos">Termos</option>
-            <option value="Bolsas">Bolsas</option>
-        </select>
+    <input type="text" id="nombre" placeholder="Nombre" required>
 
-        <input type="number" id="cantidad" placeholder="Cantidad" required>
-        <input type="date" id="fecha" required>
+    <input type="tel" id="telefono" placeholder="Teléfono" required>
 
-        <textarea id="descripcion" placeholder="Descripción del pedido" rows="4"></textarea>
+    <input type="email" id="correo" placeholder="Correo" required>
 
-        <!-- BOTONES DE ACCIÓN -->
-        <div class="modal-buttons">
+    <select id="producto" required>
+        <option value="">Producto</option>
+        <option value="Tazas">Tazas</option>
+        <option value="Termos">Termos</option>
+        <option value="Bolsas">Bolsas</option>
+    </select>
 
-          <button type="button" onclick="enviarCotizacionCorreo()">
-    Solicitar Cotización
-</button>
+    <input type="number" id="cantidad" placeholder="Cantidad" required>
 
-        </div>
+    <input type="date" id="fecha" required>
+
+    <textarea id="descripcion" placeholder="Descripción del pedido" rows="4"></textarea>
+
+    <div class="modal-buttons">
+
+        <button type="button" onclick="enviarCotizacionCorreo()">
+            Solicitar Cotización
+        </button>
+
+    </div>
+
+</form>
 
     </div>
 
