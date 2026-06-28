@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* SLIDER */
+    /* =========================
+       SLIDER
+    ========================= */
     const slides = document.querySelectorAll(".slide");
     let index = 0;
 
@@ -14,8 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+
 /* =========================
-WHATSAPP (FUNCIONA)
+   WHATSAPP
 ========================= */
 function enviarWhatsApp() {
 
@@ -27,7 +30,8 @@ function enviarWhatsApp() {
     let fecha = document.getElementById("fecha").value;
     let descripcion = document.getElementById("descripcion").value;
 
-    let mensaje = `¡Hola!
+    let mensaje =
+`¡Hola!
 
 Gracias por comunicarte con NEXIUM SUBLIMACION.
 
@@ -37,6 +41,17 @@ Me gustaría recibir información sobre sus productos promocionales y servicios 
 
 Quedo atento(a) a su respuesta.
 
+---
+
+SOLICITUD DE COTIZACIÓN
+Nombre: ${nombre}
+Tel: ${telefono}
+Correo: ${correo}
+Producto: ${producto}
+Cantidad: ${cantidad}
+Fecha: ${fecha}
+
+Descripción:
 ${descripcion}`;
 
     window.open(
@@ -45,8 +60,9 @@ ${descripcion}`;
     );
 }
 
+
 /* =========================
-EMAILJS
+   EMAILJS
 ========================= */
 function enviarCotizacionCorreo() {
 
@@ -58,20 +74,25 @@ function enviarCotizacionCorreo() {
         cantidad: document.getElementById("cantidad").value,
         fecha: document.getElementById("fecha").value,
         descripcion: document.getElementById("descripcion").value
-    }).then(() => {
+    })
+    .then(() => {
 
         alert("Enviado correctamente ✅");
 
         document.getElementById("formCotizacion").reset();
         document.getElementById("modalCotizacion").style.display = "none";
 
-    }).catch(err => {
+    })
+    .catch(err => {
         console.log(err);
         alert("Error al enviar ❌");
     });
 }
 
-/* MODAL */
+
+/* =========================
+   MODAL
+========================= */
 function cerrarModalCotizacion() {
     document.getElementById("formCotizacion").reset();
     document.getElementById("modalCotizacion").style.display = "none";
