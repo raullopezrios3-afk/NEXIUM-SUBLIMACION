@@ -290,5 +290,24 @@ section {
 
    }
 
+/* MENÚ CENTRADO */
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 12px 0;
+    border-top: 1px solid #eee;
+    width: 100%;
+}
 
+.menu a{
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.menu a:hover{
+    color: #b88a2a;
+}
 
