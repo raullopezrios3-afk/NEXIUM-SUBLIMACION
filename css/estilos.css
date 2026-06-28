@@ -347,3 +347,23 @@ section {
         width: 140px;
     }
 }
+
+/* ========================= */
+/* AJUSTE ESLOGAN A LA DERECHA */
+/* ========================= */
+
+.brand-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* separación entre logo y eslogan */
+}
+
+/* CONTENEDOR DEL ESLOGAN */
+.eslogan-img {
+    margin-left: auto; /* 🔥 empuja el eslogan a la derecha */
+}
