@@ -269,3 +269,21 @@ MODAL
     color: #333;
     font-weight: bold;
 }
+/* =========================
+   AJUSTE LOGO + NOMBRE
+========================= */
+
+.logo-img {
+    width: 110px;   /* antes 80px */
+    height: auto;
+}
+
+.nombre-img {
+    width: 160px;   /* antes no definido o 80px */
+    height: auto;
+}
+
+/* opcional: separación más limpia */
+.header-left {
+    gap: 5px;
+}
