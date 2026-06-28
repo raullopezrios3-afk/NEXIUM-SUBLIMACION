@@ -37,19 +37,6 @@ Me gustaría recibir información sobre sus productos promocionales y servicios 
 
 Quedo atento(a) a su respuesta.
 
-
-SOLICITUD DE COTIZACIÓN
-
-Nombre: ${nombre}
-Tel: ${telefono}
-Correo: ${correo}
-Producto: ${producto}
-Cantidad: ${cantidad}
-Fecha: ${fecha}
-
-Descripción:
-${descripcion}`;
-
     window.open(
         "https://wa.me/525610066522?text=" + encodeURIComponent(mensaje),
         "_blank"
