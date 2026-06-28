@@ -308,7 +308,7 @@ MODAL
     /* igualar tamaño al nombre */
     font-size: 28px;   /* ajusta si tu nombre es más grande o más pequeño */
     font-weight: 800;
-
+    line-height: 1.6;
     letter-spacing: 0.6px;
 
     /* sombra más marcada pero elegante */
