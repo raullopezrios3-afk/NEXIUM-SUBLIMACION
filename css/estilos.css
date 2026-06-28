@@ -485,3 +485,28 @@ section {
     align-items: center;
     margin-left: auto;
 }
+
+/* ========================= */
+/* ESLOGAN MÁS GRANDE Y MÁS A LA DERECHA */
+/* ========================= */
+
+.header-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* empuja todo el bloque hacia la derecha progresivamente */
+.header-eslogan{
+    display: flex;
+    align-items: center;
+    margin-left: auto;   /* 🔥 lo empuja hacia la derecha */
+    margin-right: 25px;  /* separación de botones */
+}
+
+/* ESLOGAN MÁS GRANDE */
+.eslogan-img{
+    width: 320px;  /* 🔥 aumenta tamaño */
+    height: auto;
+    object-fit: contain;
+}
