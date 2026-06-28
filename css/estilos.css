@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+header.header {
+    padding: 10px 30px;
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
 }
