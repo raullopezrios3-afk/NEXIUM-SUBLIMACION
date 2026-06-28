@@ -53,15 +53,14 @@ body {
 
 /* LOGO */
 .logo-img {
-    width: 50px;
+    width: 85px;
     height: auto;
     display: block;
     margin-bottom: 3px;
-}
 
 /* NOMBRE DEBAJO */
 .nombre-img {
-    width: 70px;
+    width: 120px;
     height: auto;
     display: block;
 }
