@@ -14,7 +14,7 @@ header.header {
     left: 0;
     width: 100%;
     z-index: 9999; /* 🔥 siempre arriba */
-
+    padding: 10px 40px; /* 👈 antes 30px, ahora más aire */
     background: #ffffff; /* blanco sólido */
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
