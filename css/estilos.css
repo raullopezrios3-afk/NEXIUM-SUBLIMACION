@@ -278,7 +278,9 @@ section {
     }
 
     .slider {
-        height: 380px;
+       margin-top: 180px; /* header en móvil es más alto */
+        height: 300px;
+        
     }
 }
 
