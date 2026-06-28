@@ -177,19 +177,95 @@ GALERÍA
 MODAL
 ========================= */
 
-.modal {
+/* =========================
+   MODAL MODERNO NEXIUM (REEMPLAZO TOTAL)
+========================= */
+
+.modal{
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.65);
     justify-content: center;
     align-items: center;
     z-index: 99999;
+    backdrop-filter: blur(5px);
 }
 
-.modal-content {
+.modal-content{
+    position: relative;
     background: #fff;
-    padding: 20px;
     width: 90%;
-    max-width: 500px;
+    max-width: 520px;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    animation: modalPop 0.25s ease;
+}
+
+/* animación entrada */
+@keyframes modalPop{
+    from{
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* título */
+.modal-content h2{
+    text-align: center;
+    margin-bottom: 15px;
+    color: #1e66ff;
+}
+
+/* inputs */
+.modal-content input,
+.modal-content select,
+.modal-content textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    outline: none;
+}
+
+/* focus bonito */
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus{
+    border-color: #1e66ff;
+}
+
+/* botón enviar */
+.modal-buttons button{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #25d366;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-buttons button:hover{
+    background: #1faa52;
+}
+
+/* botón cerrar */
+.close{
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
 }
