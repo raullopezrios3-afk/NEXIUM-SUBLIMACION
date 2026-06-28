@@ -728,3 +728,18 @@ nav ul li a.active::after {
     }
 
 }
+
+.productos-grid {
+    grid-template-columns: 1fr;
+}
+
+/* ========================= */
+/* PRODUCTOS EN CUADRÍCULA */
+/* ========================= */
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
