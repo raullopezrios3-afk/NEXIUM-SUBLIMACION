@@ -433,3 +433,42 @@ nav ul li a.active::after {
     color: #666;
     padding: 0 10px 15px;
 }
+
+/* =========================
+   GALERÍA + VIDEO LAYOUT
+========================= */
+
+.media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+    margin-bottom: 40px;
+}
+
+.media-box {
+    text-align: center;
+}
+
+/* COTIZACIÓN CENTRADA ABAJO */
+.cta-cotizacion {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.formulario-cotizacion {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+}
