@@ -242,3 +242,21 @@ function enviarCotizacionCorreo() {
         alert("Error al enviar ❌ revisa consola");
     });
 }
+
+function abrirWhatsApp() {
+
+    const numero = "5215610066522";
+
+    const mensaje = `¡Hola!
+
+Gracias por comunicarte con NEXIUM.
+
+Me gustaría recibir información sobre sus productos promocionales y servicios de personalización.
+
+Quedo atento(a) a su respuesta.`;
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, "_blank");
+
+}
