@@ -291,3 +291,14 @@ MODAL
     align-items: flex-start;
     gap: 5px;
 }
+
+.header-center {
+    text-align: left;       /* lo mueve hacia la izquierda */
+    padding-left: 10px;     /* aproximación a 10mm visual */
+}
+
+.eslogan {
+    font-size: 26px;        /* más grande */
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
