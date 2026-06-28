@@ -288,44 +288,7 @@ section {
         height: 250px;
     }
 
-    .logo-img {
-        width: 70px;
-    }
+   }
 
-    .nombre-img {
-        width: 120px;
-    }
-}
 
-/* ========================= */
-/* 🔥 BLOQUE FINAL: FORZAR TAMAÑO LOGO */
-/* ========================= */
 
-.header-left .logo-img{
-    width: 60px !important;
-    height: auto !important;
-    display: block !important;
-}
-
-.header-left .nombre-img{
-    width: 95px !important;
-    height: auto !important;
-    display: block !important;
-    margin-top: 3px !important;
-}
-
-/* ========================= */
-/* 🔥 BLOQUE FINAL ABSOLUTO (NO SE PISA) */
-/* ========================= */
-
-.header img.logo-img{
-    width: 60px !important;
-    height: auto !important;
-    max-width: 60px !important;
-}
-
-.header img.nombre-img{
-    width: 95px !important;
-    height: auto !important;
-    max-width: 95px !important;
-}
