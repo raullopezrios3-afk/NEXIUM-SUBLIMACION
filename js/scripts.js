@@ -157,6 +157,12 @@ function closeModalCotizacion() {
 
 function cerrarModalCotizacion() {
 
+    const form = document.getElementById("formCotizacion");
+
+    if (form) {
+        form.reset();
+    }
+
     document.getElementById("modalCotizacion").style.display = "none";
 
 }
