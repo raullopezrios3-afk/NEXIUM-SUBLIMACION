@@ -603,24 +603,25 @@ nav ul li a.active::after {
 @media (max-width: 768px) {
 
     .logo {
-        gap: 10px;
+        gap: 15px;
         padding: 10px 15px;
     }
 
-    .logo-img {
-        width: 70px;
-    }
+   .logo-img {
+    width: 100px;
+    height: auto;
+}
 
-    .nombre-img {
-        width: 120px;
-    }
+.nombre-img {
+    width: 160px;
+    height: auto;
+}
 
-    .eslogan-img {
-        width: 120px;
-        height: auto;
-        object-fit: contain;
-    }
-
+.eslogan-img {
+    width: 170px;
+    height: auto;
+    object-fit: contain;
+}
     .header-buttons {
         gap: 6px;
     }
