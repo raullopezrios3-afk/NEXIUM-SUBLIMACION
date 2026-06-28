@@ -209,13 +209,6 @@ section {
 /* RESPONSIVE */
 /* ========================= */
 
-@media (max-width: 768px) {
-
-    nav ul {
-        gap: 15px;
-        font-size: 14px;
-    }
-
     .slider {
        margin-top: 180px; /* header en móvil es más alto */
         height: 300px;
@@ -280,10 +273,83 @@ nav ul li a.active::after {
 }
 
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* ==========================
+   HEADER
+========================== */
+
+.header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    background:#ffffff;
+
+    z-index:1000;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:10px 30px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+}
+
+/* ==========================
+   MENÚ
+========================== */
+
+.nav{
+
+    width:100%;
+
+    margin-top:12px;
+
+    border-top:1px solid #ececec;
+
+    padding-top:12px;
+
+}
+
+.nav ul{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.nav ul li a{
+
+    text-decoration:none;
+
+    color:#333;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.nav ul li a:hover{
+
+    color:#0077ff;
+
 }
 
 /* PANEL DERECHO NUEVO */
@@ -408,12 +474,6 @@ nav ul li a.active::after {
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
-    .media-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 .modal {
     display: none;
     position: fixed;
@@ -492,14 +552,6 @@ nav ul li a.active::after {
 /* =========================
    MOBILE
 ========================= */
-@media (max-width: 768px) {
-
-    /* HEADER */
-    .header {
-        flex-direction: column;
-        padding: 10px;
-    }
-
     .logo {
         flex-direction: column;
         align-items: center;
@@ -582,12 +634,6 @@ nav ul li a.active::after {
     }
 }
 
-@media (max-width: 768px) {
-
-    .modal-content {
-        width: 95%;
-        padding: 15px;
-    }
 
     .modal-content input,
     .modal-content select,
@@ -599,13 +645,6 @@ nav ul li a.active::after {
 /* ==========================================
    HEADER RESPONSIVE - CELULARES
 ========================================== */
-
-@media (max-width: 768px) {
-
-    .logo {
-        gap: 15px;
-        padding: 10px 15px;
-    }
 
    .logo-img {
     width: 100px;
@@ -630,6 +669,62 @@ nav ul li a.active::after {
     .btn-secondary {
         padding: 6px 10px;
         font-size: 12px;
+    }
+
+}
+
+/* =========================
+   RESPONSIVE UNIFICADO
+========================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .header {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+
+    .logo {
+        gap: 15px;
+        padding: 10px 15px;
+    }
+
+    .logo-img {
+        width: 90px;
+    }
+
+    .nombre-img {
+        width: 145px;
+    }
+
+    .eslogan-img {
+        width: 150px;
+        height: auto;
+    }
+
+    /* MENÚ */
+    nav ul {
+        gap: 15px;
+        font-size: 14px;
+        flex-wrap: wrap;
+    }
+
+    /* SLIDER */
+    .slider {
+        margin-top: 180px;
+        height: 300px;
+    }
+
+    /* GALERÍA / MEDIA */
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* MODAL */
+    .modal-content {
+        width: 95%;
+        padding: 15px;
     }
 
 }
