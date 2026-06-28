@@ -440,3 +440,48 @@ section {
     gap: 30px;
     list-style: none;
 }
+
+/* ========================= */
+/* AJUSTE LOGO + ESLOGAN */
+/* ========================= */
+
+.header-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* BLOQUE LOGO + NOMBRE */
+.header-brand{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* LOGO Y NOMBRE MISMO TAMAÑO VISUAL */
+.logo-img,
+.nombre-img{
+    width: 120px;   /* 🔥 igualamos tamaño base */
+    height: auto;
+}
+
+/* ESLOGAN AL LADO Y MÁS GRANDE */
+.header-eslogan{
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* lo acerca al logo */
+}
+
+.eslogan-img{
+    width: 260px;   /* 🔥 MÁS GRANDE */
+    height: auto;
+}
+
+/* BOTONES */
+.header-buttons{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: auto;
+}
