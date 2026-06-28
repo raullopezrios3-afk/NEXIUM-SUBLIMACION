@@ -515,7 +515,7 @@ section {
     display: flex;
     align-items: center;
 
-    margin-left: 10px;   /* 🔥 lo acerca al logo */
+    margin-left: 5px;   /* 🔥 lo acerca al logo */
     margin-right: 10px;  /* evita que se vaya a los botones */
 }
 
