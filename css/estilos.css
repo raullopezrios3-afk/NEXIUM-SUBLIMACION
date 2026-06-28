@@ -311,3 +311,35 @@ section {
     color: #b88a2a;
 }
 
+/* ========================= */
+/* 🔥 ARREGLO BOTONES HEADER */
+/* ========================= */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* 🔥 asegura que esté arriba de todo */
+}
+
+/* evita que el centro empuje o bloquee */
+.header-center{
+    flex: 1;
+    text-align: center;
+    pointer-events: none; /* 🔥 no bloquea clics */
+}
+
+/* reactiva clics solo en botones */
+.header-right{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    pointer-events: auto;
+}
+
+/* botones siempre clicables */
+.btn{
+    position: relative;
+    z-index: 10000;
+}
