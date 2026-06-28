@@ -24,6 +24,7 @@ body {
 /* HEADER LIMPIO DEFINITIVO */
 /* ========================= */
 
+/* HEADER BASE */
 .header{
     width: 100%;
     background: #fff;
@@ -34,6 +35,7 @@ body {
     z-index: 1000;
 }
 
+/* ESTRUCTURA */
 .header-top{
     display: flex;
     align-items: center;
@@ -48,18 +50,12 @@ body {
     align-items: flex-start;
 }
 
-/* LOGO + NOMBRE (SIN CONFLICTOS) */
-.logo-img{
-    width: 85px;
-    height: auto;
-    display: block;
-}
-
+/* LOGO Y NOMBRE (MISMO TAMAÑO) */
+.logo-img,
 .nombre-img{
-    width: 85px;
+    width: 80px;
     height: auto;
     display: block;
-    margin-top: 3px;
 }
 
 /* CENTRO */
@@ -75,7 +71,7 @@ body {
     white-space: nowrap;
 }
 
-/* DERECHA */
+/* DERECHA (BOTONES) */
 .header-right{
     display: flex;
     gap: 10px;
@@ -97,7 +93,6 @@ body {
 .whatsapp{
     background: #25d366;
 }
-
 
 /* ========================= */
 /* MENÚ NAV */
