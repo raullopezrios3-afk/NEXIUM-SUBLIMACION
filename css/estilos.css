@@ -595,3 +595,40 @@ nav ul li a.active::after {
         font-size: 14px;
     }
 }
+
+/* ==========================================
+   HEADER RESPONSIVE - CELULARES
+========================================== */
+
+@media (max-width: 768px) {
+
+    .logo {
+        gap: 10px;
+        padding: 10px 15px;
+    }
+
+    .logo-img {
+        width: 70px;
+    }
+
+    .nombre-img {
+        width: 120px;
+    }
+
+    .eslogan-img {
+        width: 120px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .header-buttons {
+        gap: 6px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+}
