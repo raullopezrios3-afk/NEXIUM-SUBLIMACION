@@ -21,10 +21,9 @@ body {
 }
 
 /* ========================= */
-/* HEADER LIMPIO DEFINITIVO */
+/* HEADER */
 /* ========================= */
 
-/* HEADER BASE */
 .header{
     width: 100%;
     background: #fff;
@@ -35,7 +34,6 @@ body {
     z-index: 1000;
 }
 
-/* ESTRUCTURA */
 .header-top{
     display: flex;
     align-items: center;
@@ -43,14 +41,12 @@ body {
     padding: 10px 40px;
 }
 
-/* IZQUIERDA */
 .header-left{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-/* LOGO Y NOMBRE (MISMO TAMAÑO) */
 .logo-img,
 .nombre-img{
     width: 80px;
@@ -58,7 +54,6 @@ body {
     display: block;
 }
 
-/* CENTRO */
 .header-center{
     flex: 1;
     text-align: center;
@@ -71,7 +66,6 @@ body {
     white-space: nowrap;
 }
 
-/* DERECHA (BOTONES) */
 .header-right{
     display: flex;
     gap: 10px;
@@ -304,61 +298,4 @@ section {
 
 .menu a:hover{
     color: #b88a2a;
-}
-
-/* ========================= */
-/* 🔥 ARREGLO BOTONES HEADER */
-/* ========================= */
-
-.header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999; /* 🔥 asegura que esté arriba de todo */
-}
-
-
-/* reactiva clics solo en botones */
-.header-right{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    pointer-events: auto;
-}
-
-/* botones siempre clicables */
-.btn{
-    position: relative;
-    z-index: 10000;
-}
-
-/* ========================= */
-/* 🔥 FIX REAL DE CLICS HEADER */
-/* ========================= */
-
-.header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-}
-
-/* centro NO debe bloquear clics */
-.header-center{
-    pointer-events: none;
-}
-
-/* botones SIEMPRE clicables */
-.header-right{
-    pointer-events: auto;
-    position: relative;
-    z-index: 10000;
-}
-
-/* botones arriba de todo */
-.btn{
-    position: relative;
-    z-index: 10001;
 }
