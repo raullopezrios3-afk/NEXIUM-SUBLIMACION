@@ -304,10 +304,15 @@ MODAL
 }
 .eslogan {
     color: #c5a879;
-    font-size: 26px;
+
+    /* igualar tamaño al nombre */
+    font-size: 28px;   /* ajusta si tu nombre es más grande o más pequeño */
     font-weight: 800;
+
     letter-spacing: 0.6px;
 
-    /* ✨ efecto elegante como branding */
-    text-shadow: 0 1px 1px rgba(0,0,0,0.08);
+    /* sombra más marcada pero elegante */
+    text-shadow: 
+        0 2px 2px rgba(0,0,0,0.15),
+        0 4px 6px rgba(0,0,0,0.10);
 }
