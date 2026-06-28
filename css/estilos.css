@@ -9,8 +9,7 @@
 }
 
 header.header {
-    padding: 10px 30px;
-    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
 }
 
 html {
@@ -44,10 +43,6 @@ header {
     transition: all 0.4s ease;
 }
 
-header.scrolled {
-    background: #ffffff;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
-}
 
 /* CONTENEDOR SUPERIOR */
 
