@@ -249,7 +249,7 @@ function abrirWhatsApp() {
 
     const mensaje = `¡Hola!
 
-Gracias por comunicarte con NEXIUM.
+Gracias por comunicarte con NEXIUM SUBLIMACION.
 
 Me gustaría recibir información sobre sus productos promocionales y servicios de personalización.
 
