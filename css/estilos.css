@@ -618,7 +618,7 @@ nav ul li a.active::after {
 }
 
 .eslogan-img {
-    width: 170px;
+    width: 220px;
     height: auto;
     object-fit: contain;
 }
