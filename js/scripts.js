@@ -155,6 +155,12 @@ function closeModalCotizacion() {
     document.getElementById("modalCotizacion").style.display = "none";
 }
 
+function cerrarModalCotizacion() {
+
+    document.getElementById("modalCotizacion").style.display = "none";
+
+}
+
 // cerrar clic afuera
 window.addEventListener("click", function(e) {
     const modal = document.getElementById("modalCotizacion");
@@ -210,16 +216,21 @@ function enviarCotizacionCorreo() {
         fecha: document.getElementById("fecha").value,
         descripcion: document.getElementById("descripcion").value
     })
-    .then(() => {
+   .then(() => {
 
-        alert("Cotización enviada correctamente ✅");
+    alert("Cotización enviada correctamente ✅");
 
-      let form = document.getElementById("formCotizacion");
+    // Limpiar formulario
+    const form = document.getElementById("formCotizacion");
 
-if (form) {
-    form.reset();
-}
-    })
+    if (form) {
+        form.reset();
+    }
+
+    // Cerrar el modal
+    cerrarModalCotizacion();
+
+})
     .catch((error) => {
         console.log("ERROR EMAILJS:", error);
         alert("Error al enviar ❌ revisa consola");
