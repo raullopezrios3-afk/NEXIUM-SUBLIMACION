@@ -307,3 +307,33 @@ section {
 .menu a:hover{
     color: #b88a2a;
 }
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+}
+
+/* 🔥 EVITA QUE EL SLIDER TAPE EL HEADER */
+.slider{
+    position: relative;
+    z-index: 1;
+}
+
+/* 🔥 ASEGURA QUE LAS SECCIONES NO SUBAN ENCIMA */
+section{
+    position: relative;
+    z-index: 1;
+}
+
+/* 🔥 BOTONES SIEMPRE ARRIBA */
+.header-right{
+    position: relative;
+    z-index: 100000;
+}
+
+.btn{
+    position: relative;
+    z-index: 100001;
+}
