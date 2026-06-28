@@ -46,7 +46,10 @@
         </div>
 
     </div>
-
+<a href="#" class="btn-primary" onclick="openModalCotizacion()">
+    Solicitar Cotización
+</a>
+    
 </header>
 
 <!-- ========================= -->
@@ -222,6 +225,43 @@
 
 <!-- JS -->
 <script src="js/scripts.js"></script>
+
+    <div id="modalCotizacion" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModalCotizacion()">&times;</span>
+
+        <h2>Solicita tu Cotización</h2>
+
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="tel" id="telefono" placeholder="Teléfono" required>
+        <input type="email" id="correo" placeholder="Correo" required>
+
+        <select id="producto" required>
+            <option value="">Producto</option>
+            <option value="Tazas">Tazas</option>
+            <option value="Termos">Termos</option>
+            <option value="Bolsas">Bolsas</option>
+        </select>
+
+        <input type="number" id="cantidad" placeholder="Cantidad" required>
+        <input type="date" id="fecha" required>
+
+        <textarea id="descripcion" placeholder="Descripción del pedido" rows="4"></textarea>
+
+        <!-- BOTONES DE ACCIÓN -->
+        <div class="modal-buttons">
+
+            <button type="button" onclick="enviarWhatsApp()" class="btn-primary">
+                Enviar por WhatsApp
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>
