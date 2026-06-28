@@ -1,39 +1,3 @@
-
-/* =============================
-   WHATSAPP (COTIZACIÓN)
-============================= */
-
-function enviarWhatsApp() {
-
-    let nombre = document.getElementById("nombre").value;
-    let telefono = document.getElementById("telefono").value;
-    let correo = document.getElementById("correo").value;
-    let producto = document.getElementById("producto").value;
-    let cantidad = document.getElementById("cantidad").value;
-    let fecha = document.getElementById("fecha").value;
-    let descripcion = document.getElementById("descripcion").value;
-
-    let mensaje = `*SOLICITUD DE COTIZACIÓN*
-
-Nombre: ${nombre}
-Teléfono: ${telefono}
-Correo: ${correo}
-Producto: ${producto}
-Cantidad: ${cantidad}
-Fecha requerida: ${fecha}
-
-Descripción:
-${descripcion}`;
-
-    let numero = "5215512345678";
-
-    window.open(
-        "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje),
-        "_blank"
-    );
-}
-
-
 /* =============================
    FUNCIONALIDAD GENERAL
 ============================= */
@@ -100,48 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Ejecutar al cargar
     revealOnScroll();
-
-
-    /* =========================
-       SCROLL SPY (MENÚ ACTIVO)
-    ========================= */
-
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav ul li a");
-
-    function setActiveMenu() {
-
-        let current = "";
-
-        sections.forEach(section => {
-
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-
-            if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
-                current = section.getAttribute("id");
-            }
-
-        });
-
-        navLinks.forEach(link => {
-
-            link.classList.remove("active");
-
-            if (link.getAttribute("href") === "#" + current) {
-                link.classList.add("active");
-            }
-
-        });
-
-    }
-
-    window.addEventListener("scroll", setActiveMenu);
-
-    // Ejecutar al cargar
-    setActiveMenu();
-
-});
 
 // =============================
 // MODAL
