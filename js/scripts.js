@@ -191,7 +191,7 @@ Fecha: ${fecha}
 Descripción:
 ${descripcion}`;
 
-    let numero = "5215512345678";
+    let numero = "525610066522";
 
     window.open(
         "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje),
@@ -201,33 +201,24 @@ ${descripcion}`;
 
 function enviarCotizacionCorreo() {
 
-    let nombre = document.getElementById("nombre").value;
-    let telefono = document.getElementById("telefono").value;
-    let correo = document.getElementById("correo").value;
-    let producto = document.getElementById("producto").value;
-    let cantidad = document.getElementById("cantidad").value;
-    let fecha = document.getElementById("fecha").value;
-    let descripcion = document.getElementById("descripcion").value;
+    emailjs.send("Tservice_e8slvmi", "template_ams0res", {
+        nombre: document.getElementById("nombre").value,
+        telefono: document.getElementById("telefono").value,
+        correo: document.getElementById("correo").value,
+        producto: document.getElementById("producto").value,
+        cantidad: document.getElementById("cantidad").value,
+        fecha: document.getElementById("fecha").value,
+        descripcion: document.getElementById("descripcion").value
+    })
+    .then(() => {
 
-    let asunto = "Solicitud de Cotización - NEXIUM";
+        alert("Cotización enviada correctamente ✅");
 
-    let cuerpo =
-`SOLICITUD DE COTIZACIÓN
+        document.getElementById("formCotizacion").reset();
 
-Nombre: ${nombre}
-Teléfono: ${telefono}
-Correo: ${correo}
-Producto: ${producto}
-Cantidad: ${cantidad}
-Fecha requerida: ${fecha}
-
-Descripción:
-${descripcion}`;
-
-    let mailto =
-        "mailto:nexiumsublimacion@gmail.com"
-        + "?subject=" + encodeURIComponent(asunto)
-        + "&body=" + encodeURIComponent(cuerpo);
-
-    window.location.href = mailto;
+    })
+    .catch((error) => {
+        console.log("ERROR EMAILJS:", error);
+        alert("Error al enviar ❌ revisa consola");
+    });
 }
