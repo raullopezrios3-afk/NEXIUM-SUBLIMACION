@@ -251,6 +251,8 @@ function abrirWhatsApp() {
 
 Gracias por comunicarte con NEXIUM SUBLIMACION.
 
+!HACEMOS REALIDAD TUS IDEAS BRILLANTES¡
+
 Me gustaría recibir información sobre sus productos promocionales y servicios de personalización.
 
 Quedo atento(a) a su respuesta.`;
