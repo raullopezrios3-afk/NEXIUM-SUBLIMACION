@@ -492,6 +492,16 @@ NO MODIFICA LA VERSIÓN ESCRITORIO
 
 }
 
+/* poster */
+    .slider-poster{
+        position:static;
+        transform:none;
+        width:90%;
+        margin:15px auto;
+    }
+
+}
+
 
 @media (max-width:480px){
 
@@ -693,4 +703,38 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
         background-position:0% 50%;
     }
 
+}
+
+.slider{
+    position:relative;
+}
+
+/* PÓSTER DENTRO DEL SLIDER */
+.slider-poster{
+
+    position:absolute;
+    top:50%;
+    right:20px;
+
+    transform:translateY(-50%);
+
+    width:220px;
+    z-index:10;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.slider-poster img{
+
+    width:100%;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.slider-poster:hover{
+    transform:translateY(-50%) scale(1.05);
 }
