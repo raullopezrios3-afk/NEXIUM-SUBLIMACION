@@ -26,6 +26,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 4000);
     }
 
+   /* =========================
+       MENÚ ACTIVO
+    ========================= */
+    const menuLinks = document.querySelectorAll(".menu a");
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            menuLinks.forEach(i => i.classList.remove("active"));
+            this.classList.add("active");
+        });
+    });
+
 
     /* =========================
        POSTER
@@ -39,80 +51,52 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-
-    /* =========================
-       WHATSAPP HEADER
-    ========================= */
-  
-
-/* =========================
-   ESC PARA CERRAR MODAL
+       /* =========================
+   GALERÍA (ACORDEÓN TARJETAS)
 ========================= */
 
-document.addEventListener("keydown",function(e){
+const cards = document.querySelectorAll(".producto-card");
 
-    if(e.key==="Escape"){
+cards.forEach(card => {
 
-        const modal=document.getElementById("modalCotizacion");
+    card.addEventListener("click", function (e) {
 
-        if(modal && modal.style.display==="flex"){
-            cerrarModalCotizacion();
+        // Si hicieron clic en una imagen del catálogo,
+        // no abrir/cerrar la tarjeta.
+        if (e.target.closest(".galeria img")) return;
+
+        e.stopPropagation();
+
+        cerrarVisor();
+
+        const estabaAbierta = card.classList.contains("active");
+
+        // Cerrar todas
+        cards.forEach(c => c.classList.remove("active"));
+
+        // Abrir solamente la seleccionada
+        if (!estabaAbierta) {
+            card.classList.add("active");
         }
+
+    });
+
+});   // ← AQUÍ termina el forEach
+
+   /* =========================
+   CERRAR CATÁLOGOS AL HACER CLICK FUERA
+========================= */
+
+document.addEventListener("click", function (e) {
+
+    if (!e.target.closest(".producto-card")) {
+
+        document.querySelectorAll(".producto-card.active")
+            .forEach(card => card.classList.remove("active"));
 
     }
 
 });
-
-/* =========================
-       MENÚ ACTIVO
-    ========================= */
-    const menuLinks = document.querySelectorAll(".menu a");
-
-    menuLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            menuLinks.forEach(i => i.classList.remove("active"));
-            this.classList.add("active");
-        });
-    });
-
-   /* =========================
-       GALERÍA (ACORDEÓN TARJETAS)
-    ========================= */
-    const cards = document.querySelectorAll(".producto-card");
-
-   cards.forEach(card => {
-
-   card.addEventListener("click", function (e) {
-
-    console.log("CLICK EN:", card.querySelector("h2")?.textContent);
-
-    if (e.target.tagName === "IMG") return;
-
-    e.stopPropagation();
-
-    cerrarVisor();
-
-    const isActive = card.classList.contains("active");
-
-    cards.forEach(c => c.classList.remove("active"));
-
-    if (!isActive) {
-        card.classList.add("active");
-    }
-
-});
-      
-   /* =========================
-       CERRAR TARJETAS AL HACER CLICK FUERA
-    ========================= */
-    document.addEventListener("click", function (e) {
-
-        const inside = e.target.closest(".producto-card");
-
-        if (!inside) {
-            cards.forEach(c => c.classList.remove("active"));
-        }
-    });
 
 /* =========================
        CERRAR MODAL AL HACER CLICK FUERA
@@ -133,8 +117,83 @@ document.addEventListener("keydown",function(e){
     }
 
 });
+
+   /* =========================
+   CERRAR VISOR AL HACER CLIC FUERA
+========================= */
+document.addEventListener("click", function (e) {
+
+    const visor = document.getElementById("visor");
+
+    if (!visor) return;
+
+    if (visor.style.display !== "flex") return;
+
+    if (e.target === visor) {
+        cerrarVisor();
+    }
+
 });
 
+  /* =========================
+   ESC GLOBAL
+========================= */
+document.addEventListener("keydown", function (e) {
+
+    if (e.key !== "Escape") return;
+
+    // Cerrar visor
+    const visor = document.getElementById("visor");
+
+    if (visor && visor.style.display === "flex") {
+        cerrarVisor();
+    }
+
+    // Cerrar modal
+    const modal = document.getElementById("modalCotizacion");
+
+    if (modal && modal.style.display === "flex") {
+        cerrarModalCotizacion();
+    }
+
+    // Cerrar catálogos abiertos
+    document.querySelectorAll(".producto-card.active")
+        .forEach(card => card.classList.remove("active"));
+
+});
+
+   /* =========================
+   VISOR IMAGENES
+========================= */
+function abrirVisor(img) {
+
+    const galeria = img.closest(".galeria").querySelectorAll("img");
+
+    imagenes = Array.from(galeria).map(i => i.src);
+    indexActual = imagenes.indexOf(img.src);
+
+    document.getElementById("visor").style.display = "flex";
+    document.getElementById("imgGrande").src = img.src;
+}
+
+function cambiarImagen(dir, e) {
+    e?.stopPropagation();
+
+    indexActual += dir;
+
+    if (indexActual < 0) indexActual = imagenes.length - 1;
+    if (indexActual >= imagenes.length) indexActual = 0;
+
+    document.getElementById("imgGrande").src = imagenes[indexActual];
+}
+
+function cerrarVisor(e) {
+    e?.stopPropagation();
+    document.getElementById("visor").style.display = "none";
+}
+
+});
+     
 /* =====================================================
    FUNCIONES GLOBALES
 ===================================================== */
@@ -247,71 +306,6 @@ function cerrarModalCotizacion() {
     if (form) form.reset();
     if (modal) modal.style.display = "none";
 }
-
-
-/* =========================
-   VISOR IMAGENES
-========================= */
-function abrirVisor(img) {
-
-    const galeria = img.closest(".galeria").querySelectorAll("img");
-
-    imagenes = Array.from(galeria).map(i => i.src);
-    indexActual = imagenes.indexOf(img.src);
-
-    document.getElementById("visor").style.display = "flex";
-    document.getElementById("imgGrande").src = img.src;
-}
-
-function cambiarImagen(dir, e) {
-    e?.stopPropagation();
-
-    indexActual += dir;
-
-    if (indexActual < 0) indexActual = imagenes.length - 1;
-    if (indexActual >= imagenes.length) indexActual = 0;
-
-    document.getElementById("imgGrande").src = imagenes[indexActual];
-}
-
-function cerrarVisor(e) {
-    e?.stopPropagation();
-    document.getElementById("visor").style.display = "none";
-}
-
-/* =========================
-   CERRAR VISOR AL HACER CLIC FUERA
-========================= */
-document.addEventListener("click", function (e) {
-
-    const visor = document.getElementById("visor");
-
-    if (!visor) return;
-
-    if (visor.style.display !== "flex") return;
-
-    if (e.target === visor) {
-        cerrarVisor();
-    }
-
-});
-
-/* =========================
-   ESC PARA CERRAR VISOR
-========================= */
-document.addEventListener("keydown", function (e) {
-
-    if (e.key === "Escape") {
-
-        const visor = document.getElementById("visor");
-
-        if (visor && visor.style.display === "flex") {
-            cerrarVisor();
-        }
-
-    }
-
-});
 
 /* =========================
    EXPORT GLOBAL (SEGURO)
