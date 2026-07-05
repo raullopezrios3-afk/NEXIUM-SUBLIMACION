@@ -127,8 +127,8 @@ MENÚ NEXIUM V2
         #0B3D91
     );
 
-    background-size: 300% 300%;
-    animation: menuGradient 12s ease-in-out infinite;
+   background-size: 200% 200%;
+animation: menuGradient 18s ease-in-out infinite;
 
     border-top:1px solid #3E275C;
 
@@ -683,7 +683,7 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
         background-position: 0% 50%;
     }
     50% {
-        background-position: 70% 50%;
+        background-position: 100% 50%;
     }
     100% {
         background-position: 0% 50%;
