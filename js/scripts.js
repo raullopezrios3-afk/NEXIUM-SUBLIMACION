@@ -46,21 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       COTIZAR (ABRIR MODAL)
-    ========================= */
-    const btnCotizar = document.getElementById("btnCotizar");
-
-    if (btnCotizar) {
-        btnCotizar.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            const modal = document.getElementById("modalCotizacion");
-            if (modal) modal.style.display = "flex";
-        });
-    }
-
-
-    /* =========================
        WHATSAPP HEADER
     ========================= */
     const btnWhatsApp = document.getElementById("btnWhatsApp");
@@ -71,23 +56,18 @@ document.addEventListener("DOMContentLoaded", function () {
             enviarWhatsApp();
         });
     }
+});
 
-
-    /* =========================
-   CERRAR MODAL AL HACER CLICK FUERA
+/* =========================
+   ABRIR MODAL
 ========================= */
+function abrirModalCotizacion() {
 
-const modal = document.getElementById("modalCotizacion");
+    const modal = document.getElementById("modalCotizacion");
 
-if (modal) {
-
-    modal.addEventListener("click", function(e) {
-
-        if (e.target === modal) {
-            cerrarModalCotizacion();
-        }
-
-    });
+    if (modal) {
+        modal.style.display = "flex";
+    }
 
 }
 
@@ -260,6 +240,7 @@ Quedo atento(a) a su respuesta.`;
 function enviarCotizacionCorreo() {
 
     emailjs.send("service_e8slvmi", "template_ams0res", {
+
         nombre: document.getElementById("nombre").value,
         telefono: document.getElementById("telefono").value,
         correo: document.getElementById("correo").value,
@@ -267,16 +248,24 @@ function enviarCotizacionCorreo() {
         cantidad: document.getElementById("cantidad").value,
         fecha: document.getElementById("fecha").value,
         descripcion: document.getElementById("descripcion").value
+
     })
+
     .then(() => {
 
-    alert("Solicitud enviada correctamente.");
+        alert("Solicitud enviada correctamente.");
 
-    cerrarModalCotizacion();
+        cerrarModalCotizacion();
 
-})
+    })
 
+    .catch(() => {
 
+        alert("Error al enviar ❌");
+
+    });
+
+}
 /* =========================
    MODAL CLOSE
 ========================= */
