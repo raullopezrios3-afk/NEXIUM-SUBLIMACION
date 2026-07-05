@@ -140,16 +140,11 @@ function abrirModalCotizacion() {
 
     const modal = document.getElementById("modalCotizacion");
 
-    modal.style.display = "flex";
+    if (modal) {
+        modal.style.display = "flex";
+    }
 
-    console.log("ABIERTO");
-
-    setTimeout(() => {
-        console.log(modal.style.display);
-    },500);
-
-}
-/* =========================
+}/* =========================
    POSTER
 ========================= */
 function abrirPoster() {
