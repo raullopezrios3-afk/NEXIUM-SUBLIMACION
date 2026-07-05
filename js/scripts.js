@@ -97,3 +97,21 @@ function cerrarModalCotizacion() {
     document.getElementById("formCotizacion").reset();
     document.getElementById("modalCotizacion").style.display = "none";
 }
+
+//==================================
+// MENÚ ACTIVO
+//==================================
+
+const enlaces = document.querySelectorAll('.menu a');
+
+enlaces.forEach(enlace=>{
+
+    enlace.addEventListener('click',function(){
+
+        enlaces.forEach(item=>item.classList.remove('active'));
+
+        this.classList.add('active');
+
+    });
+
+});
