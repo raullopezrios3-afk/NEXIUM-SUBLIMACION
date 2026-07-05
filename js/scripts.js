@@ -210,19 +210,21 @@ function cerrarVisor(event){
 // =========================
 
 function toggleGaleria(elemento) {
+
     const card = elemento.closest(".producto-card");
     if (!card) return;
 
     const isActive = card.classList.contains("active");
 
-    // Cerrar todas las tarjetas primero
-    document.querySelectorAll(".producto-card.active")
-        .forEach(c => c.classList.remove("active"));
+    // Cerrar todas las demás tarjetas
+    document.querySelectorAll(".producto-card.active").forEach(c => {
+        if (c !== card) {
+            c.classList.remove("active");
+        }
+    });
 
-    // Si la tarjeta no estaba activa, la abrimos
-    if (!isActive) {
-        card.classList.add("active");
-    }
+    // Abrir o cerrar la actual
+    card.classList.toggle("active", !isActive);
 }
 
 // Cerrar al hacer click fuera
