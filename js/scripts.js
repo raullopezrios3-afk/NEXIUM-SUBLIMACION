@@ -169,26 +169,24 @@ function abrirPoster() {
 /* WHATSAPP */
 function enviarWhatsApp() {
 
-    let nombre = document.getElementById("nombre")?.value || "";
-    let telefono = document.getElementById("telefono")?.value || "";
-    let correo = document.getElementById("correo")?.value || "";
-    let producto = document.getElementById("producto")?.value || "";
-    let cantidad = document.getElementById("cantidad")?.value || "";
-    let fecha = document.getElementById("fecha")?.value || "";
-    let descripcion = document.getElementById("descripcion")?.value || "";
+    let nombre = document.getElementById("nombre").value;
+    let telefono = document.getElementById("telefono").value;
+    let correo = document.getElementById("correo").value;
+    let producto = document.getElementById("producto").value;
+    let cantidad = document.getElementById("cantidad").value;
+    let fecha = document.getElementById("fecha").value;
+    let descripcion = document.getElementById("descripcion").value;
 
-    let mensaje = `¡Hola!
+    let mensaje =
+`¡Hola!
 
-SOLICITUD DE COTIZACIÓN
-Nombre: ${nombre}
-Tel: ${telefono}
-Correo: ${correo}
-Producto: ${producto}
-Cantidad: ${cantidad}
-Fecha: ${fecha}
+Gracias por comunicarte con NEXIUM SUBLIMACION.
 
-Descripción:
-${descripcion}`;
+¡HACEMOS REALIDAD TUS IDEAS BRILLANTES!
+
+Me gustaría recibir información sobre sus productos promocionales y servicios de personalización.
+
+Quedo atento(a) a su respuesta.`;
 
     window.open(
         "https://wa.me/525610066522?text=" + encodeURIComponent(mensaje),
