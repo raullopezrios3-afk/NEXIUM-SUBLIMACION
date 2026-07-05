@@ -446,7 +446,7 @@ NO MODIFICA LA VERSIÓN ESCRITORIO
         display:flex;
         justify-content:center;
         flex-wrap:wrap;
-        gap:12px;
+        gap:20px;
     }
 
     .btn{
