@@ -139,7 +139,11 @@ document.addEventListener("keydown",function(e){
 ========================= */
 function abrirModalCotizacion() {
 
+    console.log("Entró a abrirModalCotizacion");
+
     const modal = document.getElementById("modalCotizacion");
+
+    console.log(modal);
 
     if (modal) {
         modal.style.display = "flex";
