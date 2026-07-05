@@ -1,11 +1,11 @@
 
 /* =====================================================
-   NEXIUM - JS COMPLETO (ORDENADO Y UNIFICADO)
+   NEXIUM - JS FINAL CORREGIDO Y FUNCIONAL
 ===================================================== */
 
 
 /* =========================
-   VARIABLES GLOBALES (VISOR)
+   VARIABLES GLOBALES
 ========================= */
 
 let imagenes = [];
@@ -46,6 +46,48 @@ document.addEventListener("DOMContentLoaded", function () {
         btnPoster.addEventListener("click", (e) => {
             e.preventDefault();
             abrirPoster();
+        });
+    }
+
+
+    /* =========================
+       BOTÓN COTIZAR (HEADER)
+    ========================= */
+    const btnCotizar = document.getElementById("btnCotizar");
+
+    if (btnCotizar) {
+        btnCotizar.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const modal = document.getElementById("modalCotizacion");
+            if (modal) {
+                modal.style.display = "flex";
+            }
+        });
+    }
+
+
+    /* =========================
+       BOTÓN WHATSAPP (HEADER)
+    ========================= */
+    const btnWhatsApp = document.getElementById("btnWhatsApp");
+
+    if (btnWhatsApp) {
+        btnWhatsApp.addEventListener("click", (e) => {
+            e.preventDefault();
+            enviarWhatsApp();
+        });
+    }
+
+
+    /* =========================
+       CERRAR MODAL (BOTÓN X)
+    ========================= */
+    const btnCerrarModal = document.getElementById("cerrarModal");
+
+    if (btnCerrarModal) {
+        btnCerrarModal.addEventListener("click", () => {
+            cerrarModalCotizacion();
         });
     }
 
@@ -129,7 +171,6 @@ document.addEventListener("DOMContentLoaded", function () {
 /* =========================
    POSTER
 ========================= */
-
 function abrirPoster() {
 
     const overlay = document.createElement("div");
@@ -165,7 +206,6 @@ function abrirPoster() {
 /* =========================
    WHATSAPP
 ========================= */
-
 function enviarWhatsApp() {
 
     let nombre = document.getElementById("nombre").value;
@@ -180,6 +220,8 @@ function enviarWhatsApp() {
 `¡Hola!
 
 Gracias por comunicarte con NEXIUM SUBLIMACION.
+
+¡HACEMOS REALIDAD TUS IDEAS BRILLANTES!
 
 SOLICITUD DE COTIZACIÓN
 Nombre: ${nombre}
@@ -202,7 +244,6 @@ ${descripcion}`;
 /* =========================
    EMAILJS
 ========================= */
-
 function enviarCotizacionCorreo() {
 
     emailjs.send("service_e8slvmi", "template_ams0res", {
@@ -232,12 +273,13 @@ function enviarCotizacionCorreo() {
 /* =========================
    MODAL
 ========================= */
-
 function cerrarModalCotizacion() {
-    document.getElementById("formCotizacion").reset();
-    document.getElementById("modalCotizacion").style.display = "none";
-}
+    const modal = document.getElementById("modalCotizacion");
+    const form = document.getElementById("formCotizacion");
 
+    if (form) form.reset();
+    if (modal) modal.style.display = "none";
+}
 
 /* =========================
    VISOR DE IMÁGENES
@@ -270,42 +312,6 @@ function cerrarVisor(event) {
     document.getElementById("visor").style.display = "none";
 }
 
-
-/* =========================
-   POSTER
-========================= */
-
-function abrirPoster(){
-
-    const overlay = document.createElement("div");
-
-    overlay.style.position = "fixed";
-    overlay.style.top = "0";
-    overlay.style.left = "0";
-    overlay.style.width = "100%";
-    overlay.style.height = "100%";
-    overlay.style.background = "rgba(0,0,0,0.85)";
-    overlay.style.display = "flex";
-    overlay.style.alignItems = "center";
-    overlay.style.justifyContent = "center";
-    overlay.style.zIndex = "999999";
-
-    const img = document.createElement("img");
-    img.src = "imagenes/poster.jpg";
-
-    img.style.maxWidth = "90%";
-    img.style.maxHeight = "90%";
-    img.style.borderRadius = "12px";
-    img.style.boxShadow = "0 10px 30px rgba(0,0,0,0.5)";
-    img.style.cursor = "zoom-out";
-
-    overlay.appendChild(img);
-
-    overlay.onclick = () => overlay.remove();
-
-    document.body.appendChild(overlay);
-
-}
 
 document.addEventListener("DOMContentLoaded", () => {
 
