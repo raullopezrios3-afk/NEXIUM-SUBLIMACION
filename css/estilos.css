@@ -70,13 +70,12 @@ HEADER
 }
 
 /* BOTONES */
-.header-right{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:25px;
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+    margin-right: 15px;
 }
 
 .btn {
