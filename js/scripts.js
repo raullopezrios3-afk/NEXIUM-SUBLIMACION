@@ -162,7 +162,15 @@ document.addEventListener("keydown", function (e) {
 
 });
 
-   /* =========================
+   
+
+});
+     
+/* =====================================================
+   FUNCIONES GLOBALES
+===================================================== */
+
+/* =========================
    VISOR IMAGENES
 ========================= */
 function abrirVisor(img) {
@@ -191,12 +199,6 @@ function cerrarVisor(e) {
     e?.stopPropagation();
     document.getElementById("visor").style.display = "none";
 }
-
-});
-     
-/* =====================================================
-   FUNCIONES GLOBALES
-===================================================== */
 
 /* =========================
    ABRIR MODAL
