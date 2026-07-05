@@ -200,22 +200,6 @@ PRODUCTOS
     gap: 20px;
 }
 
-.producto-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    text-align: center;
-    padding: 10px;
-
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.producto-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
 /* =========================
 GALERÍA
 ========================= */
@@ -541,28 +525,20 @@ MEJORAS VISUALES NEXIUM V1
 /* Imágenes */
 
 .producto-card img{
-
     width:100%;
-
     aspect-ratio:1/1;
-
     object-fit:cover;
-
     transition:.4s;
-
 }
 
 .producto-card:hover img{
-
     transform:scale(1.05);
-
 }
-
 
 /* Títulos */
 
 .productos h2{
-
+    
     color:var(--azul-oscuro);
 
 }
@@ -570,11 +546,7 @@ MEJORAS VISUALES NEXIUM V1
 
 /* Subtítulos */
 
-.subtitulo{
 
-    color:var(--texto);
-
-}
 
 
 /* Botón de cards */
@@ -596,25 +568,6 @@ MEJORAS VISUALES NEXIUM V1
 .btn-card:hover{
 
     background:var(--azul-oscuro);
-
-}
-
-
-/* Footer */
-
-footer{
-
-    background:var(--azul-oscuro);
-
-    color:var(--blanco);
-
-    border-top:5px solid var(--dorado);
-
-}
-
-footer p{
-
-    color:var(--blanco);
 
 }
 
@@ -754,3 +707,64 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
 
 .prev{ left:20px; }
 .next{ right:20px; }
+
+/* =========================
+   CONTACTO
+========================= */
+
+#contacto{
+    background: var(--blanco);
+    padding: 70px 0;
+}
+
+#contacto .contenedor{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo-seccion{
+    text-align: center;
+    color: var(--azul);
+    margin-bottom: 10px;
+}
+
+.subtitulo{
+    color: var(--texto);
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.datos-contacto{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    border-top: 5px solid var(--dorado);
+    padding: 25px 0;
+}
+
+footer .contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p{
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: .5px;
+}
