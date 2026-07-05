@@ -113,29 +113,15 @@ MENÚ NEXIUM V2
 .menu{
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
+    gap:14px;
+    padding:10px 20px;
 
-    gap:12px;
-
-    padding:8px 20px;
-
-   background:linear-gradient(
-    135deg,
-    #2E1A47,
-    #0B2E6B,
-    #0B3D91
-);
-
-background-size:300% 300%;
-
-animation:menuGradient 15s ease infinite;
+    background:#2E1A47;
 
     border-top:1px solid #3E275C;
-
-    box-shadow:0 3px 10px rgba(0,0,0,.05);
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
 
 }
 
