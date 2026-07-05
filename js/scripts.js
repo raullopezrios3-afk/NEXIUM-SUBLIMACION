@@ -99,22 +99,18 @@ function cerrarModalCotizacion() {
     document.getElementById("modalCotizacion").style.display = "none";
 }
 
-//==================================
-// MENÚ ACTIVO
-//==================================
+// MENÚ ACTIVO NEXIUM
 
-const enlaces = document.querySelectorAll('.menu a');
+const menuLinks = document.querySelectorAll('.menu a');
 
-enlaces.forEach(enlace=>{
+menuLinks.forEach(link => {
+    link.addEventListener('click', function () {
 
-    enlace.addEventListener('click',function(){
-
-        enlaces.forEach(item=>item.classList.remove('active'));
+        menuLinks.forEach(item => item.classList.remove('active'));
 
         this.classList.add('active');
 
     });
-
 });
 
 function abrirPoster(){
