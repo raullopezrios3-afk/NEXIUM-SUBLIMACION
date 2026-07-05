@@ -290,12 +290,15 @@ function cerrarVisor(e) {
 
 
 /* =========================
-   EXPOSICIÓN GLOBAL
+   EXPORT GLOBAL (SEGURO)
 ========================= */
-window.abrirPoster = abrirPoster;
-window.enviarWhatsApp = enviarWhatsApp;
-window.enviarCotizacionCorreo = enviarCotizacionCorreo;
-window.cerrarModalCotizacion = cerrarModalCotizacion;
-window.abrirVisor = abrirVisor;
-window.cambiarImagen = cambiarImagen;
-window.cerrarVisor = cerrarVisor;
+
+window.addEventListener("load", () => {
+    window.abrirPoster = abrirPoster;
+    window.enviarWhatsApp = enviarWhatsApp;
+    window.abrirVisor = abrirVisor;
+    window.cambiarImagen = cambiarImagen;
+    window.cerrarVisor = cerrarVisor;
+    window.cerrarModalCotizacion = cerrarModalCotizacion;
+    window.abrirModalCotizacion = abrirModalCotizacion;
+});
