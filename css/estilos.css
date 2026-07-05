@@ -84,12 +84,6 @@ HEADER
     text-align: center;
 }
 
-.eslogan {
-    font-size: 20px;
-    font-weight: bold;
-    color: #b88a2a;
-}
-
 /* BOTONES */
 .header-right {
     display: flex;
@@ -175,17 +169,6 @@ MENÚ NEXIUM V2
     filter:brightness(1.05);
 }
 
-/* BOTÓN ACTIVO */
-
-.menu a.active{
-
-    background:#c5a879;
-
-    color:#123a7a;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-
-}
 /* =========================
 SLIDER
 ========================= */
@@ -385,11 +368,6 @@ MODAL
     padding-left: 10px;     /* aproximación a 10mm visual */
 }
 
-.eslogan {
-    font-size: 26px;        /* más grande */
-    font-weight: 800;
-    letter-spacing: 0.5px;
-}
 .eslogan {
     color: #c5a879;
 
