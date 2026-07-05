@@ -1,6 +1,5 @@
-
 /* =====================================================
-   NEXIUM - JS FINAL CORREGIDO Y FUNCIONAL
+   NEXIUM - JS FINAL ESTABLE (DEPLOY SAFE)
 ===================================================== */
 
 
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
             index = (index + 1) % slides.length;
             slides[index].classList.add("active");
         }, 4000);
-
     }
 
 
@@ -51,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       BOTÓN COTIZAR (HEADER)
+       BOTÓN COTIZAR
     ========================= */
     const btnCotizar = document.getElementById("btnCotizar");
 
@@ -60,15 +58,13 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
 
             const modal = document.getElementById("modalCotizacion");
-            if (modal) {
-                modal.style.display = "flex";
-            }
+            if (modal) modal.style.display = "flex";
         });
     }
 
 
     /* =========================
-       BOTÓN WHATSAPP (HEADER)
+       BOTÓN WHATSAPP
     ========================= */
     const btnWhatsApp = document.getElementById("btnWhatsApp");
 
@@ -81,83 +77,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       CERRAR MODAL (BOTÓN X)
+       CERRAR MODAL
     ========================= */
     const btnCerrarModal = document.getElementById("cerrarModal");
 
     if (btnCerrarModal) {
-        btnCerrarModal.addEventListener("click", () => {
-            cerrarModalCotizacion();
-        });
+        btnCerrarModal.addEventListener("click", cerrarModalCotizacion);
     }
 
 
     /* =========================
-       MENÚ ACTIVO HEADER
+       MENÚ ACTIVO
     ========================= */
     const menuLinks = document.querySelectorAll(".menu a");
 
     menuLinks.forEach(link => {
         link.addEventListener("click", function () {
-
-            menuLinks.forEach(item => item.classList.remove("active"));
-
+            menuLinks.forEach(i => i.classList.remove("active"));
             this.classList.add("active");
-
         });
     });
 
 
     /* =========================
-       GALERÍA PRODUCTOS
+       GALERÍA
     ========================= */
     const cards = document.querySelectorAll(".producto-card");
 
     cards.forEach(card => {
 
         const header = card.querySelector(".card-header");
-
         if (!header) return;
 
         header.addEventListener("click", function (e) {
 
             e.stopPropagation();
 
-            const isActive = card.classList.contains("active");
+            const active = card.classList.contains("active");
 
             cards.forEach(c => c.classList.remove("active"));
 
-            if (!isActive) {
-                card.classList.add("active");
-            }
-
+            if (!active) card.classList.add("active");
         });
-
     });
 
 
-    /* =========================
-       CERRAR GALERÍA (CLICK FUERA)
-    ========================= */
+    /* CLICK FUERA */
     document.addEventListener("click", function (e) {
 
-        const insideCard = e.target.closest(".producto-card");
+        const inside = e.target.closest(".producto-card");
 
-        if (!insideCard) {
-
+        if (!inside) {
             document.querySelectorAll(".producto-card.active")
                 .forEach(c => c.classList.remove("active"));
-
-            return;
         }
-
-        if (!insideCard.querySelector(".card-header")) {
-
-            document.querySelectorAll(".producto-card.active")
-                .forEach(c => c.classList.remove("active"));
-
-        }
-
     });
 
 });
@@ -168,60 +141,43 @@ document.addEventListener("DOMContentLoaded", function () {
 ===================================================== */
 
 
-/* =========================
-   POSTER
-========================= */
+/* POSTER */
 function abrirPoster() {
 
     const overlay = document.createElement("div");
-
-    overlay.style.position = "fixed";
-    overlay.style.top = "0";
-    overlay.style.left = "0";
-    overlay.style.width = "100%";
-    overlay.style.height = "100%";
-    overlay.style.background = "rgba(0,0,0,0.85)";
-    overlay.style.display = "flex";
-    overlay.style.alignItems = "center";
-    overlay.style.justifyContent = "center";
-    overlay.style.zIndex = "999999";
+    overlay.style.cssText = `
+        position:fixed;top:0;left:0;width:100%;height:100%;
+        background:rgba(0,0,0,0.85);
+        display:flex;align-items:center;justify-content:center;
+        z-index:999999;
+    `;
 
     const img = document.createElement("img");
     img.src = "imagenes/poster.jpg";
-
     img.style.maxWidth = "90%";
     img.style.maxHeight = "90%";
     img.style.borderRadius = "12px";
-    img.style.boxShadow = "0 10px 30px rgba(0,0,0,0.5)";
     img.style.cursor = "zoom-out";
 
     overlay.appendChild(img);
-
     overlay.onclick = () => overlay.remove();
 
     document.body.appendChild(overlay);
 }
 
 
-/* =========================
-   WHATSAPP
-========================= */
+/* WHATSAPP */
 function enviarWhatsApp() {
 
-    let nombre = document.getElementById("nombre").value;
-    let telefono = document.getElementById("telefono").value;
-    let correo = document.getElementById("correo").value;
-    let producto = document.getElementById("producto").value;
-    let cantidad = document.getElementById("cantidad").value;
-    let fecha = document.getElementById("fecha").value;
-    let descripcion = document.getElementById("descripcion").value;
+    let nombre = document.getElementById("nombre")?.value || "";
+    let telefono = document.getElementById("telefono")?.value || "";
+    let correo = document.getElementById("correo")?.value || "";
+    let producto = document.getElementById("producto")?.value || "";
+    let cantidad = document.getElementById("cantidad")?.value || "";
+    let fecha = document.getElementById("fecha")?.value || "";
+    let descripcion = document.getElementById("descripcion")?.value || "";
 
-    let mensaje =
-`¡Hola!
-
-Gracias por comunicarte con NEXIUM SUBLIMACION.
-
-¡HACEMOS REALIDAD TUS IDEAS BRILLANTES!
+    let mensaje = `¡Hola!
 
 SOLICITUD DE COTIZACIÓN
 Nombre: ${nombre}
@@ -241,9 +197,7 @@ ${descripcion}`;
 }
 
 
-/* =========================
-   EMAILJS
-========================= */
+/* EMAILJS */
 function enviarCotizacionCorreo() {
 
     emailjs.send("service_e8slvmi", "template_ams0res", {
@@ -263,17 +217,15 @@ function enviarCotizacionCorreo() {
         document.getElementById("modalCotizacion").style.display = "none";
 
     })
-    .catch(err => {
-        console.log(err);
+    .catch(() => {
         alert("Error al enviar ❌");
     });
 }
 
 
-/* =========================
-   MODAL
-========================= */
+/* MODAL */
 function cerrarModalCotizacion() {
+
     const modal = document.getElementById("modalCotizacion");
     const form = document.getElementById("formCotizacion");
 
@@ -281,10 +233,8 @@ function cerrarModalCotizacion() {
     if (modal) modal.style.display = "none";
 }
 
-/* =========================
-   VISOR DE IMÁGENES
-========================= */
 
+/* VISOR (SIN DUPLICADOS) */
 function abrirVisor(img) {
 
     const galeria = img.closest(".galeria").querySelectorAll("img");
@@ -296,8 +246,8 @@ function abrirVisor(img) {
     document.getElementById("imgGrande").src = img.src;
 }
 
-function cambiarImagen(dir, event) {
-    event.stopPropagation();
+function cambiarImagen(dir, e) {
+    e?.stopPropagation();
 
     indexActual += dir;
 
@@ -307,74 +257,17 @@ function cambiarImagen(dir, event) {
     document.getElementById("imgGrande").src = imagenes[indexActual];
 }
 
-function cerrarVisor(event) {
-    if (event) event.stopPropagation();
+function cerrarVisor(e) {
+    e?.stopPropagation();
     document.getElementById("visor").style.display = "none";
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    const btn = document.getElementById("btnPoster");
-
-    if(btn){
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            abrirPoster();
-        });
-    }
-
-});
-
-
-/* =========================
-   VISOR IMAGEN
-========================= */
-
-let imagenes = [];
-let indexActual = 0;
-
-/* abrir visor */
-function abrirVisor(img){
-
-    const galeria = img.closest(".galeria").querySelectorAll("img");
-
-    imagenes = Array.from(galeria).map(i => i.src);
-    indexActual = imagenes.indexOf(img.src);
-
-    document.getElementById("visor").style.display = "flex";
-    document.getElementById("imgGrande").src = img.src;
-}
-
-/* cambiar imagen */
-function cambiarImagen(dir, event){
-    event.stopPropagation();
-
-    indexActual += dir;
-
-    if(indexActual < 0) indexActual = imagenes.length - 1;
-    if(indexActual >= imagenes.length) indexActual = 0;
-
-    document.getElementById("imgGrande").src = imagenes[indexActual];
-}
-
-/* cerrar visor */
-function cerrarVisor(event){
-    if(event) event.stopPropagation();
-    document.getElementById("visor").style.display = "none";
-}
-
-// Cerrar al hacer click fuera
-document.addEventListener("click", (e) => {
-    const clickedInsideCard = e.target.closest(".producto-card");
-
-    if (!clickedInsideCard) {
-        document.querySelectorAll(".producto-card.active")
-            .forEach(c => c.classList.remove("active"));
-    }
-});
-
+/* EXPOSICIÓN GLOBAL (IMPORTANTE PARA HTML onclick) */
 window.cerrarModalCotizacion = cerrarModalCotizacion;
 window.enviarCotizacionCorreo = enviarCotizacionCorreo;
 window.enviarWhatsApp = enviarWhatsApp;
 window.abrirPoster = abrirPoster;
+window.abrirVisor = abrirVisor;
+window.cambiarImagen = cambiarImagen;
+window.cerrarVisor = cerrarVisor;
