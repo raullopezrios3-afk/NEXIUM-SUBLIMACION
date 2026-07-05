@@ -373,3 +373,8 @@ document.addEventListener("click", (e) => {
             .forEach(c => c.classList.remove("active"));
     }
 });
+
+window.cerrarModalCotizacion = cerrarModalCotizacion;
+window.enviarCotizacionCorreo = enviarCotizacionCorreo;
+window.enviarWhatsApp = enviarWhatsApp;
+window.abrirPoster = abrirPoster;
