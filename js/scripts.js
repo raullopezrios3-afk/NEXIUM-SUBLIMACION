@@ -1,20 +1,17 @@
 /* =====================================================
-   NEXIUM - JS FINAL ESTABLE (DEPLOY SAFE)
+   NEXIUM - JS ESTABLE Y FUNCIONAL
 ===================================================== */
-
 
 /* =========================
    VARIABLES GLOBALES
 ========================= */
-
 let imagenes = [];
 let indexActual = 0;
 
 
 /* =========================
-   INICIALIZACIÓN GENERAL
+   INICIALIZACIÓN
 ========================= */
-
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================
@@ -23,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll(".slide");
 
     if (slides.length > 0) {
-
         let index = 0;
         slides[0].classList.add("active");
 
@@ -36,12 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       BOTÓN POSTER
+       POSTER
     ========================= */
     const btnPoster = document.getElementById("btnPoster");
 
     if (btnPoster) {
-        btnPoster.addEventListener("click", (e) => {
+        btnPoster.addEventListener("click", function (e) {
             e.preventDefault();
             abrirPoster();
         });
@@ -49,12 +45,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       BOTÓN COTIZAR
+       COTIZAR (MODAL OPEN)
     ========================= */
     const btnCotizar = document.getElementById("btnCotizar");
 
     if (btnCotizar) {
-        btnCotizar.addEventListener("click", (e) => {
+        btnCotizar.addEventListener("click", function (e) {
             e.preventDefault();
 
             const modal = document.getElementById("modalCotizacion");
@@ -64,12 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       BOTÓN WHATSAPP
+       WHATSAPP HEADER
     ========================= */
     const btnWhatsApp = document.getElementById("btnWhatsApp");
 
     if (btnWhatsApp) {
-        btnWhatsApp.addEventListener("click", (e) => {
+        btnWhatsApp.addEventListener("click", function (e) {
             e.preventDefault();
             enviarWhatsApp();
         });
@@ -77,12 +73,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       CERRAR MODAL
+       CERRAR MODAL (X)
     ========================= */
-    const btnCerrarModal = document.getElementById("cerrarModal");
+    const btnCerrar = document.getElementById("cerrarModal");
 
-    if (btnCerrarModal) {
-        btnCerrarModal.addEventListener("click", cerrarModalCotizacion);
+    if (btnCerrar) {
+        btnCerrar.addEventListener("click", function () {
+            cerrarModalCotizacion();
+        });
     }
 
 
@@ -100,68 +98,62 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-   GALERÍA (VERSIÓN FINAL LIMPIA)
-========================= */
+       GALERÍA (ACORDEÓN TARJETAS)
+    ========================= */
+    const cards = document.querySelectorAll(".producto-card");
 
-const cards = document.querySelectorAll(".producto-card");
+    cards.forEach(card => {
 
-cards.forEach(card => {
+        const header = card.querySelector(".card-header");
+        if (!header) return;
 
-    const header = card.querySelector(".card-header");
+        header.addEventListener("click", function (e) {
+            e.stopPropagation();
 
-    if (!header) return;
+            const isActive = card.classList.contains("active");
 
-    header.addEventListener("click", function (e) {
+            cards.forEach(c => c.classList.remove("active"));
 
-        e.stopPropagation();
+            if (!isActive) card.classList.add("active");
+        });
+    });
 
-        const isActive = card.classList.contains("active");
 
-        cards.forEach(c => c.classList.remove("active"));
+    /* =========================
+       CIERRE GLOBAL TARJETAS
+    ========================= */
+    document.addEventListener("click", function (e) {
 
-        if (!isActive) {
-            card.classList.add("active");
+        const inside = e.target.closest(".producto-card");
+
+        if (!inside) {
+            cards.forEach(c => c.classList.remove("active"));
         }
-
     });
 
 });
 
-
-/* =========================
-   CIERRE GLOBAL (UN SOLO CONTROL)
-========================= */
-
-document.addEventListener("click", function (e) {
-
-    const clickedCard = e.target.closest(".producto-card");
-
-    // clic fuera de tarjetas
-    if (!clickedCard) {
-        cards.forEach(c => c.classList.remove("active"));
-        return;
-    }
-
-    // clic dentro de tarjeta pero fuera de zonas activas
-    if (!e.target.closest(".card-header") && !e.target.closest(".galeria")) {
-        cards.forEach(c => c.classList.remove("active"));
-    }
-
-});
 
 /* =====================================================
    FUNCIONES GLOBALES
 ===================================================== */
 
 
-/* POSTER */
+/* =========================
+   POSTER
+========================= */
 function abrirPoster() {
 
     const overlay = document.createElement("div");
+
     overlay.style.cssText = `
-        position:fixed;top:0;left:0;width:100%;height:100%;
+        position:fixed;
+        top:0;left:0;
+        width:100%;height:100%;
         background:rgba(0,0,0,0.85);
-        display:flex;align-items:center;justify-content:center;
+        display:flex;
+        align-items:center;
+        justify-content:center;
         z-index:999999;
     `;
 
@@ -173,25 +165,19 @@ function abrirPoster() {
     img.style.cursor = "zoom-out";
 
     overlay.appendChild(img);
+
     overlay.onclick = () => overlay.remove();
 
     document.body.appendChild(overlay);
 }
 
 
-/* WHATSAPP */
+/* =========================
+   WHATSAPP (SOLO TEXTO BASE)
+========================= */
 function enviarWhatsApp() {
 
-    let nombre = document.getElementById("nombre").value;
-    let telefono = document.getElementById("telefono").value;
-    let correo = document.getElementById("correo").value;
-    let producto = document.getElementById("producto").value;
-    let cantidad = document.getElementById("cantidad").value;
-    let fecha = document.getElementById("fecha").value;
-    let descripcion = document.getElementById("descripcion").value;
-
-    let mensaje =
-`¡Hola!
+    let mensaje = `¡Hola!
 
 Gracias por comunicarte con NEXIUM SUBLIMACION.
 
@@ -208,7 +194,9 @@ Quedo atento(a) a su respuesta.`;
 }
 
 
-/* EMAILJS */
+/* =========================
+   EMAILJS (COTIZACIÓN)
+========================= */
 function enviarCotizacionCorreo() {
 
     emailjs.send("service_e8slvmi", "template_ams0res", {
@@ -224,8 +212,11 @@ function enviarCotizacionCorreo() {
 
         alert("Enviado correctamente ✅");
 
-        document.getElementById("formCotizacion").reset();
-        document.getElementById("modalCotizacion").style.display = "none";
+        const form = document.getElementById("formCotizacion");
+        const modal = document.getElementById("modalCotizacion");
+
+        if (form) form.reset();
+        if (modal) modal.style.display = "none";
 
     })
     .catch(() => {
@@ -234,7 +225,9 @@ function enviarCotizacionCorreo() {
 }
 
 
-/* MODAL */
+/* =========================
+   MODAL CLOSE
+========================= */
 function cerrarModalCotizacion() {
 
     const modal = document.getElementById("modalCotizacion");
@@ -246,9 +239,8 @@ function cerrarModalCotizacion() {
 
 
 /* =========================
-   VISOR IMAGEN (ÚNICO BLOQUE)
+   VISOR IMAGENES
 ========================= */
-
 function abrirVisor(img) {
 
     const galeria = img.closest(".galeria").querySelectorAll("img");
@@ -275,11 +267,24 @@ function cerrarVisor(e) {
     e?.stopPropagation();
     document.getElementById("visor").style.display = "none";
 }
-/* EXPOSICIÓN GLOBAL (IMPORTANTE PARA HTML onclick) */
-window.cerrarModalCotizacion = cerrarModalCotizacion;
-window.enviarCotizacionCorreo = enviarCotizacionCorreo;
-window.enviarWhatsApp = enviarWhatsApp;
+
+function safe(fn) {
+    return (...args) => {
+        try {
+            return fn(...args);
+        } catch (e) {
+            console.error("Error en función:", e);
+        }
+    };
+}
+
+/* =========================
+   EXPOSICIÓN GLOBAL (IMPORTANTE)
+========================= */
 window.abrirPoster = abrirPoster;
+window.enviarWhatsApp = enviarWhatsApp;
+window.enviarCotizacionCorreo = enviarCotizacionCorreo;
+window.cerrarModalCotizacion = cerrarModalCotizacion;
 window.abrirVisor = abrirVisor;
 window.cambiarImagen = cambiarImagen;
 window.cerrarVisor = cerrarVisor;
