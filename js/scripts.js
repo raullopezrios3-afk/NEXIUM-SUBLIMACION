@@ -209,9 +209,6 @@ function cerrarVisor(event){
    GALERÍA TOGGLE (FALTANTE - AGREGADO)
 ========================= */
 
-function toggleGaleria(header){
-
-    const card = header.parentElement;
-    card.classList.toggle('active');
-
+function toggleGaleria(card){
+    card.classList.toggle("active");
 }
