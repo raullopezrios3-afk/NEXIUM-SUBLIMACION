@@ -14,6 +14,21 @@ let indexActual = 0;
 ========================= */
 document.addEventListener("DOMContentLoaded", function () {
 
+   document.addEventListener("click", function (e) {
+
+    const modal = document.getElementById("modalCotizacion");
+
+    // si el modal no existe o está oculto, no hacer nada
+    if (!modal || modal.style.display !== "flex") return;
+
+    const contenido = modal.querySelector(".modal-content");
+
+    // si hizo click fuera del contenido → cerrar
+    if (contenido && !contenido.contains(e.target)) {
+        cerrarModalCotizacion();
+    }
+});
+
     /* =========================
        SLIDER
     ========================= */
