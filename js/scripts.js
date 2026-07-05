@@ -1,6 +1,7 @@
 /* =====================================================
-   NEXIUM - JS ESTABLE Y FUNCIONAL
+   NEXIUM - JS FINAL ESTABLE (FIX COMPLETO)
 ===================================================== */
+
 
 /* =========================
    VARIABLES GLOBALES
@@ -10,24 +11,10 @@ let indexActual = 0;
 
 
 /* =========================
-   INICIALIZACIÓN
+   INICIALIZACIÓN GENERAL
 ========================= */
-document.addEventListener("click", function (e) {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const modal = document.getElementById("modalCotizacion");
-
-    if (!modal) return;
-
-    const isOpen = modal.style.display === "flex";
-    if (!isOpen) return;
-
-    const contenido = modal.querySelector(".modal-content");
-
-    // si el click fue fuera del contenido → cerrar
-    if (contenido && !contenido.contains(e.target)) {
-        cerrarModalCotizacion();
-    }
-});
     /* =========================
        SLIDER
     ========================= */
@@ -59,7 +46,7 @@ document.addEventListener("click", function (e) {
 
 
     /* =========================
-       COTIZAR (MODAL OPEN)
+       COTIZAR (ABRIR MODAL)
     ========================= */
     const btnCotizar = document.getElementById("btnCotizar");
 
@@ -92,9 +79,7 @@ document.addEventListener("click", function (e) {
     const btnCerrar = document.getElementById("cerrarModal");
 
     if (btnCerrar) {
-        btnCerrar.addEventListener("click", function () {
-            cerrarModalCotizacion();
-        });
+        btnCerrar.addEventListener("click", cerrarModalCotizacion);
     }
 
 
@@ -119,6 +104,7 @@ document.addEventListener("click", function (e) {
     cards.forEach(card => {
 
         const header = card.querySelector(".card-header");
+
         if (!header) return;
 
         header.addEventListener("click", function (e) {
@@ -134,7 +120,7 @@ document.addEventListener("click", function (e) {
 
 
     /* =========================
-       CIERRE GLOBAL TARJETAS
+       CERRAR TARJETAS AL HACER CLICK FUERA
     ========================= */
     document.addEventListener("click", function (e) {
 
@@ -142,6 +128,26 @@ document.addEventListener("click", function (e) {
 
         if (!inside) {
             cards.forEach(c => c.classList.remove("active"));
+        }
+    });
+
+
+    /* =========================
+       CERRAR MODAL AL HACER CLICK FUERA
+    ========================= */
+    document.addEventListener("click", function (e) {
+
+        const modal = document.getElementById("modalCotizacion");
+
+        if (!modal) return;
+
+        const isOpen = modal.style.display === "flex";
+        if (!isOpen) return;
+
+        const content = modal.querySelector(".modal-content");
+
+        if (content && !content.contains(e.target)) {
+            cerrarModalCotizacion();
         }
     });
 
@@ -187,11 +193,11 @@ function abrirPoster() {
 
 
 /* =========================
-   WHATSAPP (SOLO TEXTO BASE)
+   WHATSAPP
 ========================= */
 function enviarWhatsApp() {
 
-    let mensaje = `¡Hola!
+    const mensaje = `¡Hola!
 
 Gracias por comunicarte con NEXIUM SUBLIMACION.
 
@@ -209,7 +215,7 @@ Quedo atento(a) a su respuesta.`;
 
 
 /* =========================
-   EMAILJS (COTIZACIÓN)
+   EMAILJS
 ========================= */
 function enviarCotizacionCorreo() {
 
@@ -282,18 +288,9 @@ function cerrarVisor(e) {
     document.getElementById("visor").style.display = "none";
 }
 
-function safe(fn) {
-    return (...args) => {
-        try {
-            return fn(...args);
-        } catch (e) {
-            console.error("Error en función:", e);
-        }
-    };
-}
 
 /* =========================
-   EXPOSICIÓN GLOBAL (IMPORTANTE)
+   EXPOSICIÓN GLOBAL
 ========================= */
 window.abrirPoster = abrirPoster;
 window.enviarWhatsApp = enviarWhatsApp;
