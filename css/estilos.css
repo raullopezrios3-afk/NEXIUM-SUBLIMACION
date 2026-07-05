@@ -349,11 +349,6 @@ MODAL
     gap: 5px;
 }
 
-.header-center {
-    text-align: left;       /* lo mueve hacia la izquierda */
-    padding-left: 10px;     /* aproximación a 10mm visual */
-}
-
 .eslogan {
     color: #c5a879;
 
