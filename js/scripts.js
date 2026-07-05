@@ -274,6 +274,39 @@ function cerrarVisor(e) {
     document.getElementById("visor").style.display = "none";
 }
 
+/* =========================
+   CERRAR VISOR AL HACER CLIC FUERA
+========================= */
+document.addEventListener("click", function (e) {
+
+    const visor = document.getElementById("visor");
+
+    if (!visor) return;
+
+    if (visor.style.display !== "flex") return;
+
+    if (e.target === visor) {
+        cerrarVisor();
+    }
+
+});
+
+/* =========================
+   ESC PARA CERRAR VISOR
+========================= */
+document.addEventListener("keydown", function (e) {
+
+    if (e.key === "Escape") {
+
+        const visor = document.getElementById("visor");
+
+        if (visor && visor.style.display === "flex") {
+            cerrarVisor();
+        }
+
+    }
+
+});
 
 /* =========================
    EXPORT GLOBAL (SEGURO)
