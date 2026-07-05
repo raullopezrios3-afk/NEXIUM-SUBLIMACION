@@ -720,3 +720,30 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
 .slider-poster:hover{
     transform:translateY(-50%) scale(1.05);
 }
+
+/* galería oculta dentro de la tarjeta */
+.producto-card .galeria{
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-top: 10px;
+}
+
+/* cuando la tarjeta está activa */
+.producto-card.active .galeria{
+    display: grid;
+}
+
+/* imágenes pequeñas */
+.producto-card .galeria img{
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.producto-card .galeria img:hover{
+    transform: scale(1.05);
+}
