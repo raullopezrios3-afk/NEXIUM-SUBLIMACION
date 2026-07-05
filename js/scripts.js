@@ -1,8 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
-
     /* =========================
        SLIDER
     ========================= */
+
+    document.addEventListener("DOMContentLoaded", function () {
+
     const slides = document.querySelectorAll(".slide");
     let index = 0;
 
