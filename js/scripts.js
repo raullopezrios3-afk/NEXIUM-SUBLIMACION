@@ -161,8 +161,7 @@ document.addEventListener("keydown", function (e) {
         .forEach(card => card.classList.remove("active"));
 
 });
-
-   
+ 
 
 });
      
