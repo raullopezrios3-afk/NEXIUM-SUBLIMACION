@@ -139,15 +139,15 @@ document.addEventListener("keydown",function(e){
 ========================= */
 function abrirModalCotizacion() {
 
-    console.log("Entró a abrirModalCotizacion");
-
     const modal = document.getElementById("modalCotizacion");
 
-    console.log(modal);
+    modal.style.display = "flex";
 
-    if (modal) {
-        modal.style.display = "flex";
-    }
+    console.log("ABIERTO");
+
+    setTimeout(() => {
+        console.log(modal.style.display);
+    },500);
 
 }
 /* =========================
