@@ -1,8 +1,8 @@
-    /* =========================
+   /* =========================
        SLIDER
-    ========================= */
+========================= */
 
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
     const slides = document.querySelectorAll(".slide");
     let index = 0;
@@ -99,7 +99,10 @@ function cerrarModalCotizacion() {
     document.getElementById("modalCotizacion").style.display = "none";
 }
 
-// MENÚ ACTIVO NEXIUM
+
+/* =========================
+   MENÚ ACTIVO NEXIUM
+========================= */
 
 const menuLinks = document.querySelectorAll('.menu a');
 
@@ -112,6 +115,11 @@ menuLinks.forEach(link => {
 
     });
 });
+
+
+/* =========================
+   POSTER
+========================= */
 
 function abrirPoster(){
 
@@ -158,6 +166,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+
+/* =========================
+   VISOR IMAGEN
+========================= */
+
 function verImagen(img){
     document.getElementById('visor').style.display = 'flex';
     document.getElementById('imgGrande').src = img.src;
@@ -165,4 +178,13 @@ function verImagen(img){
 
 function cerrarVisor(){
     document.getElementById('visor').style.display = 'none';
+}
+
+
+/* =========================
+   GALERÍA TOGGLE (FALTANTE - AGREGADO)
+========================= */
+
+function toggleGaleria(card){
+    card.classList.toggle('active');
 }
