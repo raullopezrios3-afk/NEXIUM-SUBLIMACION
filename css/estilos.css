@@ -752,3 +752,44 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
 .producto-card .galeria img:hover{
     transform: scale(1.05);
 }
+
+.visor{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.85);
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+}
+
+.visor img{
+    max-width:80%;
+    max-height:80%;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.cerrar{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:35px;
+    color:#fff;
+    cursor:pointer;
+}
+
+.prev, .next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:40px;
+    background:none;
+    border:none;
+    color:#fff;
+    cursor:pointer;
+    padding:10px;
+}
+
+.prev{ left:20px; }
+.next{ right:20px; }
