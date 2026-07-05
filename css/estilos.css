@@ -89,24 +89,69 @@ HEADER
 MENÚ (IMPORTANTE: SOLO UNO)
 ========================= */
 
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 12px 0;
-    border-top: 1px solid #eee;
+/*=========================
+MENÚ NEXIUM V2
+=========================*/
+
+.menu{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:14px 20px;
+
+    background:#ffffff;
+
+    border-top:1px solid #ececec;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+
 }
 
-.menu a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
+.menu a{
+
+    text-decoration:none;
+
+    background:#1e66ff;
+
+    color:#ffffff;
+
+    padding:12px 26px;
+
+    border-radius:10px;
+
+    font-weight:700;
+
+    transition:.30s;
+
 }
 
-.menu a:hover {
-    color: #b88a2a;
+.menu a:hover{
+
+    background:#c5a879;
+
+    color:#123a7a;
+
+    transform:translateY(-2px);
+
 }
 
+/* BOTÓN ACTIVO */
+
+.menu a.active{
+
+    background:#c5a879;
+
+    color:#123a7a;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
 /* =========================
 SLIDER
 ========================= */
