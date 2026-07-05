@@ -41,7 +41,8 @@
         </div>
 
         <!-- DERECHA -->
-        <a href="#" class="btn cotizar" onclick="abrirModalCotizacion()">
+       <a href="#" class="btn cotizar"
+   onclick="document.getElementById('modalCotizacion').style.display='flex'">
     Cotizar
 </a>
          <a href="#" class="btn whatsapp" onclick="enviarWhatsApp()">
@@ -241,10 +242,9 @@
 
 <!-- JS -->
 <script src="js/scripts.js?v=999"></script>
-
-    <div id="modalCotizacion" class="modal">
-
-    <div class="modal-content">
+    
+<div id="modalCotizacion" class="modal">
+<div class="modal-content">
 
        <span class="close" onclick="cerrarModalCotizacion()">&times;</span>
 
