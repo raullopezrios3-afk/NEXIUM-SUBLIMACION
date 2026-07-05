@@ -74,13 +74,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       CERRAR MODAL (X)
-    ========================= */
-    const btnCerrar = document.getElementById("cerrarModal");
+   CERRAR MODAL AL HACER CLICK FUERA
+========================= */
 
-    if (btnCerrar) {
-        btnCerrar.addEventListener("click", cerrarModalCotizacion);
+const modal = document.getElementById("modalCotizacion");
+
+if (modal) {
+
+    modal.addEventListener("click", function(e) {
+
+        if (e.target === modal) {
+            cerrarModalCotizacion();
+        }
+
+    });
+
+}
+
+   /* =========================
+   ESC PARA CERRAR MODAL
+========================= */
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Escape"){
+
+        const modal=document.getElementById("modalCotizacion");
+
+        if(modal && modal.style.display==="flex"){
+            cerrarModalCotizacion();
+        }
+
     }
+
+});
 
 
     /* =========================
@@ -130,6 +157,19 @@ document.addEventListener("DOMContentLoaded", function () {
             cards.forEach(c => c.classList.remove("active"));
         }
     });
+
+   /* =========================
+   ABRIR MODAL
+========================= */
+function abrirModalCotizacion() {
+
+    const modal = document.getElementById("modalCotizacion");
+
+    if (modal) {
+        modal.style.display = "flex";
+    }
+
+}
 
 
     /* =========================
@@ -230,19 +270,11 @@ function enviarCotizacionCorreo() {
     })
     .then(() => {
 
-        alert("Enviado correctamente ✅");
+    alert("Solicitud enviada correctamente.");
 
-        const form = document.getElementById("formCotizacion");
-        const modal = document.getElementById("modalCotizacion");
+    cerrarModalCotizacion();
 
-        if (form) form.reset();
-        if (modal) modal.style.display = "none";
-
-    })
-    .catch(() => {
-        alert("Error al enviar ❌");
-    });
-}
+})
 
 
 /* =========================
