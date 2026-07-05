@@ -82,29 +82,27 @@ document.addEventListener("keydown",function(e){
 
    cards.forEach(card => {
 
-    card.addEventListener("click", function (e) {
+   card.addEventListener("click", function (e) {
 
-        // Si hicieron clic en una imagen, no abrir/cerrar la tarjeta
-        if (e.target.tagName === "IMG") return;
+    console.log("CLICK EN:", card.querySelector("h2")?.textContent);
 
-        e.stopPropagation();
+    if (e.target.tagName === "IMG") return;
 
-        cerrarVisor();
+    e.stopPropagation();
 
-        const isActive = card.classList.contains("active");
+    cerrarVisor();
 
-        // Cerrar todas las tarjetas
-        cards.forEach(c => c.classList.remove("active"));
+    const isActive = card.classList.contains("active");
 
-        // Abrir la seleccionada
-        if (!isActive) {
-            card.classList.add("active");
-        }
+    cards.forEach(c => c.classList.remove("active"));
 
-    });
+    if (!isActive) {
+        card.classList.add("active");
+    }
 
 });
-    /* =========================
+      
+   /* =========================
        CERRAR TARJETAS AL HACER CLICK FUERA
     ========================= */
     document.addEventListener("click", function (e) {
