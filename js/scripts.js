@@ -171,13 +171,37 @@ document.addEventListener("DOMContentLoaded", () => {
    VISOR IMAGEN
 ========================= */
 
-function verImagen(img){
-    document.getElementById('visor').style.display = 'flex';
-    document.getElementById('imgGrande').src = img.src;
+let imagenes = [];
+let indexActual = 0;
+
+/* abrir visor */
+function abrirVisor(img){
+
+    const galeria = img.closest(".galeria").querySelectorAll("img");
+
+    imagenes = Array.from(galeria).map(i => i.src);
+    indexActual = imagenes.indexOf(img.src);
+
+    document.getElementById("visor").style.display = "flex";
+    document.getElementById("imgGrande").src = img.src;
 }
 
-function cerrarVisor(){
-    document.getElementById('visor').style.display = 'none';
+/* cambiar imagen */
+function cambiarImagen(dir, event){
+    event.stopPropagation();
+
+    indexActual += dir;
+
+    if(indexActual < 0) indexActual = imagenes.length - 1;
+    if(indexActual >= imagenes.length) indexActual = 0;
+
+    document.getElementById("imgGrande").src = imagenes[indexActual];
+}
+
+/* cerrar visor */
+function cerrarVisor(event){
+    if(event) event.stopPropagation();
+    document.getElementById("visor").style.display = "none";
 }
 
 
