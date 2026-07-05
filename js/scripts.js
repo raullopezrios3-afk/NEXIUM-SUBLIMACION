@@ -1,26 +1,171 @@
-   /* =========================
-       SLIDER
+
+/* =====================================================
+   NEXIUM - JS COMPLETO (ORDENADO Y UNIFICADO)
+===================================================== */
+
+
+/* =========================
+   VARIABLES GLOBALES (VISOR)
+========================= */
+
+let imagenes = [];
+let indexActual = 0;
+
+
+/* =========================
+   INICIALIZACIÓN GENERAL
 ========================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* =========================
+       SLIDER
+    ========================= */
     const slides = document.querySelectorAll(".slide");
-    let index = 0;
 
-    if (slides.length > 0) slides[0].classList.add("active");
+    if (slides.length > 0) {
 
-    setInterval(() => {
-        slides.forEach(s => s.classList.remove("active"));
-        index = (index + 1) % slides.length;
-        slides[index].classList.add("active");
-    }, 4000);
+        let index = 0;
+        slides[0].classList.add("active");
+
+        setInterval(() => {
+            slides.forEach(s => s.classList.remove("active"));
+            index = (index + 1) % slides.length;
+            slides[index].classList.add("active");
+        }, 4000);
+
+    }
+
+
+    /* =========================
+       BOTÓN POSTER
+    ========================= */
+    const btnPoster = document.getElementById("btnPoster");
+
+    if (btnPoster) {
+        btnPoster.addEventListener("click", (e) => {
+            e.preventDefault();
+            abrirPoster();
+        });
+    }
+
+
+    /* =========================
+       MENÚ ACTIVO HEADER
+    ========================= */
+    const menuLinks = document.querySelectorAll(".menu a");
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", function () {
+
+            menuLinks.forEach(item => item.classList.remove("active"));
+
+            this.classList.add("active");
+
+        });
+    });
+
+
+    /* =========================
+       GALERÍA PRODUCTOS
+    ========================= */
+    const cards = document.querySelectorAll(".producto-card");
+
+    cards.forEach(card => {
+
+        const header = card.querySelector(".card-header");
+
+        if (!header) return;
+
+        header.addEventListener("click", function (e) {
+
+            e.stopPropagation();
+
+            const isActive = card.classList.contains("active");
+
+            cards.forEach(c => c.classList.remove("active"));
+
+            if (!isActive) {
+                card.classList.add("active");
+            }
+
+        });
+
+    });
+
+
+    /* =========================
+       CERRAR GALERÍA (CLICK FUERA)
+    ========================= */
+    document.addEventListener("click", function (e) {
+
+        const insideCard = e.target.closest(".producto-card");
+
+        if (!insideCard) {
+
+            document.querySelectorAll(".producto-card.active")
+                .forEach(c => c.classList.remove("active"));
+
+            return;
+        }
+
+        if (!insideCard.querySelector(".card-header")) {
+
+            document.querySelectorAll(".producto-card.active")
+                .forEach(c => c.classList.remove("active"));
+
+        }
+
+    });
 
 });
+
+
+/* =====================================================
+   FUNCIONES GLOBALES
+===================================================== */
+
+
+/* =========================
+   POSTER
+========================= */
+
+function abrirPoster() {
+
+    const overlay = document.createElement("div");
+
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.background = "rgba(0,0,0,0.85)";
+    overlay.style.display = "flex";
+    overlay.style.alignItems = "center";
+    overlay.style.justifyContent = "center";
+    overlay.style.zIndex = "999999";
+
+    const img = document.createElement("img");
+    img.src = "imagenes/poster.jpg";
+
+    img.style.maxWidth = "90%";
+    img.style.maxHeight = "90%";
+    img.style.borderRadius = "12px";
+    img.style.boxShadow = "0 10px 30px rgba(0,0,0,0.5)";
+    img.style.cursor = "zoom-out";
+
+    overlay.appendChild(img);
+
+    overlay.onclick = () => overlay.remove();
+
+    document.body.appendChild(overlay);
+}
 
 
 /* =========================
    WHATSAPP
 ========================= */
+
 function enviarWhatsApp() {
 
     let nombre = document.getElementById("nombre").value;
@@ -35,14 +180,6 @@ function enviarWhatsApp() {
 `¡Hola!
 
 Gracias por comunicarte con NEXIUM SUBLIMACION.
-
-¡HACEMOS REALIDAD TUS IDEAS BRILLANTES!
-
-Me gustaría recibir información sobre sus productos promocionales y servicios de personalización.
-
-Quedo atento(a) a su respuesta.
-
----
 
 SOLICITUD DE COTIZACIÓN
 Nombre: ${nombre}
@@ -65,6 +202,7 @@ ${descripcion}`;
 /* =========================
    EMAILJS
 ========================= */
+
 function enviarCotizacionCorreo() {
 
     emailjs.send("service_e8slvmi", "template_ams0res", {
@@ -94,6 +232,7 @@ function enviarCotizacionCorreo() {
 /* =========================
    MODAL
 ========================= */
+
 function cerrarModalCotizacion() {
     document.getElementById("formCotizacion").reset();
     document.getElementById("modalCotizacion").style.display = "none";
@@ -101,20 +240,35 @@ function cerrarModalCotizacion() {
 
 
 /* =========================
-   MENÚ ACTIVO NEXIUM
+   VISOR DE IMÁGENES
 ========================= */
 
-const menuLinks = document.querySelectorAll('.menu a');
+function abrirVisor(img) {
 
-menuLinks.forEach(link => {
-    link.addEventListener('click', function () {
+    const galeria = img.closest(".galeria").querySelectorAll("img");
 
-        menuLinks.forEach(item => item.classList.remove('active'));
+    imagenes = Array.from(galeria).map(i => i.src);
+    indexActual = imagenes.indexOf(img.src);
 
-        this.classList.add('active');
+    document.getElementById("visor").style.display = "flex";
+    document.getElementById("imgGrande").src = img.src;
+}
 
-    });
-});
+function cambiarImagen(dir, event) {
+    event.stopPropagation();
+
+    indexActual += dir;
+
+    if (indexActual < 0) indexActual = imagenes.length - 1;
+    if (indexActual >= imagenes.length) indexActual = 0;
+
+    document.getElementById("imgGrande").src = imagenes[indexActual];
+}
+
+function cerrarVisor(event) {
+    if (event) event.stopPropagation();
+    document.getElementById("visor").style.display = "none";
+}
 
 
 /* =========================
@@ -203,54 +357,6 @@ function cerrarVisor(event){
     if(event) event.stopPropagation();
     document.getElementById("visor").style.display = "none";
 }
-
-
-/* =========================
-   GALERÍA TOGGLE REFACTORIZADO
-========================= */
-
-function toggleGaleria(elemento) {
-
-    const card = elemento.closest(".producto-card");
-    if (!card) return;
-
-    const isActive = card.classList.contains("active");
-
-    document.querySelectorAll(".producto-card.active").forEach(c => {
-        if (c !== card) {
-            c.classList.remove("active");
-        }
-    });
-
-    card.classList.toggle("active", !isActive);
-}
-
-document.addEventListener("click", function (e) {
-
-    if (!e.target.closest(".producto-card")) {
-        document.querySelectorAll(".producto-card.active")
-            .forEach(c => c.classList.remove("active"));
-    }
-
-});
-
-// Cerrar la galería al hacer clic en cualquier otra tarjeta
-document.querySelectorAll(".producto-card").forEach(card => {
-
-    card.addEventListener("click", function () {
-
-        // Si esta tarjeta NO contiene galería,
-        // cerrar cualquier galería abierta.
-        if (!this.querySelector(".galeria")) {
-
-            document.querySelectorAll(".producto-card.active")
-                .forEach(c => c.classList.remove("active"));
-
-        }
-
-    });
-
-});
 
 // Cerrar al hacer click fuera
 document.addEventListener("click", (e) => {
