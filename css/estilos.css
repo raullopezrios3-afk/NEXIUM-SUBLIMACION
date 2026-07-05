@@ -122,7 +122,16 @@ MENÚ NEXIUM V2
 
     padding:8px 20px;
 
-    background:#2E1A47;
+   background:linear-gradient(
+    135deg,
+    #2E1A47,
+    #0B2E6B,
+    #0B3D91
+);
+
+background-size:300% 300%;
+
+animation:menuGradient 15s ease infinite;
 
     border-top:1px solid #3E275C;
 
@@ -670,3 +679,23 @@ this.classList.add('active');
 });
 
 });
+
+/*======================================
+ANIMACIÓN DEGRADADO MENÚ NEXIUM
+======================================*/
+
+@keyframes menuGradient{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
