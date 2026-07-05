@@ -112,21 +112,20 @@ document.addEventListener("keydown",function(e){
 /* =========================
        CERRAR MODAL AL HACER CLICK FUERA
     ========================= */
-    document.addEventListener("click", function (e) {
+   document.addEventListener("click", function (e) {
 
-        const modal = document.getElementById("modalCotizacion");
+    const modal = document.getElementById("modalCotizacion");
 
-        if (!modal) return;
+    if (!modal || modal.style.display !== "flex") return;
 
-        const isOpen = modal.style.display === "flex";
-        if (!isOpen) return;
+    // Ignorar el clic que abrió el modal
+    if (e.target.closest(".cotizar")) return;
 
-        const content = modal.querySelector(".modal-content");
+    const content = modal.querySelector(".modal-content");
 
-        if (content && !content.contains(e.target)) {
-            cerrarModalCotizacion();
-        }
-    });
+    if (!content.contains(e.target)) {
+        cerrarModalCotizacion();
+    }
 
 });
 
