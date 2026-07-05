@@ -125,7 +125,10 @@ MENÚ NEXIUM V2
         #2E1A47 0%,
         #0B2E6B 50%,
         #0B3D91 100%
-    ) !important;
+    );
+
+    background-size: 300% 300%;
+    animation: menuGradient 6s ease infinite;
 
     border-top:1px solid #3E275C;
 
