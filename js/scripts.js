@@ -100,41 +100,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       GALERÍA
-    ========================= */
-    const cards = document.querySelectorAll(".producto-card");
+   GALERÍA (VERSIÓN FINAL LIMPIA)
+========================= */
 
-    cards.forEach(card => {
+const cards = document.querySelectorAll(".producto-card");
 
-        const header = card.querySelector(".card-header");
-        if (!header) return;
+cards.forEach(card => {
 
-        header.addEventListener("click", function (e) {
+    const header = card.querySelector(".card-header");
 
-            e.stopPropagation();
+    if (!header) return;
 
-            const active = card.classList.contains("active");
+    header.addEventListener("click", function (e) {
 
-            cards.forEach(c => c.classList.remove("active"));
+        e.stopPropagation();
 
-            if (!active) card.classList.add("active");
-        });
-    });
+        const isActive = card.classList.contains("active");
 
+        cards.forEach(c => c.classList.remove("active"));
 
-    /* CLICK FUERA */
-    document.addEventListener("click", function (e) {
-
-        const inside = e.target.closest(".producto-card");
-
-        if (!inside) {
-            document.querySelectorAll(".producto-card.active")
-                .forEach(c => c.classList.remove("active"));
+        if (!isActive) {
+            card.classList.add("active");
         }
+
     });
 
 });
 
+
+/* =========================
+   CIERRE GLOBAL (UN SOLO CONTROL)
+========================= */
+
+document.addEventListener("click", function (e) {
+
+    const clickedCard = e.target.closest(".producto-card");
+
+    // clic fuera de tarjetas
+    if (!clickedCard) {
+        cards.forEach(c => c.classList.remove("active"));
+        return;
+    }
+
+    // clic dentro de tarjeta pero fuera de zonas activas
+    if (!e.target.closest(".card-header") && !e.target.closest(".galeria")) {
+        cards.forEach(c => c.classList.remove("active"));
+    }
+
+});
 
 /* =====================================================
    FUNCIONES GLOBALES
