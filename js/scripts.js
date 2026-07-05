@@ -87,14 +87,21 @@ document.addEventListener("keydown",function(e){
         if (!header) return;
 
         header.addEventListener("click", function (e) {
-            e.stopPropagation();
+    e.stopPropagation();
 
-            const isActive = card.classList.contains("active");
+    // Cerrar el visor si está abierto
+    cerrarVisor();
 
-            cards.forEach(c => c.classList.remove("active"));
+    const isActive = card.classList.contains("active");
 
-            if (!isActive) card.classList.add("active");
-        });
+    // Cerrar todas las tarjetas
+    cards.forEach(c => c.classList.remove("active"));
+
+    // Abrir solo la seleccionada
+    if (!isActive) {
+        card.classList.add("active");
+    }
+});
     });
 
     /* =========================
