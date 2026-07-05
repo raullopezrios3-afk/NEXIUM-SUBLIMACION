@@ -1,8 +1,3 @@
-/* =====================================================
-   NEXIUM - JS FINAL ESTABLE (FIX COMPLETO)
-===================================================== */
-
-
 /* =========================
    VARIABLES GLOBALES
 ========================= */
@@ -48,30 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =========================
        WHATSAPP HEADER
     ========================= */
-    const btnWhatsApp = document.getElementById("btnWhatsApp");
-
-    if (btnWhatsApp) {
-        btnWhatsApp.addEventListener("click", function (e) {
-            e.preventDefault();
-            enviarWhatsApp();
-        });
-    }
-});
+    
 
 /* =========================
-   ABRIR MODAL
-========================= */
-function abrirModalCotizacion() {
-
-    const modal = document.getElementById("modalCotizacion");
-
-    if (modal) {
-        modal.style.display = "flex";
-    }
-
-}
-
-   /* =========================
    ESC PARA CERRAR MODAL
 ========================= */
 
@@ -89,8 +63,7 @@ document.addEventListener("keydown",function(e){
 
 });
 
-
-    /* =========================
+/* =========================
        MENÚ ACTIVO
     ========================= */
     const menuLinks = document.querySelectorAll(".menu a");
@@ -102,8 +75,7 @@ document.addEventListener("keydown",function(e){
         });
     });
 
-
-    /* =========================
+   /* =========================
        GALERÍA (ACORDEÓN TARJETAS)
     ========================= */
     const cards = document.querySelectorAll(".producto-card");
@@ -125,7 +97,6 @@ document.addEventListener("keydown",function(e){
         });
     });
 
-
     /* =========================
        CERRAR TARJETAS AL HACER CLICK FUERA
     ========================= */
@@ -138,21 +109,7 @@ document.addEventListener("keydown",function(e){
         }
     });
 
-   /* =========================
-   ABRIR MODAL
-========================= */
-function abrirModalCotizacion() {
-
-    const modal = document.getElementById("modalCotizacion");
-
-    if (modal) {
-        modal.style.display = "flex";
-    }
-
-}
-
-
-    /* =========================
+/* =========================
        CERRAR MODAL AL HACER CLICK FUERA
     ========================= */
     document.addEventListener("click", function (e) {
@@ -173,11 +130,22 @@ function abrirModalCotizacion() {
 
 });
 
-
 /* =====================================================
    FUNCIONES GLOBALES
 ===================================================== */
 
+/* =========================
+   ABRIR MODAL
+========================= */
+function abrirModalCotizacion() {
+
+    const modal = document.getElementById("modalCotizacion");
+
+    if (modal) {
+        modal.style.display = "flex";
+    }
+
+}
 
 /* =========================
    POSTER
@@ -211,7 +179,6 @@ function abrirPoster() {
     document.body.appendChild(overlay);
 }
 
-
 /* =========================
    WHATSAPP
 ========================= */
@@ -232,7 +199,6 @@ Quedo atento(a) a su respuesta.`;
         "_blank"
     );
 }
-
 
 /* =========================
    EMAILJS
@@ -314,7 +280,7 @@ function cerrarVisor(e) {
    EXPORT GLOBAL (SEGURO)
 ========================= */
 
-window.addEventListener("load", () => {
+    window.addEventListener("load", () => {
     window.abrirPoster = abrirPoster;
     window.enviarWhatsApp = enviarWhatsApp;
     window.abrirVisor = abrirVisor;
