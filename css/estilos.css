@@ -12,11 +12,32 @@ html {
     scroll-behavior: smooth;
 }
 
+/*======================================
+PALETA OFICIAL NEXIUM
+======================================*/
+
+:root{
+
+    --azul:#0B3D91;
+    --azul-oscuro:#0B2E6B;
+
+    --dorado:#C5A879;
+
+    --blanco:#FFFFFF;
+
+    --gris:#F5F5F5;
+
+    --texto:#2C2C2C;
+
+    --sombra:rgba(11,61,145,.15);
+
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    background: #fff;
-    color: #333;
+    background: var(--gris);
+    color: var(--texto);
     padding-top: 140px;
 }
 
@@ -84,10 +105,6 @@ HEADER
 
 .cotizar { background: #1e66ff; }
 .whatsapp { background: #25d366; }
-
-/* =========================
-MENÚ (IMPORTANTE: SOLO UNO)
-========================= */
 
 /*=========================
 MENÚ NEXIUM V2
@@ -486,5 +503,143 @@ NO MODIFICA LA VERSIÓN ESCRITORIO
     .menu a{
         font-size:14px;
     }
+
+}
+
+/*======================================
+MEJORAS VISUALES NEXIUM V1
+(NO AFECTA HEADER)
+======================================*/
+
+/* Sección Productos */
+
+.productos{
+
+    background:var(--gris);
+
+    padding:90px 6%;
+
+}
+
+
+/* Tarjetas */
+
+.producto-card{
+
+    background:var(--blanco);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+}
+
+.producto-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px var(--sombra);
+
+}
+
+
+/* Imágenes */
+
+.producto-card img{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.producto-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+
+/* Títulos */
+
+.productos h2{
+
+    color:var(--azul-oscuro);
+
+}
+
+
+/* Subtítulos */
+
+.subtitulo{
+
+    color:var(--texto);
+
+}
+
+
+/* Botón de cards */
+
+.btn-card{
+
+    background:var(--azul);
+
+    color:var(--blanco);
+
+    border:none;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.btn-card:hover{
+
+    background:var(--azul-oscuro);
+
+}
+
+
+/* Footer */
+
+footer{
+
+    background:var(--azul-oscuro);
+
+    color:var(--blanco);
+
+    border-top:5px solid var(--dorado);
+
+}
+
+footer p{
+
+    color:var(--blanco);
+
+}
+
+
+/* Modal */
+
+.modal-content h2{
+
+    color:var(--azul);
+
+}
+
+.modal-content input:focus,
+
+.modal-content textarea:focus,
+
+.modal-content select:focus{
+
+    border-color:var(--azul);
 
 }
