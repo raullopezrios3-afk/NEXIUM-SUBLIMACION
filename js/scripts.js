@@ -12,23 +12,22 @@ let indexActual = 0;
 /* =========================
    INICIALIZACIÓN
 ========================= */
-document.addEventListener("DOMContentLoaded", function () {
-
-   document.addEventListener("click", function (e) {
+document.addEventListener("click", function (e) {
 
     const modal = document.getElementById("modalCotizacion");
 
-    // si el modal no existe o está oculto, no hacer nada
-    if (!modal || modal.style.display !== "flex") return;
+    if (!modal) return;
+
+    const isOpen = modal.style.display === "flex";
+    if (!isOpen) return;
 
     const contenido = modal.querySelector(".modal-content");
 
-    // si hizo click fuera del contenido → cerrar
+    // si el click fue fuera del contenido → cerrar
     if (contenido && !contenido.contains(e.target)) {
         cerrarModalCotizacion();
     }
 });
-
     /* =========================
        SLIDER
     ========================= */
