@@ -234,6 +234,24 @@ document.addEventListener("click", function (e) {
 
 });
 
+// Cerrar la galería al hacer clic en cualquier otra tarjeta
+document.querySelectorAll(".producto-card").forEach(card => {
+
+    card.addEventListener("click", function () {
+
+        // Si esta tarjeta NO contiene galería,
+        // cerrar cualquier galería abierta.
+        if (!this.querySelector(".galeria")) {
+
+            document.querySelectorAll(".producto-card.active")
+                .forEach(c => c.classList.remove("active"));
+
+        }
+
+    });
+
+});
+
 // Cerrar al hacer click fuera
 document.addEventListener("click", (e) => {
     const clickedInsideCard = e.target.closest(".producto-card");
