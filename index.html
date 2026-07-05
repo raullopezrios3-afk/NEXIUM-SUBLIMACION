@@ -121,17 +121,13 @@
                 <p>Personalización premium.</p>
             </div>
 
-            <div class="producto-card" onclick="abrirGaleria()">
-                <h2>BOLSAS Y OTROS</h2>
-                <p>Ver catálogo</p>
-            </div>
+            <<div class="producto-card" onclick="toggleGaleria(this)">
 
-        </div> <!-- ✔ CIERRA productos-grid -->
+    <h2>BOLSAS Y OTROS</h2>
+    <p>Ver catálogo</p>
 
-    </div> <!-- ✔ CIERRA contenedor -->
-
-    <!-- ✔ GALERÍA FUERA DEL CONTENEDOR -->
-    <div id="galeria" class="galeria">
+    <!-- 👇 GALERÍA DENTRO DE LA TARJETA -->
+    <div class="galeria">
 
         <img src="imagenes/bolsas/bolsa-1.jpeg" onclick="verImagen(this)">
         <img src="imagenes/bolsas/bolsa-2.jpeg" onclick="verImagen(this)">
@@ -145,6 +141,8 @@
 
     </div>
 
+</div>
+    
 </section>
 
 <!-- ========================= -->
