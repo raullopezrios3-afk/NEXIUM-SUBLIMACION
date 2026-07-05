@@ -205,34 +205,32 @@ function cerrarVisor(event){
 }
 
 
-/* =========================
-   GALERÍA TOGGLE (FALTANTE - AGREGADO)
-========================= */
+// =========================
+// GALERÍA TOGGLE REFACTORIZADO
+// =========================
 
-function toggleGaleria(elemento){
-
+function toggleGaleria(elemento) {
     const card = elemento.closest(".producto-card");
-
     if (!card) return;
 
     const isActive = card.classList.contains("active");
 
-    document.querySelectorAll(".producto-card")
+    // Cerrar todas las tarjetas primero
+    document.querySelectorAll(".producto-card.active")
         .forEach(c => c.classList.remove("active"));
 
+    // Si la tarjeta no estaba activa, la abrimos
     if (!isActive) {
         card.classList.add("active");
     }
-
 }
 
-document.addEventListener("click", function (e) {
+// Cerrar al hacer click fuera
+document.addEventListener("click", (e) => {
+    const clickedInsideCard = e.target.closest(".producto-card");
 
-    const clickedCard = e.target.closest(".producto-card");
-
-    if (!clickedCard) {
+    if (!clickedInsideCard) {
         document.querySelectorAll(".producto-card.active")
             .forEach(c => c.classList.remove("active"));
     }
-
 });
