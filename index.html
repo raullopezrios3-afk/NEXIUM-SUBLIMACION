@@ -292,7 +292,15 @@
 
 <!-- 🔥 VISOR DE IMAGENES-->
 <div id="visor" class="visor" onclick="cerrarVisor()">
+
+    <span class="cerrar" onclick="cerrarVisor(event)">×</span>
+
+    <button class="prev" onclick="cambiarImagen(-1, event)">❮</button>
+
     <img id="imgGrande">
+
+    <button class="next" onclick="cambiarImagen(1, event)">❯</button>
+
 </div>
     
 </body>
