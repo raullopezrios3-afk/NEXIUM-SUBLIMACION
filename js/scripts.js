@@ -245,7 +245,10 @@ function cerrarModalCotizacion() {
 }
 
 
-/* VISOR (SIN DUPLICADOS) */
+/* =========================
+   VISOR IMAGEN (ÚNICO BLOQUE)
+========================= */
+
 function abrirVisor(img) {
 
     const galeria = img.closest(".galeria").querySelectorAll("img");
@@ -272,7 +275,6 @@ function cerrarVisor(e) {
     e?.stopPropagation();
     document.getElementById("visor").style.display = "none";
 }
-
 /* EXPOSICIÓN GLOBAL (IMPORTANTE PARA HTML onclick) */
 window.cerrarModalCotizacion = cerrarModalCotizacion;
 window.enviarCotizacionCorreo = enviarCotizacionCorreo;
