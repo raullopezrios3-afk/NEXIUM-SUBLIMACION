@@ -216,16 +216,23 @@ function toggleGaleria(elemento) {
 
     const isActive = card.classList.contains("active");
 
-    // Cerrar todas las demás tarjetas
     document.querySelectorAll(".producto-card.active").forEach(c => {
         if (c !== card) {
             c.classList.remove("active");
         }
     });
 
-    // Abrir o cerrar la actual
     card.classList.toggle("active", !isActive);
 }
+
+document.addEventListener("click", function (e) {
+
+    if (!e.target.closest(".producto-card")) {
+        document.querySelectorAll(".producto-card.active")
+            .forEach(c => c.classList.remove("active"));
+    }
+
+});
 
 // Cerrar al hacer click fuera
 document.addEventListener("click", (e) => {
