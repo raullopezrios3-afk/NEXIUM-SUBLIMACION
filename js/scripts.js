@@ -213,23 +213,26 @@ function toggleGaleria(elemento){
 
     const card = elemento.closest(".producto-card");
 
-    card.classList.toggle("active");
+    if (!card) return;
+
+    const isActive = card.classList.contains("active");
+
+    document.querySelectorAll(".producto-card")
+        .forEach(c => c.classList.remove("active"));
+
+    if (!isActive) {
+        card.classList.add("active");
+    }
 
 }
 
 document.addEventListener("click", function (e) {
 
-    const card = e.target.closest(".producto-card");
+    const clickedCard = e.target.closest(".producto-card");
 
-    const clickedInsideCard = card !== null;
-    const clickedHeader = e.target.closest(".card-header");
-
-    // Si NO hiciste click dentro de una tarjeta abierta → cerrar todo
-    if (!clickedInsideCard || !clickedHeader) {
-
+    if (!clickedCard) {
         document.querySelectorAll(".producto-card.active")
             .forEach(c => c.classList.remove("active"));
-
     }
 
 });
