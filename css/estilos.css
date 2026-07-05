@@ -258,33 +258,6 @@ MODAL
     }
 }
 
-/* título */
-.modal-content h2{
-    text-align: center;
-    margin-bottom: 15px;
-    color: #1e66ff;
-}
-
-/* inputs */
-.modal-content input,
-.modal-content select,
-.modal-content textarea{
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-family: inherit;
-    outline: none;
-}
-
-/* focus bonito */
-.modal-content input:focus,
-.modal-content select:focus,
-.modal-content textarea:focus{
-    border-color: #1e66ff;
-}
-
 /* botón enviar */
 .modal-buttons button{
     width: 100%;
@@ -575,19 +548,27 @@ MEJORAS VISUALES NEXIUM V1
 /* Modal */
 
 .modal-content h2{
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--azul);
+}
 
-    color:var(--azul);
-
+.modal-content input,
+.modal-content select,
+.modal-content textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+    border-radius:8px;
+    border:1px solid #ddd;
+    font-family:inherit;
+    outline:none;
 }
 
 .modal-content input:focus,
-
 .modal-content textarea:focus,
-
 .modal-content select:focus{
-
     border-color:var(--azul);
-
 }
 
 /*======================================
