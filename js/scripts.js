@@ -115,3 +115,24 @@ enlaces.forEach(enlace=>{
     });
 
 });
+
+function abrirPoster(){
+
+    const img = document.createElement("img");
+    img.src = "imagenes/poster.jpg";
+
+    img.style.position = "fixed";
+    img.style.top = "0";
+    img.style.left = "0";
+    img.style.width = "100%";
+    img.style.height = "100%";
+    img.style.objectFit = "contain";
+    img.style.background = "rgba(0,0,0,0.9)";
+    img.style.zIndex = "999999";
+    img.style.cursor = "zoom-out";
+
+    img.onclick = () => img.remove();
+
+    document.body.appendChild(img);
+
+}
