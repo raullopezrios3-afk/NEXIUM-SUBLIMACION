@@ -118,21 +118,32 @@ enlaces.forEach(enlace=>{
 
 function abrirPoster(){
 
+    const overlay = document.createElement("div");
+
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.background = "rgba(0,0,0,0.85)";
+    overlay.style.display = "flex";
+    overlay.style.alignItems = "center";
+    overlay.style.justifyContent = "center";
+    overlay.style.zIndex = "999999";
+
     const img = document.createElement("img");
     img.src = "imagenes/poster.jpg";
 
-    img.style.position = "fixed";
-    img.style.top = "0";
-    img.style.left = "0";
-    img.style.width = "100%";
-    img.style.height = "100%";
-    img.style.objectFit = "contain";
-    img.style.background = "rgba(0,0,0,0.9)";
-    img.style.zIndex = "999999";
+    img.style.maxWidth = "90%";
+    img.style.maxHeight = "90%";
+    img.style.borderRadius = "12px";
+    img.style.boxShadow = "0 10px 30px rgba(0,0,0,0.5)";
     img.style.cursor = "zoom-out";
 
-    img.onclick = () => img.remove();
+    overlay.appendChild(img);
 
-    document.body.appendChild(img);
+    overlay.onclick = () => overlay.remove();
+
+    document.body.appendChild(overlay);
 
 }
