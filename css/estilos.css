@@ -117,25 +117,19 @@ MENÚ NEXIUM V2
     align-items:center;
 
     gap:14px;
-    padding:14px 20px;
+    padding:10px 20px;
 
-    background:linear-gradient(90deg,
-        #2E1A47,
-        #0B2E6B,
-        #0B3D91,
-        #0B2E6B,
-        #2E1A47
+    background:linear-gradient(
+        90deg,
+        #2E1A47 0%,
+        #0B2E6B 50%,
+        #0B3D91 100%
     );
-
-    background-size:400% 400%;
-
-    animation:menuGradient 12s ease infinite;
 
     border-top:1px solid #3E275C;
     box-shadow:0 3px 10px rgba(0,0,0,.08);
 
 }
-
 .menu a{
 
     display:inline-flex;
@@ -164,6 +158,7 @@ MENÚ NEXIUM V2
 
 }
 .menu a:hover{
+    filter:brightness(1.05);
 
     background:#c5a879;
 
@@ -171,6 +166,9 @@ MENÚ NEXIUM V2
 
     transform:translateY(-2px);
 
+}
+.menu:hover{
+    filter:brightness(1.05);
 }
 
 /* BOTÓN ACTIVO */
