@@ -157,3 +157,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+function verImagen(img){
+    document.getElementById('visor').style.display = 'flex';
+    document.getElementById('imgGrande').src = img.src;
+}
+
+function cerrarVisor(){
+    document.getElementById('visor').style.display = 'none';
+}
