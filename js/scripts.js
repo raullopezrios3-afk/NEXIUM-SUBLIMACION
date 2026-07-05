@@ -147,3 +147,16 @@ function abrirPoster(){
     document.body.appendChild(overlay);
 
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const btn = document.getElementById("btnPoster");
+
+    if(btn){
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            abrirPoster();
+        });
+    }
+
+});
