@@ -43,14 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =========================
        WHATSAPP HEADER
     ========================= */
-    const btnWhatsApp = document.getElementById("btnWhatsApp");
-
-if (btnWhatsApp) {
-    btnWhatsApp.addEventListener("click", function (e) {
-        e.preventDefault();
-        enviarWhatsApp();
-    });
-}
+  
 
 /* =========================
    ESC PARA CERRAR MODAL
@@ -152,7 +145,8 @@ function abrirModalCotizacion() {
         modal.style.display = "flex";
     }
 
-}/* =========================
+}
+/* =========================
    POSTER
 ========================= */
 function abrirPoster() {
