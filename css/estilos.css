@@ -63,13 +63,6 @@ HEADER
     padding: 10px 40px;
 }
 
-/* LOGO Y NOMBRE MISMO TAMAÑO */
-.logo-img,
-.nombre-img {
-    width: 95px;
-    height: auto;
-}
-
 /* CENTRO */
 .header-center {
     flex: 1;
