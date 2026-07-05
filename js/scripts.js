@@ -205,9 +205,9 @@ function cerrarVisor(event){
 }
 
 
-// =========================
-// GALERÍA TOGGLE REFACTORIZADO
-// =========================
+/* =========================
+   GALERÍA TOGGLE REFACTORIZADO
+========================= */
 
 function toggleGaleria(elemento) {
 
