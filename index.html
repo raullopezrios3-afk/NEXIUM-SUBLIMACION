@@ -121,67 +121,30 @@
                 <p>Personalización premium.</p>
             </div>
 
-            <div class="productos-grid">
+           <div class="productos-grid">
 
-    <div class="producto-card">
-        <img src="imagenes/bolsas/bolsa-1.jpeg" alt="Bolsa 1">
-        <h3>Bolsa 1</h3>
-        <button class="btn-card">Cotizar</button>
-    </div>
-
-    <div class="producto-card">
-        <img src="imagenes/bolsas/bolsa-2.jpeg" alt="Bolsa 2">
-        <h3>Bolsa 2</h3>
-        <button class="btn-card">Cotizar</button>
-    </div>
-
-    <div class="producto-card">
-        <img src="imagenes/bolsas/bolsa-3.jpeg" alt="Bolsa 3">
-        <h3>Bolsa 3</h3>
-        <button class="btn-card">Cotizar</button>
-    </div>
-
-    <div class="producto-card">
-        <img src="imagenes/bolsas/bolsa-4.jpeg" alt="Bolsa 4">
-        <h3>Bolsa 4</h3>
-        <button class="btn-card">Cotizar</button>
-    </div>
-
-    <div class="producto-card">
-        <img src="imagenes/bolsas/bolsa-5.jpeg" alt="Bolsa 5">
-        <h3>Bolsa 5</h3>
-        <button class="btn-card">Cotizar</button>
-    </div>
-
-    <div class="producto-card">
-        <img src="imagenes/bolsas/bolsa-6.jpeg" alt="Bolsa 6">
-        <h3>Bolsa 6</h3>
-        <button class="btn-card">Cotizar</button>
-    </div>
-
-    <div class="producto-card">
-        <img src="imagenes/bolsas/bolsa-7.jpeg" alt="Bolsa 7">
-        <h3>Bolsa 7</h3>
-        <button class="btn-card">Cotizar</button>
-    </div>
-
-    <div class="producto-card">
-        <img src="imagenes/bolsas/bolsa-8.jpeg" alt="Bolsa 8">
-        <h3>Bolsa 8</h3>
-        <button class="btn-card">Cotizar</button>
-    </div>
-
-    <div class="producto-card">
-        <img src="imagenes/bolsas/bolsa-9.jpeg" alt="Bolsa 9">
-        <h3>Bolsa 9</h3>
-        <button class="btn-card">Cotizar</button>
+    <div class="producto-card" onclick="abrirGaleria()">
+        <h2>BOLSAS Y OTROS</h2>
+        <p>Ver catálogo</p>
     </div>
 
 </div>
-        </div>
 
-    </div>
 
+<!-- GALERÍA (FUERA del grid) -->
+<div id="galeria" class="galeria">
+
+    <img src="imagenes/bolsas/bolsa-1.jpeg" onclick="verImagen(this)">
+    <img src="imagenes/bolsas/bolsa-2.jpeg" onclick="verImagen(this)">
+    <img src="imagenes/bolsas/bolsa-3.jpeg" onclick="verImagen(this)">
+    <img src="imagenes/bolsas/bolsa-4.jpeg" onclick="verImagen(this)">
+    <img src="imagenes/bolsas/bolsa-5.jpeg" onclick="verImagen(this)">
+    <img src="imagenes/bolsas/bolsa-6.jpeg" onclick="verImagen(this)">
+    <img src="imagenes/bolsas/bolsa-7.jpeg" onclick="verImagen(this)">
+    <img src="imagenes/bolsas/bolsa-8.jpeg" onclick="verImagen(this)">
+    <img src="imagenes/bolsas/bolsa-9.jpeg" onclick="verImagen(this)">
+
+</div>
 </section>
 
 
@@ -328,6 +291,11 @@
     emailjs.init("6IL4uM1rVoBl9qgrB");
 })();
 </script>
+
+<!-- 🔥 VISOR DE IMAGENES-->
+<div id="visor" class="visor" onclick="cerrarVisor()">
+    <img id="imgGrande">
+</div>
     
 </body>
 </html>
