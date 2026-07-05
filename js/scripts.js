@@ -137,15 +137,17 @@ document.addEventListener("keydown",function(e){
 /* =========================
    ABRIR MODAL
 ========================= */
-function abrirModalCotizacion() {
+function abrirModalCotizacion() {'{'}
 
-    const modal = document.getElementById("modalCotizacion");
+const modal = document.getElementById("modalCotizacion");
 
-    if (modal) {
-        modal.style.display = "flex";
-    }
+if (modal) {'{'}
 
-}
+modal.style.display = "flex";
+
+{'}'}
+
+{'}'}
 
 /* =========================
    POSTER
