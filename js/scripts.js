@@ -273,7 +273,6 @@ function cerrarVisor(e) {
     document.getElementById("visor").style.display = "none";
 }
 
-
 /* EXPOSICIÓN GLOBAL (IMPORTANTE PARA HTML onclick) */
 window.cerrarModalCotizacion = cerrarModalCotizacion;
 window.enviarCotizacionCorreo = enviarCotizacionCorreo;
