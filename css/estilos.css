@@ -124,12 +124,11 @@ MENÚ NEXIUM V2
         270deg,
         #2E1A47,
         #0B2E6B,
-        #0B3D91,
-        #C5A879
+        #0B3D91
     );
 
-    background-size: 400% 400%;
-    animation: menuGradient 8s ease infinite;
+    background-size: 300% 300%;
+    animation: menuGradient 12s ease-in-out infinite;
 
     border-top:1px solid #3E275C;
 
@@ -679,20 +678,16 @@ footer p{
 ANIMACIÓN DEGRADADO MENÚ NEXIUM
 ======================================*/
 
-@keyframes menuGradient{
-
-    0%{
-        background-position:0% 50%;
+@keyframes menuGradient {
+    0% {
+        background-position: 0% 50%;
     }
-
-    50%{
-        background-position:100% 50%;
+    50% {
+        background-position: 70% 50%;
     }
-
-    100%{
-        background-position:0% 50%;
+    100% {
+        background-position: 0% 50%;
     }
-
 }
 
 .slider{
