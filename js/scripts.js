@@ -216,3 +216,20 @@ function toggleGaleria(elemento){
     card.classList.toggle("active");
 
 }
+
+document.addEventListener("click", function (e) {
+
+    const card = e.target.closest(".producto-card");
+
+    const clickedInsideCard = card !== null;
+    const clickedHeader = e.target.closest(".card-header");
+
+    // Si NO hiciste click dentro de una tarjeta abierta → cerrar todo
+    if (!clickedInsideCard || !clickedHeader) {
+
+        document.querySelectorAll(".producto-card.active")
+            .forEach(c => c.classList.remove("active"));
+
+    }
+
+});
