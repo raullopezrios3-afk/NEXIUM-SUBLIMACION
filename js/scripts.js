@@ -280,7 +280,8 @@ function cerrarVisor(e) {
    EXPORT GLOBAL (SEGURO)
 ========================= */
 
-    window.addEventListener("load", () => {
+ window.addEventListener("load", () => {
+
     window.abrirPoster = abrirPoster;
     window.enviarWhatsApp = enviarWhatsApp;
     window.abrirVisor = abrirVisor;
@@ -288,4 +289,6 @@ function cerrarVisor(e) {
     window.cerrarVisor = cerrarVisor;
     window.cerrarModalCotizacion = cerrarModalCotizacion;
     window.abrirModalCotizacion = abrirModalCotizacion;
+    window.enviarCotizacionCorreo = enviarCotizacionCorreo;
+
 });
