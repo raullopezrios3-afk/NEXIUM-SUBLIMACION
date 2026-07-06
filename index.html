@@ -274,30 +274,22 @@
 
     </div>
 
-    <!-- ========================= -->
-    <!-- VIDEO -->
-    <!-- ========================= -->
+ <!-- VIDEO -->
+<div class="producto-card">
 
-    <div class="producto-card">
+    <h3>Video</h3>
 
-        <h3>Video</h3>
+    <img
+        class="card-portada"
+        src="imagenes/video/video-1.jpeg"
+        alt="Video">
 
-        <img class="card-portada"
-             src="imagenes/video/video-1.jpeg"
-             alt="Video">
+    <a href="#" class="btn-card" onclick="abrirVideo(event)">
+        Ver Presentación
+    </a>
 
-        <a href="#videos" class="btn-card">Ver Presentación</a>
-
-        <div class="video-contenedor">
-
-            <video controls width="100%">
-                <source src="videos/presentacion.mp4" type="video/mp4">
-            </video>
-
-        </div>
-
-    </div>
-
+</div>
+          
 </div>
         
 </div> <!-- contenedor -->
@@ -409,6 +401,20 @@
     <img id="imgGrande">
 
     <button class="next" onclick="cambiarImagen(1, event)">❯</button>
+
+</div>
+
+<!-- =========================
+VISOR DE VIDEO
+========================= -->
+
+<div id="visorVideo" class="visor">
+
+    <span class="cerrar" onclick="cerrarVideo(event)">×</span>
+
+    <video id="videoGrande" controls>
+        <source src="video/video-1.mp4" type="video/mp4">
+    </video>
 
 </div>
     
