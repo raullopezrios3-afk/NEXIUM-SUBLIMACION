@@ -311,17 +311,16 @@ function cerrarModalCotizacion() {
 VISOR VIDEO
 =========================*/
 
-const visorVideo = document.getElementById("visorVideo");
-const videoGrande = document.getElementById("videoGrande");
-
 function abrirVideo(e){
 
-    e.preventDefault();
+    if(e) e.preventDefault();
+
+    const visorVideo=document.getElementById("visorVideo");
+    const videoGrande=document.getElementById("videoGrande");
 
     visorVideo.style.display="flex";
 
     videoGrande.currentTime=0;
-
     videoGrande.play();
 
 }
@@ -330,37 +329,53 @@ function cerrarVideo(e){
 
     if(e) e.stopPropagation();
 
+    const visorVideo=document.getElementById("visorVideo");
+    const videoGrande=document.getElementById("videoGrande");
+
     visorVideo.style.display="none";
 
     videoGrande.pause();
-
     videoGrande.currentTime=0;
 
 }
 
-visorVideo.addEventListener("click",function(e){
+window.addEventListener("DOMContentLoaded",()=>{
 
-    if(e.target===visorVideo){
+    const visorVideo=document.getElementById("visorVideo");
 
-        cerrarVideo();
+    if(visorVideo){
+
+        visorVideo.addEventListener("click",function(e){
+
+            if(e.target===visorVideo){
+
+                cerrarVideo();
+
+            }
+
+        });
 
     }
 
 });
-
 /* =========================
    EXPORT GLOBAL (SEGURO)
 ========================= */
 
- window.addEventListener("load", () => {
+window.addEventListener("load",()=>{
 
-    window.abrirPoster = abrirPoster;
-    window.enviarWhatsApp = enviarWhatsApp;
-    window.abrirVisor = abrirVisor;
-    window.cambiarImagen = cambiarImagen;
-    window.cerrarVisor = cerrarVisor;
-    window.cerrarModalCotizacion = cerrarModalCotizacion;
-    window.abrirModalCotizacion = abrirModalCotizacion;
-    window.enviarCotizacionCorreo = enviarCotizacionCorreo;
+    window.abrirPoster=abrirPoster;
+    window.enviarWhatsApp=enviarWhatsApp;
+
+    window.abrirVisor=abrirVisor;
+    window.cambiarImagen=cambiarImagen;
+    window.cerrarVisor=cerrarVisor;
+
+    window.abrirVideo=abrirVideo;
+    window.cerrarVideo=cerrarVideo;
+
+    window.cerrarModalCotizacion=cerrarModalCotizacion;
+    window.abrirModalCotizacion=abrirModalCotizacion;
+    window.enviarCotizacionCorreo=enviarCotizacionCorreo;
 
 });
