@@ -867,3 +867,20 @@ footer p{
     font-weight: bold;
     letter-spacing: .5px;
 }
+
+/*=========================
+VISOR VIDEO
+=========================*/
+
+#visorVideo video{
+
+    width:90%;
+    max-width:900px;
+
+    max-height:80vh;
+
+    border-radius:15px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+
+}
