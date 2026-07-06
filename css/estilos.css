@@ -839,10 +839,9 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
 }
 
 .contacto-box{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 430px;
+    max-width:520px;
+    margin-left:250px;
+    text-align:left;
 }
 
 .contacto-box .titulo-seccion{
