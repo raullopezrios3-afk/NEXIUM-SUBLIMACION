@@ -194,10 +194,44 @@ SLIDER
 PRODUCTOS
 ========================= */
 
-.productos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+.productos-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4, 1fr);
+
+    gap:25px;
+
+    align-items:start;
+
+}
+
+.producto-card{
+
+    min-height:520px;
+
+}
+
+/* Tablet */
+@media (max-width:1200px){
+
+    .productos-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* Celular */
+@media (max-width:768px){
+
+    .productos-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
 }
 
 /* =========================
