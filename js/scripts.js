@@ -307,6 +307,47 @@ function cerrarModalCotizacion() {
     if (modal) modal.style.display = "none";
 }
 
+/*=========================
+VISOR VIDEO
+=========================*/
+
+const visorVideo = document.getElementById("visorVideo");
+const videoGrande = document.getElementById("videoGrande");
+
+function abrirVideo(e){
+
+    e.preventDefault();
+
+    visorVideo.style.display="flex";
+
+    videoGrande.currentTime=0;
+
+    videoGrande.play();
+
+}
+
+function cerrarVideo(e){
+
+    if(e) e.stopPropagation();
+
+    visorVideo.style.display="none";
+
+    videoGrande.pause();
+
+    videoGrande.currentTime=0;
+
+}
+
+visorVideo.addEventListener("click",function(e){
+
+    if(e.target===visorVideo){
+
+        cerrarVideo();
+
+    }
+
+});
+
 /* =========================
    EXPORT GLOBAL (SEGURO)
 ========================= */
