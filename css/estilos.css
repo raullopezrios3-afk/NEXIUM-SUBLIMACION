@@ -193,17 +193,11 @@ SLIDER
 /* =========================
 PRODUCTOS
 ========================= */
-
 .productos-grid{
-
     display:grid;
-
     grid-template-columns:repeat(4, 1fr);
-
     gap:25px;
-
     align-items:start;
-
 }
 
 .producto-card{
