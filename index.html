@@ -284,12 +284,14 @@
         src="imagenes/video/video-1.jpeg"
         alt="Video">
 
-    <a href="#" class="btn-card" onclick="abrirVideo(event)">
+    <a
+        href="#"
+        class="btn-card"
+        onclick="abrirVideo(event)">
         Ver Presentación
     </a>
 
-</div>
-          
+</div>          
 </div>
         
 </div> <!-- contenedor -->
@@ -392,6 +394,19 @@
 </script>
 
 <!-- 🔥 VISOR DE IMAGENES -->
+<div id="visor" class="visor">
+
+    <span class="cerrar" onclick="cerrarVisor(event)">×</span>
+
+    <button class="prev" onclick="cambiarImagen(-1, event)">❮</button>
+
+    <img id="imgGrande">
+
+    <button class="next" onclick="cambiarImagen(1, event)">❯</button>
+
+</div>
+
+    <!-- 🔥 VISOR DE IMAGENES -->
 <div id="visor" class="visor">
 
     <span class="cerrar" onclick="cerrarVisor(event)">×</span>
