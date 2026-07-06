@@ -488,13 +488,18 @@ MEJORAS VISUALES NEXIUM V1
 
     text-align:center;
 
-    padding-bottom:20px;
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    min-height:420px;
 
 }
-
 .producto-card h3{
-
-    margin:20px 15px 10px;
 
     color:var(--azul);
 
@@ -502,21 +507,19 @@ MEJORAS VISUALES NEXIUM V1
 
     font-weight:700;
 
-    text-align:center;
+    line-height:1.35;
+
+    margin:0 0 20px;
 
 }
 
 .producto-card p{
 
-    margin:0 20px 20px;
-
     color:var(--texto);
 
-    text-align:center;
+    font-size:18px;
 
-    font-size:17px;
-
-    line-height:1.5;
+    margin-bottom:20px;
 
 }
 
@@ -610,7 +613,9 @@ MEJORAS VISUALES NEXIUM V1
 
     display:inline-block;
 
-    margin-top:20px;
+    margin-top:auto;
+
+    align-self:center;
 
     padding:14px 35px;
 
@@ -635,7 +640,6 @@ MEJORAS VISUALES NEXIUM V1
     transform:translateY(-2px);
 
 }
-
 .producto-card:hover{
 
     transform:translateY(-8px);
