@@ -873,16 +873,17 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
 
 #contacto .contenedor{
     width: 90%;
-    max-width: 1200px;
+    max-width: 600px;
     margin: 0 auto;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .contacto-box{
+    width:100%;
     max-width:520px;
-    margin-left:300px;
+    margin-left:0;
     text-align:left;
 }
 
