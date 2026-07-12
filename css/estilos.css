@@ -405,25 +405,25 @@ NO MODIFICA LA VERSIÓN ESCRITORIO
         gap:6px;
     }
 
-   .header-left{
+  .header-left{
     display:flex;
     flex-direction:row;
     align-items:center;
     justify-content:center;
-    gap:10px;
+    gap:8px;
 }
 
-
+/* LOGO Y NOMBRE EN UNA SOLA FILA EN CELULAR */
 .logo-img{
-    width:80px;
+    width:70px;
     height:auto;
 }
-
 
 .nombre-img{
-    width:115px;
+    width:120px;
     height:auto;
 }
+    
     .header-center{
         flex:none;
         width:100%;
