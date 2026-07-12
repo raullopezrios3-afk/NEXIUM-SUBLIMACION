@@ -916,6 +916,13 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
     font-size: 20px;
     font-weight: 600;
     line-height: 1.4;
+
+    overflow-wrap: normal;
+    word-break: keep-all;
+}
+
+.datos-contacto a{
+    white-space: nowrap;
 }
 
 /* =========================
