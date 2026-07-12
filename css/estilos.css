@@ -405,16 +405,25 @@ NO MODIFICA LA VERSIÓN ESCRITORIO
         gap:6px;
     }
 
-    .header-left{
-        align-items:center;
-    }
+   .header-left{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+}
 
-    .logo-img,
-    .nombre-img{
-        width:95px;
-        height:auto;
-    }
 
+.logo-img{
+    width:80px;
+    height:auto;
+}
+
+
+.nombre-img{
+    width:115px;
+    height:auto;
+}
     .header-center{
         flex:none;
         width:100%;
@@ -462,10 +471,14 @@ NO MODIFICA LA VERSIÓN ESCRITORIO
 
 @media (max-width:480px){
 
-    .logo-img,
-    .nombre-img{
-        width:110px;
-    }
+   .logo-img{
+    width:70px;
+}
+
+
+.nombre-img{
+    width:100px;
+}
 
     .eslogan{
         font-size:16px;
