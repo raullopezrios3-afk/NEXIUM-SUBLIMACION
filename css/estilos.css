@@ -921,7 +921,6 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
     flex-direction: column;
     gap: 18px;
 }
-
 .datos-contacto p{
     display: flex;
     align-items: center;
@@ -934,7 +933,12 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
     font-weight: 600;
     line-height: 1.4;
 
-    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.datos-contacto .correo{
+    white-space: nowrap;
+    display: inline-block;
 }
 
 .datos-contacto p a{
