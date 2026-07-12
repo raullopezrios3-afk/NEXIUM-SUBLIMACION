@@ -481,7 +481,9 @@ NO MODIFICA LA VERSIÓN ESCRITORIO
 }
 
     .eslogan{
-        font-size:16px;
+        font-size:12px;
+        white-space: nowrap;
+        letter-spacing: 0.5px;
     }
 
     .btn{
