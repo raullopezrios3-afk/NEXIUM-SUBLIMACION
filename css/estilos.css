@@ -496,6 +496,10 @@ NO MODIFICA LA VERSIÓN ESCRITORIO
         font-size:14px;
     }
 
+.datos-contacto .correo{
+        font-size:15px;
+   }
+
 }
 
 @media(max-width:480px){
@@ -504,7 +508,7 @@ NO MODIFICA LA VERSIÓN ESCRITORIO
         font-size:16px;
         gap:10px;
     }
-
+    
 }
 
 /*======================================
@@ -898,6 +902,10 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
     box-shadow:0 10px 25px rgba(0,0,0,.12);
 
     text-align:left;
+}
+/* CORREO CONTACTO */
+.datos-contacto .correo{
+    white-space: nowrap;
 }
 
 .contacto-box .titulo-seccion{
