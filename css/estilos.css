@@ -866,8 +866,8 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
 ========================= */
 
 #contacto{
-    background: var(--blanco);
-    padding: 120px 0 70px;
+    background: transparent;
+    padding: 60px 0;
     margin-top: 60px;
 }
 
