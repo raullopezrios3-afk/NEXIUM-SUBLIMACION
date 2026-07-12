@@ -498,6 +498,15 @@ NO MODIFICA LA VERSIÓN ESCRITORIO
 
 }
 
+@media(max-width:480px){
+
+    .datos-contacto p{
+        font-size:16px;
+        gap:10px;
+    }
+
+}
+
 /*======================================
 MEJORAS VISUALES NEXIUM V1
 (NO AFECTA HEADER)
@@ -917,12 +926,13 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
     font-weight: 600;
     line-height: 1.4;
 
-    overflow-wrap: normal;
-    word-break: keep-all;
+    flex-wrap: nowrap;
 }
 
-.datos-contacto a{
+.datos-contacto p a{
     white-space: nowrap;
+    word-break: keep-all;
+    overflow-wrap: normal;
 }
 
 /* =========================
