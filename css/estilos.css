@@ -948,6 +948,17 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
     overflow-wrap: normal;
 }
 
+.icono-contacto{
+    margin-right:8px;
+    flex-shrink:0;
+}
+
+.datos-contacto .correo{
+    white-space:nowrap;
+    display:inline-block;
+    flex-shrink:0;
+}
+
 /* =========================
    FOOTER
 ========================= */
