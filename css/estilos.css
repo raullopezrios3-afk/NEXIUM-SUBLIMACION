@@ -933,12 +933,13 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
     font-weight: 600;
     line-height: 1.4;
 
-    white-space: nowrap;
+    flex-wrap: nowrap;
 }
 
 .datos-contacto .correo{
     white-space: nowrap;
     display: inline-block;
+    flex-shrink: 0;
 }
 
 .datos-contacto p a{
