@@ -1177,3 +1177,37 @@ NEXIUM DESIGN STUDIO
     border-radius:18px;
 
 }
+
+/*======================================
+PREVIEW DEL PRODUCTO
+======================================*/
+
+.preview-producto{
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+#productoActual{
+
+    max-width:380px;
+
+    max-height:450px;
+
+    transition:.35s;
+
+    user-select:none;
+
+    pointer-events:none;
+
+}
