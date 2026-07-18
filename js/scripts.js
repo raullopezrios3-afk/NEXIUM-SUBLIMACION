@@ -445,6 +445,50 @@ botonesProducto.forEach(boton=>{
 
 });
 
+/*======================================
+CARGAR DISEÑO DEL CLIENTE
+======================================*/
+
+const subirDiseno=document.getElementById("subirDiseno");
+
+const disenoUsuario=document.getElementById("disenoUsuario");
+
+
+if(subirDiseno && disenoUsuario){
+
+
+    subirDiseno.addEventListener("change",function(){
+
+
+        const archivo=this.files[0];
+
+
+        if(!archivo) return;
+
+
+        const lector=new FileReader();
+
+
+        lector.onload=function(e){
+
+
+            disenoUsuario.src=e.target.result;
+
+            disenoUsuario.style.display="block";
+
+
+        };
+
+
+        lector.readAsDataURL(archivo);
+
+
+    });
+
+
+}
+
+
 });
 
 /* =========================
