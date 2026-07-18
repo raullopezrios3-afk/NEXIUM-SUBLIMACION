@@ -1051,9 +1051,7 @@ NEXIUM DESIGN STUDIO
 .studio-box{
 
     width:90%;
-
     max-width:1200px;
-
     height:85vh;
 
     background:#fff;
@@ -1064,7 +1062,7 @@ NEXIUM DESIGN STUDIO
 
     position:relative;
 
-    overflow:hidden;
+    overflow:visible;   /* ← antes era hidden */
 
 }
 
@@ -1072,13 +1070,49 @@ NEXIUM DESIGN STUDIO
 
     position:absolute;
 
-    right:25px;
+    top:15px;
 
-    top:20px;
+    right:15px;
 
-    font-size:38px;
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#0B3D91;
+
+    color:#fff;
+
+    border-radius:50%;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    line-height:1;
 
     cursor:pointer;
+
+    z-index:999999;
+
+    transition:.30s;
+
+    user-select:none;
+
+}
+
+.cerrar-studio:hover{
+
+    background:#C5A879;
+
+    color:#0B3D91;
+
+    transform:rotate(90deg);
 
 }
 
