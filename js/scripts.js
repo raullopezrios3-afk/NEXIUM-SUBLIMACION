@@ -358,6 +358,55 @@ window.addEventListener("DOMContentLoaded",()=>{
     }
 
 });
+
+/*=========================
+NEXIUM DESIGN STUDIO
+=========================*/
+
+window.addEventListener("DOMContentLoaded",()=>{
+
+    const btn=document.getElementById("btnStudio");
+
+    const modal=document.getElementById("modalStudio");
+
+    const cerrar=document.getElementById("cerrarStudio");
+
+    if(!btn || !modal || !cerrar) return;
+
+    btn.addEventListener("click",()=>{
+
+        modal.style.display="flex";
+
+    });
+
+    cerrar.addEventListener("click",()=>{
+
+        modal.style.display="none";
+
+    });
+
+    modal.addEventListener("click",(e)=>{
+
+        if(e.target===modal){
+
+            modal.style.display="none";
+
+        }
+
+    });
+
+    document.addEventListener("keydown",(e)=>{
+
+        if(e.key==="Escape"){
+
+            modal.style.display="none";
+
+        }
+
+    });
+
+});
+
 /* =========================
    EXPORT GLOBAL (SEGURO)
 ========================= */
