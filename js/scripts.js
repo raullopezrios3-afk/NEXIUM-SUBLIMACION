@@ -405,6 +405,46 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     });
 
+   /*======================================
+SELECCIÓN DE PRODUCTO
+======================================*/
+
+const botonesProducto=document.querySelectorAll(".studio-item");
+
+const productoActual=document.getElementById("productoActual");
+
+botonesProducto.forEach(boton=>{
+
+    boton.addEventListener("click",function(){
+
+        const producto=this.dataset.producto;
+
+        switch(producto){
+
+            case "taza":
+
+                productoActual.src="configurador/productos/tazas/taza-blanca.png";
+
+            break;
+
+            case "playera":
+
+                productoActual.src="configurador/productos/playeras/playera-blanca.png";
+
+            break;
+
+            case "termo":
+
+                productoActual.src="configurador/productos/termos/termo-blanco.png";
+
+            break;
+
+        }
+
+    });
+
+});
+
 });
 
 /* =========================
