@@ -983,3 +983,163 @@ VISOR VIDEO
     box-shadow:0 20px 40px rgba(0,0,0,.4);
 
 }
+
+/*======================================
+NEXIUM DESIGN STUDIO
+======================================*/
+
+.design-studio{
+
+    padding:70px 0;
+
+    text-align:center;
+
+}
+
+.btn-studio{
+
+    background:#0B3D91;
+
+    color:#fff;
+
+    border:none;
+
+    padding:18px 40px;
+
+    border-radius:15px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.btn-studio:hover{
+
+    background:#0B2E6B;
+
+    transform:translateY(-4px);
+
+}
+
+.modal-studio{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(6px);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999999;
+
+}
+
+.studio-box{
+
+    width:90%;
+
+    max-width:1200px;
+
+    height:85vh;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.cerrar-studio{
+
+    position:absolute;
+
+    right:25px;
+
+    top:20px;
+
+    font-size:38px;
+
+    cursor:pointer;
+
+}
+
+.studio-box h2{
+
+    color:#0B3D91;
+
+    margin-bottom:10px;
+
+}
+
+.studio-contenido{
+
+    display:grid;
+
+    grid-template-columns:250px 1fr;
+
+    gap:30px;
+
+    margin-top:30px;
+
+}
+
+.studio-menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.studio-item{
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#0B3D91;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+.studio-preview{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:2px dashed #ccc;
+
+    border-radius:18px;
+
+}
