@@ -490,29 +490,40 @@ VISOR DE VIDEO
 
     <hr>
 
-    <h3>Tu diseño</h3>
+    <label for="subirDiseno" class="upload-box">
 
-    <input
-        type="file"
-        id="subirDiseno"
-        accept="image/png,image/jpeg,image/webp">
+    <strong>Sube tu diseño</strong><br>
 
-</div>
+    Formatos permitidos:<br>
 
-           <div class="studio-preview">
+    JPG • JPEG • PNG
+
+</label>
+
+<input
+    type="file"
+    id="subirDiseno"
+    accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+    hidden>
+
+ </div>  
+        
+    <div class="studio-preview">
 
     <div class="preview-producto">
 
         <!-- Producto -->
-        <img
-            id="productoActual"
-            class="producto-base"
-            src="configurador/productos/tazas/taza-blanca.png">
+       <img
+    id="productoActual"
+    class="producto-base"
+    src="configurador/productos/tazas/taza-blanca.png"
+    alt="Producto">
 
         <!-- Diseño del cliente -->
-        <img
-            id="disenoUsuario"
-            class="diseno-usuario">
+       <img
+    id="disenoUsuario"
+    class="diseno-usuario"
+    alt="Diseño del cliente">
 
     </div>
 
