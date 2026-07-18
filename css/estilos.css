@@ -984,6 +984,34 @@ VISOR VIDEO
 
 }
 
+/*=========================
+DISEÑO DEL CLIENTE
+=========================*/
+
+.preview-producto{
+
+    position:relative;
+
+}
+
+.diseno-usuario{
+
+    display:none;
+
+    position:absolute;
+
+    width:180px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    pointer-events:none;
+
+}
+
 /*======================================
 NEXIUM DESIGN STUDIO
 ======================================*/
