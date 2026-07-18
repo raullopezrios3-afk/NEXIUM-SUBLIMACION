@@ -1239,3 +1239,43 @@ PREVIEW DEL PRODUCTO
     pointer-events:none;
 
 }
+
+/*=========================
+BOTÓN SUBIR DISEÑO
+=========================*/
+
+.upload-box{
+
+    display:block;
+
+    margin-top:20px;
+
+    padding:18px;
+
+    border:2px dashed #0B3D91;
+
+    border-radius:12px;
+
+    background:#F5F5F5;
+
+    color:#0B3D91;
+
+    text-align:center;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+
+.upload-box:hover{
+
+    background:#0B3D91;
+
+    color:#FFFFFF;
+
+    border-color:#C5A879;
+
+}
