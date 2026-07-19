@@ -1224,23 +1224,20 @@ NEXIUM DESIGN STUDIO
 
 .studio-preview{
 
-    flex:0 0 55%;
-
+    width:55%;
     height:100%;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
     border:2px dashed #ccc;
-
     border-radius:18px;
 
     overflow:hidden;
 
 }
+
 /*======================================
 PREVIEW DEL PRODUCTO
 ======================================*/
