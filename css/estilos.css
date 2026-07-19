@@ -1098,7 +1098,7 @@ NEXIUM DESIGN STUDIO
 
     position:relative;
 
-    overflow:visible;
+   overflow:hidden;
 
     display:flex;
     flex-direction:column;
