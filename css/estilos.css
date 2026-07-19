@@ -1072,7 +1072,9 @@ NEXIUM DESIGN STUDIO
 
     justify-content:center;
 
-    align-items:center;
+    align-items:flex-start;
+
+    padding-top:40px;
 
     z-index:9999999;
 
@@ -1190,6 +1192,8 @@ NEXIUM DESIGN STUDIO
 
     gap:12px;
 
+    min-height:0;
+
     overflow-y:auto;
 
     padding-right:8px;
@@ -1258,11 +1262,11 @@ PREVIEW DEL PRODUCTO
 
 #productoActual{
 
-    width:85%;
+    width:95%;
 
-    max-width:85%;
+    max-width:95%;
 
-    max-height:85%;
+    max-height:95%;
 
     object-fit:contain;
 
