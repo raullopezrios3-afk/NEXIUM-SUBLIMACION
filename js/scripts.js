@@ -405,6 +405,49 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     });
 
+   /*======================================
+ÁREA DE IMPRESIÓN POR PRODUCTO
+======================================*/
+
+const areaImpresion = document.getElementById("areaImpresion");
+
+function actualizarAreaImpresion(producto){
+
+    switch(producto){
+
+        case "taza":
+
+            areaImpresion.style.width="38%";
+            areaImpresion.style.height="30%";
+            areaImpresion.style.left="50%";
+            areaImpresion.style.top="46%";
+
+        break;
+
+
+        case "playera":
+
+            areaImpresion.style.width="32%";
+            areaImpresion.style.height="46%";
+            areaImpresion.style.left="50%";
+            areaImpresion.style.top="39%";
+
+        break;
+
+
+        case "termo":
+
+            areaImpresion.style.width="22%";
+            areaImpresion.style.height="48%";
+            areaImpresion.style.left="50%";
+            areaImpresion.style.top="44%";
+
+        break;
+
+    }
+
+}
+
   
    /*======================================
 SELECCIÓN DE PRODUCTO
@@ -422,23 +465,28 @@ botonesProducto.forEach(boton=>{
 
         switch(producto){
 
-            case "taza":
+           case "taza":
 
-                productoActual.src="configurador/productos/tazas/taza-blanca.png";
+    productoActual.src="configurador/productos/tazas/taza-blanca.png";
 
-            break;
+    actualizarAreaImpresion("taza");
 
-            case "playera":
+break;
 
-                productoActual.src="configurador/productos/playeras/playera-blanca.png";
+           case "playera":
 
-            break;
+    productoActual.src="configurador/productos/playeras/playera-blanca.png";
 
+    actualizarAreaImpresion("playera");
+
+break;
             case "termo":
 
-                productoActual.src="configurador/productos/termos/termo-blanco.png";
+    productoActual.src="configurador/productos/termos/termo-blanco.png";
 
-            break;
+    actualizarAreaImpresion("termo");
+
+break;
 
         }
 
