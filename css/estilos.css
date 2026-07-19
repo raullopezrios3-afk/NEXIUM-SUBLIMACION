@@ -1191,7 +1191,10 @@ NEXIUM DESIGN STUDIO
 
     gap:15px;
 
+    overflow-y:auto;
+
 }
+
 .studio-item{
 
     padding:18px;
