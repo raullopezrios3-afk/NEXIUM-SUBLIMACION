@@ -1100,7 +1100,10 @@ NEXIUM DESIGN STUDIO
 
     position:relative;
 
-    overflow:visible;   /* ← antes era hidden */
+    overflow:visible;
+
+    display:flex;
+    flex-direction:column;
 
 }
 
@@ -1165,6 +1168,8 @@ NEXIUM DESIGN STUDIO
 .studio-contenido{
 
     display:flex;
+
+    width:100%;
 
     gap:30px;
 
