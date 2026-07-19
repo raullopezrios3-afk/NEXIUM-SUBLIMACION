@@ -1088,20 +1088,18 @@ NEXIUM DESIGN STUDIO
 
     width:90%;
     max-width:1200px;
-    height:85vh;
+
+    height:75vh;
 
     background:#fff;
 
     border-radius:20px;
 
-    padding:30px;
+    padding:25px;
 
     position:relative;
 
-   overflow:hidden;
-
-    display:flex;
-    flex-direction:column;
+    overflow:hidden;
 
 }
 
@@ -1167,13 +1165,11 @@ NEXIUM DESIGN STUDIO
 
     display:flex;
 
-    width:100%;
+    gap:25px;
 
-    gap:30px;
+    margin-top:20px;
 
-    margin-top:30px;
-
-    height:calc(100% - 90px);
+    height:calc(100% - 110px);
 
     overflow:hidden;
 
@@ -1189,9 +1185,11 @@ NEXIUM DESIGN STUDIO
 
     flex-direction:column;
 
-    gap:15px;
+    gap:12px;
 
     overflow-y:auto;
+
+    padding-right:8px;
 
 }
 
@@ -1217,6 +1215,8 @@ NEXIUM DESIGN STUDIO
 
     flex:1;
 
+    height:100%;
+
     display:flex;
 
     justify-content:center;
@@ -1227,7 +1227,7 @@ NEXIUM DESIGN STUDIO
 
     border-radius:18px;
 
-    min-height:500px;
+    overflow:hidden;
 
 }
 
@@ -1253,15 +1253,13 @@ PREVIEW DEL PRODUCTO
 
 #productoActual{
 
-    max-width:380px;
+    width:auto;
 
-    max-height:450px;
+    max-width:70%;
 
-    transition:.35s;
+    max-height:70%;
 
-    user-select:none;
-
-    pointer-events:none;
+    object-fit:contain;
 
 }
 
