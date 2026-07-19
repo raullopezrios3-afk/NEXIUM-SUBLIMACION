@@ -1183,9 +1183,11 @@ NEXIUM DESIGN STUDIO
 
     gap:12px;
 
-    overflow:visible;
+    overflow-y:auto;
 
     padding-right:8px;
+
+    padding-bottom:30px;
 
 }
 
@@ -1251,9 +1253,9 @@ PREVIEW DEL PRODUCTO
 
     width:auto;
 
-    max-width:70%;
+    max-width:85%;
 
-    max-height:70%;
+    max-height:85%;
 
     object-fit:contain;
 
