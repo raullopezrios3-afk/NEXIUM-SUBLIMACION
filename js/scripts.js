@@ -405,6 +405,44 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     });
 
+   .area-impresion{
+
+    position:absolute;
+
+    width:140px;
+
+    height:140px;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    border:1px dashed rgba(0,0,255,.25); /* solo para pruebas */
+
+}
+
+.diseno-usuario{
+
+    max-width:100%;
+
+    max-height:100%;
+
+    object-fit:contain;
+
+    display:none;
+
+}
+
    /*======================================
 SELECCIÓN DE PRODUCTO
 ======================================*/
