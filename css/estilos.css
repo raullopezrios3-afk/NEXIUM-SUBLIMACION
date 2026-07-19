@@ -1093,7 +1093,10 @@ NEXIUM DESIGN STUDIO
 
     position:relative;
 
-    overflow:auto;
+    display:flex;
+    flex-direction:column;
+
+    overflow:hidden;
 
 }
 
@@ -1165,7 +1168,9 @@ NEXIUM DESIGN STUDIO
 
     margin-top:10px;
 
-    height:calc(100% - 90px);
+    flex:1;
+
+    min-height:0;
 
     overflow:hidden;
 
