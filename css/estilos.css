@@ -1196,7 +1196,7 @@ NEXIUM DESIGN STUDIO
 
     min-height:0;
 
-    overflow-y:auto;
+    overflow-y:hidden;
 
     padding-right:8px;
 
@@ -1224,7 +1224,7 @@ NEXIUM DESIGN STUDIO
 
 .studio-preview{
 
-    flex:1;
+    width:75%;
 
     height:100%;
 
