@@ -1343,3 +1343,17 @@ BOTÓN SUBIR DISEÑO
    border:none;
 
 }
+
+/*======================================
+CONTROL DE TAMAÑO
+======================================*/
+
+#tamanoDiseno{
+
+    width:100%;
+
+    margin-top:10px;
+
+    cursor:pointer;
+
+}
