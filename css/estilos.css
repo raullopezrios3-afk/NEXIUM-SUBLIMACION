@@ -1153,6 +1153,8 @@ NEXIUM DESIGN STUDIO
 
     margin-bottom:10px;
 
+    text-align:center;
+
 }
 
 .studio-contenido{
@@ -1165,7 +1167,7 @@ NEXIUM DESIGN STUDIO
 
     height:auto;
 
-    min-height:0;
+    flex:1;
 
     overflow:visible;
 
@@ -1211,7 +1213,7 @@ NEXIUM DESIGN STUDIO
 
     flex:1;
 
-    height:100%;
+    min-height:0;
 
     display:flex;
 
@@ -1223,7 +1225,7 @@ NEXIUM DESIGN STUDIO
 
     border-radius:18px;
 
-    overflow:hidden;
+    overflow:visible;
 
 }
 
