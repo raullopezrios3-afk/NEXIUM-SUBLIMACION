@@ -1163,10 +1163,13 @@ NEXIUM DESIGN STUDIO
 
     margin-top:20px;
 
+    height:auto;
+
     min-height:0;
 
-}
+    overflow:visible;
 
+}
 .studio-menu{
 
     width:260px;
