@@ -1200,15 +1200,15 @@ NEXIUM DESIGN STUDIO
 
     align-items:center;
 
-    gap:12px;
+    gap:14px;
 
     min-height:0;
 
-    overflow-y:hidden;
+    overflow:visible;
 
     padding-right:8px;
 
-    padding-bottom:30px;
+    padding-bottom:0;
 
 }
 
@@ -1228,6 +1228,7 @@ NEXIUM DESIGN STUDIO
 
     font-size:17px;
 
+     flex-shrink:0;
 }
 
 .studio-preview{
@@ -1286,7 +1287,7 @@ BOTÓN SUBIR DISEÑO
 
     display:block;
 
-    margin-top:0px;
+    margin-top:18px;
 
     padding:18px;
 
