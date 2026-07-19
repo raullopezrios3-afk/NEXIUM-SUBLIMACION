@@ -393,6 +393,50 @@ window.addEventListener("DOMContentLoaded",()=>{
 
         }
 
+       /*======================================
+MOVER DISEÑO
+======================================*/
+
+let arrastrando = false;
+
+let offsetX = 0;
+let offsetY = 0;
+
+disenoUsuario.addEventListener("mousedown", function(e){
+
+    arrastrando = true;
+
+    offsetX = e.offsetX;
+    offsetY = e.offsetY;
+
+    disenoUsuario.style.cursor = "grabbing";
+
+});
+
+document.addEventListener("mousemove", function(e){
+
+    if(!arrastrando) return;
+
+    const rect = areaImpresion.getBoundingClientRect();
+
+    let x = e.clientX - rect.left - offsetX;
+    let y = e.clientY - rect.top - offsetY;
+
+    disenoUsuario.style.position = "absolute";
+
+    disenoUsuario.style.left = x + "px";
+    disenoUsuario.style.top = y + "px";
+
+});
+
+document.addEventListener("mouseup", function(){
+
+    arrastrando = false;
+
+    disenoUsuario.style.cursor = "grab";
+
+});
+
     });
 
     document.addEventListener("keydown",(e)=>{
