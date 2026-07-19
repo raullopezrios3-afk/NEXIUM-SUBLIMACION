@@ -1224,7 +1224,7 @@ NEXIUM DESIGN STUDIO
 
 .studio-preview{
 
-    width:75%;
+    flex:0 0 55%;
 
     height:100%;
 
@@ -1241,7 +1241,6 @@ NEXIUM DESIGN STUDIO
     overflow:hidden;
 
 }
-
 /*======================================
 PREVIEW DEL PRODUCTO
 ======================================*/
