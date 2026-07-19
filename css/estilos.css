@@ -1196,19 +1196,25 @@ NEXIUM DESIGN STUDIO
 
     justify-content:center;
 
-    gap:20px;
+    gap:28px;
 
-    padding-top:35px;
+    padding-top:0;
+
+    width:260px;
 
 }
 
 .studio-item{
 
-    padding:12px 15px;
+    width:260px;
+
+    height:90px;
+
+    padding:0;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:22px;
 
     background:#0B3D91;
 
@@ -1216,9 +1222,20 @@ NEXIUM DESIGN STUDIO
 
     cursor:pointer;
 
-    font-size:17px;
+    font-size:28px;
 
-     flex-shrink:0;
+    font-weight:700;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-shrink:0;
+
 }
 
 .studio-preview{
