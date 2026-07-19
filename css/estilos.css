@@ -1163,13 +1163,11 @@ NEXIUM DESIGN STUDIO
 
     gap:25px;
 
-    margin-top:20px;
+    margin-top:10px;
 
-    height:auto;
+    height:calc(100% - 90px);
 
-    flex:1;
-
-    overflow:visible;
+    overflow:hidden;
 
 }
 
@@ -1185,7 +1183,7 @@ NEXIUM DESIGN STUDIO
 
     gap:12px;
 
-    overflow-y:auto;
+    overflow:visible;
 
     padding-right:8px;
 
@@ -1213,7 +1211,7 @@ NEXIUM DESIGN STUDIO
 
     flex:1;
 
-    min-height:0;
+    height:100%;
 
     display:flex;
 
@@ -1225,7 +1223,7 @@ NEXIUM DESIGN STUDIO
 
     border-radius:18px;
 
-    overflow:visible;
+    overflow:hidden;
 
 }
 
