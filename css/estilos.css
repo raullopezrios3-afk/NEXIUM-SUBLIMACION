@@ -1188,22 +1188,18 @@ NEXIUM DESIGN STUDIO
 
 .studio-menu{
 
-    width:260px;
-    flex-shrink:0;
-
     display:flex;
+
     flex-direction:column;
 
-    justify-content:center
     align-items:center;
 
-    gap:14px;
+    justify-content:center;
 
-    min-height:0;
-    overflow:visible;
+    gap:20px;
 
-    padding-right:8px;
-    padding-top:10px;
+    padding-top:35px;
+
 }
 
 .studio-item{
