@@ -539,6 +539,25 @@ if(subirDiseno && disenoUsuario){
 
 });
 
+/*======================================
+CONTROL TAMAÑO DISEÑO
+======================================*/
+
+const tamanoDiseno = document.getElementById("tamanoDiseno");
+
+
+if(tamanoDiseno && disenoUsuario){
+
+    tamanoDiseno.addEventListener("input", function(){
+
+        const escala = this.value / 100;
+
+        disenoUsuario.style.width = (180 * escala) + "px";
+
+    });
+
+}
+
 /* =========================
    EXPORT GLOBAL (SEGURO)
 ========================= */
