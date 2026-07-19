@@ -1170,7 +1170,7 @@ NEXIUM DESIGN STUDIO
 
     display:flex;
 
-    gap:50px;
+    gap:40px;
 
     margin-top:0px;
 
@@ -1223,14 +1223,18 @@ NEXIUM DESIGN STUDIO
 
 .studio-preview{
 
-    width:55%;
+    width:45%;
+
     height:100%;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     border:2px dashed #ccc;
+
     border-radius:18px;
 
     overflow:hidden;
