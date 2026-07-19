@@ -1175,6 +1175,8 @@ NEXIUM DESIGN STUDIO
 
     height:calc(100% - 90px);
 
+    overflow:hidden;
+
 }
 
 .studio-menu{
