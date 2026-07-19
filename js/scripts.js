@@ -537,9 +537,6 @@ if(subirDiseno && disenoUsuario){
 
 }
 
-
-});
-
 /* =========================
    EXPORT GLOBAL (SEGURO)
 ========================= */
