@@ -1304,13 +1304,23 @@ BOTÓN SUBIR DISEÑO
 
 }
 
-/* Zona donde vivirá el diseño */
+/*======================================
+ÁREA DE IMPRESIÓN
+======================================*/
 
 .area-impresion{
 
     position:absolute;
 
-    overflow:hidden;
+    width:140px;
+
+    height:140px;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
 
     display:flex;
 
@@ -1318,9 +1328,11 @@ BOTÓN SUBIR DISEÑO
 
     align-items:center;
 
-}
+    overflow:hidden;
 
-/* Imagen del cliente */
+    border:1px dashed rgba(0,0,255,.25);
+
+}
 
 .diseno-usuario{
 
