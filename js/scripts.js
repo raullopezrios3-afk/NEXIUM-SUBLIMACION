@@ -411,7 +411,10 @@ window.addEventListener("DOMContentLoaded",()=>{
 
 const areaImpresion = document.getElementById("areaImpresion");
 
+
 function actualizarAreaImpresion(producto){
+
+    if(!areaImpresion) return;
 
     switch(producto){
 
