@@ -1228,6 +1228,8 @@ NEXIUM DESIGN STUDIO
 
     flex-shrink:0;
 
+    align-self:flex-start;    
+
     }
 
 .studio-preview{
