@@ -1072,9 +1072,9 @@ NEXIUM DESIGN STUDIO
 
     justify-content:center;
 
-    align-items:flex-start;
+    align-items:center;
 
-    padding-top:40px;
+    padding:0;
 
     z-index:9999999;
 
