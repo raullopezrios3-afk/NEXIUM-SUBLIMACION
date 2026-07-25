@@ -437,7 +437,7 @@ VISOR DE VIDEO
 
 </div>
 
-    <!-- ========================= -->
+   <!-- ========================= -->
 <!-- NEXIUM DESIGN STUDIO -->
 <!-- ========================= -->
 
@@ -450,102 +450,142 @@ VISOR DE VIDEO
         <h2>NEXIUM DESIGN STUDIO</h2>
 
         <p>
-
             Diseña tu producto antes de realizar tu pedido.
-
         </p>
+
 
         <div class="studio-contenido">
 
-           <div class="studio-menu">
 
-    <button
-        class="studio-item"
-        data-producto="taza">
+            <!-- MENU IZQUIERDO -->
 
-        ☕ Taza
+            <div class="studio-menu">
 
-    </button>
+                <button
+                    class="studio-item"
+                    data-producto="taza">
 
-    <button
-        class="studio-item"
-        data-producto="playera">
+                    ☕ Taza
 
-        👕 Playera
+                </button>
 
-    </button>
 
-    <button
-        class="studio-item"
-        data-producto="termo">
+                <button
+                    class="studio-item"
+                    data-producto="playera">
 
-        🥤 Termo
+                    👕 Playera
 
-    </button>
+                </button>
 
-    <hr>
 
-    <label for="subirDiseno" class="upload-box">
+                <button
+                    class="studio-item"
+                    data-producto="termo">
 
-    <strong>Sube tu diseño</strong><br>
+                    🥤 Termo
 
-    Formatos permitidos:<br>
+                </button>
 
-    JPG • JPEG • PNG
 
-</label>
+                <hr>
 
-<input
-    type="file"
-    id="subirDiseno"
-    accept=".jpg,.jpeg,.png,image/jpeg,image/png"
-    hidden>
 
-</div> <!-- cierre studio-menu -->
+                <label for="subirDiseno" class="upload-box">
 
-<div class="studio-preview">
+                    <strong>Sube tu diseño</strong><br>
 
-    <div class="control-tamano">
+                    Formatos permitidos:<br>
 
-    <label for="tamanoDiseno">
-        Tamaño del diseño
-    </label>
+                    JPG • JPEG • PNG
 
-    <input
-        type="range"
-        id="tamanoDiseno"
-        min="20"
-        max="200"
-        value="100">
+                </label>
 
-</div>
-   <div class="preview-producto">
 
-    <!-- Producto -->
-    <img
-        id="productoActual"
-        class="producto-base"
-        src="configurador/productos/tazas/taza-blanca.png"
-        alt="Producto">
+                <input
+                    type="file"
+                    id="subirDiseno"
+                    accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+                    hidden>
 
-    <!-- Área donde se imprimirá -->
-    <div id="areaImpresion" class="area-impresion">
 
-        <img
-            id="disenoUsuario"
-            class="diseno-usuario"
-            alt="Diseño del cliente">
+            </div>
 
-             </div>
 
-          </div>
 
-       </div>
+            <!-- ZONA DERECHA -->
+
+            <div class="studio-zona-derecha">
+
+
+                <!-- CONTROL SUPERIOR -->
+
+                <div class="control-tamano">
+
+                    <label for="tamanoDiseno">
+                        Tamaño del diseño
+                    </label>
+
+
+                    <input
+                        type="range"
+                        id="tamanoDiseno"
+                        min="20"
+                        max="200"
+                        value="100">
+
+                </div>
+
+
+
+                <!-- RECUADRO PRODUCTO -->
+
+                <div class="studio-preview">
+
+
+                    <div class="preview-producto">
+
+
+                        <!-- Producto -->
+
+                        <img
+                            id="productoActual"
+                            class="producto-base"
+                            src="configurador/productos/tazas/taza-blanca.png"
+                            alt="Producto">
+
+
+
+                        <!-- Área donde se imprimirá -->
+
+                        <div id="areaImpresion" class="area-impresion">
+
+
+                            <img
+                                id="disenoUsuario"
+                                class="diseno-usuario"
+                                alt="Diseño del cliente">
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
 
     </div>
-   
-</div>
 
+
+</div>
       
 </body>
 </html>
