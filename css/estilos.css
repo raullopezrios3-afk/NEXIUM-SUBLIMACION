@@ -1261,15 +1261,10 @@ PREVIEW DEL PRODUCTO
 .preview-producto{
 
     width:100%;
-
     flex:1;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     position:relative;
 
 }
