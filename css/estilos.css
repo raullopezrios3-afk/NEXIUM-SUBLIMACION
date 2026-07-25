@@ -1162,14 +1162,15 @@ NEXIUM DESIGN STUDIO
 
     display:flex;
 
-    justify-content:space-between;
+    justify-content:flex-end;
 
     align-items:center;
 
     width:100%;
 
-}
+    padding-right:70px;
 
+}
 .studio-contenido{
 
     display:flex;
