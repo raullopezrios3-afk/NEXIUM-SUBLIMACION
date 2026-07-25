@@ -509,13 +509,13 @@ const disenoUsuario=document.getElementById("disenoUsuario");
 if(subirDiseno && disenoUsuario){
 
 
-    subirDiseno.addEventListener("change",function(){
+   subirDiseno.addEventListener("change",function(){
 
+    console.log("Diseño seleccionado");
 
-        const archivo=this.files[0];
+    const archivo=this.files[0];
 
-
-        if(!archivo) return;
+    if(!archivo) return;
 
 
         const lector=new FileReader();
