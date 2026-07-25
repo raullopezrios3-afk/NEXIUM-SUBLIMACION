@@ -1232,6 +1232,38 @@ NEXIUM DESIGN STUDIO
 
 }
 
+.studio-zona-derecha{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    height:100%;
+
+}
+
+.control-tamano{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:5px;
+
+    flex-shrink:0;
+
+}
+
 .studio-preview{
 
     width:45%;
