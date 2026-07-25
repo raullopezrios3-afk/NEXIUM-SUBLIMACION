@@ -1260,7 +1260,7 @@ NEXIUM DESIGN STUDIO
 
     width:100%;
 
-    height:100%;
+    height:92%;
 
     display:flex;
 
@@ -1268,15 +1268,11 @@ NEXIUM DESIGN STUDIO
 
     align-items:center;
 
-    border:2px dashed #C5A879;
+    border:2px dashed #ccc;
 
     border-radius:18px;
 
     overflow:hidden;
-
-    position:relative;
-
-    top:-10px;
 
 }
 
