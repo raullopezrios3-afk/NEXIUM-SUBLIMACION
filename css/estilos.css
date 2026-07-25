@@ -1164,6 +1164,18 @@ NEXIUM DESIGN STUDIO
 
 }
 
+.studio-box p{
+
+    margin:0 0 8px 10px;
+
+    color:#555;
+
+    font-size:15px;
+
+    line-height:1.3;
+
+}
+
 .studio-contenido{
 
     display:flex;
