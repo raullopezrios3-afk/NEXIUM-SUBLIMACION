@@ -1258,6 +1258,8 @@ NEXIUM DESIGN STUDIO
 
     height:100%;
 
+    flex:1;
+
 }
 
 .control-tamano{
@@ -1276,7 +1278,7 @@ NEXIUM DESIGN STUDIO
 
 .studio-preview{
 
-    width:60%;
+    width:100%;
 
     height:90%;
 
@@ -1290,7 +1292,7 @@ NEXIUM DESIGN STUDIO
 
     border-radius:18px;
 
-    overflow:hidden; 
+    overflow:hidden;
 
 }
 
