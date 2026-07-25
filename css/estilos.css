@@ -1158,6 +1158,18 @@ NEXIUM DESIGN STUDIO
 
 }
 
+.studio-titulo{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    width:100%;
+
+}
+
 .studio-contenido{
 
     display:flex;
