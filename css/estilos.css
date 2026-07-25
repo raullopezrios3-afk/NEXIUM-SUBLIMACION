@@ -1061,21 +1061,13 @@ NEXIUM DESIGN STUDIO
 .modal-studio{
 
     display:none;
-
     position:fixed;
-
     inset:0;
-
     background:rgba(0,0,0,.75);
-
     backdrop-filter:blur(6px);
-
     justify-content:center;
-
     align-items:center;
-
     padding:0;
-
     z-index:9999999;
 
 }
