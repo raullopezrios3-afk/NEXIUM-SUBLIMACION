@@ -1320,7 +1320,13 @@ PREVIEW DEL PRODUCTO
 
     position:relative;
 
-    top:-20px;
+    background-image:url("../imagenes/fondo-productos.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
 
 }
 
