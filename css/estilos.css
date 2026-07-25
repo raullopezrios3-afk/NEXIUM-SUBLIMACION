@@ -1407,6 +1407,9 @@ BOTÓN SUBIR DISEÑO
 
     transform:translate(-50%,-50%);
 
+    width:38%;
+    height:30%;
+
     display:flex;
 
     justify-content:center;
