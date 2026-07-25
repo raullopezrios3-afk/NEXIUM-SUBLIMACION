@@ -1240,11 +1240,13 @@ NEXIUM DESIGN STUDIO
 
     display:flex;
 
+    flex-direction:column;
+
     justify-content:flex-start;
 
     align-items:center;
 
-    gap:20px;
+    gap:10px;
 
     border:2px dashed #ccc;
 
@@ -1261,10 +1263,15 @@ PREVIEW DEL PRODUCTO
 .preview-producto{
 
     width:100%;
-    flex:1;
+
+    height:100%;
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     position:relative;
 
 }
