@@ -1290,13 +1290,13 @@ NEXIUM DESIGN STUDIO
 
     align-items:center;
 
-    border:2px dashed #ccc;
+    border:2px dashed #C5A879;
 
     border-radius:18px;
 
     overflow:hidden;
 
-    transform:translateY(-15px);
+    background:#0B3D91;
 
 }
 
