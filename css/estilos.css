@@ -1296,7 +1296,10 @@ NEXIUM DESIGN STUDIO
 
     overflow:hidden;
 
+    transform:translateY(-15px);
+
 }
+
 /*======================================
 PREVIEW DEL PRODUCTO
 ======================================*/
