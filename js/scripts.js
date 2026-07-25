@@ -501,32 +501,37 @@ break;
 CARGAR DISEÑO DEL CLIENTE
 ======================================*/
 
-const subirDiseno=document.getElementById("subirDiseno");
+const subirDiseno = document.getElementById("subirDiseno");
 
-const disenoUsuario=document.getElementById("disenoUsuario");
+const disenoUsuario = document.getElementById("disenoUsuario");
 
 
 if(subirDiseno && disenoUsuario){
 
 
-   subirDiseno.addEventListener("change",function(){
+    subirDiseno.addEventListener("change",function(){
 
-    console.log("Diseño seleccionado");
-
-    const archivo=this.files[0];
-
-    if(!archivo) return;
+        console.log("Diseño seleccionado");
 
 
-        const lector=new FileReader();
+        const archivo = this.files[0];
 
 
-        lector.onload=function(e){
+        if(!archivo) return;
 
 
-            disenoUsuario.src=e.target.result;
+        const lector = new FileReader();
 
-            disenoUsuario.style.display="block";
+
+        lector.onload = function(e){
+
+
+            disenoUsuario.src = e.target.result;
+
+            disenoUsuario.style.display = "block";
+
+
+            console.log("Imagen cargada:", disenoUsuario.src);
 
 
         };
@@ -539,8 +544,6 @@ if(subirDiseno && disenoUsuario){
 
 
 }
-
-});
 
 /*======================================
 CONTROL TAMAÑO DISEÑO
