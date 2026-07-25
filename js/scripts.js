@@ -558,12 +558,17 @@ if(tamanoDiseno && disenoUsuario){
 
         const escala = this.value / 100;
 
-        disenoUsuario.style.width = (180 * escala) + "px";
+        const ancho = 180 * escala;
+
+        const alto = 90 * escala;
+
+        disenoUsuario.style.width = ancho + "px";
+
+        disenoUsuario.style.height = alto + "px";
 
     });
 
 }
-
 });
 
 /* =========================
