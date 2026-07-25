@@ -1296,7 +1296,9 @@ NEXIUM DESIGN STUDIO
 
     overflow:hidden;
 
-    background:#0B2E6B;
+    position:relative;
+
+    top:-10px;
 
 }
 
