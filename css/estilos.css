@@ -1004,13 +1004,7 @@ DISEÑO DEL CLIENTE
 
     height:90%;
 
-    object-fit:contain;
-
-    pointer-events:auto;
-
-    cursor:grab;
-
-    user-select:none;
+    object-fit:fill;
 
 }
 
