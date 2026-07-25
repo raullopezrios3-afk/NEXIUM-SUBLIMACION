@@ -1256,22 +1256,6 @@ NEXIUM DESIGN STUDIO
 
 }
 
-.control-tamano{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:5px;
-
-    width:100%;
-
-    margin-top:-25px;
-
-}
-
 .studio-preview{
 
     width:100%;
@@ -1442,21 +1426,5 @@ BOTÓN SUBIR DISEÑO
 
     width:180px;
     height:220px;
-
-}
-
-/*======================================
-POSICIÓN CONTROL DE TAMAÑO
-======================================*/
-
-#tamanoDiseno{
-
-    width:220px;
-
-    margin:0;
-
-    position:relative;
-
-    top:-40px;
 
 }
