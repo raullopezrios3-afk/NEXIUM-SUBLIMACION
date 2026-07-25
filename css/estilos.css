@@ -1235,23 +1235,14 @@ NEXIUM DESIGN STUDIO
 .studio-preview{
 
     width:45%;
-
     height:100%;
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:flex-start;
-
     align-items:center;
-
     gap:25px;
-
     border:2px dashed #ccc;
-
     border-radius:18px;
-
     overflow:hidden;
 
 }
