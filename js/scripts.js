@@ -564,6 +564,8 @@ if(tamanoDiseno && disenoUsuario){
 
 }
 
+});
+
 /* =========================
    EXPORT GLOBAL (SEGURO)
 ========================= */
