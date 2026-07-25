@@ -1274,7 +1274,9 @@ NEXIUM DESIGN STUDIO
 
     width:100%;
 
-    transform:translateY(-15px);
+    position:relative;
+
+    top:-25px;
 
 }
 
