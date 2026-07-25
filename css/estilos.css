@@ -1240,9 +1240,11 @@ NEXIUM DESIGN STUDIO
 
     display:flex;
 
-    justify-content:center;
+    justify-content:flex-start;
 
     align-items:center;
+
+    gap:20px;
 
     border:2px dashed #ccc;
 
