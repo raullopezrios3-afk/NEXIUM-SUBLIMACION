@@ -1194,8 +1194,6 @@ NEXIUM DESIGN STUDIO
 
     width:260px;
 
-    transform:translateX(-25px);
-
 }
 
 
@@ -1230,6 +1228,8 @@ NEXIUM DESIGN STUDIO
     gap:12px;
 
     flex-shrink:0;
+
+    transform:translateX(-15px);
 
 }
 
