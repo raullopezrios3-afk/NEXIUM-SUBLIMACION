@@ -1162,15 +1162,14 @@ NEXIUM DESIGN STUDIO
 
     display:flex;
 
-    justify-content:flex-end;
+    justify-content:space-between;
 
     align-items:center;
 
-    width:100%;
-
-    padding-right:70px;
+    width:calc(100% - 50px);
 
 }
+
 .studio-contenido{
 
     display:flex;
@@ -1269,11 +1268,9 @@ NEXIUM DESIGN STUDIO
 
     align-items:center;
 
-    justify-content:center;
-
     gap:5px;
 
-    flex-shrink:0;
+    margin-right:40px;
 
 }
 
