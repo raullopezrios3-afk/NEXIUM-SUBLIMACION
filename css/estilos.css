@@ -1284,8 +1284,6 @@ NEXIUM DESIGN STUDIO
 
     height:100%;
 
-    margin-top:-35px;
-
     display:flex;
 
     justify-content:center;
@@ -1299,7 +1297,6 @@ NEXIUM DESIGN STUDIO
     overflow:hidden;
 
 }
-
 /*======================================
 PREVIEW DEL PRODUCTO
 ======================================*/
@@ -1317,6 +1314,8 @@ PREVIEW DEL PRODUCTO
     align-items:center;
 
     position:relative;
+
+    top:-20px;
 
 }
 
