@@ -545,32 +545,6 @@ if(subirDiseno && disenoUsuario){
 
 }
 
-/*======================================
-CONTROL TAMAÑO DISEÑO
-======================================*/
-
-const tamanoDiseno = document.getElementById("tamanoDiseno");
-
-
-if(tamanoDiseno && disenoUsuario){
-
-    tamanoDiseno.addEventListener("input", function(){
-
-        const escala = this.value / 100;
-
-        const ancho = 180 * escala;
-
-        const alto = 90 * escala;
-
-        disenoUsuario.style.width = ancho + "px";
-
-        disenoUsuario.style.height = alto + "px";
-
-    });
-
-}
-});
-
 /* =========================
    EXPORT GLOBAL (SEGURO)
 ========================= */
