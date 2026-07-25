@@ -534,46 +534,53 @@ VISOR DE VIDEO
 
 
 
-            <!-- ZONA DERECHA -->
+           <!-- ZONA DERECHA -->
 
-            <div class="studio-zona-derecha">
-
-               <!-- RECUADRO PRODUCTO -->
-
-                <div class="studio-preview">
+<div class="studio-zona-derecha">
 
 
-                    <div class="preview-producto">
+    <!-- CONTROL SUPERIOR -->
+
+    <div class="control-tamano">
+
+        <label for="tamanoDiseno">
+            Tamaño del diseño
+        </label>
+
+        <input
+            type="range"
+            id="tamanoDiseno"
+            min="20"
+            max="200"
+            value="100">
+
+    </div>
 
 
-                        <!-- Producto -->
 
-                        <img
-                            id="productoActual"
-                            class="producto-base"
-                            src="configurador/productos/tazas/taza-blanca.png"
-                            alt="Producto">
+    <!-- RECUADRO PRODUCTO -->
+
+    <div class="studio-preview">
 
 
-
-                        <!-- Área donde se imprimirá -->
-
-                        <div id="areaImpresion" class="area-impresion">
+        <div class="preview-producto">
 
 
-                            <img
-                                id="disenoUsuario"
-                                class="diseno-usuario"
-                                alt="Diseño del cliente">
+            <img
+                id="productoActual"
+                class="producto-base"
+                src="configurador/productos/tazas/taza-blanca.png"
+                alt="Producto">
 
 
-                        </div>
+
+            <div id="areaImpresion" class="area-impresion">
 
 
-                    </div>
-
-
-                </div>
+                <img
+                    id="disenoUsuario"
+                    class="diseno-usuario"
+                    alt="Diseño del cliente">
 
 
             </div>
@@ -585,7 +592,6 @@ VISOR DE VIDEO
     </div>
 
 
-</div>
-      
+</div>      
 </body>
 </html>
