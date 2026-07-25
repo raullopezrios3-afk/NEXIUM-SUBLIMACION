@@ -1320,11 +1320,11 @@ PREVIEW DEL PRODUCTO
 
 #productoActual{
 
-    width:65%;
+    width:60%;
 
-    max-width:65%;
+    max-width:60%;
 
-    max-height:65%;
+    max-height:60%;
 
     object-fit:contain;
 
