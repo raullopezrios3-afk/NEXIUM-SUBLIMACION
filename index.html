@@ -438,40 +438,65 @@ VISOR DE VIDEO
 <!-- NEXIUM DESIGN STUDIO -->
 <!-- ========================= -->
 
+<!-- ========================= -->
+<!-- NEXIUM DESIGN STUDIO -->
+<!-- ========================= -->
+
 <div id="modalStudio" class="modal-studio">
+
 
     <div class="studio-box">
 
-        <span id="cerrarStudio" class="cerrar-studio">&times;</span>
 
-       <div class="studio-titulo">
+        <!-- CERRAR -->
 
-    <h2>NEXIUM DESIGN STUDIO</h2>
+        <span id="cerrarStudio" class="cerrar-studio">
+            &times;
+        </span>
 
-</div>
 
 
-<!-- AVISO PROXIMAMENTE -->
+        <!-- TITULO -->
 
-<div class="studio-alerta-construccion">
+        <div class="studio-titulo">
 
-    <h2>🚧 Próximamente</h2>
+            <h2>
+                NEXIUM DESIGN STUDIO
+            </h2>
 
-    <p>
-        Estamos construyendo el sistema 360° 
-        de visualización de productos.
-    </p>
+        </div>
 
-</div>
 
-        
+
+        <!-- AVISO -->
+
+        <div class="studio-alerta-construccion">
+
+            <h2>
+                🚧 Próximamente
+            </h2>
+
+
+            <p>
+                Estamos construyendo el sistema 360°
+                de visualización de productos.
+            </p>
+
+        </div>
+
+
+
+
+        <!-- CONTENIDO PRINCIPAL -->
 
         <div class="studio-contenido">
 
 
+
             <!-- MENU IZQUIERDO -->
 
-            <div class="studio-menu">
+            <aside class="studio-menu">
+
 
                 <button
                     class="studio-item"
@@ -480,6 +505,7 @@ VISOR DE VIDEO
                     ☕ Taza
 
                 </button>
+
 
 
                 <button
@@ -491,6 +517,7 @@ VISOR DE VIDEO
                 </button>
 
 
+
                 <button
                     class="studio-item"
                     data-producto="termo">
@@ -500,18 +527,35 @@ VISOR DE VIDEO
                 </button>
 
 
+
                 <hr>
 
 
-                <label for="subirDiseno" class="upload-box">
 
-                    <strong>Sube tu diseño</strong><br>
+                <label 
+                for="subirDiseno" 
+                class="upload-box">
 
-                    Formatos permitidos:<br>
+
+                    <strong>
+                        Sube tu diseño
+                    </strong>
+
+
+                    <br>
+
+
+                    Formatos permitidos:
+
+
+                    <br>
+
 
                     JPG • JPEG • PNG
 
+
                 </label>
+
 
 
                 <input
@@ -521,44 +565,83 @@ VISOR DE VIDEO
                     hidden>
 
 
-            </div>
+
+            </aside>
 
 
 
-           <!-- ZONA DERECHA -->
-
-<div class="studio-zona-derecha">
-
-    <!-- RECUADRO PRODUCTO -->
-
-    <div class="studio-preview">
-
-
-        <div class="preview-producto">
-
-
-            <img
-                id="productoActual"
-                class="producto-base"
-                src="configurador/productos/tazas/taza-blanca.png"
-                alt="Producto">
 
 
 
-            <div id="areaImpresion" class="area-impresion">
+
+            <!-- ZONA DE TRABAJO -->
+
+            <main class="studio-zona-derecha">
 
 
-                <img
-                    id="disenoUsuario"
-                    class="diseno-usuario"
-                    alt="Diseño del cliente">
+
+                <div class="studio-preview">
 
 
-            </div> <!-- studio-contenido -->
 
-    </div> <!-- studio-box -->
+                    <div class="preview-producto">
 
-</div> <!-- modalStudio -->
+
+
+                        <!-- PRODUCTO BASE -->
+
+                        <img
+                            id="productoActual"
+                            class="producto-base"
+                            src="configurador/productos/tazas/taza-blanca.png"
+                            alt="Producto">
+
+
+
+
+
+                        <!-- AREA DE DISEÑO -->
+
+                        <div
+                            id="areaImpresion"
+                            class="area-impresion">
+
+
+
+                            <img
+                                id="disenoUsuario"
+                                class="diseno-usuario"
+                                alt="Diseño del cliente">
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </main>
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
