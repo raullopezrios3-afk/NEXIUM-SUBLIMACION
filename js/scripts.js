@@ -344,9 +344,21 @@ function cerrarModalCotizacion() {
 
     const modal = document.getElementById("modalCotizacion");
     const form = document.getElementById("formCotizacion");
+    const btnCotizar = document.getElementById("btnCotizar");
 
-    if (form) form.reset();
-    if (modal) modal.style.display = "none";
+    if (form) {
+        form.reset();
+    }
+
+    // Regresar botón a estado bloqueado
+    if(btnCotizar){
+        btnCotizar.disabled = true;
+    }
+
+    if (modal) {
+        modal.style.display = "none";
+    }
+
 }
 
 /*=========================
