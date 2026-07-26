@@ -23,13 +23,13 @@ PALETA OFICIAL NEXIUM
 
     --dorado:#D4AF37;
 
-    --blanco:#1E293B;
+    --blanco:#ffffff;
 
-    --gris:#111827;
+    --gris:#f3f4f6;
 
-    --texto:#E5E7EB;
+    --texto:#1f2937;
 
-    --sombra:rgba(0,0,0,.35);
+    --sombra:rgba(0,0,0,.25);
 
 }
 
@@ -37,8 +37,8 @@ body{
 
     font-family: Arial, Helvetica, sans-serif;
     line-height:1.6;
-    background:#0F172A;
-    color:#E5E7EB;
+    background:#1D4ED8;
+    color:#1f2937;
     padding-top:140px;
 
 }
@@ -1650,6 +1650,28 @@ body.nexium-light .header{
     background:#090273;
 
     border-bottom:2px solid var(--dorado);
+
+}
+
+/*=========================
+NEXIUM LIGHT CARDS
+=========================*/
+
+body.nexium-light .producto-card{
+
+    background:var(--blanco);
+
+}
+
+body.nexium-light .contacto-box{
+
+    background:var(--blanco);
+
+}
+
+body.nexium-light .studio-box{
+
+    background:var(--blanco);
 
 }
 
