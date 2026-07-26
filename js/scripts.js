@@ -365,6 +365,32 @@ NEXIUM DESIGN STUDIO
 
 window.addEventListener("DOMContentLoaded",()=>{
 
+   /* =========================
+   NEXIUM DARK MODE
+========================= */
+
+const btnDarkMode = document.getElementById("btnDarkMode");
+
+if(btnDarkMode){
+
+    btnDarkMode.addEventListener("click",()=>{
+
+        document.body.classList.toggle("nexium-dark");
+
+        if(document.body.classList.contains("nexium-dark")){
+
+            btnDarkMode.textContent="☀️";
+
+        }else{
+
+            btnDarkMode.textContent="🌙";
+
+        }
+
+    });
+
+}
+
     const btn=document.getElementById("btnStudio");
 
     const modal=document.getElementById("modalStudio");
