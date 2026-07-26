@@ -18,29 +18,30 @@ PALETA OFICIAL NEXIUM
 
 :root{
 
-    --azul:#0B3D91;
-    --azul-oscuro:#0B2E6B;
+    --azul:#1D4ED8;
+    --azul-oscuro:#0F172A;
 
-    --dorado:#C5A879;
+    --dorado:#D4AF37;
 
-    --blanco:#FFFFFF;
+    --blanco:#1E293B;
 
-    --gris:#F5F5F5;
+    --gris:#111827;
 
-    --texto:#2C2C2C;
+    --texto:#E5E7EB;
 
-    --sombra:rgba(11,61,145,.15);
+    --sombra:rgba(0,0,0,.35);
 
 }
 
-body {
+body{
+
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    background: var(--azul);
-    color: var(--blanco);
-    padding-top: 140px;
-}
+    line-height:1.6;
+    background:#0F172A;
+    color:#E5E7EB;
+    padding-top:140px;
 
+}
 /* =========================
 HEADER
 ========================= */
@@ -262,7 +263,7 @@ GALERÍA
 
 .modal-content{
     position: relative;
-    background: #fff;
+    background:#1E293B;
     width: 90%;
     max-width: 520px;
     border-radius: 16px;
@@ -307,7 +308,7 @@ GALERÍA
     right: 15px;
     font-size: 24px;
     cursor: pointer;
-    color: #333;
+    color:#F8FAFC;
     font-weight: bold;
 }
 
@@ -645,7 +646,7 @@ MEJORAS VISUALES NEXIUM V1
 
 .producto-card{
 
-    background:var(--blanco);
+    background:#1E293B;
 
     border-radius:18px;
 
@@ -665,7 +666,7 @@ MEJORAS VISUALES NEXIUM V1
 
     margin:20px 15px 10px;
 
-    color:var(--azul);
+    color:#F8FAFC;
 
     font-size:30px;
 
@@ -679,7 +680,7 @@ MEJORAS VISUALES NEXIUM V1
 
     margin:0 20px 20px;
 
-    color:var(--texto);
+    color:#CBD5E1;
 
     text-align:center;
 
@@ -896,7 +897,7 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
 .contacto-box{
     width:520px;
     max-width:100%;
-    background:var(--blanco);
+    background:#1E293B;
     padding:35px;
     border-radius:18px;
     box-shadow:0 10px 25px rgba(0,0,0,.12);
@@ -906,7 +907,7 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
 /* CORREO CONTACTO */
 
 .contacto-box .titulo-seccion{
-    color: var(--azul);
+    color:#F8FAFC;
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -926,7 +927,7 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
 
     margin:0;
 
-    color:var(--texto);
+    color:#CBD5E1;
     font-size:20px;
     font-weight:600;
     line-height:1.4;
@@ -1073,7 +1074,7 @@ NEXIUM DESIGN STUDIO
 
     height:75vh;
 
-    background:#fff;
+    background:#1E293B;
 
     border-radius:20px;
 
@@ -1140,7 +1141,7 @@ NEXIUM DESIGN STUDIO
 
 .studio-box h2{
 
-    color:#0B3D91;
+    color:#F8FAFC;
 
     margin:0 0 10px 0;
 
@@ -1168,7 +1169,7 @@ NEXIUM DESIGN STUDIO
 
     margin:0 0 8px 10px;
 
-    color:#555;
+    color:#CBD5E1;
 
     font-size:15px;
 
@@ -1346,9 +1347,9 @@ BOTÓN SUBIR DISEÑO
 
     border-radius:12px;
 
-    background:#F5F5F5;
+    background:#111827;
 
-    color:#0B3D91;
+    color:#F8FAFC;
 
     text-align:center;
 
@@ -1436,5 +1437,35 @@ BOTÓN SUBIR DISEÑO
 
     width:180px;
     height:220px;
+
+}
+
+/*======================================
+NEXIUM DARK THEME
+======================================*/
+
+body{
+
+    background:#0F172A;
+
+    color:#F8FAFC;
+
+}
+
+section{
+
+    background:transparent;
+
+}
+
+h1,h2,h3,h4,h5,h6{
+
+    color:#F8FAFC;
+
+}
+
+p{
+
+    color:#CBD5E1;
 
 }
