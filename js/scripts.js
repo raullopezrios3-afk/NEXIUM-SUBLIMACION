@@ -1,10 +1,3 @@
-/* =====================================================
-   NEXIUM SCRIPTS.JS
-   ESTRUCTURA REORGANIZADA
-   FUNCIONALIDAD CONSERVADA
-===================================================== */
-
-
 /* =========================
    VARIABLES GLOBALES
 ========================= */
@@ -13,16 +6,14 @@ let imagenes = [];
 let indexActual = 0;
 
 
-
-/* =====================================================
-   INICIO PRINCIPAL NEXIUM
-===================================================== */
+/* =========================
+   INICIO GENERAL NEXIUM
+========================= */
 
 document.addEventListener(
     "DOMContentLoaded",
     iniciarNexium
 );
-
 
 
 function iniciarNexium(){
@@ -38,78 +29,90 @@ function iniciarNexium(){
 
     iniciarGalerias();
 
-    iniciarCierres();
+    iniciarCotizacion();
 
-    iniciarFormularioCotizacion();
+    iniciarVideo();
 
-    iniciarVisorVideo();
+    iniciarTema();
 
-    iniciarDesignStudio();
+    iniciarStudio();
 
 }
 
 
 
-/* =====================================================
+/* =========================
    SLIDER
-===================================================== */
-
+========================= */
 
 function iniciarSlider(){
 
-    const slides = document.querySelectorAll(".slide");
+    const slides =
+    document.querySelectorAll(".slide");
 
 
-    if(slides.length > 0){
-
-        let index = 0;
+    if(slides.length === 0) return;
 
 
-        slides[0].classList.add("active");
+    let index = 0;
 
 
-        setInterval(()=>{
+    slides[0].classList.add("active");
 
 
-            slides.forEach(
-                slide => slide.classList.remove("active")
-            );
+    setInterval(()=>{
 
 
-            index = (index + 1) % slides.length;
+        slides.forEach(slide=>{
+
+            slide.classList.remove("active");
+
+        });
 
 
-            slides[index].classList.add("active");
+        index =
+        (index + 1) % slides.length;
 
 
-        },4000);
+        slides[index]
+        .classList.add("active");
 
-    }
+
+    },4000);
 
 }
 
 
 
-/* =====================================================
+/* =========================
    MENU ACTIVO
-===================================================== */
-
+========================= */
 
 function iniciarMenu(){
+
 
     const menuLinks =
     document.querySelectorAll(".menu a");
 
 
+    if(menuLinks.length === 0) return;
+
+
+
     menuLinks.forEach(link=>{
 
 
-        link.addEventListener("click",function(){
+        link.addEventListener(
+        "click",
+        function(){
 
 
-            menuLinks.forEach(
-                item=>item.classList.remove("active")
-            );
+            menuLinks.forEach(item=>{
+
+                item.classList.remove("active");
+
+            });
+
 
 
             this.classList.add("active");
@@ -120,427 +123,306 @@ function iniciarMenu(){
 
     });
 
+
 }
 
 
 
-/* =====================================================
+/* =========================
    POSTER
-===================================================== */
-
+========================= */
 
 function iniciarPoster(){
+
 
     const btnPoster =
     document.getElementById("btnPoster");
 
 
-    if(btnPoster){
+    if(!btnPoster) return;
 
 
-        btnPoster.addEventListener(
-            "click",
-            function(e){
+
+    btnPoster.addEventListener(
+        "click",
+        function(e){
 
 
-                e.preventDefault();
-
-                abrirPoster();
+            e.preventDefault();
 
 
-            }
-        );
+            abrirPoster();
 
 
-    }
+        }
+    );
+
 
 }
 
 
 
-
-
-/* =====================================================
+/* =========================
    GALERIAS PRODUCTOS
-===================================================== */
-
+========================= */
 
 function iniciarGalerias(){
 
 
-    const cards =
-    document.querySelectorAll(".producto-card");
+const cards =
+document.querySelectorAll(".producto-card");
 
 
 
-    cards.forEach(card=>{
+cards.forEach(card=>{
 
 
-        card.addEventListener(
-            "click",
-            function(e){
-
-
-
-                if(
-                    e.target.closest(".galeria img")
-                ){
-
-                    return;
-
-                }
+    card.addEventListener(
+    "click",
+    function(e){
 
 
 
-                e.stopPropagation();
+        if(
+        e.target.closest(".galeria img")
+        ) return;
 
 
 
-                cerrarVisor();
+        e.stopPropagation();
 
 
 
-                const estabaAbierta =
-                card.classList.contains("active");
+        cerrarVisor();
 
 
 
-                cards.forEach(c=>{
-
-                    c.classList.remove("active");
-
-                });
+        const estabaAbierta =
+        card.classList.contains("active");
 
 
 
-                if(!estabaAbierta){
+        cards.forEach(c=>{
 
-                    card.classList.add("active");
+            c.classList.remove("active");
 
-                }
+        });
 
 
-            }
-        );
+
+        if(!estabaAbierta){
+
+            card.classList.add("active");
+
+        }
 
 
 
     });
 
 
+});
 
 
 
-    document.addEventListener(
-        "click",
-        function(e){
+/* CERRAR AL HACER CLICK FUERA */
 
 
+document.addEventListener(
+"click",
+function(e){
 
-            if(
-                !e.target.closest(".producto-card")
-            ){
 
+    if(
+    !e.target.closest(".producto-card")
+    ){
 
 
-                document
-                .querySelectorAll(".producto-card.active")
-                .forEach(card=>{
+        document
+        .querySelectorAll(".producto-card.active")
+        .forEach(card=>{
 
 
-                    card.classList.remove("active");
-
-
-                });
-
-
-            }
-
-
-        }
-    );
-
-
-}
-
-
-
-
-
-/* =====================================================
-   CIERRES GENERALES
-===================================================== */
-
-
-function iniciarCierres(){
-
-
-
-    /* CERRAR MODAL COTIZACION */
-
-
-    document.addEventListener(
-        "click",
-        function(e){
-
-
-
-            const modal =
-            document.getElementById(
-                "modalCotizacion"
-            );
-
-
-
-            if(
-                !modal ||
-                modal.style.display !== "flex"
-            ){
-
-                return;
-
-            }
-
-
-
-            if(
-                e.target.closest(".cotizar")
-            ){
-
-                return;
-
-            }
-
-
-
-            const content =
-            modal.querySelector(".modal-content");
-
-
-
-            if(
-                !content.contains(e.target)
-            ){
-
-                cerrarModalCotizacion();
-
-            }
-
-
-
-        }
-    );
-
-
-
-
-
-
-    /* CERRAR VISOR */
-
-    document.addEventListener(
-        "click",
-        function(e){
-
-
-
-            const visor =
-            document.getElementById("visor");
-
-
-
-            if(!visor){
-
-                return;
-
-            }
-
-
-
-            if(
-                visor.style.display !== "flex"
-            ){
-
-                return;
-
-            }
-
-
-
-            if(
-                e.target === visor
-            ){
-
-                cerrarVisor();
-
-            }
-
-
-        }
-    );
-
-
-
-
-
-
-
-    /* ESC GLOBAL */
-
-
-    document.addEventListener(
-        "keydown",
-        function(e){
-
-
-
-            if(e.key !== "Escape"){
-
-                return;
-
-            }
-
-
-
-            const visor =
-            document.getElementById("visor");
-
-
-
-            if(
-                visor &&
-                visor.style.display === "flex"
-            ){
-
-                cerrarVisor();
-
-            }
-
-
-
-
-            const modal =
-            document.getElementById(
-                "modalCotizacion"
-            );
-
-
-
-            if(
-                modal &&
-                modal.style.display === "flex"
-            ){
-
-                cerrarModalCotizacion();
-
-            }
-
-
-
-            document
-            .querySelectorAll(".producto-card.active")
-            .forEach(card=>{
-
-
-                card.classList.remove("active");
-
-
-            });
-
-
-
-        }
-    );
-
-
-
-}
-
-
-
-
-
-
-/* =====================================================
-   FORMULARIO COTIZACION
-===================================================== */
-
-
-function iniciarFormularioCotizacion(){
-
-
-    const camposCotizacion =
-    document.querySelectorAll(
-        "#nombre, #telefono, #correo, #producto, #cantidad, #fecha"
-    );
-
-
-
-    const btnCotizar =
-    document.getElementById(
-        "btnCotizar"
-    );
-
-
-
-    if(btnCotizar){
-
-
-
-        function validarFormulario(){
-
-
-            let completo = true;
-
-
-
-            camposCotizacion.forEach(campo=>{
-
-
-                if(
-                    campo.value.trim()===""
-                ){
-
-                    completo=false;
-
-                }
-
-
-            });
-
-
-
-            btnCotizar.disabled =
-            !completo;
-
-
-
-        }
-
-
-
-
-        camposCotizacion.forEach(campo=>{
-
-
-            campo.addEventListener(
-                "input",
-                validarFormulario
-            );
+            card.classList.remove("active");
 
 
         });
 
 
-
     }
+
+
+});
+
+
+
+/* CERRAR VISOR CLICK FUERA */
+
+
+document.addEventListener(
+"click",
+function(e){
+
+
+const visor =
+document.getElementById("visor");
+
+
+if(!visor) return;
+
+
+if(
+visor.style.display==="flex"
+&&
+e.target===visor
+){
+
+
+    cerrarVisor();
 
 
 }
 
-/* =====================================================
+
+});
+
+
+
+/* ESC GLOBAL */
+
+
+document.addEventListener(
+"keydown",
+function(e){
+
+
+if(e.key!=="Escape")
+return;
+
+
+
+const visor =
+document.getElementById("visor");
+
+
+if(
+visor &&
+visor.style.display==="flex"
+){
+
+
+    cerrarVisor();
+
+
+}
+
+
+
+const modal =
+document.getElementById("modalCotizacion");
+
+
+if(
+modal &&
+modal.style.display==="flex"
+){
+
+
+    cerrarModalCotizacion();
+
+
+}
+
+
+
+document
+.querySelectorAll(".producto-card.active")
+.forEach(card=>{
+
+
+card.classList.remove("active");
+
+
+});
+
+
+});
+
+
+}
+
+
+
+/* =========================
+   COTIZACION
+========================= */
+
+function iniciarCotizacion(){
+
+
+const campos =
+document.querySelectorAll(
+"#nombre,#telefono,#correo,#producto,#cantidad,#fecha"
+);
+
+
+
+const btn =
+document.getElementById("btnCotizar");
+
+
+
+if(!btn) return;
+
+
+
+function validarFormulario(){
+
+
+let completo=true;
+
+
+
+campos.forEach(campo=>{
+
+
+if(campo.value.trim()===""){
+
+
+completo=false;
+
+
+}
+
+
+});
+
+
+
+btn.disabled=!completo;
+
+
+}
+
+
+
+campos.forEach(campo=>{
+
+
+campo.addEventListener(
+"input",
+validarFormulario
+);
+
+
+});
+
+
+}
+
+/* =========================
    VISOR DE IMÁGENES
-===================================================== */
+========================= */
 
 
 function abrirVisor(img){
@@ -566,6 +448,7 @@ function abrirVisor(img){
     const visor =
     document.getElementById("visor");
 
+
     const imgGrande =
     document.getElementById("imgGrande");
 
@@ -590,7 +473,6 @@ function abrirVisor(img){
 
 
 
-
 function cambiarImagen(dir,e){
 
 
@@ -609,7 +491,7 @@ function cambiarImagen(dir,e){
     if(indexActual < 0){
 
         indexActual =
-        imagenes.length - 1;
+        imagenes.length-1;
 
     }
 
@@ -617,7 +499,7 @@ function cambiarImagen(dir,e){
 
     if(indexActual >= imagenes.length){
 
-        indexActual = 0;
+        indexActual=0;
 
     }
 
@@ -637,7 +519,6 @@ function cambiarImagen(dir,e){
 
 
 }
-
 
 
 
@@ -668,34 +549,27 @@ function cerrarVisor(e){
 
 
 
-
-
-
-/* =====================================================
+/* =========================
    MODAL COTIZACION
-===================================================== */
+========================= */
 
 
 function abrirModalCotizacion(){
 
 
-    const modal =
-    document.getElementById(
-        "modalCotizacion"
-    );
+const modal =
+document.getElementById("modalCotizacion");
 
 
 
-    if(modal){
+if(modal){
 
-        modal.style.display="flex";
-
-    }
-
+    modal.style.display="flex";
 
 }
 
 
+}
 
 
 
@@ -703,48 +577,42 @@ function abrirModalCotizacion(){
 function cerrarModalCotizacion(){
 
 
-    const modal =
-    document.getElementById(
-        "modalCotizacion"
-    );
+const modal =
+document.getElementById("modalCotizacion");
+
+
+const form =
+document.getElementById("formCotizacion");
+
+
+const btn =
+document.getElementById("btnCotizar");
 
 
 
-    const form =
-    document.getElementById(
-        "formCotizacion"
-    );
+
+if(form){
+
+    form.reset();
+
+}
 
 
 
-    const btnCotizar =
-    document.getElementById(
-        "btnCotizar"
-    );
+if(btn){
+
+    btn.disabled=true;
+
+}
 
 
 
-    if(form){
+if(modal){
 
-        form.reset();
+    modal.style.display="none";
 
-    }
+}
 
-
-
-    if(btnCotizar){
-
-        btnCotizar.disabled=true;
-
-    }
-
-
-
-    if(modal){
-
-        modal.style.display="none";
-
-    }
 
 
 }
@@ -753,72 +621,67 @@ function cerrarModalCotizacion(){
 
 
 
-
-
-
-/* =====================================================
+/* =========================
    POSTER
-===================================================== */
+========================= */
 
 
 function abrirPoster(){
 
 
-
-    const overlay =
-    document.createElement("div");
-
-
-
-    overlay.style.cssText=`
-
-        position:fixed;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        background:rgba(0,0,0,0.85);
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        z-index:999999;
-
-    `;
+const overlay =
+document.createElement("div");
 
 
 
+overlay.style.cssText=`
 
-    const img =
-    document.createElement("img");
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:999999;
 
-
-
-    img.src =
-    "imagenes/poster.jpg";
-
-
-
-    img.style.maxWidth="90%";
-
-    img.style.maxHeight="90%";
-
-    img.style.borderRadius="12px";
-
-    img.style.cursor="zoom-out";
+`;
 
 
 
-
-    overlay.appendChild(img);
-
-
-
-    overlay.onclick =
-    ()=>overlay.remove();
+const img =
+document.createElement("img");
 
 
 
-    document.body.appendChild(overlay);
+img.src =
+"imagenes/poster.jpg";
+
+
+
+img.style.maxWidth="90%";
+img.style.maxHeight="90%";
+img.style.borderRadius="12px";
+img.style.cursor="zoom-out";
+
+
+
+overlay.appendChild(img);
+
+
+
+overlay.onclick=()=>{
+
+    overlay.remove();
+
+};
+
+
+
+document.body.appendChild(overlay);
+
 
 
 }
@@ -826,39 +689,40 @@ function abrirPoster(){
 
 
 
-
-
-/* =====================================================
+/* =========================
    WHATSAPP
-===================================================== */
+========================= */
 
 
 function enviarWhatsApp(){
 
 
-    const mensaje = `¡Hola!
+const mensaje=`¡Hola!
+
 
 Gracias por comunicarte con NEXIUM SUBLIMACION.
 
+
 ¡HACEMOS REALIDAD TUS IDEAS BRILLANTES!
 
+
 Me gustaría recibir información sobre sus productos promocionales y servicios de personalización.
+
 
 Quedo atento(a) a su respuesta.`;
 
 
 
-    window.open(
 
-        "https://wa.me/525610066522?text="
+window.open(
 
-        +
+"https://wa.me/525610066522?text="
++
+encodeURIComponent(mensaje),
 
-        encodeURIComponent(mensaje),
+"_blank"
 
-        "_blank"
-
-    );
+);
 
 
 }
@@ -867,160 +731,94 @@ Quedo atento(a) a su respuesta.`;
 
 
 
-
-
-/* =====================================================
+/* =========================
    EMAILJS
-===================================================== */
+========================= */
 
 
 function enviarCotizacionCorreo(){
 
 
 
-    emailjs.send(
+emailjs.send(
 
-        "service_e8slvmi",
+"service_e8slvmi",
 
-        "template_ams0res",
+"template_ams0res",
 
-        {
-
-
-
-            nombre:
-            document.getElementById("nombre").value,
+{
 
 
-
-            telefono:
-            document.getElementById("telefono").value,
-
+nombre:
+document.getElementById("nombre").value,
 
 
-            correo:
-            document.getElementById("correo").value,
+telefono:
+document.getElementById("telefono").value,
 
 
-
-            producto:
-            document.getElementById("producto").value,
-
+correo:
+document.getElementById("correo").value,
 
 
-            cantidad:
-            document.getElementById("cantidad").value,
+producto:
+document.getElementById("producto").value,
 
 
-
-            fecha:
-            document.getElementById("fecha").value,
-
+cantidad:
+document.getElementById("cantidad").value,
 
 
-            descripcion:
-            document.getElementById("descripcion").value
+fecha:
+document.getElementById("fecha").value,
 
 
-
-        }
-
-
-
-    )
-
-
-
-    .then(()=>{
-
-
-
-        alert(
-            "Solicitud enviada correctamente."
-        );
-
-
-
-        cerrarModalCotizacion();
-
-
-
-    })
-
-
-
-    .catch(()=>{
-
-
-
-        alert(
-            "Error al enviar ❌"
-        );
-
-
-
-    });
-
+descripcion:
+document.getElementById("descripcion").value
 
 
 }
 
 
+)
 
 
 
+.then(()=>{
+
+
+alert(
+"Solicitud enviada correctamente."
+);
 
 
 
-/* =====================================================
-   VISOR VIDEO
-===================================================== */
-
-
-function iniciarVisorVideo(){
+cerrarModalCotizacion();
 
 
 
-    const visorVideo =
-    document.getElementById(
-        "visorVideo"
-    );
+})
 
 
 
-    if(visorVideo){
+.catch(()=>{
+
+
+alert(
+"Error al enviar ❌"
+);
 
 
 
-        visorVideo.addEventListener(
-            "click",
-            function(e){
-
-
-
-                if(
-                    e.target===visorVideo
-                ){
-
-
-                    cerrarVideo();
-
-
-                }
-
-
-            }
-        );
-
-
-    }
+});
 
 
 
 }
 
-
-
+/* =========================
+   VIDEO
+========================= */
 
 
 function abrirVideo(e){
@@ -1035,34 +833,26 @@ function abrirVideo(e){
 
 
     const visorVideo =
-    document.getElementById(
-        "visorVideo"
-    );
-
+    document.getElementById("visorVideo");
 
 
     const videoGrande =
-    document.getElementById(
-        "videoGrande"
-    );
+    document.getElementById("videoGrande");
 
 
 
-    if(visorVideo){
-
-        visorVideo.style.display="flex";
-
-    }
+    if(!visorVideo || !videoGrande)
+    return;
 
 
 
-    if(videoGrande){
+    visorVideo.style.display="flex";
 
-        videoGrande.currentTime=0;
 
-        videoGrande.play();
+    videoGrande.currentTime=0;
 
-    }
+
+    videoGrande.play();
 
 
 
@@ -1072,9 +862,7 @@ function abrirVideo(e){
 
 
 
-
 function cerrarVideo(e){
-
 
 
     if(e){
@@ -1086,211 +874,104 @@ function cerrarVideo(e){
 
 
     const visorVideo =
-    document.getElementById(
-        "visorVideo"
-    );
-
+    document.getElementById("visorVideo");
 
 
     const videoGrande =
-    document.getElementById(
-        "videoGrande"
-    );
+    document.getElementById("videoGrande");
 
 
 
-    if(visorVideo){
-
-        visorVideo.style.display="none";
-
-    }
+    if(!visorVideo || !videoGrande)
+    return;
 
 
 
-    if(videoGrande){
+    visorVideo.style.display="none";
 
 
-        videoGrande.pause();
-
-        videoGrande.currentTime=0;
+    videoGrande.pause();
 
 
-    }
+    videoGrande.currentTime=0;
+
 
 
 }
 
-/* =====================================================
-   NEXIUM DESIGN STUDIO
-===================================================== */
-
-
-function iniciarDesignStudio(){
-
 
 
 /* =========================
-   DARK MODE
+   TEMA NEXIUM
 ========================= */
+
+
+function iniciarTema(){
+
 
 
 const btnDarkMode =
-document.getElementById(
-    "btnDarkMode"
+document.getElementById("btnDarkMode");
+
+
+
+if(!btnDarkMode)
+return;
+
+
+
+
+document.body.classList.add(
+"nexium-light"
 );
 
 
 
-if(btnDarkMode){
-
-
-
-    document.body.classList.add(
-        "nexium-light"
-    );
-
-
-
-    btnDarkMode.addEventListener(
-        "click",
-        ()=>{
-
-
-
-            if(
-                document.body.classList.contains(
-                    "nexium-light"
-                )
-            ){
-
-
-                document.body.classList.remove(
-                    "nexium-light"
-                );
-
-
-                document.body.classList.add(
-                    "nexium-dark"
-                );
-
-
-                btnDarkMode.textContent="☀️";
-
-
-
-            }else{
-
-
-                document.body.classList.remove(
-                    "nexium-dark"
-                );
-
-
-                document.body.classList.add(
-                    "nexium-light"
-                );
-
-
-                btnDarkMode.textContent="🌙";
-
-
-            }
-
-
-
-        }
-    );
-
-
-}
-
-
-
-
-
-
-/* =========================
-   ABRIR STUDIO
-========================= */
-
-
-const btnStudio =
-document.getElementById(
-    "btnStudio"
-);
-
-
-
-const modal =
-document.getElementById(
-    "modalStudio"
-);
-
-
-
-const cerrar =
-document.getElementById(
-    "cerrarStudio"
-);
-
-
+btnDarkMode.addEventListener(
+"click",
+()=>{
 
 
 
 if(
-    btnStudio &&
-    modal &&
-    cerrar
+document.body.classList.contains(
+"nexium-light"
+)
 ){
 
 
-
-    btnStudio.addEventListener(
-        "click",
-        ()=>{
-
-
-            modal.style.display="flex";
+document.body.classList.remove(
+"nexium-light"
+);
 
 
-        }
-    );
+document.body.classList.add(
+"nexium-dark"
+);
 
 
 
-
-    cerrar.addEventListener(
-        "click",
-        ()=>{
-
-
-            modal.style.display="none";
-
-
-        }
-    );
+btnDarkMode.textContent="☀️";
 
 
 
-
-    modal.addEventListener(
-        "click",
-        e=>{
+}else{
 
 
-            if(
-                e.target===modal
-            ){
+
+document.body.classList.remove(
+"nexium-dark"
+);
 
 
-                modal.style.display="none";
+
+document.body.classList.add(
+"nexium-light"
+);
 
 
-            }
 
-
-        }
-    );
+btnDarkMode.textContent="🌙";
 
 
 
@@ -1298,22 +979,101 @@ if(
 
 
 
+});
+
+
+}
+
+
+
+/* =========================
+   NEXIUM DESIGN STUDIO
+========================= */
+
+
+function iniciarStudio(){
+
+
+
+const btn =
+document.getElementById("btnStudio");
+
+
+const modal =
+document.getElementById("modalStudio");
+
+
+const cerrar =
+document.getElementById("cerrarStudio");
+
+
+
+if(!btn || !modal || !cerrar)
+return;
+
+
+
+
+btn.addEventListener(
+"click",
+()=>{
+
+
+modal.style.display="flex";
+
+
+});
+
+
+
+
+
+cerrar.addEventListener(
+"click",
+()=>{
+
+
+modal.style.display="none";
+
+
+});
+
+
+
+
+
+modal.addEventListener(
+"click",
+(e)=>{
+
+
+if(e.target===modal){
+
+
+modal.style.display="none";
+
+
+}
+
+
+});
 
 
 
 
 
 /* =========================
-   AREA IMPRESION
+   PRODUCTOS STUDIO
 ========================= */
 
 
 const areaImpresion =
-document.getElementById(
-    "areaImpresion"
-);
+document.getElementById("areaImpresion");
 
 
+
+const productoActual =
+document.getElementById("productoActual");
 
 
 
@@ -1321,79 +1081,57 @@ function actualizarAreaImpresion(producto){
 
 
 
-    if(!areaImpresion){
-
-        return;
-
-    }
+if(!areaImpresion)
+return;
 
 
 
-
-    switch(producto){
-
-
-
-        case "taza":
+switch(producto){
 
 
 
-            areaImpresion.style.width="38%";
-
-            areaImpresion.style.height="30%";
-
-            areaImpresion.style.left="50%";
-
-            areaImpresion.style.top="46%";
+case "taza":
 
 
+areaImpresion.style.width="38%";
+areaImpresion.style.height="30%";
+areaImpresion.style.left="50%";
+areaImpresion.style.top="46%";
 
-        break;
+
+break;
 
 
 
 
-
-        case "playera":
-
+case "playera":
 
 
-            areaImpresion.style.width="32%";
-
-            areaImpresion.style.height="46%";
-
-            areaImpresion.style.left="50%";
-
-            areaImpresion.style.top="39%";
+areaImpresion.style.width="32%";
+areaImpresion.style.height="46%";
+areaImpresion.style.left="50%";
+areaImpresion.style.top="39%";
 
 
-
-        break;
+break;
 
 
 
 
-
-        case "termo":
-
+case "termo":
 
 
-            areaImpresion.style.width="22%";
+areaImpresion.style.width="22%";
+areaImpresion.style.height="48%";
+areaImpresion.style.left="50%";
+areaImpresion.style.top="44%";
 
-            areaImpresion.style.height="48%";
 
-            areaImpresion.style.left="50%";
-
-            areaImpresion.style.top="44%";
+break;
 
 
 
-        break;
-
-
-
-    }
-
+}
 
 
 }
@@ -1402,27 +1140,10 @@ function actualizarAreaImpresion(producto){
 
 
 
-
-
-
-/* =========================
-   CAMBIO PRODUCTO
-========================= */
-
-
 const botonesProducto =
 document.querySelectorAll(
-    ".studio-item"
+".studio-item"
 );
-
-
-
-const productoActual =
-document.getElementById(
-    "productoActual"
-);
-
-
 
 
 
@@ -1431,100 +1152,80 @@ boton=>{
 
 
 
-    boton.addEventListener(
-        "click",
-        function(){
+boton.addEventListener(
+"click",
+function(){
 
 
 
-            const producto =
-            this.dataset.producto;
-
-
-
-
-
-            if(!productoActual){
-
-                return;
-
-            }
+const producto =
+this.dataset.producto;
 
 
 
 
-
-            switch(producto){
-
-
-
-                case "taza":
+if(!productoActual)
+return;
 
 
 
-                    productoActual.src =
-                    "configurador/productos/tazas/taza-blanca.png";
+
+switch(producto){
 
 
 
-                    actualizarAreaImpresion(
-                        "taza"
-                    );
+case "taza":
 
 
+productoActual.src =
+"configurador/productos/tazas/taza-blanca.png";
 
-                break;
+
+actualizarAreaImpresion("taza");
+
+
+break;
 
 
 
 
 
-                case "playera":
+case "playera":
 
 
-
-                    productoActual.src =
-                    "configurador/productos/playeras/playera-blanca.png";
-
+productoActual.src =
+"configurador/productos/playeras/playera-blanca.png";
 
 
-                    actualizarAreaImpresion(
-                        "playera"
-                    );
+actualizarAreaImpresion("playera");
 
 
-
-                break;
+break;
 
 
 
 
 
-                case "termo":
+case "termo":
+
+
+productoActual.src =
+"configurador/productos/termos/termo-blanco.png";
+
+
+actualizarAreaImpresion("termo");
+
+
+break;
 
 
 
-                    productoActual.src =
-                    "configurador/productos/termos/termo-blanco.png";
+}
 
 
 
-                    actualizarAreaImpresion(
-                        "termo"
-                    );
+});
 
-
-
-                break;
-
-
-
-            }
-
-
-
-        }
-    );
 
 
 });
@@ -1534,99 +1235,82 @@ boton=>{
 
 
 
-
-
-
-
 /* =========================
-   CARGAR DISEÑO CLIENTE
+   SUBIR DISEÑO
 ========================= */
 
 
-const subirDiseno =
-document.getElementById(
-    "subirDiseno"
-);
 
+const subirDiseno =
+document.getElementById("subirDiseno");
 
 
 const disenoUsuario =
-document.getElementById(
-    "disenoUsuario"
-);
-
+document.getElementById("disenoUsuario");
 
 
 
 
 if(
-    subirDiseno &&
-    disenoUsuario
+subirDiseno &&
+disenoUsuario
 ){
 
 
 
-    subirDiseno.addEventListener(
-        "change",
-        function(){
+subirDiseno.addEventListener(
+"change",
+function(){
 
 
 
-            const archivo =
-            this.files[0];
+const archivo =
+this.files[0];
 
 
 
-            if(!archivo){
-
-                return;
-
-            }
-
+if(!archivo)
+return;
 
 
 
 
-            const lector =
-            new FileReader();
+const lector =
+new FileReader();
 
 
 
 
-
-            lector.onload =
-            function(e){
+lector.onload=function(e){
 
 
 
-                disenoUsuario.src =
-                e.target.result;
+disenoUsuario.src =
+e.target.result;
 
 
 
-                disenoUsuario.style.display =
-                "block";
+disenoUsuario.style.display=
+"block";
 
 
 
-            };
+};
 
 
 
 
-
-            lector.readAsDataURL(
-                archivo
-            );
-
+lector.readAsDataURL(
+archivo
+);
 
 
-        }
-    );
 
+});
 
 
 }
+
 
 
 
@@ -1635,12 +1319,9 @@ if(
 
 
 
-
-
-
-/* =====================================================
-   EXPORTAR FUNCIONES AL HTML
-===================================================== */
+/* =========================
+   EXPORTAR FUNCIONES GLOBALES
+========================= */
 
 
 window.addEventListener(
@@ -1648,53 +1329,54 @@ window.addEventListener(
 ()=>{
 
 
-    window.abrirPoster =
-    abrirPoster;
+
+window.abrirPoster =
+abrirPoster;
 
 
 
-    window.enviarWhatsApp =
-    enviarWhatsApp;
+window.enviarWhatsApp =
+enviarWhatsApp;
 
 
 
-    window.abrirVisor =
-    abrirVisor;
+window.abrirVisor =
+abrirVisor;
 
 
 
-    window.cambiarImagen =
-    cambiarImagen;
+window.cambiarImagen =
+cambiarImagen;
 
 
 
-    window.cerrarVisor =
-    cerrarVisor;
+window.cerrarVisor =
+cerrarVisor;
 
 
 
-    window.abrirVideo =
-    abrirVideo;
+window.abrirVideo =
+abrirVideo;
 
 
 
-    window.cerrarVideo =
-    cerrarVideo;
+window.cerrarVideo =
+cerrarVideo;
 
 
 
-    window.cerrarModalCotizacion =
-    cerrarModalCotizacion;
+window.abrirModalCotizacion =
+abrirModalCotizacion;
 
 
 
-    window.abrirModalCotizacion =
-    abrirModalCotizacion;
+window.cerrarModalCotizacion =
+cerrarModalCotizacion;
 
 
 
-    window.enviarCotizacionCorreo =
-    enviarCotizacionCorreo;
+window.enviarCotizacionCorreo =
+enviarCotizacionCorreo;
 
 
 
