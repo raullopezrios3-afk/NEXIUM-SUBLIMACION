@@ -160,6 +160,8 @@ document.addEventListener("keydown", function (e) {
 document.querySelectorAll(".producto-card.active")
     .forEach(card => card.classList.remove("active"));
 
+});
+
 
 // ACTIVAR BOTÓN DE COTIZACIÓN CUANDO EL FORMULARIO ESTÉ COMPLETO
 
