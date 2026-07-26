@@ -652,7 +652,7 @@ MEJORAS VISUALES NEXIUM V1
 
 .producto-card{
 
-    background:#1E293B;
+    background:#ffffff;
 
     border-radius:18px;
 
@@ -672,7 +672,7 @@ MEJORAS VISUALES NEXIUM V1
 
     margin:20px 15px 10px;
 
-    color:#F8FAFC;
+    color:#1D4ED8;
 
     font-size:30px;
 
@@ -903,7 +903,7 @@ ANIMACIÓN DEGRADADO MENÚ NEXIUM
 .contacto-box{
     width:520px;
     max-width:100%;
-    background:#1E293B;
+    background:#ffffff;
     border:1px solid rgba(255,255,255,.08);
 
 box-shadow:
