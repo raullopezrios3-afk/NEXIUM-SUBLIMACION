@@ -1484,10 +1484,10 @@ box-shadow:
 }
 
 /*======================================
-NEXIUM DARK THEME
+NEXIUM DARK MODE
 ======================================*/
 
-body{
+body.nexium-dark{
 
     background:#0F172A;
 
@@ -1495,20 +1495,43 @@ body{
 
 }
 
-section{
+body.nexium-dark section{
 
     background:transparent;
 
 }
 
-h1,h2,h3,h4,h5,h6{
+body.nexium-dark h1,
+body.nexium-dark h2,
+body.nexium-dark h3,
+body.nexium-dark h4,
+body.nexium-dark h5,
+body.nexium-dark h6{
 
     color:#F8FAFC;
 
 }
 
-p{
+body.nexium-dark p{
 
     color:#CBD5E1;
+
+}
+
+body.nexium-dark .producto-card{
+
+    background:#1E293B;
+
+}
+
+body.nexium-dark .contacto-box{
+
+    background:#1E293B;
+
+}
+
+body.nexium-dark .studio-box{
+
+    background:#1E293B;
 
 }
