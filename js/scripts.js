@@ -369,19 +369,31 @@ window.addEventListener("DOMContentLoaded",()=>{
    NEXIUM DARK MODE
 ========================= */
 
+/*=========================
+NEXIUM THEMES
+=========================*/
+
 const btnDarkMode = document.getElementById("btnDarkMode");
 
 if(btnDarkMode){
 
+    /* Inicia siempre en modo Light */
+
+    document.body.classList.add("nexium-light");
+
     btnDarkMode.addEventListener("click",()=>{
 
-        document.body.classList.toggle("nexium-dark");
+        if(document.body.classList.contains("nexium-light")){
 
-        if(document.body.classList.contains("nexium-dark")){
+            document.body.classList.remove("nexium-light");
+            document.body.classList.add("nexium-dark");
 
             btnDarkMode.textContent="☀️";
 
         }else{
+
+            document.body.classList.remove("nexium-dark");
+            document.body.classList.add("nexium-light");
 
             btnDarkMode.textContent="🌙";
 
