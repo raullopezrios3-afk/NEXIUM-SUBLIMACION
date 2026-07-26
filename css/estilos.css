@@ -1653,6 +1653,16 @@ body.nexium-light .header{
 
 }
 
+body.nexium-light footer{
+
+    background:#090273;
+
+    color:var(--blanco);
+
+    border-top:5px solid var(--dorado);
+
+}
+
 /*=========================
 NEXIUM LIGHT CARDS
 =========================*/
