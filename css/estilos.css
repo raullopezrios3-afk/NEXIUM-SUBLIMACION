@@ -1663,6 +1663,24 @@ body.nexium-light footer{
 
 }
 
+body.nexium-light .upload-box{
+
+    background:#ffffff;
+
+    color:#1f2937;
+
+    border-color:#0B3D91;
+
+}
+
+body.nexium-dark .upload-box{
+
+    background:#111827;
+
+    color:#F8FAFC;
+
+}
+
 /*=========================
 NEXIUM LIGHT CARDS
 =========================*/
