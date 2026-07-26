@@ -156,13 +156,53 @@ document.addEventListener("keydown", function (e) {
         cerrarModalCotizacion();
     }
 
-    // Cerrar catálogos abiertos
-    document.querySelectorAll(".producto-card.active")
-        .forEach(card => card.classList.remove("active"));
+   // Cerrar catálogos abiertos
+document.querySelectorAll(".producto-card.active")
+    .forEach(card => card.classList.remove("active"));
 
-});
 
-});
+// ACTIVAR BOTÓN DE COTIZACIÓN CUANDO EL FORMULARIO ESTÉ COMPLETO
+
+const camposCotizacion = document.querySelectorAll(
+    "#nombre, #telefono, #correo, #producto, #cantidad, #fecha"
+);
+
+const btnCotizar = document.getElementById("btnCotizar");
+
+
+if(btnCotizar){
+
+    function validarFormulario(){
+
+        let completo = true;
+
+        camposCotizacion.forEach(campo => {
+
+            if(campo.value.trim() === ""){
+                completo = false;
+            }
+
+        });
+
+        btnCotizar.disabled = !completo;
+
+    }
+
+
+    camposCotizacion.forEach(campo => {
+
+        campo.addEventListener("input", validarFormulario);
+
+    });
+
+}
+
+
+});  // <-- ESTE ES EL CIERRE DEL DOMContentLoaded
+     
+/* =====================================================
+   FUNCIONES GLOBALES
+===================================================== */
      
 /* =====================================================
    FUNCIONES GLOBALES
