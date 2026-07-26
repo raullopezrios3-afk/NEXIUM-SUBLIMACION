@@ -820,6 +820,39 @@ alert(
    VIDEO
 ========================= */
 
+/* =========================
+   INICIALIZAR VIDEO
+========================= */
+
+function iniciarVideo(){
+
+
+    const visorVideo =
+    document.getElementById("visorVideo");
+
+
+    if(!visorVideo) return;
+
+
+
+    visorVideo.addEventListener(
+        "click",
+        function(e){
+
+
+            if(e.target === visorVideo){
+
+                cerrarVideo();
+
+            }
+
+
+        }
+    );
+
+
+}
+
 
 function abrirVideo(e){
 
