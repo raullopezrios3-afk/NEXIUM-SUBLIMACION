@@ -1693,6 +1693,7 @@ body.nexium-dark .btn-card:hover{
 
 }
 
-.productos{
+.productos,
+.productos *{
     background:#090273 !important;
 }
