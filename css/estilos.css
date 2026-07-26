@@ -1484,7 +1484,7 @@ box-shadow:
 }
 
 /*======================================
-NEXIUM DARK MODE
+NEXIUM DARK THEME
 ======================================*/
 
 body.nexium-dark{
@@ -1492,6 +1492,8 @@ body.nexium-dark{
     background:#0F172A;
 
     color:#F8FAFC;
+
+    transition:.35s;
 
 }
 
@@ -1518,20 +1520,153 @@ body.nexium-dark p{
 
 }
 
-body.nexium-dark .producto-card{
+/*=========================
+HEADER
+=========================*/
 
-    background:#1E293B;
+body.nexium-dark .header{
+
+    background:#111827;
+
+    border-bottom:2px solid #C5A879;
 
 }
 
-body.nexium-dark .contacto-box{
+body.nexium-dark .menu{
 
-    background:#1E293B;
+    background:linear-gradient(
+        270deg,
+        #111827,
+        #1E293B,
+        #334155,
+        #475569,
+        #C5A879
+    );
 
 }
 
+body.nexium-dark .menu a{
+
+    background:#1E293B;
+
+    color:#F8FAFC;
+
+}
+
+body.nexium-dark .menu a:hover{
+
+    background:#C5A879;
+
+    color:#111827;
+
+}
+
+body.nexium-dark .menu a.active{
+
+    background:#C5A879;
+
+    color:#111827;
+
+}
+
+/*=========================
+TARJETAS
+=========================*/
+
+body.nexium-dark .producto-card,
+body.nexium-dark .contacto-box,
 body.nexium-dark .studio-box{
 
     background:#1E293B;
+
+}
+
+/*=========================
+SECCIONES
+=========================*/
+
+body.nexium-dark .productos{
+
+    background:#111827;
+
+}
+
+body.nexium-dark #contacto{
+
+    background:#0F172A;
+
+}
+
+body.nexium-dark footer{
+
+    background:#111827;
+
+    border-top:5px solid #C5A879;
+
+}
+
+/*=========================
+TEXTOS
+=========================*/
+
+body.nexium-dark .producto-card h3{
+
+    color:#F8FAFC;
+
+}
+
+body.nexium-dark .producto-card p{
+
+    color:#CBD5E1;
+
+}
+
+body.nexium-dark .contacto-box .titulo-seccion{
+
+    color:#F8FAFC;
+
+}
+
+body.nexium-dark .datos-contacto p{
+
+    color:#CBD5E1;
+
+}
+
+/*======================================
+NEXIUM LIGHT THEME
+======================================*/
+
+body.nexium-light{
+
+    background:var(--azul);
+
+    color:var(--blanco);
+
+}
+
+body.nexium-light .header{
+
+    background:#090273;
+
+    border-bottom:2px solid var(--dorado);
+
+}
+
+/*=========================
+BOTONES
+=========================*/
+
+body.nexium-dark .btn-card{
+
+    background:#2563EB;
+
+    color:#FFFFFF;
+
+}
+
+body.nexium-dark .btn-card:hover{
+
+    background:#3B82F6;
 
 }
