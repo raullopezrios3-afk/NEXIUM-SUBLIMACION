@@ -1,293 +1,840 @@
+/* =====================================================
+   NEXIUM SCRIPTS.JS
+   ESTRUCTURA REORGANIZADA
+   FUNCIONALIDAD CONSERVADA
+===================================================== */
+
+
 /* =========================
    VARIABLES GLOBALES
 ========================= */
+
 let imagenes = [];
 let indexActual = 0;
 
 
-/* =========================
-   INICIALIZACIÓN GENERAL
-========================= */
-document.addEventListener("DOMContentLoaded", function () {
 
-    /* =========================
-       SLIDER
-    ========================= */
+/* =====================================================
+   INICIO PRINCIPAL NEXIUM
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    iniciarNexium
+);
+
+
+
+function iniciarNexium(){
+
+    console.log("NEXIUM iniciado");
+
+
+    iniciarSlider();
+
+    iniciarMenu();
+
+    iniciarPoster();
+
+    iniciarGalerias();
+
+    iniciarCierres();
+
+    iniciarFormularioCotizacion();
+
+    iniciarVisorVideo();
+
+    iniciarDesignStudio();
+
+}
+
+
+
+/* =====================================================
+   SLIDER
+===================================================== */
+
+
+function iniciarSlider(){
+
     const slides = document.querySelectorAll(".slide");
 
-    if (slides.length > 0) {
+
+    if(slides.length > 0){
+
         let index = 0;
+
+
         slides[0].classList.add("active");
 
-        setInterval(() => {
-            slides.forEach(s => s.classList.remove("active"));
+
+        setInterval(()=>{
+
+
+            slides.forEach(
+                slide => slide.classList.remove("active")
+            );
+
+
             index = (index + 1) % slides.length;
+
+
             slides[index].classList.add("active");
-        }, 4000);
+
+
+        },4000);
+
     }
 
-   /* =========================
-       MENÚ ACTIVO
-    ========================= */
-    const menuLinks = document.querySelectorAll(".menu a");
+}
 
-    menuLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            menuLinks.forEach(i => i.classList.remove("active"));
+
+
+/* =====================================================
+   MENU ACTIVO
+===================================================== */
+
+
+function iniciarMenu(){
+
+    const menuLinks =
+    document.querySelectorAll(".menu a");
+
+
+    menuLinks.forEach(link=>{
+
+
+        link.addEventListener("click",function(){
+
+
+            menuLinks.forEach(
+                item=>item.classList.remove("active")
+            );
+
+
             this.classList.add("active");
+
+
         });
+
+
+    });
+
+}
+
+
+
+/* =====================================================
+   POSTER
+===================================================== */
+
+
+function iniciarPoster(){
+
+    const btnPoster =
+    document.getElementById("btnPoster");
+
+
+    if(btnPoster){
+
+
+        btnPoster.addEventListener(
+            "click",
+            function(e){
+
+
+                e.preventDefault();
+
+                abrirPoster();
+
+
+            }
+        );
+
+
+    }
+
+}
+
+
+
+
+
+/* =====================================================
+   GALERIAS PRODUCTOS
+===================================================== */
+
+
+function iniciarGalerias(){
+
+
+    const cards =
+    document.querySelectorAll(".producto-card");
+
+
+
+    cards.forEach(card=>{
+
+
+        card.addEventListener(
+            "click",
+            function(e){
+
+
+
+                if(
+                    e.target.closest(".galeria img")
+                ){
+
+                    return;
+
+                }
+
+
+
+                e.stopPropagation();
+
+
+
+                cerrarVisor();
+
+
+
+                const estabaAbierta =
+                card.classList.contains("active");
+
+
+
+                cards.forEach(c=>{
+
+                    c.classList.remove("active");
+
+                });
+
+
+
+                if(!estabaAbierta){
+
+                    card.classList.add("active");
+
+                }
+
+
+            }
+        );
+
+
+
     });
 
 
-    /* =========================
-       POSTER
-    ========================= */
-    const btnPoster = document.getElementById("btnPoster");
 
-    if (btnPoster) {
-        btnPoster.addEventListener("click", function (e) {
-            e.preventDefault();
-            abrirPoster();
+
+
+    document.addEventListener(
+        "click",
+        function(e){
+
+
+
+            if(
+                !e.target.closest(".producto-card")
+            ){
+
+
+
+                document
+                .querySelectorAll(".producto-card.active")
+                .forEach(card=>{
+
+
+                    card.classList.remove("active");
+
+
+                });
+
+
+            }
+
+
+        }
+    );
+
+
+}
+
+
+
+
+
+/* =====================================================
+   CIERRES GENERALES
+===================================================== */
+
+
+function iniciarCierres(){
+
+
+
+    /* CERRAR MODAL COTIZACION */
+
+
+    document.addEventListener(
+        "click",
+        function(e){
+
+
+
+            const modal =
+            document.getElementById(
+                "modalCotizacion"
+            );
+
+
+
+            if(
+                !modal ||
+                modal.style.display !== "flex"
+            ){
+
+                return;
+
+            }
+
+
+
+            if(
+                e.target.closest(".cotizar")
+            ){
+
+                return;
+
+            }
+
+
+
+            const content =
+            modal.querySelector(".modal-content");
+
+
+
+            if(
+                !content.contains(e.target)
+            ){
+
+                cerrarModalCotizacion();
+
+            }
+
+
+
+        }
+    );
+
+
+
+
+
+
+    /* CERRAR VISOR */
+
+    document.addEventListener(
+        "click",
+        function(e){
+
+
+
+            const visor =
+            document.getElementById("visor");
+
+
+
+            if(!visor){
+
+                return;
+
+            }
+
+
+
+            if(
+                visor.style.display !== "flex"
+            ){
+
+                return;
+
+            }
+
+
+
+            if(
+                e.target === visor
+            ){
+
+                cerrarVisor();
+
+            }
+
+
+        }
+    );
+
+
+
+
+
+
+
+    /* ESC GLOBAL */
+
+
+    document.addEventListener(
+        "keydown",
+        function(e){
+
+
+
+            if(e.key !== "Escape"){
+
+                return;
+
+            }
+
+
+
+            const visor =
+            document.getElementById("visor");
+
+
+
+            if(
+                visor &&
+                visor.style.display === "flex"
+            ){
+
+                cerrarVisor();
+
+            }
+
+
+
+
+            const modal =
+            document.getElementById(
+                "modalCotizacion"
+            );
+
+
+
+            if(
+                modal &&
+                modal.style.display === "flex"
+            ){
+
+                cerrarModalCotizacion();
+
+            }
+
+
+
+            document
+            .querySelectorAll(".producto-card.active")
+            .forEach(card=>{
+
+
+                card.classList.remove("active");
+
+
+            });
+
+
+
+        }
+    );
+
+
+
+}
+
+
+
+
+
+
+/* =====================================================
+   FORMULARIO COTIZACION
+===================================================== */
+
+
+function iniciarFormularioCotizacion(){
+
+
+    const camposCotizacion =
+    document.querySelectorAll(
+        "#nombre, #telefono, #correo, #producto, #cantidad, #fecha"
+    );
+
+
+
+    const btnCotizar =
+    document.getElementById(
+        "btnCotizar"
+    );
+
+
+
+    if(btnCotizar){
+
+
+
+        function validarFormulario(){
+
+
+            let completo = true;
+
+
+
+            camposCotizacion.forEach(campo=>{
+
+
+                if(
+                    campo.value.trim()===""
+                ){
+
+                    completo=false;
+
+                }
+
+
+            });
+
+
+
+            btnCotizar.disabled =
+            !completo;
+
+
+
+        }
+
+
+
+
+        camposCotizacion.forEach(campo=>{
+
+
+            campo.addEventListener(
+                "input",
+                validarFormulario
+            );
+
+
         });
+
+
+
     }
 
-       /* =========================
-   GALERÍA (ACORDEÓN TARJETAS)
-========================= */
 
-const cards = document.querySelectorAll(".producto-card");
+}
 
-cards.forEach(card => {
+/* =====================================================
+   VISOR DE IMÁGENES
+===================================================== */
 
-    card.addEventListener("click", function (e) {
 
-        // Si hicieron clic en una imagen del catálogo,
-        // no abrir/cerrar la tarjeta.
-        if (e.target.closest(".galeria img")) return;
+function abrirVisor(img){
+
+
+    const galeria =
+    img.closest(".galeria")
+    .querySelectorAll("img");
+
+
+
+    imagenes =
+    Array.from(galeria)
+    .map(i=>i.src);
+
+
+
+    indexActual =
+    imagenes.indexOf(img.src);
+
+
+
+    const visor =
+    document.getElementById("visor");
+
+    const imgGrande =
+    document.getElementById("imgGrande");
+
+
+
+    if(visor){
+
+        visor.style.display="flex";
+
+    }
+
+
+
+    if(imgGrande){
+
+        imgGrande.src=img.src;
+
+    }
+
+
+}
+
+
+
+
+function cambiarImagen(dir,e){
+
+
+    if(e){
 
         e.stopPropagation();
 
-        cerrarVisor();
-
-        const estabaAbierta = card.classList.contains("active");
-
-        // Cerrar todas
-        cards.forEach(c => c.classList.remove("active"));
-
-        // Abrir solamente la seleccionada
-        if (!estabaAbierta) {
-            card.classList.add("active");
-        }
-
-    });
-
-});   // ← AQUÍ termina el forEach
-
-   /* =========================
-   CERRAR CATÁLOGOS AL HACER CLICK FUERA
-========================= */
-
-document.addEventListener("click", function (e) {
-
-    if (!e.target.closest(".producto-card")) {
-
-        document.querySelectorAll(".producto-card.active")
-            .forEach(card => card.classList.remove("active"));
-
-    }
-
-});
-
-/* =========================
-       CERRAR MODAL AL HACER CLICK FUERA
-    ========================= */
-   document.addEventListener("click", function (e) {
-
-    const modal = document.getElementById("modalCotizacion");
-
-    if (!modal || modal.style.display !== "flex") return;
-
-    // Ignorar el clic que abrió el modal
-    if (e.target.closest(".cotizar")) return;
-
-    const content = modal.querySelector(".modal-content");
-
-    if (!content.contains(e.target)) {
-        cerrarModalCotizacion();
-    }
-
-});
-
-   /* =========================
-   CERRAR VISOR AL HACER CLIC FUERA
-========================= */
-document.addEventListener("click", function (e) {
-
-    const visor = document.getElementById("visor");
-
-    if (!visor) return;
-
-    if (visor.style.display !== "flex") return;
-
-    if (e.target === visor) {
-        cerrarVisor();
-    }
-
-});
-
-  /* =========================
-   ESC GLOBAL
-========================= */
-document.addEventListener("keydown", function (e) {
-
-    if (e.key !== "Escape") return;
-
-    // Cerrar visor
-    const visor = document.getElementById("visor");
-
-    if (visor && visor.style.display === "flex") {
-        cerrarVisor();
-    }
-
-    // Cerrar modal
-    const modal = document.getElementById("modalCotizacion");
-
-    if (modal && modal.style.display === "flex") {
-        cerrarModalCotizacion();
-    }
-
-   // Cerrar catálogos abiertos
-document.querySelectorAll(".producto-card.active")
-    .forEach(card => card.classList.remove("active"));
-
-});
-
-
-// ACTIVAR BOTÓN DE COTIZACIÓN CUANDO EL FORMULARIO ESTÉ COMPLETO
-
-const camposCotizacion = document.querySelectorAll(
-    "#nombre, #telefono, #correo, #producto, #cantidad, #fecha"
-);
-
-const btnCotizar = document.getElementById("btnCotizar");
-
-
-if(btnCotizar){
-
-    function validarFormulario(){
-
-        let completo = true;
-
-        camposCotizacion.forEach(campo => {
-
-            if(campo.value.trim() === ""){
-                completo = false;
-            }
-
-        });
-
-        btnCotizar.disabled = !completo;
-
     }
 
 
-    camposCotizacion.forEach(campo => {
-
-        campo.addEventListener("input", validarFormulario);
-
-    });
-
-}
-
-
-});  // <-- ESTE ES EL CIERRE DEL DOMContentLoaded
-     
-/* =====================================================
-   FUNCIONES GLOBALES
-===================================================== */
-     
-/* =====================================================
-   FUNCIONES GLOBALES
-===================================================== */
-
-/* =========================
-   VISOR IMAGENES
-========================= */
-function abrirVisor(img) {
-
-    const galeria = img.closest(".galeria").querySelectorAll("img");
-
-    imagenes = Array.from(galeria).map(i => i.src);
-    indexActual = imagenes.indexOf(img.src);
-
-    document.getElementById("visor").style.display = "flex";
-    document.getElementById("imgGrande").src = img.src;
-}
-
-function cambiarImagen(dir, e) {
-    e?.stopPropagation();
 
     indexActual += dir;
 
-    if (indexActual < 0) indexActual = imagenes.length - 1;
-    if (indexActual >= imagenes.length) indexActual = 0;
 
-    document.getElementById("imgGrande").src = imagenes[indexActual];
-}
 
-function cerrarVisor(e) {
-    e?.stopPropagation();
-    document.getElementById("visor").style.display = "none";
-}
+    if(indexActual < 0){
 
-/* =========================
-   ABRIR MODAL
-========================= */
-function abrirModalCotizacion() {
+        indexActual =
+        imagenes.length - 1;
 
-    const modal = document.getElementById("modalCotizacion");
-
-    if (modal) {
-        modal.style.display = "flex";
     }
 
+
+
+    if(indexActual >= imagenes.length){
+
+        indexActual = 0;
+
+    }
+
+
+
+    const imgGrande =
+    document.getElementById("imgGrande");
+
+
+
+    if(imgGrande){
+
+        imgGrande.src =
+        imagenes[indexActual];
+
+    }
+
+
 }
-/* =========================
+
+
+
+
+function cerrarVisor(e){
+
+
+    if(e){
+
+        e.stopPropagation();
+
+    }
+
+
+
+    const visor =
+    document.getElementById("visor");
+
+
+
+    if(visor){
+
+        visor.style.display="none";
+
+    }
+
+
+}
+
+
+
+
+
+
+/* =====================================================
+   MODAL COTIZACION
+===================================================== */
+
+
+function abrirModalCotizacion(){
+
+
+    const modal =
+    document.getElementById(
+        "modalCotizacion"
+    );
+
+
+
+    if(modal){
+
+        modal.style.display="flex";
+
+    }
+
+
+}
+
+
+
+
+
+
+function cerrarModalCotizacion(){
+
+
+    const modal =
+    document.getElementById(
+        "modalCotizacion"
+    );
+
+
+
+    const form =
+    document.getElementById(
+        "formCotizacion"
+    );
+
+
+
+    const btnCotizar =
+    document.getElementById(
+        "btnCotizar"
+    );
+
+
+
+    if(form){
+
+        form.reset();
+
+    }
+
+
+
+    if(btnCotizar){
+
+        btnCotizar.disabled=true;
+
+    }
+
+
+
+    if(modal){
+
+        modal.style.display="none";
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
    POSTER
-========================= */
-function abrirPoster() {
+===================================================== */
 
-    const overlay = document.createElement("div");
 
-    overlay.style.cssText = `
+function abrirPoster(){
+
+
+
+    const overlay =
+    document.createElement("div");
+
+
+
+    overlay.style.cssText=`
+
         position:fixed;
-        top:0;left:0;
-        width:100%;height:100%;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
         background:rgba(0,0,0,0.85);
         display:flex;
         align-items:center;
         justify-content:center;
         z-index:999999;
+
     `;
 
-    const img = document.createElement("img");
-    img.src = "imagenes/poster.jpg";
-    img.style.maxWidth = "90%";
-    img.style.maxHeight = "90%";
-    img.style.borderRadius = "12px";
-    img.style.cursor = "zoom-out";
+
+
+
+    const img =
+    document.createElement("img");
+
+
+
+    img.src =
+    "imagenes/poster.jpg";
+
+
+
+    img.style.maxWidth="90%";
+
+    img.style.maxHeight="90%";
+
+    img.style.borderRadius="12px";
+
+    img.style.cursor="zoom-out";
+
+
+
 
     overlay.appendChild(img);
 
-    overlay.onclick = () => overlay.remove();
+
+
+    overlay.onclick =
+    ()=>overlay.remove();
+
+
 
     document.body.appendChild(overlay);
+
+
 }
 
-/* =========================
+
+
+
+
+
+/* =====================================================
    WHATSAPP
-========================= */
-function enviarWhatsApp() {
+===================================================== */
+
+
+function enviarWhatsApp(){
+
 
     const mensaje = `¡Hola!
 
@@ -299,364 +846,856 @@ Me gustaría recibir información sobre sus productos promocionales y servicios 
 
 Quedo atento(a) a su respuesta.`;
 
+
+
     window.open(
-        "https://wa.me/525610066522?text=" + encodeURIComponent(mensaje),
+
+        "https://wa.me/525610066522?text="
+
+        +
+
+        encodeURIComponent(mensaje),
+
         "_blank"
+
     );
+
+
 }
 
-/* =========================
+
+
+
+
+
+
+/* =====================================================
    EMAILJS
-========================= */
-function enviarCotizacionCorreo() {
+===================================================== */
 
-    emailjs.send("service_e8slvmi", "template_ams0res", {
 
-        nombre: document.getElementById("nombre").value,
-        telefono: document.getElementById("telefono").value,
-        correo: document.getElementById("correo").value,
-        producto: document.getElementById("producto").value,
-        cantidad: document.getElementById("cantidad").value,
-        fecha: document.getElementById("fecha").value,
-        descripcion: document.getElementById("descripcion").value
+function enviarCotizacionCorreo(){
 
-    })
 
-    .then(() => {
 
-        alert("Solicitud enviada correctamente.");
+    emailjs.send(
+
+        "service_e8slvmi",
+
+        "template_ams0res",
+
+        {
+
+
+
+            nombre:
+            document.getElementById("nombre").value,
+
+
+
+            telefono:
+            document.getElementById("telefono").value,
+
+
+
+            correo:
+            document.getElementById("correo").value,
+
+
+
+            producto:
+            document.getElementById("producto").value,
+
+
+
+            cantidad:
+            document.getElementById("cantidad").value,
+
+
+
+            fecha:
+            document.getElementById("fecha").value,
+
+
+
+            descripcion:
+            document.getElementById("descripcion").value
+
+
+
+        }
+
+
+
+    )
+
+
+
+    .then(()=>{
+
+
+
+        alert(
+            "Solicitud enviada correctamente."
+        );
+
+
 
         cerrarModalCotizacion();
 
+
+
     })
 
-    .catch(() => {
 
-        alert("Error al enviar ❌");
+
+    .catch(()=>{
+
+
+
+        alert(
+            "Error al enviar ❌"
+        );
+
+
 
     });
 
-}
-/* =========================
-   MODAL CLOSE
-========================= */
-function cerrarModalCotizacion() {
 
-    const modal = document.getElementById("modalCotizacion");
-    const form = document.getElementById("formCotizacion");
-    const btnCotizar = document.getElementById("btnCotizar");
-
-    if (form) {
-        form.reset();
-    }
-
-    // Regresar botón a estado bloqueado
-    if(btnCotizar){
-        btnCotizar.disabled = true;
-    }
-
-    if (modal) {
-        modal.style.display = "none";
-    }
 
 }
 
-/*=========================
-VISOR VIDEO
-=========================*/
 
-function abrirVideo(e){
 
-    if(e) e.preventDefault();
 
-    const visorVideo=document.getElementById("visorVideo");
-    const videoGrande=document.getElementById("videoGrande");
 
-    visorVideo.style.display="flex";
 
-    videoGrande.currentTime=0;
-    videoGrande.play();
 
-}
 
-function cerrarVideo(e){
+/* =====================================================
+   VISOR VIDEO
+===================================================== */
 
-    if(e) e.stopPropagation();
 
-    const visorVideo=document.getElementById("visorVideo");
-    const videoGrande=document.getElementById("videoGrande");
+function iniciarVisorVideo(){
 
-    visorVideo.style.display="none";
 
-    videoGrande.pause();
-    videoGrande.currentTime=0;
 
-}
+    const visorVideo =
+    document.getElementById(
+        "visorVideo"
+    );
 
-window.addEventListener("DOMContentLoaded",()=>{
 
-    const visorVideo=document.getElementById("visorVideo");
 
     if(visorVideo){
 
-        visorVideo.addEventListener("click",function(e){
 
-            if(e.target===visorVideo){
 
-                cerrarVideo();
+        visorVideo.addEventListener(
+            "click",
+            function(e){
+
+
+
+                if(
+                    e.target===visorVideo
+                ){
+
+
+                    cerrarVideo();
+
+
+                }
+
 
             }
+        );
 
-        });
 
     }
 
-});
 
-/*=========================
-NEXIUM DESIGN STUDIO
-=========================*/
-
-window.addEventListener("DOMContentLoaded",()=>{
-
-   /* =========================
-   NEXIUM DARK MODE
-========================= */
-
-/*=========================
-NEXIUM THEMES
-=========================*/
-
-const btnDarkMode = document.getElementById("btnDarkMode");
-
-if(btnDarkMode){
-
-    /* Inicia siempre en modo Light */
-
-    document.body.classList.add("nexium-light");
-
-    btnDarkMode.addEventListener("click",()=>{
-
-        if(document.body.classList.contains("nexium-light")){
-
-            document.body.classList.remove("nexium-light");
-            document.body.classList.add("nexium-dark");
-
-            btnDarkMode.textContent="☀️";
-
-        }else{
-
-            document.body.classList.remove("nexium-dark");
-            document.body.classList.add("nexium-light");
-
-            btnDarkMode.textContent="🌙";
-
-        }
-
-    });
 
 }
 
-    const btn=document.getElementById("btnStudio");
 
-    const modal=document.getElementById("modalStudio");
 
-    const cerrar=document.getElementById("cerrarStudio");
 
-    if(!btn || !modal || !cerrar) return;
 
-    btn.addEventListener("click",()=>{
+function abrirVideo(e){
 
-        modal.style.display="flex";
 
-    });
+    if(e){
 
-    cerrar.addEventListener("click",()=>{
+        e.preventDefault();
 
-        modal.style.display="none";
+    }
 
-    });
 
-    modal.addEventListener("click",(e)=>{
 
-        if(e.target===modal){
+    const visorVideo =
+    document.getElementById(
+        "visorVideo"
+    );
+
+
+
+    const videoGrande =
+    document.getElementById(
+        "videoGrande"
+    );
+
+
+
+    if(visorVideo){
+
+        visorVideo.style.display="flex";
+
+    }
+
+
+
+    if(videoGrande){
+
+        videoGrande.currentTime=0;
+
+        videoGrande.play();
+
+    }
+
+
+
+}
+
+
+
+
+
+
+function cerrarVideo(e){
+
+
+
+    if(e){
+
+        e.stopPropagation();
+
+    }
+
+
+
+    const visorVideo =
+    document.getElementById(
+        "visorVideo"
+    );
+
+
+
+    const videoGrande =
+    document.getElementById(
+        "videoGrande"
+    );
+
+
+
+    if(visorVideo){
+
+        visorVideo.style.display="none";
+
+    }
+
+
+
+    if(videoGrande){
+
+
+        videoGrande.pause();
+
+        videoGrande.currentTime=0;
+
+
+    }
+
+
+}
+
+/* =====================================================
+   NEXIUM DESIGN STUDIO
+===================================================== */
+
+
+function iniciarDesignStudio(){
+
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+
+const btnDarkMode =
+document.getElementById(
+    "btnDarkMode"
+);
+
+
+
+if(btnDarkMode){
+
+
+
+    document.body.classList.add(
+        "nexium-light"
+    );
+
+
+
+    btnDarkMode.addEventListener(
+        "click",
+        ()=>{
+
+
+
+            if(
+                document.body.classList.contains(
+                    "nexium-light"
+                )
+            ){
+
+
+                document.body.classList.remove(
+                    "nexium-light"
+                );
+
+
+                document.body.classList.add(
+                    "nexium-dark"
+                );
+
+
+                btnDarkMode.textContent="☀️";
+
+
+
+            }else{
+
+
+                document.body.classList.remove(
+                    "nexium-dark"
+                );
+
+
+                document.body.classList.add(
+                    "nexium-light"
+                );
+
+
+                btnDarkMode.textContent="🌙";
+
+
+            }
+
+
+
+        }
+    );
+
+
+}
+
+
+
+
+
+
+/* =========================
+   ABRIR STUDIO
+========================= */
+
+
+const btnStudio =
+document.getElementById(
+    "btnStudio"
+);
+
+
+
+const modal =
+document.getElementById(
+    "modalStudio"
+);
+
+
+
+const cerrar =
+document.getElementById(
+    "cerrarStudio"
+);
+
+
+
+
+
+if(
+    btnStudio &&
+    modal &&
+    cerrar
+){
+
+
+
+    btnStudio.addEventListener(
+        "click",
+        ()=>{
+
+
+            modal.style.display="flex";
+
+
+        }
+    );
+
+
+
+
+    cerrar.addEventListener(
+        "click",
+        ()=>{
+
 
             modal.style.display="none";
 
-        }
-
-       });
-
-          document.addEventListener("keydown",(e)=>{
-
-        if(e.key==="Escape"){
-
-            modal.style.display="none";
 
         }
+    );
 
-    });
 
-   /*======================================
-ÁREA DE IMPRESIÓN POR PRODUCTO
-======================================*/
 
-const areaImpresion = document.getElementById("areaImpresion");
+
+    modal.addEventListener(
+        "click",
+        e=>{
+
+
+            if(
+                e.target===modal
+            ){
+
+
+                modal.style.display="none";
+
+
+            }
+
+
+        }
+    );
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   AREA IMPRESION
+========================= */
+
+
+const areaImpresion =
+document.getElementById(
+    "areaImpresion"
+);
+
+
+
 
 
 function actualizarAreaImpresion(producto){
 
-    if(!areaImpresion) return;
+
+
+    if(!areaImpresion){
+
+        return;
+
+    }
+
+
+
 
     switch(producto){
 
+
+
         case "taza":
 
+
+
             areaImpresion.style.width="38%";
+
             areaImpresion.style.height="30%";
+
             areaImpresion.style.left="50%";
+
             areaImpresion.style.top="46%";
 
+
+
         break;
+
+
+
 
 
         case "playera":
 
+
+
             areaImpresion.style.width="32%";
+
             areaImpresion.style.height="46%";
+
             areaImpresion.style.left="50%";
+
             areaImpresion.style.top="39%";
 
+
+
         break;
+
+
+
 
 
         case "termo":
 
+
+
             areaImpresion.style.width="22%";
+
             areaImpresion.style.height="48%";
+
             areaImpresion.style.left="50%";
+
             areaImpresion.style.top="44%";
+
+
 
         break;
 
+
+
     }
 
-}
-
-  
-   /*======================================
-SELECCIÓN DE PRODUCTO
-======================================*/
-
-const botonesProducto=document.querySelectorAll(".studio-item");
-
-const productoActual=document.getElementById("productoActual");
-
-botonesProducto.forEach(boton=>{
-
-    boton.addEventListener("click",function(){
-
-        const producto=this.dataset.producto;
-
-        switch(producto){
-
-           case "taza":
-
-    productoActual.src="configurador/productos/tazas/taza-blanca.png";
-
-    actualizarAreaImpresion("taza");
-
-break;
-
-           case "playera":
-
-    productoActual.src="configurador/productos/playeras/playera-blanca.png";
-
-    actualizarAreaImpresion("playera");
-
-break;
-            case "termo":
-
-    productoActual.src="configurador/productos/termos/termo-blanco.png";
-
-    actualizarAreaImpresion("termo");
-
-break;
-
-        }
-
-    });
-
-});
-
-/*======================================
-CARGAR DISEÑO DEL CLIENTE
-======================================*/
-
-const subirDiseno = document.getElementById("subirDiseno");
-
-const disenoUsuario = document.getElementById("disenoUsuario");
-
-
-if(subirDiseno && disenoUsuario){
-
-
-    subirDiseno.addEventListener("change",function(){
-
-        console.log("Diseño seleccionado");
-
-
-        const archivo = this.files[0];
-
-
-        if(!archivo) return;
-
-
-        const lector = new FileReader();
-
-
-        lector.onload = function(e){
-
-
-            disenoUsuario.src = e.target.result;
-
-            disenoUsuario.style.display = "block";
-
-
-            console.log("Imagen cargada:", disenoUsuario.src);
-
-
-        };
-
-
-        lector.readAsDataURL(archivo);
-
-
-    });
 
 
 }
 
-});
+
+
+
+
+
+
 
 /* =========================
-   EXPORT GLOBAL (SEGURO)
+   CAMBIO PRODUCTO
 ========================= */
 
-window.addEventListener("load",()=>{
 
-    window.abrirPoster=abrirPoster;
-    window.enviarWhatsApp=enviarWhatsApp;
+const botonesProducto =
+document.querySelectorAll(
+    ".studio-item"
+);
 
-    window.abrirVisor=abrirVisor;
-    window.cambiarImagen=cambiarImagen;
-    window.cerrarVisor=cerrarVisor;
 
-    window.abrirVideo=abrirVideo;
-    window.cerrarVideo=cerrarVideo;
 
-    window.cerrarModalCotizacion=cerrarModalCotizacion;
-    window.abrirModalCotizacion=abrirModalCotizacion;
-    window.enviarCotizacionCorreo=enviarCotizacionCorreo;
+const productoActual =
+document.getElementById(
+    "productoActual"
+);
+
+
+
+
+
+botonesProducto.forEach(
+boton=>{
+
+
+
+    boton.addEventListener(
+        "click",
+        function(){
+
+
+
+            const producto =
+            this.dataset.producto;
+
+
+
+
+
+            if(!productoActual){
+
+                return;
+
+            }
+
+
+
+
+
+            switch(producto){
+
+
+
+                case "taza":
+
+
+
+                    productoActual.src =
+                    "configurador/productos/tazas/taza-blanca.png";
+
+
+
+                    actualizarAreaImpresion(
+                        "taza"
+                    );
+
+
+
+                break;
+
+
+
+
+
+                case "playera":
+
+
+
+                    productoActual.src =
+                    "configurador/productos/playeras/playera-blanca.png";
+
+
+
+                    actualizarAreaImpresion(
+                        "playera"
+                    );
+
+
+
+                break;
+
+
+
+
+
+                case "termo":
+
+
+
+                    productoActual.src =
+                    "configurador/productos/termos/termo-blanco.png";
+
+
+
+                    actualizarAreaImpresion(
+                        "termo"
+                    );
+
+
+
+                break;
+
+
+
+            }
+
+
+
+        }
+    );
+
+
+});
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   CARGAR DISEÑO CLIENTE
+========================= */
+
+
+const subirDiseno =
+document.getElementById(
+    "subirDiseno"
+);
+
+
+
+const disenoUsuario =
+document.getElementById(
+    "disenoUsuario"
+);
+
+
+
+
+
+if(
+    subirDiseno &&
+    disenoUsuario
+){
+
+
+
+    subirDiseno.addEventListener(
+        "change",
+        function(){
+
+
+
+            const archivo =
+            this.files[0];
+
+
+
+            if(!archivo){
+
+                return;
+
+            }
+
+
+
+
+
+            const lector =
+            new FileReader();
+
+
+
+
+
+            lector.onload =
+            function(e){
+
+
+
+                disenoUsuario.src =
+                e.target.result;
+
+
+
+                disenoUsuario.style.display =
+                "block";
+
+
+
+            };
+
+
+
+
+
+            lector.readAsDataURL(
+                archivo
+            );
+
+
+
+        }
+    );
+
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   EXPORTAR FUNCIONES AL HTML
+===================================================== */
+
+
+window.addEventListener(
+"load",
+()=>{
+
+
+    window.abrirPoster =
+    abrirPoster;
+
+
+
+    window.enviarWhatsApp =
+    enviarWhatsApp;
+
+
+
+    window.abrirVisor =
+    abrirVisor;
+
+
+
+    window.cambiarImagen =
+    cambiarImagen;
+
+
+
+    window.cerrarVisor =
+    cerrarVisor;
+
+
+
+    window.abrirVideo =
+    abrirVideo;
+
+
+
+    window.cerrarVideo =
+    cerrarVideo;
+
+
+
+    window.cerrarModalCotizacion =
+    cerrarModalCotizacion;
+
+
+
+    window.abrirModalCotizacion =
+    abrirModalCotizacion;
+
+
+
+    window.enviarCotizacionCorreo =
+    enviarCotizacionCorreo;
+
+
 
 });
