@@ -1490,7 +1490,6 @@ function moverDiseno(){
 
 }
 
-}
 
 /* =========================
    EXPORTAR FUNCIONES GLOBALES
