@@ -1186,7 +1186,7 @@ body.nexium-dark .studio-titulo h2{
 
     gap:10px;
 
-    margin-top:5px;
+    margin-top:-5px;
 
     height:380px;
 
@@ -1196,9 +1196,9 @@ body.nexium-dark .studio-titulo h2{
 
     justify-content:space-between;
 
-    align-items:center;
+    align-items:flex-start;
 
-    padding:0 10px;
+    padding:5px;
 
 }
 
@@ -1210,11 +1210,9 @@ body.nexium-dark .studio-titulo h2{
 
     align-items:center;
 
-    justify-content:center;
+    justify-content:flex-start;
 
     gap:8px;
-
-    padding-top:0;
 
     width:260px;
 
@@ -1284,15 +1282,13 @@ body.nexium-dark .studio-titulo h2{
 
     justify-content:flex-start;
 
-    gap:12px;
+    gap:8px;
 
     flex:1;
 
-    min-height:0;
+    width:520px;
 
-    padding:8px;
-    
-    width:460px;
+    padding:5px;
 
 }
 
