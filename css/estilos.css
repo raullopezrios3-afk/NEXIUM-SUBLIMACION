@@ -995,30 +995,6 @@ VISOR VIDEO
 
 }
 
-/*=========================
-DISEÑO DEL CLIENTE
-=========================*/
-
-.diseno-usuario{
-
-    display:none;
-
-    position:absolute;
-
-    left:50%;
-
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:contain;
-
-}
-
 /*======================================
 NEXIUM DESIGN STUDIO
 ======================================*/
@@ -1501,12 +1477,15 @@ box-shadow:
 /* TAZA */
 .area-taza{
 
-    width:150px;
+    width:220px;
 
-    height:80px;
+    height:90px;
+
+    border:2px dashed #9ca3af;
+
+    border-radius:8px;
 
 }
-
 
 /* TERMO */
 .area-termo{
@@ -1534,6 +1513,11 @@ DISEÑO DEL CLIENTE
 
     position:absolute;
 
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
     width:100%;
     height:100%;
 
@@ -1548,7 +1532,6 @@ DISEÑO DEL CLIENTE
     -webkit-user-drag:none;
 
 }
-
 
 .diseno-usuario:active{
 
