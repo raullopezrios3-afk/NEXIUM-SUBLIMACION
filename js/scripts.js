@@ -1137,29 +1137,20 @@ modal.style.display="none";
 });
 
 
-}
-
-
 modal.addEventListener(
 "click",
 (e)=>{
 
 
-if(e.target===modal){
+    if(e.target === modal){
 
+        modal.style.display="none";
 
-modal.style.display="none";
-
-
-}
+    }
 
 
 });
-
-
-
-
-
+   
 /* =========================
    PRODUCTOS STUDIO
 ========================= */
@@ -1171,7 +1162,8 @@ document.getElementById("areaImpresion");
 
 
 const productoActual =
-document.getElementById("productoActual");
+document.getElementById("productoActual") ||
+document.getElementById("taza360");
 
 const taza360 =
 document.getElementById("taza360");
