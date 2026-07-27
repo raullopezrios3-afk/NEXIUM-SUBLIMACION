@@ -6,6 +6,14 @@ let imagenes = [];
 let indexActual = 0;
 
 
+// ===============================
+// MOTOR 360 TAZA
+// ===============================
+
+let frameActualTaza = 1;
+let imagenesTaza360 = [];
+
+
 /* =========================
    INICIO GENERAL NEXIUM
 ========================= */
@@ -1165,6 +1173,9 @@ document.getElementById("areaImpresion");
 const productoActual =
 document.getElementById("productoActual");
 
+const taza360 =
+document.getElementById("taza360");
+
 
 
 function actualizarAreaImpresion(producto){
@@ -1267,15 +1278,18 @@ switch(producto){
 case "taza":
 
 
-productoActual.src =
-"configurador/productos/tazas/360/taza-01.png";
+if(taza360){
+
+    taza360.src =
+    "configurador/productos/tazas/360/taza-01.png";
+
+}
 
 
 actualizarAreaImpresion("taza");
 
 
 break;
-
 
 
 
@@ -1508,6 +1522,68 @@ function cargarTaza360() {
 }
 
 cargarTaza360();
+
+   // ===============================
+// MOSTRAR FRAME TAZA 360
+// ===============================
+
+function mostrarFrameTaza(){
+
+
+    const taza =
+    document.getElementById("taza360");
+
+
+    if(!taza)
+    return;
+
+
+    let numero =
+    frameActualTaza
+    .toString()
+    .padStart(2,"0");
+
+
+    taza.src =
+    `configurador/productos/tazas/360/taza-${numero}.png`;
+
+
+}
+
+   // ===============================
+// CONTROL GIRO TAZA 360
+// ===============================
+
+function girarTaza(direccion){
+
+
+    frameActualTaza += direccion;
+
+
+    if(frameActualTaza > 21){
+
+        frameActualTaza = 1;
+
+    }
+
+
+    if(frameActualTaza < 1){
+
+        frameActualTaza = 21;
+
+    }
+
+
+    mostrarFrameTaza();
+
+
+}
+
+   setInterval(()=>{
+
+    girarTaza(1);
+
+},3000);
 
 /* =========================
    EXPORTAR FUNCIONES GLOBALES
