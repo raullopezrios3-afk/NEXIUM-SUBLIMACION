@@ -1341,16 +1341,6 @@ document.getElementById("disenoUsuario");
 
 
 
-if(
-subirDiseno &&
-disenoUsuario
-){
-
-moverDiseno();
-
-
-}
-
 subirDiseno.addEventListener(
 "change",
 function(){
