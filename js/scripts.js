@@ -46,6 +46,8 @@ function iniciarNexium(){
     iniciarTema();
 
     iniciarStudio();
+    
+    iniciarTaza360();
 
 }
 
@@ -1574,11 +1576,174 @@ function girarTaza(direccion){
 
 }
 
-   setInterval(()=>{
+   // ===================================
+// CONTROL 360 INTERACTIVO TAZA
+// ===================================
 
-    girarTaza(1);
+function iniciarTaza360(){
 
-},3000);
+    const taza =
+    document.getElementById("taza360");
+
+
+    if(!taza)
+    return;
+
+
+    let presionando = false;
+
+    let posicionInicial = 0;
+
+    let frameAnterior = frameActualTaza;
+
+
+
+    function iniciarMovimiento(posicion){
+
+        presionando = true;
+
+        posicionInicial = posicion;
+
+        frameAnterior = frameActualTaza;
+
+    }
+
+
+
+    function mover(posicion){
+
+
+        if(!presionando)
+        return;
+
+
+
+        let diferencia =
+        posicion - posicionInicial;
+
+
+
+        if(Math.abs(diferencia) > 10){
+
+
+            if(diferencia > 0){
+
+                frameActualTaza--;
+
+            }else{
+
+                frameActualTaza++;
+
+            }
+
+
+
+            if(frameActualTaza > totalFramesTaza){
+
+                frameActualTaza = 1;
+
+            }
+
+
+            if(frameActualTaza < 1){
+
+                frameActualTaza = totalFramesTaza;
+
+            }
+
+
+
+            mostrarFrameTaza();
+
+
+
+            posicionInicial = posicion;
+
+
+        }
+
+
+    }
+
+
+
+    function terminar(){
+
+        presionando=false;
+
+    }
+
+
+
+    // MOUSE
+
+    taza.addEventListener(
+    "mousedown",
+    e=>{
+
+        iniciarMovimiento(e.clientX);
+
+    });
+
+
+
+    window.addEventListener(
+    "mousemove",
+    e=>{
+
+        mover(e.clientX);
+
+    });
+
+
+
+    window.addEventListener(
+    "mouseup",
+    terminar);
+
+
+
+    // TOUCH MOVIL
+
+    taza.addEventListener(
+    "touchstart",
+    e=>{
+
+
+        iniciarMovimiento(
+            e.touches[0].clientX
+        );
+
+
+    });
+
+
+
+    taza.addEventListener(
+    "touchmove",
+    e=>{
+
+
+        mover(
+            e.touches[0].clientX
+        );
+
+
+    });
+
+
+
+    taza.addEventListener(
+    "touchend",
+    terminar);
+
+
+
+    console.log(
+    "Taza 360 interactiva activada"
+    );
+
+}
 
 /* =========================
    EXPORTAR FUNCIONES GLOBALES
