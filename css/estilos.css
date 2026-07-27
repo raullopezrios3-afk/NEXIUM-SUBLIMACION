@@ -1058,7 +1058,7 @@ NEXIUM DESIGN STUDIO
     width:76%;
     max-width:900px;
 
-    height:70vh;
+    height:72vh;
 
     background:#1E293B;
 
@@ -1069,7 +1069,7 @@ NEXIUM DESIGN STUDIO
 
     border-radius:20px;
 
-    padding:12px 25px 20px 25px;
+    padding:8px 25px 15px 25px;
 
     position:relative;
 
@@ -1079,6 +1079,7 @@ NEXIUM DESIGN STUDIO
     overflow:hidden;
 
 }
+
 .cerrar-studio{
 
     position:absolute;
@@ -1183,13 +1184,13 @@ body.nexium-dark .studio-titulo h2{
 
     display:flex;
 
-    gap:40px;
+    gap:35px;
 
-    margin-top:20px;
+    margin-top:5px;
 
-    height:420px;
+    height:380px;
 
-    min-height:420px;
+    min-height:380px;
 
     overflow:hidden;
 
@@ -1198,7 +1199,6 @@ body.nexium-dark .studio-titulo h2{
     align-items:center;
 
 }
-
 .studio-menu{
 
     display:flex;
@@ -1279,7 +1279,7 @@ body.nexium-dark .studio-titulo h2{
 
     align-items:center;
 
-    justify-content:center;
+    justify-content:flex-start;
 
     gap:12px;
 
@@ -1824,65 +1824,5 @@ body.nexium-dark .btn-card:hover{
     background:#bdbdbd;
     color:#eeeeee;
     cursor:not-allowed;
-
-}
-
-
-/* ======================================
-   AJUSTE FINAL NEXIUM DESIGN STUDIO
-   CORRECCION ESPACIOS Y PANEL PRODUCTO
-====================================== */
-
-
-.studio-contenido{
-
-    height:380px;
-    min-height:380px;
-    margin-top:5px;
-
-}
-
-
-.studio-preview{
-
-    height:350px;
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-}
-
-
-.preview-producto{
-
-    height:350px;
-
-    min-height:350px;
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-}
-
-
-.studio-zona-derecha{
-
-    padding:0;
-
-}
-
-
-.studio-box h2{
-
-    margin-bottom:3px;
-
-}
-
-
-.studio-box p{
-
-    margin-bottom:3px;
 
 }
