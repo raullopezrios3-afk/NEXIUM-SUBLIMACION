@@ -1268,7 +1268,7 @@ case "taza":
 
 
 productoActual.src =
-"configurador/productos/tazas/taza-blanca.png";
+"configurador/productos/tazas/360/taza-01.png";
 
 
 actualizarAreaImpresion("taza");
