@@ -15,6 +15,11 @@ let imagenesTaza360 = [];
 let productoActivo = "taza";
 let giroTazaActivo = false;
 
+// ===============================
+// PLAYERA
+// ===============================
+let vistaPlayera = "anverso";
+
 
 /* =========================
    INICIO GENERAL NEXIUM
@@ -1522,6 +1527,50 @@ function cargarTaza360() {
 }
 
 cargarTaza360();
+
+// ===================================
+// PLAYERA ANVERSO / REVERSO
+// ===================================
+
+function cambiarVistaPlayera(vista){
+
+    const producto =
+    document.getElementById("productoActual");
+
+
+    if(!producto)
+    return;
+
+
+    productoActivo = "playera";
+
+
+    vistaPlayera = vista;
+
+
+    if(vista === "anverso"){
+
+
+        producto.src =
+        "configurador/productos/playeras/playera-anverso.png";
+
+
+    }
+
+
+    if(vista === "reverso"){
+
+
+        producto.src =
+        "configurador/productos/playeras/playera-reverso.png";
+
+
+    }
+
+
+    actualizarAreaImpresion("playera");
+
+}
 
    // ===============================
 // MOSTRAR FRAME TAZA 360
