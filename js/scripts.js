@@ -1341,10 +1341,12 @@ document.getElementById("disenoUsuario");
 
 
 
+if(subirDiseno){
+
+
 subirDiseno.addEventListener(
 "change",
 function(){
-
 
 
 const archivo =
