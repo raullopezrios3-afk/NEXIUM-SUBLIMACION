@@ -1298,9 +1298,9 @@ body.nexium-dark .studio-titulo h2{
 
 .studio-preview{
 
-    width:100%;
+    width:460px;
 
-    max-width:380px;
+    max-width:460px;
 
     height:350px;
 
@@ -1343,7 +1343,7 @@ PREVIEW DEL PRODUCTO
 
 .preview-producto{
 
-    width:100%;
+    width:460px;
 
     height:350px;
 
@@ -1370,7 +1370,6 @@ PREVIEW DEL PRODUCTO
     overflow:hidden;
 
 }
-
 #productoActual{
 
     width:55%;
