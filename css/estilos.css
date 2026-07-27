@@ -1309,7 +1309,9 @@ body.nexium-dark .studio-titulo h2{
 
     flex:1;
 
-    height:420px;
+    min-height:0;
+
+    padding:8px;
 
 }
 
