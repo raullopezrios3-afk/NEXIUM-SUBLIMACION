@@ -1451,9 +1451,19 @@ box-shadow:
 
 .producto-base{
 
+    position:absolute;
+
     display:block;
 
     max-width:100%;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    z-index:1;
 
 }
 
@@ -1511,6 +1521,36 @@ box-shadow:
 
     width:180px;
     height:220px;
+
+}
+
+/*======================================
+DISEÑO DEL CLIENTE
+======================================*/
+
+.diseno-usuario{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    display:none;
+
+    cursor:grab;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+
+.diseno-usuario:active{
+
+    cursor:grabbing;
 
 }
 
