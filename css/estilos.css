@@ -1082,17 +1082,18 @@ NEXIUM DESIGN STUDIO
     width:76%;
     max-width:900px;
 
-    height:75vh;
+    height:70vh;
 
     background:#1E293B;
+
     border:1px solid rgba(255,255,255,.08);
 
-box-shadow:
-0 25px 70px rgba(0,0,0,.55);
+    box-shadow:
+    0 25px 70px rgba(0,0,0,.55);
 
     border-radius:20px;
 
-    padding:8px 25px 25px 25px;
+    padding:12px 25px 20px 25px;
 
     position:relative;
 
@@ -1102,7 +1103,6 @@ box-shadow:
     overflow:hidden;
 
 }
-
 .cerrar-studio{
 
     position:absolute;
