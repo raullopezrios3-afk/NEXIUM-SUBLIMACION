@@ -1501,7 +1501,6 @@ function moverDiseno(){
 // ===================================
 
 const totalFramesTaza = 21;
-const imagenesTaza360 = [];
 
 function cargarTaza360() {
 
