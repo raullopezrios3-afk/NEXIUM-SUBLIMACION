@@ -29,6 +29,8 @@ function iniciarNexium(){
 
     iniciarGalerias();
 
+    iniciarEventosGlobales();
+
     iniciarCotizacion();
 
     iniciarVideo();
@@ -38,7 +40,6 @@ function iniciarNexium(){
     iniciarStudio();
 
 }
-
 
 
 /* =========================
@@ -224,19 +225,171 @@ cards.forEach(card=>{
 });
 
 
+}
 
-/* CERRAR AL HACER CLICK FUERA */
+/* =========================
+   EVENTOS GLOBALES
+========================= */
+
+function iniciarEventosGlobales(){
 
 
-document.addEventListener(
-"click",
-function(e){
+    /*
+    CERRAR TARJETAS AL HACER CLICK FUERA
+    */
+
+    document.addEventListener(
+    "click",
+    function(e){
 
 
-    if(
-    !e.target.closest(".producto-card")
-    ){
+        if(
+        !e.target.closest(".producto-card")
+        ){
 
+
+            document
+            .querySelectorAll(".producto-card.active")
+            .forEach(card=>{
+
+
+                card.classList.remove("active");
+
+
+            });
+
+
+        }
+
+
+    });
+
+
+
+
+
+    /*
+    CERRAR VISOR AL HACER CLICK FUERA
+    */
+
+
+    document.addEventListener(
+    "click",
+    function(e){
+
+
+        const visor =
+        document.getElementById("visor");
+
+
+        if(!visor)
+        return;
+
+
+
+        if(
+        visor.style.display === "flex"
+        &&
+        e.target === visor
+        ){
+
+
+            cerrarVisor();
+
+
+        }
+
+
+    });
+
+
+
+
+
+
+    /*
+    ESC GLOBAL
+    */
+
+
+    document.addEventListener(
+    "keydown",
+    function(e){
+
+
+        if(e.key !== "Escape")
+        return;
+
+
+
+
+        // CERRAR VISOR
+
+        const visor =
+        document.getElementById("visor");
+
+
+
+        if(
+        visor &&
+        visor.style.display === "flex"
+        ){
+
+
+            cerrarVisor();
+
+
+        }
+
+
+
+
+
+        // CERRAR MODAL COTIZACION
+
+        const modal =
+        document.getElementById("modalCotizacion");
+
+
+
+        if(
+        modal &&
+        modal.style.display === "flex"
+        ){
+
+
+            cerrarModalCotizacion();
+
+
+        }
+
+
+
+
+
+        // CERRAR DESIGN STUDIO
+
+        const studio =
+        document.getElementById("modalStudio");
+
+
+
+        if(
+        studio &&
+        studio.style.display === "flex"
+        ){
+
+
+            studio.style.display="none";
+
+
+        }
+
+
+
+
+
+        // CERRAR TARJETAS ABIERTAS
 
         document
         .querySelectorAll(".producto-card.active")
@@ -249,108 +402,12 @@ function(e){
         });
 
 
-    }
 
+    });
 
-});
-
-
-
-/* CERRAR VISOR CLICK FUERA */
-
-
-document.addEventListener(
-"click",
-function(e){
-
-
-const visor =
-document.getElementById("visor");
-
-
-if(!visor) return;
-
-
-if(
-visor.style.display==="flex"
-&&
-e.target===visor
-){
-
-
-    cerrarVisor();
 
 
 }
-
-
-});
-
-
-
-/* ESC GLOBAL */
-
-
-document.addEventListener(
-"keydown",
-function(e){
-
-
-if(e.key!=="Escape")
-return;
-
-
-
-const visor =
-document.getElementById("visor");
-
-
-if(
-visor &&
-visor.style.display==="flex"
-){
-
-
-    cerrarVisor();
-
-
-}
-
-
-
-const modal =
-document.getElementById("modalCotizacion");
-
-
-if(
-modal &&
-modal.style.display==="flex"
-){
-
-
-    cerrarModalCotizacion();
-
-
-}
-
-
-
-document
-.querySelectorAll(".producto-card.active")
-.forEach(card=>{
-
-
-card.classList.remove("active");
-
-
-});
-
-
-});
-
-
-}
-
 
 
 /* =========================
