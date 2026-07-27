@@ -1480,6 +1480,32 @@ function moverDiseno(){
 
 }
 
+// ===================================
+// MOTOR 360 TAZA - PREPARACIÓN
+// ===================================
+
+const totalFramesTaza = 21;
+const imagenesTaza360 = [];
+
+function cargarTaza360() {
+
+    for (let i = 1; i <= totalFramesTaza; i++) {
+
+        let numero = i.toString().padStart(2, "0");
+
+        let img = new Image();
+
+        img.src = 
+        `configurador/productos/tazas/360/taza-${numero}.png`;
+
+        imagenesTaza360.push(img);
+    }
+
+    console.log("Imágenes 360 cargadas:", imagenesTaza360);
+
+}
+
+cargarTaza360();
 
 /* =========================
    EXPORTAR FUNCIONES GLOBALES
