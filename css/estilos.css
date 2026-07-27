@@ -1335,6 +1335,25 @@ body.nexium-dark .studio-titulo h2{
 
 }
 
+/* =========================
+   CONTROL 360 TAZA
+========================= */
+
+#taza360{
+
+    cursor:grab;
+    user-select:none;
+    -webkit-user-drag:none;
+
+}
+
+
+#taza360:active{
+
+    cursor:grabbing;
+
+}
+
 /*======================================
 PREVIEW DEL PRODUCTO
 ======================================*/
