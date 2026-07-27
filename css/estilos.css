@@ -1184,9 +1184,9 @@ body.nexium-dark .studio-titulo h2{
 
     display:flex;
 
-    gap:35px;
+    gap:10px;
 
-    margin-top:-5px;
+    margin-top:5px;
 
     height:380px;
 
@@ -1194,11 +1194,14 @@ body.nexium-dark .studio-titulo h2{
 
     overflow:hidden;
 
-    justify-content:center;
+    justify-content:space-between;
 
     align-items:center;
 
+    padding:0 10px;
+
 }
+
 .studio-menu{
 
     display:flex;
@@ -1288,6 +1291,8 @@ body.nexium-dark .studio-titulo h2{
     min-height:0;
 
     padding:8px;
+    
+    width:460px;
 
 }
 
