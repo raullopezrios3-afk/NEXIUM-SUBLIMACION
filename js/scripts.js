@@ -1346,7 +1346,10 @@ subirDiseno &&
 disenoUsuario
 ){
 
+moverDiseno();
 
+
+}
 
 subirDiseno.addEventListener(
 "change",
