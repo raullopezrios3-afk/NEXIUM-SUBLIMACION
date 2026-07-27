@@ -1400,13 +1400,17 @@ disenoUsuario.style.display=
 
 
 lector.readAsDataURL(
-archivo
-);
+    archivo
+    );
 
 
 });
 
 
+}
+
+
+// CERRAMOS INICIAR STUDIO AQUÍ
 }
 
 
