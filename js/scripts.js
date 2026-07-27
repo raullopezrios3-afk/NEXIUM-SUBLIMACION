@@ -1395,17 +1395,97 @@ archivo
 );
 
 
-
 });
 
 
 }
 
 
+/* =========================
+   MOVER DISEÑO CON MOUSE
+========================= */
+
+
+function moverDiseno(){
+
+    const diseno =
+    document.getElementById("disenoUsuario");
+
+
+    const area =
+    document.getElementById("areaImpresion");
+
+
+    if(!diseno || !area)
+    return;
+
+
+    let moviendo=false;
+
+    let offsetX=0;
+
+    let offsetY=0;
+
+
+    diseno.addEventListener(
+    "mousedown",
+    function(e){
+
+
+        moviendo=true;
+
+
+        offsetX =
+        e.clientX -
+        diseno.offsetLeft;
+
+
+        offsetY =
+        e.clientY -
+        diseno.offsetTop;
+
+
+        diseno.style.cursor="grabbing";
+
+
+    });
+
+
+    document.addEventListener(
+    "mousemove",
+    function(e){
+
+
+        if(!moviendo)
+        return;
+
+
+        diseno.style.left =
+        (e.clientX-offsetX)+"px";
+
+
+        diseno.style.top =
+        (e.clientY-offsetY)+"px";
+
+
+    });
+
+
+    document.addEventListener(
+    "mouseup",
+    function(){
+
+
+        moviendo=false;
+
+
+        diseno.style.cursor="grab";
+
+
+    });
 
 
 }
-
 
 
 
