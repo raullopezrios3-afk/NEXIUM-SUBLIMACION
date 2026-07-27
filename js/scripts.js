@@ -12,6 +12,8 @@ let indexActual = 0;
 
 let frameActualTaza = 1;
 let imagenesTaza360 = [];
+let productoActivo = "taza";
+let giroTazaActivo = false;
 
 
 /* =========================
@@ -1255,6 +1257,7 @@ function(){
 
 const producto =
 this.dataset.producto;
+productoActivo = producto;
 
 
 
@@ -1678,9 +1681,7 @@ function activarArrastreTaza360(){
 
 
 
-activarArrastreTaza360();
-
-   // ===================================
+// ===================================
 // CONTROL 360 INTERACTIVO TAZA
 // ===================================
 
@@ -1717,8 +1718,12 @@ function iniciarTaza360(){
     function mover(posicion){
 
 
-        if(!presionando)
-        return;
+    if(!presionando)
+    return;
+
+
+    if(productoActivo !== "taza")
+    return;
 
 
 
@@ -1781,13 +1786,17 @@ function iniciarTaza360(){
 
     // MOUSE
 
-    taza.addEventListener(
-    "mousedown",
-    e=>{
+   taza.addEventListener(
+"mousedown",
+e=>{
 
-        iniciarMovimiento(e.clientX);
+    if(productoActivo !== "taza")
+    return;
 
-    });
+
+    iniciarMovimiento(e.clientX);
+
+});
 
 
 
