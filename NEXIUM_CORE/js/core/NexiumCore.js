@@ -9,27 +9,57 @@
 
 class NexiumCore {
 
-    constructor(){
+   constructor(){
 
-        this.version = "1.0.0";
-
-        this.modules = {};
-
-        this.scene = null;
-
-        this.objects = [];
-
-        this.layers = [];
-
-        this.history = [];
+    this.version = "1.0.0";
 
 
-        console.log(
-            "NEXIUM CORE iniciado",
-            this.version
-        );
+    // SISTEMA DE MODULOS
 
-    }
+    this.modules = {};
+
+
+    // ESCENA
+
+    this.scene = null;
+
+
+    // OBJETOS DEL EDITOR
+
+    this.objects = [];
+
+
+    // CAPAS
+
+    this.layers = [];
+
+
+    // HISTORIAL
+
+    this.history = [];
+
+
+
+    // CANVAS ENGINE
+
+    this.canvas = null;
+
+    this.context = null;
+
+
+
+    // OBJETO ACTIVO
+
+    this.selectedObject = null;
+
+
+
+    console.log(
+        "NEXIUM CORE iniciado",
+        this.version
+    );
+
+}
 
 
 
@@ -120,11 +150,94 @@ class NexiumCore {
 
 
 
-    init(){
+       init(){
 
         console.log(
             "NEXIUM ENGINE READY"
         );
+
+
+        this.conectarCanvas();
+
+        this.iniciarEventos();
+
+    }
+
+
+
+    conectarCanvas(){
+
+
+        this.canvas =
+        document.getElementById(
+            "nexiumCanvas"
+        );
+
+
+        if(!this.canvas){
+
+            console.error(
+                "Canvas no encontrado"
+            );
+
+            return;
+
+        }
+
+
+        this.context =
+        this.canvas.getContext(
+            "2d"
+        );
+
+
+        this.canvas.width =
+        this.canvas.offsetWidth;
+
+
+        this.canvas.height =
+        this.canvas.offsetHeight;
+
+
+        console.log(
+            "Canvas conectado correctamente"
+        );
+
+
+    }
+
+
+
+    iniciarEventos(){
+
+
+        window.addEventListener(
+            "resize",
+            ()=>{
+
+
+                if(this.canvas){
+
+
+                    this.canvas.width =
+                    this.canvas.offsetWidth;
+
+
+                    this.canvas.height =
+                    this.canvas.offsetHeight;
+
+
+                }
+
+
+            }
+        );
+
+
+        console.log(
+            "Eventos NEXIUM activos"
+        );
+
 
     }
 
