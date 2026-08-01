@@ -124,29 +124,30 @@ class NexiumCore {
 
 
 
-    undo(){
+ undo(){
 
-        if(this.history.length > 1){
+    if(this.history.length > 0){
 
-            this.history.pop();
-
-            let anterior =
-            this.history[
-                this.history.length-1
-            ];
+        this.history.pop();
 
 
-            this.objects =
-            JSON.parse(anterior);
+        let anterior =
+        this.history.length > 0
+        ? this.history[this.history.length-1]
+        : "[]";
 
 
-            console.log(
-                "Undo ejecutado"
-            );
+        this.objects =
+        JSON.parse(anterior);
 
-        }
+
+        console.log(
+            "Undo ejecutado"
+        );
 
     }
+
+}
 
 
 
