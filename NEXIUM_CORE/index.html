@@ -1,1 +1,210 @@
+<!DOCTYPE html>
 
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>NEXIUM CORE ENGINE</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     NEXIUM CORE APPLICATION
+====================================== -->
+
+
+<div id="nexium-app">
+
+
+
+    <!-- BARRA SUPERIOR -->
+
+    <header class="topbar">
+
+
+        <div class="logo">
+
+            NEXIUM CORE
+
+        </div>
+
+
+
+        <div class="actions">
+
+
+            <button id="btnSave">
+                Guardar
+            </button>
+
+
+            <button id="btnExport">
+                Exportar
+            </button>
+
+
+            <button id="btnUndo">
+                Undo
+            </button>
+
+
+        </div>
+
+
+    </header>
+
+
+
+
+
+    <!-- CONTENEDOR PRINCIPAL -->
+
+
+    <main class="workspace">
+
+
+
+        <!-- PANEL IZQUIERDO -->
+
+        <aside class="panel tools-panel">
+
+
+            <h3>
+                Herramientas
+            </h3>
+
+
+            <button>
+                Seleccionar
+            </button>
+
+
+            <button>
+                Texto
+            </button>
+
+
+            <button>
+                Imagen
+            </button>
+
+
+            <button>
+                Vector
+            </button>
+
+
+            <button>
+                Producto
+            </button>
+
+
+        </aside>
+
+
+
+
+
+        <!-- AREA CENTRAL -->
+
+
+        <section class="canvas-area">
+
+
+            <div id="canvas-container">
+
+
+                <!-- Aquí vivirá Canvas 2D / 3D -->
+
+
+                <canvas id="nexiumCanvas"></canvas>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+        <!-- PANEL DERECHO -->
+
+
+        <aside class="panel properties-panel">
+
+
+            <h3>
+                Propiedades
+            </h3>
+
+
+
+            <div id="object-properties">
+
+
+                Seleccione un objeto
+
+
+            </div>
+
+
+
+        </aside>
+
+
+
+    </main>
+
+
+
+
+
+    <!-- PANEL INFERIOR -->
+
+
+    <footer class="timeline">
+
+
+        NEXIUM Timeline
+
+
+    </footer>
+
+
+
+</div>
+
+
+
+
+
+<!-- CORE ENGINE -->
+
+<script src="js/core/NexiumCore.js"></script>
+
+
+<!-- MAIN -->
+
+<script src="js/main.js"></script>
+
+
+
+</body>
+
+
+</html>
