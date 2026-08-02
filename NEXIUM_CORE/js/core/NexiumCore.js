@@ -24,6 +24,9 @@ new CanvasManager(this);
 
 this.modules.render =
 new RenderEngine(this);
+
+    this.modules.mouse =
+new MouseManager(this);
     
 
 
