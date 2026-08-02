@@ -30,6 +30,9 @@ new MouseManager(this);
 
     this.modules.selection =
 new SelectionManager(this);
+
+    this.modules.hitTest =
+new HitTest(this);
     
 
 
