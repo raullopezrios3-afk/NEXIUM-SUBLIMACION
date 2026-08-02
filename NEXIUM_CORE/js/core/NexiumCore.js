@@ -21,6 +21,9 @@ this.modules = {};
 
 this.modules.canvas =
 new CanvasManager(this);
+
+this.modules.render =
+new RenderEngine(this);
     
 
 
