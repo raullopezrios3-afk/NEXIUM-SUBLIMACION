@@ -43,24 +43,23 @@ class RenderEngine{
 
 
 
-      render(){
+     render(){
 
+    this.clear();
 
-        this.clear();
+    let objetos =
+    this.core.objects;
 
+    objetos.forEach(
+    obj=>{
 
-        let objetos =
-        this.core.objects;
+        this.objectRenderer.render(obj);
 
+    });
 
-      objetos.forEach(
-obj=>{
+    this.core.modules.boundingBox.render();
 
-    this.objectRenderer.render(obj);
-
-});
-
-
+}
      /*
 console.log(
     "Render ejecutado",
