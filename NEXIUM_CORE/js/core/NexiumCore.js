@@ -36,7 +36,9 @@ class NexiumCore {
 
     // HISTORIAL
 
-    this.history = [];
+this.history = [
+    JSON.stringify([])
+];
 
 
 
