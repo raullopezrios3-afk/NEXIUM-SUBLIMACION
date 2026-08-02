@@ -15,25 +15,15 @@ document.addEventListener(
     new NexiumCore();
 
 
+
     window.NEXIUM =
     nexium;
+
 
 
     nexium.modules.canvas.init(
         "nexiumCanvas"
     );
-
-
-});
-
-}
-
-    nexium.init();
-
-
-
-    window.NEXIUM =
-    nexium;
 
 
 
