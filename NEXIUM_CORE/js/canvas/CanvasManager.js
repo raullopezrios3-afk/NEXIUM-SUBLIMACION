@@ -46,27 +46,53 @@ class CanvasManager{
         }
 
 
-
-        this.context =
-        this.canvas.getContext("2d");
+init(id){
 
 
-
-        this.core.canvas =
-        this.canvas;
-
-
-        this.core.context =
-        this.context;
+    this.canvas =
+    document.getElementById(id);
 
 
 
-        console.log(
-            "Canvas inicializado"
+    if(!this.canvas){
+
+        console.error(
+            "Canvas no encontrado:",
+            id
         );
 
+        return;
 
     }
+
+
+
+    this.canvas.width = 900;
+
+    this.canvas.height = 600;
+
+
+
+    this.context =
+    this.canvas.getContext("2d");
+
+
+
+    this.core.canvas =
+    this.canvas;
+
+
+    this.core.context =
+    this.context;
+
+
+
+    console.log(
+        "Canvas inicializado"
+    );
+
+
+}
 
 
 
