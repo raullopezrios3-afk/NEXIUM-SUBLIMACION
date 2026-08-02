@@ -67,11 +67,13 @@ class RenderEngine{
         });
 
 
-        console.log(
-            "Render ejecutado",
-            objetos.length,
-            "objetos"
-        );
+     /*
+console.log(
+    "Render ejecutado",
+    objetos.length,
+    "objetos"
+);
+*/
 
 
     }
