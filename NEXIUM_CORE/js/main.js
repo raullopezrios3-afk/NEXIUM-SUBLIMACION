@@ -25,6 +25,8 @@ document.addEventListener(
         "nexiumCanvas"
     );
 
+ nexium.modules.render.start();
+
 
 
 });
