@@ -46,53 +46,33 @@ class CanvasManager{
         }
 
 
-init(id){
+
+        this.canvas.width = 900;
+
+        this.canvas.height = 600;
 
 
-    this.canvas =
-    document.getElementById(id);
+
+        this.context =
+        this.canvas.getContext("2d");
 
 
 
-    if(!this.canvas){
+        this.core.canvas =
+        this.canvas;
 
-        console.error(
-            "Canvas no encontrado:",
-            id
+
+        this.core.context =
+        this.context;
+
+
+
+        console.log(
+            "Canvas inicializado"
         );
 
-        return;
 
     }
-
-
-
-    this.canvas.width = 900;
-
-    this.canvas.height = 600;
-
-
-
-    this.context =
-    this.canvas.getContext("2d");
-
-
-
-    this.core.canvas =
-    this.canvas;
-
-
-    this.core.context =
-    this.context;
-
-
-
-    console.log(
-        "Canvas inicializado"
-    );
-
-
-}
 
 
 
