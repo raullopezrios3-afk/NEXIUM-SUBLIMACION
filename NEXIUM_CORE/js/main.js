@@ -26,7 +26,7 @@ document.addEventListener(
 
 });
 
-
+}
 
     nexium.init();
 
