@@ -14,9 +14,14 @@ class NexiumCore {
     this.version = "1.0.0";
 
 
-    // SISTEMA DE MODULOS
+// SISTEMA DE MODULOS
 
-    this.modules = {};
+this.modules = {};
+
+
+this.modules.canvas =
+new CanvasManager(this);
+    
 
 
     // ESCENA
