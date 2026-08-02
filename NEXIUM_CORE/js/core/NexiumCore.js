@@ -27,6 +27,9 @@ new RenderEngine(this);
 
     this.modules.mouse =
 new MouseManager(this);
+
+    this.modules.selection =
+new SelectionManager(this);
     
 
 
