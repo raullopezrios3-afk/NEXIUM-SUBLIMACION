@@ -33,6 +33,9 @@ new SelectionManager(this);
 
     this.modules.hitTest =
 new HitTest(this);
+
+    this.modules.boundingBox =
+new BoundingBoxRenderer(this);
     
 
 
