@@ -38,16 +38,14 @@ class RenderEngine{
 
 
 
-    render(){
+      render(){
 
 
         this.clear();
 
 
-
         let objetos =
         this.core.objects;
-
 
 
         objetos.forEach(
@@ -66,9 +64,7 @@ class RenderEngine{
             );
 
 
-
         });
-
 
 
         console.log(
@@ -76,6 +72,27 @@ class RenderEngine{
             objetos.length,
             "objetos"
         );
+
+
+    }
+
+
+
+    start(){
+
+        const loop = ()=>{
+
+
+            this.render();
+
+
+            requestAnimationFrame(loop);
+
+
+        };
+
+
+        loop();
 
 
     }
