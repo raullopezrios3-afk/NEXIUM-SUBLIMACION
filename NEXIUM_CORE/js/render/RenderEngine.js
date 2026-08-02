@@ -5,24 +5,20 @@
 =========================================
 */
 
-
 class RenderEngine{
 
+    constructor(core){
 
- constructor(core){
+        this.core = core;
 
-    this.core = core;
+        this.objectRenderer =
+        new ObjectRenderer(core);
 
+        console.log(
+            "Render Engine creado"
+        );
 
-    this.objectRenderer =
-    new ObjectRenderer(core);
-
-
-    console.log(
-        "Render Engine creado"
-    );
-
-}
+    }
 
 
 
@@ -30,7 +26,6 @@ class RenderEngine{
 
         if(!this.core.context)
         return;
-
 
         this.core.context.clearRect(
             0,
@@ -43,31 +38,21 @@ class RenderEngine{
 
 
 
-     render(){
+    render(){
 
-    this.clear();
+        this.clear();
 
-    let objetos =
-    this.core.objects;
+        const objetos =
+        this.core.objects;
 
-    objetos.forEach(
-    obj=>{
+        objetos.forEach(
+        obj=>{
 
-        this.objectRenderer.render(obj);
+            this.objectRenderer.render(obj);
 
-    });
+        });
 
-    this.core.modules.boundingBox.render();
-
-}
-     /*
-console.log(
-    "Render ejecutado",
-    objetos.length,
-    "objetos"
-);
-*/
-
+        this.core.modules.boundingBox.render();
 
     }
 
@@ -77,20 +62,14 @@ console.log(
 
         const loop = ()=>{
 
-
             this.render();
-
 
             requestAnimationFrame(loop);
 
-
         };
-
 
         loop();
 
-
     }
-
 
 }
