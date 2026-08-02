@@ -1,7 +1,9 @@
-/*=========================================
+/*
+=========================================
  NEXIUM CORE
  Mouse Manager
-=========================================*/
+=========================================
+*/
 
 class MouseManager{
 
@@ -30,14 +32,43 @@ class MouseManager{
 
             (e)=>{
 
+
                 const rect =
                 this.core.canvas.getBoundingClientRect();
 
+
+
+                const escalaX =
+                this.core.canvas.width /
+                rect.width;
+
+
+
+                const escalaY =
+                this.core.canvas.height /
+                rect.height;
+
+
+
                 const x =
-                e.clientX - rect.left;
+                (e.clientX - rect.left) *
+                escalaX;
+
+
 
                 const y =
-                e.clientY - rect.top;
+                (e.clientY - rect.top) *
+                escalaY;
+
+
+
+                console.log(
+                    "Click canvas:",
+                    x,
+                    y
+                );
+
+
 
                 const obj =
                 this.core.modules.hitTest.getObject(
@@ -45,17 +76,24 @@ class MouseManager{
                     y
                 );
 
+
+
                 if(obj){
+
 
                     this.core.modules.selection.select(
                         obj
                     );
 
+
                 }else{
+
 
                     this.core.modules.selection.clear();
 
+
                 }
+
 
             }
 
