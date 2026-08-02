@@ -9,15 +9,20 @@
 class RenderEngine{
 
 
-    constructor(core){
+ constructor(core){
 
-        this.core = core;
+    this.core = core;
 
-        console.log(
-            "Render Engine creado"
-        );
 
-    }
+    this.objectRenderer =
+    new ObjectRenderer(core);
+
+
+    console.log(
+        "Render Engine creado"
+    );
+
+}
 
 
 
@@ -48,23 +53,12 @@ class RenderEngine{
         this.core.objects;
 
 
-        objetos.forEach(
-        obj=>{
+      objetos.forEach(
+obj=>{
 
+    this.objectRenderer.render(obj);
 
-            this.core.context.fillStyle =
-            "#D4AF37";
-
-
-            this.core.context.fillRect(
-                obj.x,
-                obj.y,
-                obj.ancho,
-                obj.alto
-            );
-
-
-        });
+});
 
 
      /*
