@@ -25,9 +25,9 @@ document.addEventListener(
         "nexiumCanvas"
     );
 
+ nexium.modules.mouse.bindEvents();
 
-
-    nexium.modules.render.start();
+ nexium.modules.render.start();
 
 
 
