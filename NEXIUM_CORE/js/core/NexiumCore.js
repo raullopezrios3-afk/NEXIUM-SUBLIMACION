@@ -109,6 +109,22 @@ this.history = [
 
     }
 
+ createRectangle(
+    x,
+    y,
+    ancho,
+    alto
+){
+
+    return this.modules.objects.createRectangle(
+        x,
+        y,
+        ancho,
+        alto
+    );
+
+}
+
 
 
     removeObject(id){
