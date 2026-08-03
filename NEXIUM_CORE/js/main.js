@@ -13,9 +13,7 @@ document.addEventListener(
 
     const nexium =
     new NexiumCore();
-
-
-
+ 
     window.NEXIUM =
     nexium;
 
