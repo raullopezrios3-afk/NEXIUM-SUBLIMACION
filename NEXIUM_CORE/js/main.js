@@ -26,21 +26,3 @@ document.addEventListener(
  nexium.modules.mouse.bindEvents();
 
  nexium.modules.render.start();
-
- nexium.addObject({
-
-    id:1,
-
-    tipo:"rectangulo",
-
-    x:100,
-    y:100,
-
-    ancho:200,
-    alto:100
-
-});
-
-
-
-});
