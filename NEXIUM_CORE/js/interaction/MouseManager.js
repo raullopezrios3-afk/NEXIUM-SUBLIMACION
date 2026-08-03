@@ -23,61 +23,75 @@ class MouseManager{
     }
 
 
-bindEvents(){
 
-    this.core.canvas.addEventListener(
+    bindEvents(){
 
-        "click",
+        this.core.canvas.addEventListener(
 
-        (e)=>{
+            "click",
 
-            const rect =
-            this.core.canvas.getBoundingClientRect();
+            (e)=>{
 
-            const escalaX =
-            this.core.canvas.width /
-            rect.width;
+                const rect =
+                this.core.canvas.getBoundingClientRect();
 
-            const escalaY =
-            this.core.canvas.height /
-            rect.height;
+                const escalaX =
+                this.core.canvas.width /
+                rect.width;
 
-            const x =
-            (e.clientX - rect.left) *
-            escalaX;
+                const escalaY =
+                this.core.canvas.height /
+                rect.height;
 
-            const y =
-            (e.clientY - rect.top) *
-            escalaY;
+                const x =
+                (e.clientX - rect.left) *
+                escalaX;
 
-            console.log("Mouse:", x, y);
+                const y =
+                (e.clientY - rect.top) *
+                escalaY;
 
-            const obj =
-            this.core.modules.hitTest.getObject(
-                x,
-                y
-            );
+                console.log(
+                    "Mouse:",
+                    x,
+                    y
+                );
 
-            console.log("HitTest:", obj);
+                const obj =
+                this.core.modules.hitTest.getObject(
+                    x,
+                    y
+                );
 
-            if(obj){
-
-                console.log("Seleccionando objeto");
-
-                this.core.modules.selection.select(
+                console.log(
+                    "HitTest:",
                     obj
                 );
 
-            }else{
+                if(obj){
 
-                console.log("Limpiando selección");
+                    console.log(
+                        "Seleccionando objeto"
+                    );
 
-                this.core.modules.selection.clear();
+                    this.core.modules.selection.select(
+                        obj
+                    );
+
+                }else{
+
+                    console.log(
+                        "Limpiando selección"
+                    );
+
+                    this.core.modules.selection.clear();
+
+                }
 
             }
 
-        }
+        );
 
-    );
+    }
 
 }
