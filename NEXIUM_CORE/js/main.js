@@ -13,28 +13,34 @@ document.addEventListener(
 
     const nexium =
     new NexiumCore();
- 
+
+
     window.NEXIUM =
     nexium;
 
 
 
-   nexium.modules.canvas.init(
-    "nexiumCanvas"
-);
-
-
-nexium.modules.mouse.bindEvents();
+    nexium.modules.canvas.init(
+        "nexiumCanvas"
+    );
 
 
 
-nexium.createRectangle(
-    100,
-    100,
-    200,
-    100
-);
+    nexium.modules.mouse.bindEvents();
 
 
 
-nexium.modules.render.start();
+    nexium.createRectangle(
+        100,
+        100,
+        200,
+        100
+    );
+
+
+
+    nexium.modules.render.start();
+
+
+
+});
