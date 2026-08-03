@@ -19,10 +19,22 @@ document.addEventListener(
 
 
 
-    nexium.modules.canvas.init(
-        "nexiumCanvas"
-    );
+   nexium.modules.canvas.init(
+    "nexiumCanvas"
+);
 
- nexium.modules.mouse.bindEvents();
 
- nexium.modules.render.start();
+nexium.modules.mouse.bindEvents();
+
+
+
+nexium.createRectangle(
+    100,
+    100,
+    200,
+    100
+);
+
+
+
+nexium.modules.render.start();
