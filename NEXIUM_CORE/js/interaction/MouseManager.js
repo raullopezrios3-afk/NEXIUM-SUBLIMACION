@@ -23,82 +23,61 @@ class MouseManager{
     }
 
 
+bindEvents(){
 
-    bindEvents(){
+    this.core.canvas.addEventListener(
 
-        this.core.canvas.addEventListener(
+        "click",
 
-            "click",
+        (e)=>{
 
-            (e)=>{
+            const rect =
+            this.core.canvas.getBoundingClientRect();
 
+            const escalaX =
+            this.core.canvas.width /
+            rect.width;
 
-                const rect =
-                this.core.canvas.getBoundingClientRect();
+            const escalaY =
+            this.core.canvas.height /
+            rect.height;
 
+            const x =
+            (e.clientX - rect.left) *
+            escalaX;
 
+            const y =
+            (e.clientY - rect.top) *
+            escalaY;
 
-                const escalaX =
-                this.core.canvas.width /
-                rect.width;
+            console.log("Mouse:", x, y);
 
+            const obj =
+            this.core.modules.hitTest.getObject(
+                x,
+                y
+            );
 
+            console.log("HitTest:", obj);
 
-                const escalaY =
-                this.core.canvas.height /
-                rect.height;
+            if(obj){
 
+                console.log("Seleccionando objeto");
 
-
-                const x =
-                (e.clientX - rect.left) *
-                escalaX;
-
-
-
-                const y =
-                (e.clientY - rect.top) *
-                escalaY;
-
-
-
-                console.log(
-                    "Click canvas:",
-                    x,
-                    y
+                this.core.modules.selection.select(
+                    obj
                 );
 
+            }else{
 
+                console.log("Limpiando selección");
 
-                const obj =
-                this.core.modules.hitTest.getObject(
-                    x,
-                    y
-                );
-
-
-
-                if(obj){
-
-
-                    this.core.modules.selection.select(
-                        obj
-                    );
-
-
-                }else{
-
-
-                    this.core.modules.selection.clear();
-
-
-                }
-
+                this.core.modules.selection.clear();
 
             }
 
-        );
+        }
 
-    }
+    );
 
 }
