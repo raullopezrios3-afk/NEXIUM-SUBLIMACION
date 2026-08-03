@@ -18,6 +18,9 @@ class NexiumCore {
 
 this.modules = {};
 
+   this.modules.objects =
+new ObjectFactory(this);
+
 
 this.modules.canvas =
 new CanvasManager(this);
