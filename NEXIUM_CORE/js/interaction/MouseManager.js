@@ -172,6 +172,21 @@ if(resize){
                 this.y = pos.y;
 
 
+             if(
+    this.core.modules.transform &&
+    this.core.modules.transform.transforming
+){
+
+    this.core.modules.transform.resize(
+        this.x,
+        this.y
+    );
+
+    return;
+
+}
+
+
 
                 if(
                     this.core.modules.drag &&
