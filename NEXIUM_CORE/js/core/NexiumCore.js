@@ -57,6 +57,9 @@ new BoundingBoxRenderer(this);
 this.modules.transform =
 new TransformManager(this);
 
+ this.modules.history =
+new HistoryManager(this);
+
     console.log(
         "NEXIUM CORE iniciado",
         this.version
