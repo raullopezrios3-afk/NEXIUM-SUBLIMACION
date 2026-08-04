@@ -25,28 +25,22 @@ class DragManager{
 
 
 
-    start(x, y){
+   start(
+    obj,
+    x,
+    y
+){
 
-        const obj =
-        this.core.selectedObject;
-
-        if(!obj){
-            return;
-        }
-
-        this.dragging = true;
-
-        this.offsetX =
-        x - obj.x;
-
-        this.offsetY =
-        y - obj.y;
-
-        console.log(
-            "Drag iniciado"
-        );
-
+    if(!obj){
+        return;
     }
+
+    this.dragging = true;
+
+    this.offsetX = x - obj.x;
+    this.offsetY = y - obj.y;
+
+}
 
 
 
