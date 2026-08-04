@@ -54,9 +54,7 @@ class MouseManager{
                 this.x = pos.x;
                 this.y = pos.y;
 
-
                 this.isDown = true;
-
 
                 console.log(
                     "Mouse Down:",
