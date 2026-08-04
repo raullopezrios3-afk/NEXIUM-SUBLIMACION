@@ -28,4 +28,43 @@ class TransformManager{
     }
 
 
+
+    isHandleClicked(x,y){
+
+
+        const obj =
+        this.core.selectedObject;
+
+
+        if(!obj)
+        return false;
+
+
+
+        const handleX =
+        obj.x + obj.ancho;
+
+
+        const handleY =
+        obj.y + obj.alto;
+
+
+
+        if(
+            x >= handleX - 8 &&
+            x <= handleX + 8 &&
+            y >= handleY - 8 &&
+            y <= handleY + 8
+        ){
+
+            return true;
+
+        }
+
+
+        return false;
+
+    }
+
+
 }
