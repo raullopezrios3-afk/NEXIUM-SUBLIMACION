@@ -110,6 +110,15 @@ if(resize){
                     );
 
 
+                 if(
+    this.core.modules.transform &&
+    this.core.modules.transform.transforming
+){
+
+    this.core.modules.transform.endResize();
+
+}
+
                     /*
                     Preparación DragManager
                     */
