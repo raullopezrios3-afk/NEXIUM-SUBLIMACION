@@ -109,7 +109,7 @@ class TransformManager{
 
 
 
-    resize(x,y){
+      resize(x,y){
 
 
         if(!this.transforming)
@@ -146,4 +146,25 @@ class TransformManager{
 
 
 
-}
+
+    endResize(){
+
+
+        if(!this.transforming)
+        return;
+
+
+
+        this.transforming = false;
+
+
+        this.objeto = null;
+
+
+
+        console.log(
+            "Resize finalizado"
+        );
+
+
+    }
