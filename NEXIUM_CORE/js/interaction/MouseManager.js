@@ -2,9 +2,10 @@
 =========================================
  NEXIUM CORE
  Mouse Manager
- Version 2.0
+ Version 2.1
 =========================================
 */
+
 
 class MouseManager{
 
@@ -32,6 +33,8 @@ class MouseManager{
 
 
 
+
+
     /*
     =========================================
      INICIALIZAR EVENTOS DEL MOUSE
@@ -41,20 +44,34 @@ class MouseManager{
     bindEvents(){
 
 
+
+        /*
+        =====================================
+         MOUSE DOWN
+        =====================================
+        */
+
         this.core.canvas.addEventListener(
 
             "mousedown",
 
             (e)=>{
 
+
                 const pos =
                 this.getMousePosition(e);
 
 
+
                 this.x = pos.x;
+
                 this.y = pos.y;
 
+
+
                 this.isDown = true;
+
+
 
                 console.log(
                     "Mouse Down:",
@@ -62,24 +79,46 @@ class MouseManager{
                     this.y
                 );
 
-             const resize =
-this.core.modules.transform.isHandleClicked(
-    this.x,
-    this.y
-);
 
 
-if(resize){
-
-   this.core.modules.transform.startResize(
-    this.x,
-    this.y
-);
 
 
-    return;
+                /*
+                ================================
+                 VERIFICAR HANDLE RESIZE
+                ================================
+                */
 
-}
+
+                if(
+                    this.core.modules.transform &&
+                    this.core.modules.transform.isHandleClicked(
+                        this.x,
+                        this.y
+                    )
+                ){
+
+
+                    this.core.modules.transform.startResize(
+                        this.x,
+                        this.y
+                    );
+
+
+                    return;
+
+                }
+
+
+
+
+
+                /*
+                ================================
+                 HIT TEST
+                ================================
+                */
+
 
                 const obj =
                 this.core.modules.hitTest.getObject(
@@ -88,10 +127,14 @@ if(resize){
                 );
 
 
+
                 console.log(
                     "HitTest:",
                     obj
                 );
+
+
+
 
 
                 if(obj){
@@ -102,7 +145,9 @@ if(resize){
                     );
 
 
+
                     this.selectedObject = obj;
+
 
 
                     this.core.modules.selection.select(
@@ -110,22 +155,20 @@ if(resize){
                     );
 
 
-                 if(
-    this.core.modules.transform &&
-    this.core.modules.transform.transforming
-){
 
-    this.core.modules.transform.endResize();
 
-}
 
                     /*
-                    Preparación DragManager
+                    ============================
+                     INICIAR DRAG
+                    ============================
                     */
+
 
                     if(
                         this.core.modules.drag
                     ){
+
 
                         this.core.modules.drag.start(
                             obj,
@@ -133,7 +176,9 @@ if(resize){
                             this.y
                         );
 
+
                     }
+
 
 
                 }else{
@@ -144,7 +189,9 @@ if(resize){
                     );
 
 
+
                     this.selectedObject = null;
+
 
 
                     this.core.modules.selection.clear();
@@ -153,11 +200,23 @@ if(resize){
                 }
 
 
+
             }
 
         );
 
 
+
+
+
+
+
+
+        /*
+        =====================================
+         MOUSE MOVE
+        =====================================
+        */
 
 
         this.core.canvas.addEventListener(
@@ -167,8 +226,10 @@ if(resize){
             (e)=>{
 
 
+
                 if(!this.isDown)
                 return;
+
 
 
 
@@ -178,23 +239,48 @@ if(resize){
 
 
                 this.x = pos.x;
+
                 this.y = pos.y;
 
 
-             if(
-    this.core.modules.transform &&
-    this.core.modules.transform.transforming
-){
 
-    this.core.modules.transform.resize(
-        this.x,
-        this.y
-    );
 
-    return;
 
-}
 
+                /*
+                ================================
+                 RESIZE ACTIVO
+                ================================
+                */
+
+
+                if(
+                    this.core.modules.transform &&
+                    this.core.modules.transform.transforming
+                ){
+
+
+                    this.core.modules.transform.resize(
+                        this.x,
+                        this.y
+                    );
+
+
+                    return;
+
+                }
+
+
+
+
+
+
+
+                /*
+                ================================
+                 DRAG ACTIVO
+                ================================
+                */
 
 
                 if(
@@ -204,19 +290,33 @@ if(resize){
 
 
                     this.core.modules.drag.move(
-
                         this.x,
                         this.y
-
                     );
 
 
                 }
 
 
+
+
             }
 
         );
+
+
+
+
+
+
+
+
+
+        /*
+        =====================================
+         MOUSE UP
+        =====================================
+        */
 
 
         window.addEventListener(
@@ -226,8 +326,10 @@ if(resize){
             ()=>{
 
 
+
                 if(!this.isDown)
                 return;
+
 
 
 
@@ -241,13 +343,53 @@ if(resize){
 
 
 
+
+
+
+
+                /*
+                ================================
+                 FINALIZAR RESIZE
+                ================================
+                */
+
+
+                if(
+                    this.core.modules.transform &&
+                    this.core.modules.transform.transforming
+                ){
+
+
+                    this.core.modules.transform.endResize();
+
+
+                }
+
+
+
+
+
+
+
+                /*
+                ================================
+                 FINALIZAR DRAG
+                ================================
+                */
+
+
                 if(
                     this.core.modules.drag
                 ){
 
+
                     this.core.modules.drag.end();
 
+
                 }
+
+
+
 
 
             }
@@ -255,7 +397,12 @@ if(resize){
         );
 
 
+
     }
+
+
+
+
 
 
 
@@ -267,11 +414,14 @@ if(resize){
     =========================================
     */
 
+
     getMousePosition(e){
+
 
 
         const rect =
         this.core.canvas.getBoundingClientRect();
+
 
 
 
@@ -281,13 +431,17 @@ if(resize){
 
 
 
+
         const escalaY =
         this.core.canvas.height /
         rect.height;
 
 
 
+
+
         return {
+
 
 
             x:
@@ -303,7 +457,9 @@ if(resize){
             escalaY
 
 
+
         };
+
 
 
     }
