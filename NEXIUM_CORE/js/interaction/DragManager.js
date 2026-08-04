@@ -89,4 +89,10 @@ class DragManager{
 
     }
 
+ end(){
+
+    this.stop();
+
+}
+
 }
