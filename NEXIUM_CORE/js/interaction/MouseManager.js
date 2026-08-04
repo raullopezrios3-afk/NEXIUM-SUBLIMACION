@@ -64,6 +64,25 @@ class MouseManager{
                     this.y
                 );
 
+             const resize =
+this.core.modules.transform.isHandleClicked(
+    this.x,
+    this.y
+);
+
+
+if(resize){
+
+    console.log(
+        "Resize iniciado"
+    );
+
+
+    return;
+
+}
+
+
 
                 const obj =
                 this.core.modules.hitTest.getObject(
