@@ -65,6 +65,25 @@ class BoundingBoxRenderer{
         );
 
 
+     // HANDLE INFERIOR DERECHO
+
+ctx.fillStyle =
+"#2196F3";
+
+
+ctx.fillRect(
+
+    obj.x + obj.ancho - 5,
+
+    obj.y + obj.alto - 5,
+
+    10,
+
+    10
+
+);
+
+
 
         ctx.restore();
 
