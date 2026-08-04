@@ -9,75 +9,33 @@
 
 class NexiumCore {
 
-   constructor(){
+constructor(){
 
     this.version = "1.0.0";
 
+    this.modules = {};
 
-// SISTEMA DE MODULOS
-
-this.modules = {};
-
-   this.modules.objects =
-new ObjectFactory(this);
-
-
-this.modules.canvas =
-new CanvasManager(this);
-
-this.modules.render =
-new RenderEngine(this);
-
-    this.modules.mouse =
-new MouseManager(this);
-
-    this.modules.selection =
-new SelectionManager(this);
-
-    this.modules.hitTest =
-new HitTest(this);
-
-    this.modules.boundingBox =
-new BoundingBoxRenderer(this);
-    
-
-
-    // ESCENA
-
+    // Estado del motor
     this.scene = null;
-
-
-    // OBJETOS DEL EDITOR
-
     this.objects = [];
-
-
-    // CAPAS
-
     this.layers = [];
 
-
-    // HISTORIAL
-
-this.history = [
-    JSON.stringify([])
-];
-
-
-
-    // CANVAS ENGINE
+    this.history = [
+        JSON.stringify([])
+    ];
 
     this.canvas = null;
-
     this.context = null;
-
-
-
-    // OBJETO ACTIVO
-
     this.selectedObject = null;
 
-
+    // Crear módulos
+    this.modules.objects = new ObjectFactory(this);
+    this.modules.canvas = new CanvasManager(this);
+    this.modules.render = new RenderEngine(this);
+    this.modules.mouse = new MouseManager(this);
+    this.modules.selection = new SelectionManager(this);
+    this.modules.hitTest = new HitTest(this);
+    this.modules.boundingBox = new BoundingBoxRenderer(this);
 
     console.log(
         "NEXIUM CORE iniciado",
