@@ -28,14 +28,30 @@ constructor(){
     this.context = null;
     this.selectedObject = null;
 
-    // Crear módulos
-    this.modules.objects = new ObjectFactory(this);
-    this.modules.canvas = new CanvasManager(this);
-    this.modules.render = new RenderEngine(this);
-    this.modules.mouse = new MouseManager(this);
-    this.modules.selection = new SelectionManager(this);
-    this.modules.hitTest = new HitTest(this);
-    this.modules.boundingBox = new BoundingBoxRenderer(this);
+   // Crear módulos
+this.modules.objects =
+new ObjectFactory(this);
+
+this.modules.canvas =
+new CanvasManager(this);
+
+this.modules.render =
+new RenderEngine(this);
+
+this.modules.mouse =
+new MouseManager(this);
+
+this.modules.drag =
+new DragManager(this);
+
+this.modules.selection =
+new SelectionManager(this);
+
+this.modules.hitTest =
+new HitTest(this);
+
+this.modules.boundingBox =
+new BoundingBoxRenderer(this);
 
     console.log(
         "NEXIUM CORE iniciado",
