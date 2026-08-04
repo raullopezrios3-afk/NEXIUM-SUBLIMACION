@@ -67,4 +67,45 @@ class TransformManager{
     }
 
 
+
+    startResize(x,y){
+
+
+        const obj =
+        this.core.selectedObject;
+
+
+        if(!obj)
+        return;
+
+
+
+        this.transforming = true;
+
+
+        this.objeto = obj;
+
+
+        this.startX = x;
+
+        this.startY = y;
+
+
+        this.startWidth =
+        obj.ancho;
+
+
+        this.startHeight =
+        obj.alto;
+
+
+        console.log(
+            "Resize iniciado",
+            obj
+        );
+
+
+    }
+
+
 }
