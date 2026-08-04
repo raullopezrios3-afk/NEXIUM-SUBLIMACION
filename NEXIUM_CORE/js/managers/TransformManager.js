@@ -108,4 +108,42 @@ class TransformManager{
     }
 
 
+
+    resize(x,y){
+
+
+        if(!this.transforming)
+        return;
+
+
+
+        const deltaX =
+        x - this.startX;
+
+
+        const deltaY =
+        y - this.startY;
+
+
+
+        this.objeto.ancho =
+        this.startWidth + deltaX;
+
+
+        this.objeto.alto =
+        this.startHeight + deltaY;
+
+
+
+        console.log(
+            "Resize:",
+            this.objeto.ancho,
+            this.objeto.alto
+        );
+
+
+    }
+
+
+
 }
