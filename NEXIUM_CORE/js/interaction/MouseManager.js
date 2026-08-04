@@ -195,9 +195,6 @@ if(resize){
         );
 
 
-
-
-
         window.addEventListener(
 
             "mouseup",
