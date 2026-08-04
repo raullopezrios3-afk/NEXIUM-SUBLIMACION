@@ -82,8 +82,6 @@ if(resize){
 
 }
 
-
-
                 const obj =
                 this.core.modules.hitTest.getObject(
                     this.x,
