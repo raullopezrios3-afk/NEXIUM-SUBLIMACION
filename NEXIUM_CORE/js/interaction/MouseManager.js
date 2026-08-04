@@ -73,9 +73,10 @@ this.core.modules.transform.isHandleClicked(
 
 if(resize){
 
-    console.log(
-        "Resize iniciado"
-    );
+   this.core.modules.transform.startResize(
+    this.x,
+    this.y
+);
 
 
     return;
