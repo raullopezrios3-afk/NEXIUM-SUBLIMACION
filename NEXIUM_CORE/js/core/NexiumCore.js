@@ -28,7 +28,7 @@ constructor(){
     this.context = null;
     this.selectedObject = null;
 
-   // Crear módulos
+// Crear módulos
 this.modules.objects =
 new ObjectFactory(this);
 
@@ -52,6 +52,10 @@ new HitTest(this);
 
 this.modules.boundingBox =
 new BoundingBoxRenderer(this);
+
+
+this.modules.transform =
+new TransformManager(this);
 
     console.log(
         "NEXIUM CORE iniciado",
