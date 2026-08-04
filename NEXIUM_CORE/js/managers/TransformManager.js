@@ -16,9 +16,22 @@ class TransformManager{
 
         this.transforming = false;
 
+
         this.objeto = null;
 
+
         this.handle = null;
+
+
+        this.startX = 0;
+
+        this.startY = 0;
+
+
+        this.startWidth = 0;
+
+        this.startHeight = 0;
+
 
 
         console.log(
@@ -29,11 +42,20 @@ class TransformManager{
 
 
 
+
+
+    /*
+    =========================================
+     DETECTAR HANDLE DE RESIZE
+    =========================================
+    */
+
     isHandleClicked(x,y){
 
 
         const obj =
         this.core.selectedObject;
+
 
 
         if(!obj)
@@ -45,8 +67,10 @@ class TransformManager{
         obj.x + obj.ancho;
 
 
+
         const handleY =
         obj.y + obj.alto;
+
 
 
 
@@ -62,17 +86,29 @@ class TransformManager{
         }
 
 
+
         return false;
 
     }
 
 
 
+
+
+
+
+    /*
+    =========================================
+     INICIAR RESIZE
+    =========================================
+    */
+
     startResize(x,y){
 
 
         const obj =
         this.core.selectedObject;
+
 
 
         if(!obj)
@@ -83,7 +119,9 @@ class TransformManager{
         this.transforming = true;
 
 
+
         this.objeto = obj;
+
 
 
         this.startX = x;
@@ -91,12 +129,15 @@ class TransformManager{
         this.startY = y;
 
 
+
         this.startWidth =
         obj.ancho;
 
 
+
         this.startHeight =
         obj.alto;
+
 
 
         console.log(
@@ -109,7 +150,18 @@ class TransformManager{
 
 
 
-      resize(x,y){
+
+
+
+
+
+    /*
+    =========================================
+     EJECUTAR RESIZE
+    =========================================
+    */
+
+    resize(x,y){
 
 
         if(!this.transforming)
@@ -121,6 +173,7 @@ class TransformManager{
         x - this.startX;
 
 
+
         const deltaY =
         y - this.startY;
 
@@ -128,6 +181,7 @@ class TransformManager{
 
         this.objeto.ancho =
         this.startWidth + deltaX;
+
 
 
         this.objeto.alto =
@@ -147,6 +201,16 @@ class TransformManager{
 
 
 
+
+
+
+
+    /*
+    =========================================
+     FINALIZAR RESIZE
+    =========================================
+    */
+
     endResize(){
 
 
@@ -156,6 +220,7 @@ class TransformManager{
 
 
         this.transforming = false;
+
 
 
         this.objeto = null;
@@ -168,3 +233,7 @@ class TransformManager{
 
 
     }
+
+
+
+}
