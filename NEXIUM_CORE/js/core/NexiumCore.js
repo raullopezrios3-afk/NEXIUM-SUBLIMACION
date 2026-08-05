@@ -63,6 +63,9 @@ new KeyboardManager(this);
  this.modules.actions =
 new ObjectActionsManager(this);
 
+ this.modules.layers =
+new LayerManager(this);
+
     console.log(
         "NEXIUM CORE iniciado",
         this.version
