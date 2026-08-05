@@ -9,26 +9,55 @@
 class PropertyManager{
 
 
- constructor(core){
+constructor(core){
 
     this.core = core;
 
-
     this.container = null;
-
-
-    this.init();
 
 
     console.log(
         "Property Manager creado"
     );
 
-
 }
 
 
+/*
+=========================================
+ CONECTAR PANEL
+=========================================
+*/
 
+
+init(){
+
+
+    this.container =
+    document.getElementById(
+        "object-properties"
+    );
+
+
+
+    if(!this.container){
+
+        console.warn(
+            "Panel propiedades no encontrado"
+        );
+
+        return;
+
+    }
+
+
+
+    console.log(
+        "Property Manager conectado"
+    );
+
+
+}
 
 
 /*
