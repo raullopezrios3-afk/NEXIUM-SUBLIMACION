@@ -211,29 +211,41 @@ class TransformManager{
     =========================================
     */
 
-    endResize(){
+  endResize(){
 
 
-        if(!this.transforming)
-        return;
-
-
-
-        this.transforming = false;
+    if(!this.transforming)
+    return;
 
 
 
-        this.objeto = null;
+    this.transforming = false;
 
 
 
-        console.log(
-            "Resize finalizado"
-        );
+    /*
+    =========================================
+     GUARDAR ESTADO EN HISTORIAL
+    =========================================
+    */
 
+    if(
+        this.core.historyManager
+    ){
+
+        this.core.historyManager.saveState();
 
     }
 
+
+
+    this.objeto = null;
+
+
+
+    console.log(
+        "Resize finalizado"
+    );
 
 
 }
