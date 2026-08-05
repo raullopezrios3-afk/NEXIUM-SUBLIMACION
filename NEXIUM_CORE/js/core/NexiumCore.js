@@ -60,6 +60,9 @@ new HistoryManager(this);
  this.modules.keyboard =
 new KeyboardManager(this);
 
+ this.modules.actions =
+new ObjectActionsManager(this);
+
     console.log(
         "NEXIUM CORE iniciado",
         this.version
