@@ -150,6 +150,7 @@ JSON.parse(
     estado
 );
 
+ this.core.selectedObject = null;
 
 if(
     this.core.modules.render
@@ -194,6 +195,8 @@ redo(){
     JSON.parse(
         estado
     );
+
+ this.core.selectedObject = null;
 
  if(
     this.core.modules.render
