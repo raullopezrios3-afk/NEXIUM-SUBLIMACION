@@ -122,11 +122,49 @@ new HistoryManager(this);
     }
 
 
+ /*
+=========================================
+ UNDO PUBLICO
+=========================================
+*/
+
+undo(){
+
+    if(this.modules.history){
+
+        this.modules.history.undo();
+
+    }
+
+}
+
+
+
+/*
+=========================================
+ REDO PUBLICO
+=========================================
+*/
+
+redo(){
+
+    if(this.modules.history){
+
+        this.modules.history.redo();
+
+    }
+
+}
+
+ 
+
     getObjects(){
 
         return this.objects;
 
     }
+
+ 
 
 
     saveHistory(){
