@@ -229,13 +229,13 @@ class TransformManager{
     =========================================
     */
 
-    if(
-        this.core.historyManager
-    ){
+   if(
+    this.core.modules.history
+){
 
-        this.core.historyManager.saveState();
+    this.core.modules.history.save();
 
-    }
+}
 
 
 
