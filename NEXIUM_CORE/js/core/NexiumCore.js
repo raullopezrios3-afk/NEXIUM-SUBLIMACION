@@ -84,11 +84,15 @@ new HistoryManager(this);
 
     addObject(objeto){
 
-        this.objects.push(objeto);
+    this.objects.push(objeto);
 
-        this.saveHistory();
+    if(this.modules.history){
+
+        this.modules.history.save();
 
     }
+
+}
 
  createRectangle(
     x,
