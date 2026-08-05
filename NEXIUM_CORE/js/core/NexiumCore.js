@@ -171,16 +171,30 @@ redo(){
 
     }
 
- 
-  init(){
+/*
+=========================================
+ INICIALIZAR MOTOR
+=========================================
+*/
+
+init(){
+
 
     console.log(
         "NEXIUM ENGINE READY"
     );
 
 
+
     this.conectarCanvas();
 
+
+
+    /*
+    =========================================
+     CONECTAR INTERFAZ PROPIEDADES
+    =========================================
+    */
 
 
     if(
@@ -195,28 +209,8 @@ redo(){
 
     this.iniciarEventos();
 
-}
-
-        /*
-    =========================================
-     CONECTAR INTERFAZ
-    =========================================
-    */
-
-
-    if(
-        this.modules.properties
-    ){
-
-        this.modules.properties.init();
-
-    }
-
-
-    this.iniciarEventos();
 
 }
-
 
     conectarCanvas(){
 
