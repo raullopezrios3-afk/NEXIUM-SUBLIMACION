@@ -240,7 +240,7 @@ class ObjectActionsManager{
 
 
 
-    /*
+       /*
     =========================================
      PEGAR OBJETO
     =========================================
@@ -331,6 +331,62 @@ class ObjectActionsManager{
         console.log(
             "Objeto pegado",
             copia
+        );
+
+
+    }
+
+
+
+
+
+    /*
+    =========================================
+     CORTAR OBJETO SELECCIONADO
+    =========================================
+    */
+
+
+    cutSelected(){
+
+
+        const obj =
+        this.core.selectedObject;
+
+
+
+        if(!obj){
+
+
+            console.log(
+                "No hay objeto seleccionado"
+            );
+
+
+            return;
+
+        }
+
+
+
+        /*
+        Copiar al clipboard
+        */
+
+        this.copySelected();
+
+
+
+        /*
+        Eliminar objeto
+        */
+
+        this.deleteSelected();
+
+
+
+        console.log(
+            "Objeto cortado"
         );
 
 
