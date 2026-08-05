@@ -15,11 +15,16 @@ href="sandbox.css">
 
 </head>
 
+
 <body>
+
 
 <header>
 
-<h1>NEXIUM CORE SANDBOX</h1>
+<h1>
+NEXIUM CORE SANDBOX
+</h1>
+
 
 <div id="estado">
 
@@ -30,25 +35,66 @@ Motor listo
 </header>
 
 
+
+
 <main>
+
+
+<section class="canvas-area">
+
 
 <canvas
 id="nexiumCanvas">
 </canvas>
 
+
+</section>
+
+
+
+<!-- PANEL PROPIEDADES -->
+
+<aside class="properties-panel">
+
+
+<h3>
+Propiedades
+</h3>
+
+
+
+<div id="object-properties">
+
+
+Seleccione un objeto
+
+
+</div>
+
+
+
+</aside>
+
+
+
 </main>
+
+
 
 
 
 <!-- OBJECTS -->
 <script src="../js/objects/ObjectFactory.js"></script>
 
+
 <!-- CANVAS -->
 <script src="../js/canvas/CanvasManager.js"></script>
+
 
 <!-- RENDER -->
 <script src="../js/renderer/ObjectRenderer.js"></script>
 <script src="../js/render/RenderEngine.js"></script>
+
 
 <!-- INTERACTION -->
 <script src="../js/interaction/MouseManager.js"></script>
@@ -56,6 +102,8 @@ id="nexiumCanvas">
 <script src="../js/interaction/SelectionManager.js"></script>
 <script src="../js/interaction/HitTest.js"></script>
 <script src="../js/interaction/BoundingBoxRenderer.js"></script>
+
+
 
 <!-- MANAGERS -->
 <script src="../js/managers/TransformManager.js"></script>
@@ -66,12 +114,16 @@ id="nexiumCanvas">
 <script src="../js/managers/PropertyManager.js"></script>
 
 
+
 <!-- CORE -->
 <script src="../js/core/NexiumCore.js"></script>
 
 
+
 <!-- SANDBOX -->
 <script src="sandbox.js"></script>
+
+
 </body>
 
 </html>
