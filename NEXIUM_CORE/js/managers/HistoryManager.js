@@ -144,13 +144,14 @@ undo(){
 
 
 
-    this.core.objects =
+  this.core.objects =
 
-    JSON.parse(
-        estado
-    );
+JSON.parse(
+    estado
+);
 
- if(
+
+if(
     this.core.modules.render
 ){
 
@@ -159,11 +160,9 @@ undo(){
 }
 
 
-
-    console.log(
-        "Undo ejecutado"
-    );
-
+console.log(
+    "Undo ejecutado"
+);
 
 }
 
@@ -195,6 +194,14 @@ redo(){
     JSON.parse(
         estado
     );
+
+ if(
+    this.core.modules.render
+){
+
+    this.core.modules.render.render();
+
+}
 
     console.log(
         "Redo ejecutado"
