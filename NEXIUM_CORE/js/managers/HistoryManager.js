@@ -85,9 +85,23 @@ this.history.push(
 );
 
 
+/*
+Limitar historial
+*/
 
-        this.position =
-        this.history.length - 1;
+if(
+
+    this.history.length>100
+
+){
+
+    this.history.shift();
+
+}
+
+
+this.position =
+this.history.length - 1;
 
 
 
@@ -143,6 +157,52 @@ this.history.push(
 
     }
 
+
+
+}
+
+/*
+=========================================
+ REDO
+=========================================
+*/
+
+redo(){
+
+
+    if(
+
+        this.position >=
+        this.history.length-1
+
+    )
+    return;
+
+
+
+    this.position++;
+
+
+
+    const estado =
+
+    this.history[
+        this.position
+    ];
+
+
+
+    this.core.objects =
+
+    JSON.parse(
+        estado
+    );
+
+
+
+    console.log(
+        "Redo ejecutado"
+    );
 
 
 }
