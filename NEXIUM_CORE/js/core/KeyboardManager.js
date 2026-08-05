@@ -122,7 +122,7 @@ class KeyboardManager{
 
 
 
-                              /*
+                /*
                 =========================
                  DUPLICAR OBJETO
                  CTRL + D
@@ -219,6 +219,41 @@ class KeyboardManager{
 
                     console.log(
                         "CTRL + V"
+                    );
+
+                }
+
+
+
+
+
+                /*
+                =========================
+                 CORTAR OBJETO
+                 CTRL + X
+                =========================
+                */
+
+
+                if(
+                    e.ctrlKey &&
+                    e.key === "x"
+                ){
+
+                    e.preventDefault();
+
+
+                    if(
+                        this.core.modules.actions
+                    ){
+
+                        this.core.modules.actions.cutSelected();
+
+                    }
+
+
+                    console.log(
+                        "CTRL + X"
                     );
 
                 }
