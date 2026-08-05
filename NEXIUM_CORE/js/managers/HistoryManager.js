@@ -169,40 +169,28 @@ undo(){
 
 redo(){
 
-
     if(
-
         this.position >=
         this.history.length-1
-
     )
     return;
 
-
-
     this.position++;
 
-
-
     const estado =
-
     this.history[
         this.position
     ];
 
-
-
     this.core.objects =
-
     JSON.parse(
         estado
     );
-
-
 
     console.log(
         "Redo ejecutado"
     );
 
-
 }
+
+} // <-- ESTA LLAVE CIERRA LA CLASE HistoryManager
