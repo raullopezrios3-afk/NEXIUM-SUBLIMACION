@@ -227,7 +227,7 @@ class KeyboardManager{
 
 
 
-                /*
+                             /*
                 =========================
                  CORTAR OBJETO
                  CTRL + X
@@ -254,6 +254,142 @@ class KeyboardManager{
 
                     console.log(
                         "CTRL + X"
+                    );
+
+                }
+
+
+
+
+
+                /*
+                =========================
+                 TRAER AL FRENTE
+                 HOME
+                =========================
+                */
+
+
+                if(
+                    e.key === "Home"
+                ){
+
+                    e.preventDefault();
+
+
+                    if(
+                        this.core.modules.layers
+                    ){
+
+                        this.core.modules.layers.bringToFront();
+
+                    }
+
+
+                    console.log(
+                        "HOME - AL FRENTE"
+                    );
+
+                }
+
+
+
+
+
+                /*
+                =========================
+                 ENVIAR AL FONDO
+                 END
+                =========================
+                */
+
+
+                if(
+                    e.key === "End"
+                ){
+
+                    e.preventDefault();
+
+
+                    if(
+                        this.core.modules.layers
+                    ){
+
+                        this.core.modules.layers.sendToBack();
+
+                    }
+
+
+                    console.log(
+                        "END - AL FONDO"
+                    );
+
+                }
+
+
+
+
+
+                /*
+                =========================
+                 SUBIR CAPA
+                 PAGE UP
+                =========================
+                */
+
+
+                if(
+                    e.key === "PageUp"
+                ){
+
+                    e.preventDefault();
+
+
+                    if(
+                        this.core.modules.layers
+                    ){
+
+                        this.core.modules.layers.bringForward();
+
+                    }
+
+
+                    console.log(
+                        "PAGE UP - SUBIR CAPA"
+                    );
+
+                }
+
+
+
+
+
+                /*
+                =========================
+                 BAJAR CAPA
+                 PAGE DOWN
+                =========================
+                */
+
+
+                if(
+                    e.key === "PageDown"
+                ){
+
+                    e.preventDefault();
+
+
+                    if(
+                        this.core.modules.layers
+                    ){
+
+                        this.core.modules.layers.sendBackward();
+
+                    }
+
+
+                    console.log(
+                        "PAGE DOWN - BAJAR CAPA"
                     );
 
                 }
