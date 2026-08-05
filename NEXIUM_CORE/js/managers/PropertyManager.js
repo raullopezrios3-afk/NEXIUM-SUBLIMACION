@@ -22,6 +22,40 @@ constructor(core){
 
 }
 
+ /*
+=========================================
+ CONECTAR CONTENEDOR
+=========================================
+*/
+
+
+connect(){
+
+
+    this.container =
+    document.getElementById(
+        "object-properties"
+    );
+
+
+
+    if(this.container){
+
+        console.log(
+            "Property Manager conectado"
+        );
+
+    }else{
+
+        console.warn(
+            "Panel de propiedades no encontrado"
+        );
+
+    }
+
+
+}
+
 
 /*
 =========================================
