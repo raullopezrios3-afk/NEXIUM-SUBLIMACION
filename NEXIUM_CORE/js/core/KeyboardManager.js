@@ -25,71 +25,99 @@ class KeyboardManager{
 
 
 
-    init(){
+   init(){
 
 
-        window.addEventListener(
-            "keydown",
-            (e)=>{
+    window.addEventListener(
+        "keydown",
+        (e)=>{
 
 
-                /*
-                =========================
-                 UNDO
-                =========================
-                */
+            /*
+            =========================
+             UNDO
+            =========================
+            */
 
 
-                if(
-                    e.ctrlKey &&
-                    e.key === "z"
-                ){
+            if(
+                e.ctrlKey &&
+                e.key === "z"
+            ){
 
-                    e.preventDefault();
-
-
-                    this.core.undo();
+                e.preventDefault();
 
 
-                    console.log(
-                        "CTRL + Z"
-                    );
-
-                }
+                this.core.undo();
 
 
-
-                /*
-                =========================
-                 REDO
-                =========================
-                */
-
-
-                if(
-                    e.ctrlKey &&
-                    e.key === "y"
-                ){
-
-                    e.preventDefault();
-
-
-                    this.core.redo();
-
-
-                    console.log(
-                        "CTRL + Y"
-                    );
-
-                }
-
+                console.log(
+                    "CTRL + Z"
+                );
 
             }
 
-        );
 
 
-    }
+            /*
+            =========================
+             REDO
+            =========================
+            */
+
+
+            if(
+                e.ctrlKey &&
+                e.key === "y"
+            ){
+
+                e.preventDefault();
+
+
+                this.core.redo();
+
+
+                console.log(
+                    "CTRL + Y"
+                );
+
+            }
+
+
+
+            /*
+            =========================
+             DELETE OBJETO
+            =========================
+            */
+
+
+            if(
+                e.key === "Delete"
+            ){
+
+                e.preventDefault();
+
+
+                if(
+                    this.core.modules.actions
+                ){
+
+                    this.core.modules.actions.deleteSelected();
+
+                }
+
+
+                console.log(
+                    "DELETE"
+                );
+
+            }
+
+
+        }
+
+    );
 
 
 }
