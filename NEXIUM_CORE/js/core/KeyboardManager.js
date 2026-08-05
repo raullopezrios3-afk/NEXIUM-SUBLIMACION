@@ -122,4 +122,8 @@ class KeyboardManager{
 
 }
 
+} // <-- CIERRA LA CLASE KeyboardManager
+
+
+
 window.KeyboardManager = KeyboardManager;
