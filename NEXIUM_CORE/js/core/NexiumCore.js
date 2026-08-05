@@ -172,7 +172,7 @@ redo(){
     }
 
  
-     init(){
+  init(){
 
     console.log(
         "NEXIUM ENGINE READY"
@@ -181,6 +181,21 @@ redo(){
 
     this.conectarCanvas();
 
+
+
+    if(
+        this.modules.properties
+    ){
+
+        this.modules.properties.connect();
+
+    }
+
+
+
+    this.iniciarEventos();
+
+}
 
         /*
     =========================================
