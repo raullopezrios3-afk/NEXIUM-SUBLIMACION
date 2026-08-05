@@ -20,10 +20,7 @@ constructor(){
     this.objects = [];
     this.layers = [];
 
-    this.history = [
-        JSON.stringify([])
-    ];
-
+   
     this.canvas = null;
     this.context = null;
     this.selectedObject = null;
@@ -165,49 +162,6 @@ redo(){
     }
 
  
-
-
-    saveHistory(){
-
-        this.history.push(
-            JSON.stringify(this.objects)
-        );
-
-
-        if(this.history.length > 50){
-
-            this.history.shift();
-
-        }
-
-    }
-
-
- undo(){
-
-    if(this.history.length > 0){
-
-        this.history.pop();
-
-
-        let anterior =
-        this.history.length > 0
-        ? this.history[this.history.length-1]
-        : "[]";
-
-
-        this.objects =
-        JSON.parse(anterior);
-
-
-        console.log(
-            "Undo ejecutado"
-        );
-
-    }
-
-}
-
        init(){
 
         console.log(
