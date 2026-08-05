@@ -172,18 +172,28 @@ redo(){
     }
 
  
-       init(){
+     init(){
 
-        console.log(
-            "NEXIUM ENGINE READY"
-        );
+    console.log(
+        "NEXIUM ENGINE READY"
+    );
 
 
-        this.conectarCanvas();
+    this.conectarCanvas();
 
-        this.iniciarEventos();
+
+    if(
+        this.modules.properties
+    ){
+
+        this.modules.properties.init();
 
     }
+
+
+    this.iniciarEventos();
+
+}
 
 
     conectarCanvas(){
