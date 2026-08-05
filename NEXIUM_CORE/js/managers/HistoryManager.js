@@ -150,6 +150,14 @@ undo(){
         estado
     );
 
+ if(
+    this.core.modules.render
+){
+
+    this.core.modules.render.render();
+
+}
+
 
 
     console.log(
