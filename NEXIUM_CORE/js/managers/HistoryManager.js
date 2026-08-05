@@ -117,49 +117,49 @@ this.history.length - 1;
 
 
 
-    /*
-    =========================================
-     UNDO
-    =========================================
-    */
+   /*
+=========================================
+ UNDO
+=========================================
+*/
+
+undo(){
 
 
-    undo(){
-
-
-        if(this.position <= 0)
-        return;
-
-
-
-        this.position--;
+    if(this.position <= 0)
+    return;
 
 
 
-        const estado =
-        this.history[
-            this.position
-        ];
+    this.position--;
 
 
 
-        this.core.objects =
-        JSON.parse(
-            estado
-        );
+    const estado =
+
+    this.history[
+        this.position
+    ];
 
 
 
-        console.log(
-            "Undo ejecutado"
-        );
+    this.core.objects =
+
+    JSON.parse(
+        estado
+    );
 
 
-    }
 
+    console.log(
+        "Undo ejecutado"
+    );
 
 
 }
+
+
+
 
 /*
 =========================================
