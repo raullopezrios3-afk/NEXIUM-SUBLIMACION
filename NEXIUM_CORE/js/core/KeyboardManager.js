@@ -122,7 +122,7 @@ class KeyboardManager{
 
 
 
-                /*
+                              /*
                 =========================
                  DUPLICAR OBJETO
                  CTRL + D
@@ -149,6 +149,76 @@ class KeyboardManager{
 
                     console.log(
                         "CTRL + D"
+                    );
+
+                }
+
+
+
+
+
+                /*
+                =========================
+                 COPIAR OBJETO
+                 CTRL + C
+                =========================
+                */
+
+
+                if(
+                    e.ctrlKey &&
+                    e.key === "c"
+                ){
+
+                    e.preventDefault();
+
+
+                    if(
+                        this.core.modules.actions
+                    ){
+
+                        this.core.modules.actions.copySelected();
+
+                    }
+
+
+                    console.log(
+                        "CTRL + C"
+                    );
+
+                }
+
+
+
+
+
+                /*
+                =========================
+                 PEGAR OBJETO
+                 CTRL + V
+                =========================
+                */
+
+
+                if(
+                    e.ctrlKey &&
+                    e.key === "v"
+                ){
+
+                    e.preventDefault();
+
+
+                    if(
+                        this.core.modules.actions
+                    ){
+
+                        this.core.modules.actions.paste();
+
+                    }
+
+
+                    console.log(
+                        "CTRL + V"
                     );
 
                 }
