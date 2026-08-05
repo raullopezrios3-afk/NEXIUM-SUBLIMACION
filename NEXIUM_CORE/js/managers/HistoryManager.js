@@ -14,10 +14,11 @@ class HistoryManager{
         this.core = core;
 
 
-        this.history = [];
+       this.history = [
+    JSON.stringify([])
+];
 
-
-        this.position = -1;
+this.position = 0;
 
 
 
