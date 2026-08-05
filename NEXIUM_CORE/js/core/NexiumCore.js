@@ -182,6 +182,13 @@ redo(){
     this.conectarCanvas();
 
 
+        /*
+    =========================================
+     CONECTAR INTERFAZ
+    =========================================
+    */
+
+
     if(
         this.modules.properties
     ){
