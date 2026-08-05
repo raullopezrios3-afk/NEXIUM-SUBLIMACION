@@ -54,17 +54,35 @@ class HistoryManager{
         */
 
 
-        this.history =
-        this.history.slice(
-            0,
-            this.position + 1
-        );
+      this.history =
+this.history.slice(
+    0,
+    this.position + 1
+);
 
 
+/*
+Evitar estados duplicados
+*/
 
-        this.history.push(
-            estado
-        );
+if(
+
+    this.history.length>0 &&
+
+    this.history[
+        this.history.length-1
+    ]===estado
+
+){
+
+    return;
+
+}
+
+
+this.history.push(
+    estado
+);
 
 
 
