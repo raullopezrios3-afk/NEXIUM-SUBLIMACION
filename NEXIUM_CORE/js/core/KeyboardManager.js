@@ -93,3 +93,5 @@ class KeyboardManager{
 
 
 }
+
+window.KeyboardManager = KeyboardManager;
