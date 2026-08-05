@@ -340,7 +340,7 @@ class ObjectActionsManager{
 
 
 
-    /*
+      /*
     =========================================
      CORTAR OBJETO SELECCIONADO
     =========================================
@@ -393,7 +393,7 @@ class ObjectActionsManager{
     }
 
 
-}
+} // <-- cierre de la clase
 
 
 // Exportación global
