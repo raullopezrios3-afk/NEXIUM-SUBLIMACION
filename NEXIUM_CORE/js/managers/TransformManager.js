@@ -243,9 +243,12 @@ class TransformManager{
 
 
 
-    console.log(
+console.log(
         "Resize finalizado"
     );
+
+
+}
 
 
 }
