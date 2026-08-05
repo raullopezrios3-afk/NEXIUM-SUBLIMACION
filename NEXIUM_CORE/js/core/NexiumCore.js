@@ -6,7 +6,6 @@
 ====================================================
 */
 
-
 class NexiumCore {
 
 constructor(){
@@ -20,7 +19,6 @@ constructor(){
     this.objects = [];
     this.layers = [];
 
-   
     this.canvas = null;
     this.context = null;
     this.selectedObject = null;
