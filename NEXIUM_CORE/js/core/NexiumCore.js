@@ -64,6 +64,9 @@ new ObjectActionsManager(this);
  this.modules.layers =
 new LayerManager(this);
 
+ this.modules.properties =
+new PropertyManager(this);
+
     console.log(
         "NEXIUM CORE iniciado",
         this.version
