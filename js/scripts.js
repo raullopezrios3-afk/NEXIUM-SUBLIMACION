@@ -14,6 +14,8 @@ let frameActualTaza = 1;
 let imagenesTaza360 = [];
 let productoActivo = "taza";
 let giroTazaActivo = false;
+let intervaloGiroTaza = null;
+let velocidadGiro = 120;
 
 // ===============================
 // PLAYERA
@@ -1724,8 +1726,64 @@ function activarArrastreTaza360(){
     "Taza 360 interactiva activada"
     );
 
+function iniciarGiroAutomaticoTaza(){
+
+    detenerGiroAutomaticoTaza();
+
+
+    intervaloGiroTaza = setInterval(()=>{
+
+
+        if(productoActivo !== "taza")
+        return;
+
+
+        if(giroTazaActivo)
+        return;
+
+
+
+        frameActualTaza++;
+
+
+        if(frameActualTaza > totalFramesTaza){
+
+            frameActualTaza = 1;
+
+        }
+
+
+        mostrarFrameTaza();
+
+
+
+    }, velocidadGiro);
+
 
 }
+
+
+
+function detenerGiroAutomaticoTaza(){
+
+
+    if(intervaloGiroTaza){
+
+
+        clearInterval(intervaloGiroTaza);
+
+
+        intervaloGiroTaza = null;
+
+
+    }
+
+
+}
+   
+
+}
+
 
 
 
@@ -1823,30 +1881,49 @@ function iniciarTaza360(){
     }
 
 
+function terminar(){
 
-    function terminar(){
 
-        presionando=false;
+    presionando=false;
 
-    }
+
+    giroTazaActivo=false;
+
+
+    setTimeout(()=>{
+
+
+        iniciarGiroAutomaticoTaza();
+
+
+    },1500);
+
+
+}
 
 
 
     // MOUSE
 
-   taza.addEventListener(
+ taza.addEventListener(
 "mousedown",
 e=>{
+
 
     if(productoActivo !== "taza")
     return;
 
 
+    detenerGiroAutomaticoTaza();
+
+
+    giroTazaActivo = true;
+
+
     iniciarMovimiento(e.clientX);
 
+
 });
-
-
 
     window.addEventListener(
     "mousemove",
