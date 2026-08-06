@@ -38,6 +38,11 @@ import DownloadManager from "./modules/DownloadManager.js";
 import Helpers from "./utils/Helpers.js";
 
 
+console.log(
+    "NEXIUM VECTOR STUDIO app.js cargado"
+);
+
+
 
 
 
