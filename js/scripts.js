@@ -1782,10 +1782,6 @@ function detenerGiroAutomaticoTaza(){
 }
    
 
-}
-
-
-
 
 // ===================================
 // CONTROL 360 INTERACTIVO TAZA
