@@ -587,22 +587,11 @@ registerEvents(){
 
 
 
-                    const image =
+                   await this.fileManager.load(
 
-                        await this.fileManager.load(
+    file
 
-                            file
-
-                        );
-
-
-
-
-
-                    this.state.image =
-
-                        image;
-
+);
 
 
 
