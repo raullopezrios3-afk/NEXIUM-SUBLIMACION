@@ -1506,7 +1506,7 @@ function moverDiseno(){
 // MOTOR 360 TAZA - PREPARACIÓN
 // ===================================
 
-const totalFramesTaza = 21;
+const totalFramesTaza = 64;
 
 function cargarTaza360() {
 
@@ -1609,7 +1609,7 @@ function girarTaza(direccion){
     frameActualTaza += direccion;
 
 
-    if(frameActualTaza > 21){
+    if(frameActualTaza > totalFramesTaza){
 
         frameActualTaza = 1;
 
@@ -1618,13 +1618,12 @@ function girarTaza(direccion){
 
     if(frameActualTaza < 1){
 
-        frameActualTaza = 21;
+        frameActualTaza = totalFramesTaza;
 
     }
 
 
     mostrarFrameTaza();
-
 
 }
 
