@@ -22,7 +22,8 @@ constructor(core){
 
 }
 
- /*
+
+/*
 =========================================
  CONECTAR CONTENEDOR
 =========================================
@@ -52,43 +53,6 @@ connect(){
         );
 
     }
-
-
-}
-
-
-/*
-=========================================
- CONECTAR PANEL
-=========================================
-*/
-
-
-init(){
-
-
-    this.container =
-    document.getElementById(
-        "object-properties"
-    );
-
-
-
-    if(!this.container){
-
-        console.warn(
-            "Panel propiedades no encontrado"
-        );
-
-        return;
-
-    }
-
-
-
-    console.log(
-        "Property Manager conectado"
-    );
 
 
 }
@@ -132,135 +96,136 @@ init(){
 
 
 
-    /*
-    =========================================
-     ACTUALIZAR PROPIEDADES
-    =========================================
-    */
+
+/*
+=========================================
+ ACTUALIZAR PROPIEDADES
+=========================================
+*/
 
 
-    update(){
+update(){
 
 
-        if(!this.container)
+    if(!this.container)
+    return;
+
+
+
+    const obj =
+    this.core.selectedObject;
+
+
+
+    if(!obj){
+
+
+        this.container.innerHTML =
+        "Seleccione un objeto";
+
+
         return;
 
-
-
-        const obj =
-        this.core.selectedObject;
-
-
-
-        if(!obj){
-
-
-            this.container.innerHTML =
-            "Seleccione un objeto";
-
-
-            return;
-
-        }
-
-
-
-        this.container.innerHTML = `
-
-
-            <div class="property">
-
-                <label>
-                    ID
-                </label>
-
-                <input 
-                    value="${obj.id}"
-                    disabled
-                >
-
-            </div>
-
-
-
-            <div class="property">
-
-                <label>
-                    Tipo
-                </label>
-
-                <input 
-                    value="${obj.tipo}"
-                    disabled
-                >
-
-            </div>
-
-
-
-            <div class="property">
-
-                <label>
-                    X
-                </label>
-
-                <input 
-                    id="propX"
-                    value="${obj.x}"
-                >
-
-            </div>
-
-
-
-            <div class="property">
-
-                <label>
-                    Y
-                </label>
-
-                <input 
-                    id="propY"
-                    value="${obj.y}"
-                >
-
-            </div>
-
-
-
-            <div class="property">
-
-                <label>
-                    Ancho
-                </label>
-
-                <input 
-                    id="propAncho"
-                    value="${obj.ancho}"
-                >
-
-            </div>
-
-
-
-            <div class="property">
-
-                <label>
-                    Alto
-                </label>
-
-                <input 
-                    id="propAlto"
-                    value="${obj.alto}"
-                >
-
-            </div>
-
-
-        `;
-
-
     }
+
+
+
+    this.container.innerHTML = `
+
+
+        <div class="property">
+
+            <label>
+                ID
+            </label>
+
+            <input 
+                value="${obj.id}"
+                disabled
+            >
+
+        </div>
+
+
+
+        <div class="property">
+
+            <label>
+                Tipo
+            </label>
+
+            <input 
+                value="${obj.tipo}"
+                disabled
+            >
+
+        </div>
+
+
+
+        <div class="property">
+
+            <label>
+                X
+            </label>
+
+            <input 
+                id="propX"
+                value="${obj.x}"
+            >
+
+        </div>
+
+
+
+        <div class="property">
+
+            <label>
+                Y
+            </label>
+
+            <input 
+                id="propY"
+                value="${obj.y}"
+            >
+
+        </div>
+
+
+
+        <div class="property">
+
+            <label>
+                Ancho
+            </label>
+
+            <input 
+                id="propAncho"
+                value="${obj.ancho}"
+            >
+
+        </div>
+
+
+
+        <div class="property">
+
+            <label>
+                Alto
+            </label>
+
+            <input 
+                id="propAlto"
+                value="${obj.alto}"
+            >
+
+        </div>
+
+
+    `;
+
+
+}
 
 
 
