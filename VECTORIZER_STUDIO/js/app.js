@@ -399,13 +399,13 @@ initialize(){
     */
 
 
-    const viewer =
+   const viewer =
 
-        document.getElementById(
+    document.getElementById(
 
-            "mugCanvasHolder"
+        "viewer3D"
 
-        );
+    );
 
 
 
