@@ -30,12 +30,19 @@ document.addEventListener(
 
 
 
-    nexium.createRectangle(
-        100,
-        100,
-        200,
-        100
-    );
+  /*
+=========================================
+OBJETO DE PRUEBA
+(Deshabilitado)
+=========================================
+
+nexium.createRectangle(
+    100,
+    100,
+    200,
+    100
+);
+*/
 
 
 
