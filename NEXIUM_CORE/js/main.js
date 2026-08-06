@@ -25,14 +25,17 @@ document.addEventListener(
 
     nexium.modules.mouse.bindEvents();
 
-    // OBJETO DE PRUEBA
+ /*
+=========================================   
+ // OBJETO DE PRUEBA
     nexium.createRectangle(
         100,
         100,
         200,
         100
     );
-
+=========================================
+*/
     // Iniciar render
     nexium.modules.render.start();
 
