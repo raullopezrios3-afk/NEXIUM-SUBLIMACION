@@ -140,6 +140,10 @@ class VectorizerStudio{
 
     constructor(){
 
+     console.log(
+    "VectorizerStudio constructor ejecutado"
+);
+
 
 
         console.log(
