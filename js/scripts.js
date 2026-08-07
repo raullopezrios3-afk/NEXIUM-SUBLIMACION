@@ -63,6 +63,8 @@ console.log(
     "Mockup Engine inicializado"
 );
 
+   mockupEngine.init();
+
 }
 
 
