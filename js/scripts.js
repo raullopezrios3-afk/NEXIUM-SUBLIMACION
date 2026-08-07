@@ -4,7 +4,7 @@
 
 let imagenes = [];
 let indexActual = 0;
-
+let mockupEngine = null;
 
 // ===============================
 // MOTOR 360 TAZA
@@ -57,6 +57,11 @@ function iniciarNexium(){
     iniciarStudio();
     
     iniciarTaza360();
+   mockupEngine = new MockupEngine();
+
+console.log(
+    "Mockup Engine inicializado"
+);
 
 }
 
