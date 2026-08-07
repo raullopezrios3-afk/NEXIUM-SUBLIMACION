@@ -65,6 +65,10 @@ console.log(
 
    mockupEngine.init();
 
+  mockupEngine.loadProduct(
+    "configurador/productos/tazas/taza-blanca.png"
+);
+
 }
 
 
