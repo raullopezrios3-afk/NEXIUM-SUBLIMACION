@@ -1601,132 +1601,13 @@ function mostrarFrameTaza(){
 
 }
 
-   // ===============================
-// CONTROL GIRO TAZA 360
-// ===============================
-
-function girarTaza(direccion){
-
-
-    frameActualTaza += direccion;
-
-
-    if(frameActualTaza > totalFramesTaza){
-
-        frameActualTaza = 1;
-
-    }
-
-
-    if(frameActualTaza < 1){
-
-        frameActualTaza = totalFramesTaza;
-
-    }
-
-
-    mostrarFrameTaza();
-
-}
-
 // ===================================
-// ARRASTRE MOUSE TAZA 360
+// GIRO AUTOMATICO TAZA 360
 // ===================================
 
-function activarArrastreTaza360(){
-
-
-    const taza =
-    document.getElementById("taza360");
-
-
-    if(!taza)
-    return;
-
-
-    let inicioX = 0;
-
-    let arrastrando = false;
-
-
-
-    taza.addEventListener(
-    "mousedown",
-    function(e){
-
-
-        arrastrando = true;
-
-
-        inicioX = e.clientX;
-
-
-        taza.style.cursor="grabbing";
-
-
-    });
-
-
-
-    document.addEventListener(
-    "mousemove",
-    function(e){
-
-
-        if(!arrastrando)
-        return;
-
-
-
-        let movimiento =
-        e.clientX - inicioX;
-
-
-
-        if(Math.abs(movimiento) > 15){
-
-
-            if(movimiento > 0){
-
-                girarTaza(-1);
-
-            }else{
-
-                girarTaza(1);
-
-            }
-
-
-            inicioX = e.clientX;
-
-
-        }
-
-
-
-    });
-
-
-
-    document.addEventListener(
-    "mouseup",
-    function(){
-
-
-        arrastrando=false;
-
-
-        taza.style.cursor="grab";
-
-
-    });
-
-
-    console.log(
-    "Taza 360 interactiva activada"
-    );
 
 function iniciarGiroAutomaticoTaza(){
+
 
     detenerGiroAutomaticoTaza();
 
@@ -1742,7 +1623,6 @@ function iniciarGiroAutomaticoTaza(){
         return;
 
 
-
         frameActualTaza++;
 
 
@@ -1754,7 +1634,6 @@ function iniciarGiroAutomaticoTaza(){
 
 
         mostrarFrameTaza();
-
 
 
     }, velocidadGiro);
@@ -1780,8 +1659,6 @@ function detenerGiroAutomaticoTaza(){
 
 
 }
-   
-
 
 // ===================================
 // CONTROL 360 INTERACTIVO TAZA
@@ -1939,17 +1816,23 @@ e=>{
 
     // TOUCH MOVIL
 
-    taza.addEventListener(
-    "touchstart",
-    e=>{
+ taza.addEventListener(
+"touchstart",
+e=>{
 
 
-        iniciarMovimiento(
-            e.touches[0].clientX
-        );
+    detenerGiroAutomaticoTaza();
 
 
-    });
+    giroTazaActivo=true;
+
+
+    iniciarMovimiento(
+        e.touches[0].clientX
+    );
+
+
+});
 
 
 
@@ -1973,11 +1856,19 @@ e=>{
 
 
 
-    console.log(
-    "Taza 360 interactiva activada"
-    );
+   console.log(
+"Taza 360 interactiva activada"
+);
+
+
+iniciarGiroAutomaticoTaza();
 
 }
+
+
+
+
+   // ===============================
 
 /* =========================
    EXPORTAR FUNCIONES GLOBALES
