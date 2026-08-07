@@ -1337,26 +1337,21 @@ body.nexium-dark .studio-titulo h2{
 
 #mockupContainer{
 
-    width:370px;
+    position:absolute;
 
-    height:470px;
+    width:100%;
 
-    position:relative;
+    height:100%;
+
+    left:0;
+
+    top:0;
 
     overflow:hidden;
 
+    pointer-events:none;
 
-    /* separación con botones */
-    margin-left:19px;
-
-
-    /* separación borde derecho */
-    margin-right:19px;
-
-
-    /* separación inferior */
-    margin-bottom:19px;
-
+    z-index:2;
 
 }
 
