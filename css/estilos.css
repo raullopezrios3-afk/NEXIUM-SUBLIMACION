@@ -1378,6 +1378,18 @@ PREVIEW DEL PRODUCTO
 
 }
 
+#mockupContainer{
+
+    width:370px;
+
+    height:470px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
 /*=========================
 BOTÓN SUBIR DISEÑO
 =========================*/
