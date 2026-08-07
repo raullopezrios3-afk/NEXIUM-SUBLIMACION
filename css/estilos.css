@@ -1345,6 +1345,19 @@ body.nexium-dark .studio-titulo h2{
 
     overflow:hidden;
 
+
+    /* separación con botones */
+    margin-left:19px;
+
+
+    /* separación borde derecho */
+    margin-right:19px;
+
+
+    /* separación inferior */
+    margin-bottom:19px;
+
+
 }
 
 /*======================================
