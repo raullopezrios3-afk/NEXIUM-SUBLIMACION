@@ -72,9 +72,25 @@ class MockupEngine{
         "999";
 
 
-        document.body.appendChild(
-            this.canvas
-        );
+      const contenedor =
+document.getElementById(
+    "mockupContainer"
+);
+
+
+if(contenedor){
+
+    contenedor.appendChild(
+        this.canvas
+    );
+
+}else{
+
+    console.warn(
+        "No existe mockupContainer"
+    );
+
+}
 
 
 
