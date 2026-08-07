@@ -1497,6 +1497,8 @@ box-shadow:
 
     overflow:hidden;
 
+    z-index:3;
+
 }
 
 
@@ -1543,7 +1545,15 @@ DISEÑO DEL CLIENTE
 
     object-fit:fill;
 
-    display:none;
+    display:block;
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    z-index:3;
 
 }
 
