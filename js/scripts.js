@@ -1388,21 +1388,6 @@ lector.onload=function(e){
     e.target.result;
 
 
-    // NUEVA CAPA PARA LA TAZA
-
-    const disenoCurvo =
-    document.getElementById(
-    "disenoCurvo"
-    );
-
-    if(disenoCurvo){
-
-        disenoCurvo.src =
-        e.target.result;
-
-    }
-
-
     disenoUsuario.style.width="100%";
 
     disenoUsuario.style.height="100%";
