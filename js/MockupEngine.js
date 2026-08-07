@@ -139,30 +139,65 @@ class MockupEngine{
 
 
 
-        if(this.imagen){
+        if(this.producto){
 
 
-            this.ctx.drawImage(
+    this.ctx.drawImage(
 
-                this.imagen,
+        this.producto,
 
-                0,
-                0,
+        0,
+        0,
 
-                this.canvas.width,
+        this.canvas.width,
 
-                this.canvas.height
+        this.canvas.height
 
-            );
+    );
 
 
-        }
-
+}
 
 
         console.log(
             "Mockup render ejecutado"
         );
+
+
+    }
+
+     /*
+    =========================================
+     CARGAR PRODUCTO BASE
+    =========================================
+    */
+
+
+    loadProduct(src){
+
+
+        this.producto =
+        new Image();
+
+
+
+        this.producto.onload = ()=>{
+
+
+            console.log(
+                "Producto cargado en Mockup Engine"
+            );
+
+
+            this.render();
+
+
+        };
+
+
+
+        this.producto.src =
+        src;
 
 
     }
