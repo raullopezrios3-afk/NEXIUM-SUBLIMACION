@@ -138,18 +138,14 @@ this.canvas.height = 470;
         );
 
 
-        this.ctx.fillStyle =
-        "#ffffff";
+      this.ctx.clearRect(
 
+    0,
+    0,
+    this.canvas.width,
+    this.canvas.height
 
-        this.ctx.fillRect(
-
-            0,
-            0,
-            this.canvas.width,
-            this.canvas.height
-
-        );
+);
 
 
         if(this.producto){
