@@ -1461,23 +1461,17 @@ box-shadow:
 
     position:absolute;
 
-    top:50%;
+    width:62%;
+
+    height:38%;
+
     left:50%;
+
+    top:50%;
 
     transform:translate(-50%,-50%);
 
-    width:60%;
-    height:30%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
     overflow:hidden;
-
-    z-index:5;
 
 }
 
@@ -1519,25 +1513,13 @@ DISEÑO DEL CLIENTE
 
 .diseno-usuario{
 
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
     width:100%;
+
     height:100%;
 
-    object-fit:contain;
+    object-fit:fill;
 
     display:none;
-
-    cursor:grab;
-
-    user-select:none;
-
-    -webkit-user-drag:none;
 
 }
 
