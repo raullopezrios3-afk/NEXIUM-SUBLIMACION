@@ -1387,15 +1387,29 @@ lector.onload=function(e){
     disenoUsuario.src =
     e.target.result;
 
-    disenoUsuario.style.width="100%";
-    disenoUsuario.style.height="100%";
 
+    // NUEVA CAPA PARA LA TAZA
+
+    const disenoCurvo =
+    document.getElementById(
+    "disenoCurvo"
+    );
+
+    if(disenoCurvo){
+
+        disenoCurvo.src =
+        e.target.result;
+
+    }
+
+
+    disenoUsuario.style.width="100%";
+
+    disenoUsuario.style.height="100%";
 
     disenoUsuario.style.display="block";
 
-
 };
-
 
 
 lector.readAsDataURL(
