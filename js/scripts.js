@@ -1395,6 +1395,9 @@ new FileReader();
 
 lector.onload=function(e){
 
+
+    // SISTEMA ANTERIOR (se conserva)
+
     disenoUsuario.src =
     e.target.result;
 
@@ -1405,8 +1408,33 @@ lector.onload=function(e){
 
     disenoUsuario.style.display="block";
 
-};
 
+
+    // NUEVO MOCKUP ENGINE
+
+
+    const imagen =
+    new Image();
+
+
+
+    imagen.onload = ()=>{
+
+
+        mockupEngine.addLayer(
+            imagen
+        );
+
+
+    };
+
+
+
+    imagen.src =
+    e.target.result;
+
+
+};
 
 lector.readAsDataURL(
     archivo
