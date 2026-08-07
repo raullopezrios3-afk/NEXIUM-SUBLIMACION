@@ -25,6 +25,7 @@ class MockupEngine{
 
         this.producto = null;
 
+        this.capas = [];
 
     }
 
@@ -217,4 +218,29 @@ class MockupEngine{
 
     }
 
- }
+  /*
+    =========================================
+     AGREGAR CAPA AL MOCKUP
+    =========================================
+    */
+
+
+    addLayer(imagen){
+
+
+        this.capas.push(
+            imagen
+        );
+
+
+        console.log(
+            "Capa agregada al Mockup Engine"
+        );
+
+
+        this.render();
+
+
+    }
+
+}
