@@ -120,7 +120,6 @@ this.canvas.height = 470;
     =========================================
     */
 
-
     render(){
 
 
@@ -136,7 +135,6 @@ this.canvas.height = 470;
             this.canvas.height
 
         );
-
 
     if(false && this.producto){
 
@@ -155,7 +153,6 @@ this.canvas.height = 470;
 }
 
 }
-
 
         console.log(
             "Mockup render ejecutado"
@@ -177,8 +174,6 @@ this.canvas.height = 470;
         this.producto =
         new Image();
 
-
-
         this.producto.onload = ()=>{
 
 
@@ -191,7 +186,6 @@ this.canvas.height = 470;
 
 
         };
-
 
 
         this.producto.src =
