@@ -142,9 +142,6 @@ class MockupEngine{
     }
 
 
-}
-
-
     init(canvasId){
 
         this.canvas =
