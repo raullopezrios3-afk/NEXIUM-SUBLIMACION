@@ -1545,7 +1545,7 @@ DISEÑO DEL CLIENTE
 
     object-fit:fill;
 
-    display:block;
+    display:none;
 
 }
 
@@ -1554,7 +1554,6 @@ DISEÑO DEL CLIENTE
     cursor:grabbing;
 
 }
-
 /*======================================
 NEXIUM DARK THEME
 ======================================*/
