@@ -138,17 +138,7 @@ this.canvas.height = 470;
         );
 
 
-      this.ctx.clearRect(
-
-    0,
-    0,
-    this.canvas.width,
-    this.canvas.height
-
-);
-
-
-        if(false && this.producto){
+    if(false && this.producto){
 
     this.ctx.drawImage(
 
@@ -161,6 +151,8 @@ this.canvas.height = 470;
         330
 
     );
+
+}
 
 }
 
