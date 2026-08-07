@@ -1320,7 +1320,7 @@ body.nexium-dark .studio-titulo h2{
 
 #taza360{
 
-    display:none;
+    display:block;
 
     cursor:grab;
     user-select:none;
