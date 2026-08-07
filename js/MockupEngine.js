@@ -47,9 +47,9 @@ class MockupEngine{
     );
 
 
-    this.canvas.width = 600;
+  this.canvas.width = 370;
 
-    this.canvas.height = 600;
+this.canvas.height = 470;
 
 
 
@@ -158,18 +158,17 @@ class MockupEngine{
         if(this.producto){
 
 
-    this.ctx.drawImage(
+   this.ctx.drawImage(
 
-        this.producto,
+    this.producto,
 
-        0,
-        0,
+    40,
+    60,
 
-        this.canvas.width,
+    290,
+    350
 
-        this.canvas.height
-
-    );
+);
 
 
 }
