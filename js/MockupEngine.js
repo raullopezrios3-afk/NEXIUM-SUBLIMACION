@@ -40,36 +40,24 @@ class MockupEngine{
     init(){
 
 
-        this.canvas =
-        document.createElement(
-            "canvas"
-        );
+       this.canvas.style.position =
+"absolute";
 
 
-        this.canvas.width = 600;
-
-        this.canvas.height = 600;
-
+this.canvas.style.left =
+"0";
 
 
-        this.canvas.style.position =
-        "absolute";
+this.canvas.style.top =
+"0";
 
 
-        this.canvas.style.left =
-        "50%";
+this.canvas.style.transform =
+"none";
 
 
-        this.canvas.style.top =
-        "50%";
-
-
-        this.canvas.style.transform =
-        "translate(-50%, -50%)";
-
-
-        this.canvas.style.zIndex =
-        "999";
+this.canvas.style.zIndex =
+"2";
 
 
       const contenedor =
