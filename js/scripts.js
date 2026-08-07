@@ -1389,21 +1389,19 @@ new FileReader();
 lector.onload=function(e){
 
 
+    disenoUsuario.src =
+    e.target.result;
 
-disenoUsuario.src =
-e.target.result;
 
-disenoUsuario.style.width="100%";
-disenoUsuario.style.height="100%";
-disenoUsuario.style.objectFit="fill";
+    disenoUsuario.style.width="100%";
 
-disenoUsuario.style.display=
-"block";
+    disenoUsuario.style.height="100%";
 
+
+    disenoUsuario.style.display="block";
 
 
 };
-
 
 
 
