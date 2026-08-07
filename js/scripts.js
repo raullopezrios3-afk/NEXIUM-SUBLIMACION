@@ -1197,10 +1197,12 @@ switch(producto){
 case "taza":
 
 
-areaImpresion.style.width="38%";
-areaImpresion.style.height="30%";
+areaImpresion.style.width="62%";
+areaImpresion.style.height="38%";
+
+
 areaImpresion.style.left="50%";
-areaImpresion.style.top="46%";
+areaImpresion.style.top="50%";
 
 
 break;
@@ -1391,7 +1393,9 @@ lector.onload=function(e){
 disenoUsuario.src =
 e.target.result;
 
-
+disenoUsuario.style.width="100%";
+disenoUsuario.style.height="100%";
+disenoUsuario.style.objectFit="fill";
 
 disenoUsuario.style.display=
 "block";
