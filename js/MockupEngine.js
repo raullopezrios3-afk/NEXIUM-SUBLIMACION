@@ -114,52 +114,52 @@ this.canvas.height = 470;
 
 
 
-       /*
-    =========================================
-     RENDER PRINCIPAL
-    =========================================
-    */
+    /*
+=========================================
+ RENDER PRINCIPAL
+=========================================
+*/
 
-    render(){
-
-
-        if(!this.ctx)
-        return;
+render(){
 
 
-        this.ctx.clearRect(
+    if(!this.ctx)
+    return;
 
-            0,
-            0,
-            this.canvas.width,
-            this.canvas.height
 
-        );
+    this.ctx.clearRect(
 
-    if(false && this.producto){
-
-    this.ctx.drawImage(
-
-        this.producto,
-
-        20,
-        55,
-
-        330,
-        330
+        0,
+        0,
+        this.canvas.width,
+        this.canvas.height
 
     );
 
-}
 
-}
+    if(false && this.producto){
 
-        console.log(
-            "Mockup render ejecutado"
+        this.ctx.drawImage(
+
+            this.producto,
+
+            20,
+            55,
+
+            330,
+            330
+
         );
 
-
     }
+
+
+    console.log(
+        "Mockup render ejecutado"
+    );
+
+
+}
 
      /*
     =========================================
