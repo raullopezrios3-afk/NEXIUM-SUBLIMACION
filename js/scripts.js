@@ -1378,23 +1378,16 @@ if(!archivo)
 return;
 
 
-
-
 const lector =
 new FileReader();
 
 
-
-
 lector.onload=function(e){
-
 
     disenoUsuario.src =
     e.target.result;
 
-
     disenoUsuario.style.width="100%";
-
     disenoUsuario.style.height="100%";
 
 
