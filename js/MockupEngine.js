@@ -128,7 +128,6 @@ this.canvas.height = 470;
         return;
 
 
-
         this.ctx.clearRect(
 
             0,
@@ -137,7 +136,6 @@ this.canvas.height = 470;
             this.canvas.height
 
         );
-
 
 
         this.ctx.fillStyle =
@@ -154,13 +152,12 @@ this.canvas.height = 470;
         );
 
 
-
         if(this.producto){
 
 
- this.ctx.drawImage(
+        this.ctx.drawImage(
 
-    this.producto,
+        this.producto,
 
     20,
     55,
