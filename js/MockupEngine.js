@@ -37,68 +37,79 @@ class MockupEngine{
     */
 
 
-    init(){
+  init(){
 
 
-       this.canvas.style.position =
-"absolute";
-
-
-this.canvas.style.left =
-"0";
-
-
-this.canvas.style.top =
-"0";
-
-
-this.canvas.style.transform =
-"none";
-
-
-this.canvas.style.zIndex =
-"2";
-
-
-      const contenedor =
-document.getElementById(
-    "mockupContainer"
-);
-
-
-if(contenedor){
-
-    contenedor.appendChild(
-        this.canvas
+    this.canvas =
+    document.createElement(
+        "canvas"
     );
 
-}else{
 
-    console.warn(
-        "No existe mockupContainer"
+    this.canvas.width = 600;
+
+    this.canvas.height = 600;
+
+
+
+    this.canvas.style.position =
+    "absolute";
+
+
+    this.canvas.style.left =
+    "0";
+
+
+    this.canvas.style.top =
+    "0";
+
+
+    this.canvas.style.transform =
+    "none";
+
+
+    this.canvas.style.zIndex =
+    "2";
+
+
+
+    const contenedor =
+    document.getElementById(
+        "mockupContainer"
     );
 
-}
 
+    if(contenedor){
 
-
-        this.ctx =
-        this.canvas.getContext(
-            "2d"
+        contenedor.appendChild(
+            this.canvas
         );
 
+    }else{
 
-
-        console.log(
-            "Mockup Canvas creado"
+        console.warn(
+            "No existe mockupContainer"
         );
-
-
-        this.render();
-
 
     }
 
+
+
+    this.ctx =
+    this.canvas.getContext(
+        "2d"
+    );
+
+
+    console.log(
+        "Mockup Canvas creado"
+    );
+
+
+    this.render();
+
+
+}
 
 
 
