@@ -1368,9 +1368,9 @@ PREVIEW DEL PRODUCTO
 
     width:460px;
 
-    height:470px;
-    
-    min-height:470px;
+    height:350px;
+
+    min-height:350px;
 
     display:flex;
 
@@ -1393,6 +1393,8 @@ PREVIEW DEL PRODUCTO
     overflow:hidden;
 
 }
+
+
 #productoActual{
 
     width:55%;
