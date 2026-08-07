@@ -98,7 +98,7 @@ class MockupEngine{
 
 
 
-    /*
+       /*
     =========================================
      RENDER PRINCIPAL
     =========================================
@@ -114,10 +114,12 @@ class MockupEngine{
 
 
         this.ctx.clearRect(
+
             0,
             0,
             this.canvas.width,
             this.canvas.height
+
         );
 
 
@@ -127,11 +129,35 @@ class MockupEngine{
 
 
         this.ctx.fillRect(
+
             0,
             0,
             this.canvas.width,
             this.canvas.height
+
         );
+
+
+
+        if(this.imagen){
+
+
+            this.ctx.drawImage(
+
+                this.imagen,
+
+                0,
+                0,
+
+                this.canvas.width,
+
+                this.canvas.height
+
+            );
+
+
+        }
+
 
 
         console.log(
@@ -140,85 +166,3 @@ class MockupEngine{
 
 
     }
-
-
-    init(canvasId){
-
-        this.canvas =
-        document.getElementById(canvasId);
-
-        if(!this.canvas){
-
-            console.warn(
-                "Canvas no encontrado:",
-                canvasId
-            );
-
-            return;
-
-        }
-
-        this.ctx =
-        this.canvas.getContext("2d");
-
-        console.log(
-            "Canvas Mockup inicializado"
-        );
-
-    }
-
-
-    loadImage(src){
-
-        this.imagen =
-        new Image();
-
-        this.imagen.onload=()=>{
-
-            console.log(
-                "Imagen cargada"
-            );
-
-            this.render();
-
-        };
-
-        this.imagen.src = src;
-
-    }
-
-
-    render(){
-
-        if(
-            !this.ctx ||
-            !this.imagen
-        ) return;
-
-
-        this.ctx.clearRect(
-
-            0,
-            0,
-            this.canvas.width,
-            this.canvas.height
-
-        );
-
-
-        this.ctx.drawImage(
-
-            this.imagen,
-
-            0,
-            0,
-
-            this.canvas.width,
-
-            this.canvas.height
-
-        );
-
-    }
-
-}
