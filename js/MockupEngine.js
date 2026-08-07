@@ -158,15 +158,15 @@ this.canvas.height = 470;
         if(this.producto){
 
 
-   this.ctx.drawImage(
+  this.ctx.drawImage(
 
     this.producto,
 
-    40,
-    60,
+    10,
+    35,
 
-    290,
-    350
+    350,
+    410
 
 );
 
