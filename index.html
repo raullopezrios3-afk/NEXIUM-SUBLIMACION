@@ -6,9 +6,10 @@
   <meta name="description" content="Productos promocionales personalizados y sublimación para empresas y particulares.">
   <title>NEXIUM Sublimación y Promocionales</title>
   <link rel="icon" type="image/png" href="imagenes/favicon.png">
-  <link rel="stylesheet" href="css/estilos.css?v=4">
+  <link rel="stylesheet" href="css/estilos.css?v=5">
 </head>
 <body>
+  <div id="pageProgress" class="page-progress" aria-hidden="true"></div>
   <header class="header">
     <div class="header-top">
       <a class="header-left" href="#inicio" aria-label="NEXIUM, ir al inicio">
@@ -37,6 +38,7 @@
       </div>
       <button class="slider-control prev-slide" type="button" aria-label="Banner anterior">‹</button>
       <button class="slider-control next-slide" type="button" aria-label="Banner siguiente">›</button>
+      <div class="slider-dots" aria-label="Seleccionar banner"></div>
       <div class="hero-copy">
         <span class="eyebrow">Sublimación · Promocionales · Eventos</span>
         <h1>Detalles únicos para ideas que merecen destacar</h1>
@@ -102,6 +104,8 @@
   </main>
   <footer><div class="footer-inner"><div class="footer-brand"><img src="imagenes/logo.png" alt="NEXIUM"><div><strong>NEXIUM Sublimación</strong><span>Hacemos realidad tus ideas brillantes.</span></div></div><div class="footer-links"><a href="#productos">Productos</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a></div><p>© 2026 NEXIUM</p></div></footer>
 
+  <div class="floating-actions" aria-label="Accesos rápidos"><a class="floating-whatsapp" data-whatsapp href="https://wa.me/525610066522" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><span>WhatsApp</span><b>●</b></a><button id="backToTop" type="button" aria-label="Volver al inicio">↑</button></div>
+
   <div id="modalCotizacion" class="overlay" role="dialog" aria-modal="true" aria-labelledby="tituloCotizacion" hidden><div class="modal-content"><button class="close" type="button" data-close aria-label="Cerrar">×</button><h2 id="tituloCotizacion">Solicita tu Cotización</h2><form id="formCotizacion">
     <label>Nombre<input type="text" id="nombre" name="nombre" autocomplete="name" required></label><label>Teléfono<input type="tel" id="telefono" name="telefono" autocomplete="tel" required></label><label>Correo<input type="email" id="correo" name="correo" autocomplete="email" required></label><label>Producto<select id="producto" name="producto" required><option value="">Selecciona un producto</option><option>Tazas</option><option>Playeras</option><option>Termos</option><option>Bolsas y otros</option><option>Decoración de globos</option></select></label><label>Cantidad<input type="number" id="cantidad" name="cantidad" min="1" required></label><label>Fecha requerida<input type="date" id="fecha" name="fecha" required></label><label>Descripción<textarea id="descripcion" name="descripcion" rows="4"></textarea></label><p id="formStatus" class="form-status" aria-live="polite"></p><button id="btnCotizar" class="submit" type="submit">Solicitar cotización</button>
   </form></div></div>
@@ -109,7 +113,6 @@
   <div id="visorVideo" class="overlay visor" role="dialog" aria-modal="true" aria-label="Reproductor de video" hidden><button class="close" type="button" data-close aria-label="Cerrar">×</button><video id="videoGrande" controls preload="metadata" poster="video/video-1.jpeg"><source src="video/video-1.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video></div>
   <div id="visorPoster" class="overlay visor" role="dialog" aria-modal="true" aria-label="Póster" hidden><button class="close" type="button" data-close aria-label="Cerrar">×</button><img src="imagenes/poster.jpg" alt="Póster NEXIUM"></div>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="js/scripts.js"></script>
+  <script src="js/scripts.js?v=5"></script>
 </body>
 </html>
-
