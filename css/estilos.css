@@ -49,4 +49,5 @@ body.nexium-dark .header{background:linear-gradient(105deg,rgba(3,7,22,.98),rgba
 .slider-control::before{content:"";display:block;width:11px;height:11px;border-top:3px solid currentColor;border-right:3px solid currentColor;box-sizing:border-box}
 .next-slide::before{transform:translateX(-2px) rotate(45deg)}
 .prev-slide::before{transform:translateX(2px) rotate(-135deg)}
+/* Publicación: controles centrados */
 
