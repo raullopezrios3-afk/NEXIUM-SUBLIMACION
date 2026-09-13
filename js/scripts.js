@@ -24,12 +24,25 @@
   }
 
   const slides = $$('.slide');
+  const dotsContainer = $('.slider-dots');
   let slideIndex = 0;
   function showSlide(index) {
     if (!slides.length) return;
     slideIndex = (index + slides.length) % slides.length;
     slides.forEach((slide, i) => slide.classList.toggle('active', i === slideIndex));
+    $$('.slider-dot', dotsContainer).forEach((dot, i) => {
+      dot.classList.toggle('active', i === slideIndex);
+      dot.setAttribute('aria-current', i === slideIndex ? 'true' : 'false');
+    });
   }
+  slides.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button'; dot.className = 'slider-dot';
+    dot.setAttribute('aria-label', `Mostrar banner ${index + 1}`);
+    dot.addEventListener('click', () => moveSlide(index - slideIndex));
+    dotsContainer?.appendChild(dot);
+  });
+  showSlide(0);
   let sliderTimer = slides.length > 1 ? setInterval(() => showSlide(slideIndex + 1), 5000) : null;
   function moveSlide(direction) { showSlide(slideIndex + direction); clearInterval(sliderTimer); sliderTimer = setInterval(() => showSlide(slideIndex + 1), 5000); }
   $('.prev-slide')?.addEventListener('click', () => moveSlide(-1));
@@ -90,6 +103,38 @@
   function updateThemeButton() { const dark = document.body.classList.contains('nexium-dark'); themeButton.textContent = dark ? '☀️' : '🌙'; themeButton.setAttribute('aria-label', dark ? 'Activar modo claro' : 'Activar modo oscuro'); }
   updateThemeButton();
   themeButton.addEventListener('click', () => { document.body.classList.toggle('nexium-dark'); localStorage.setItem('nexium-theme', document.body.classList.contains('nexium-dark') ? 'dark' : 'light'); updateThemeButton(); });
+
+  const progress = $('#pageProgress');
+  const backToTop = $('#backToTop');
+  const header = $('.header');
+  function updateScrollUI() {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const amount = maxScroll > 0 ? Math.min(1, window.scrollY / maxScroll) : 0;
+    progress.style.transform = `scaleX(${amount})`;
+    header.classList.toggle('is-scrolled', window.scrollY > 40);
+    backToTop.classList.toggle('visible', window.scrollY > 650);
+  }
+  window.addEventListener('scroll', updateScrollUI, { passive: true });
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  updateScrollUI();
+
+  const revealTargets = $$('.trust-item, .producto-card, .experience-copy, .experience-collage, .cta-inner, .contacto-box');
+  revealTargets.forEach((element, index) => {
+    element.classList.add('scroll-reveal');
+    element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 70}ms`);
+  });
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -35px' });
+    revealTargets.forEach(element => revealObserver.observe(element));
+  } else {
+    revealTargets.forEach(element => element.classList.add('revealed'));
+  }
 
   const form = $('#formCotizacion');
   form.addEventListener('submit', async event => {
