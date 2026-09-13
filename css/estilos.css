@@ -60,3 +60,16 @@ body.nexium-dark .header{background:linear-gradient(105deg,rgba(3,7,22,.98),rgba
 @media(max-width:760px){.header.is-scrolled .header-top{min-height:96px}.header.is-scrolled .logo-img{width:48px;height:48px}.header.is-scrolled .nombre-img{width:122px}.slider-dots{bottom:14px}.floating-actions{right:14px;bottom:14px}.floating-whatsapp span{display:none}.floating-whatsapp{width:48px;padding:0;justify-content:center}.floating-whatsapp b{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.scroll-reveal,.scroll-reveal.revealed,.hero-copy>*{opacity:1;transform:none;animation:none;transition:none}.page-progress{transition:none}}
 
+/* Contenido centrado y jerarquía visual de las tarjetas */
+.producto-card{align-items:stretch;text-align:center}
+.card-heading{display:flex;min-height:174px;flex-direction:column;align-items:center;justify-content:flex-start;padding:17px 15px 14px;border-radius:13px;background:linear-gradient(180deg,rgba(232,240,255,.8),rgba(255,255,255,.25));border:1px solid rgba(29,78,216,.09)}
+.card-kicker{width:100%;margin-bottom:7px;text-align:center;letter-spacing:1.6px}
+.producto-card h2{width:100%;margin-bottom:9px;text-align:center;font-size:29px;line-height:1.15;color:#123783}
+.card-heading p{display:flex;align-items:flex-start;justify-content:center;max-width:310px;min-height:auto;margin:0 auto;text-align:center;color:#53627a;line-height:1.6}
+.card-meta{justify-content:center;margin-top:auto}
+.card-meta span{min-width:112px;text-align:center;border:1px solid rgba(29,78,216,.08);box-shadow:0 4px 12px rgba(29,78,216,.06)}
+.btn-card{letter-spacing:.15px}
+body.nexium-dark .card-heading{background:linear-gradient(180deg,rgba(42,60,91,.85),rgba(25,39,65,.35));border-color:#354968}
+body.nexium-dark .producto-card h2{color:#9ec2ff}
+@media(max-width:760px){.card-heading{min-height:auto;padding:15px 12px}.producto-card h2{font-size:27px}.card-heading p{max-width:360px}}
+
