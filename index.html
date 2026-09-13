@@ -1,634 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Sublimación y Promocionales</title>
-
-  <link rel="icon" type="image/jpeg" href="imagenes/favicon.png">
-
-    <meta name="description" content="Productos promocionales personalizados y sublimación para empresas y particulares.">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/estilos.css?v=3">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Productos promocionales personalizados y sublimación para empresas y particulares.">
+  <title>NEXIUM Sublimación y Promocionales</title>
+  <link rel="icon" type="image/png" href="imagenes/favicon.png">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
-
 <body>
-
-<!-- ========================= -->
-<!-- HEADER PRINCIPAL NEXIUM -->
-<!-- ========================= -->
-
-<header class="header">
-
-    <!-- FILA SUPERIOR -->
+  <header class="header">
     <div class="header-top">
-
-        <!-- IZQUIERDA -->
-        <div class="header-left">
-
-   <img src="imagenes/logo.png" class="logo-img">
-
-<img src="imagenes/nombre.png" class="nombre-img">
-
-</div>
-
-      <!-- CENTRO -->
-<div class="header-center">
-    <span class="eslogan">
-        ¡HACEMOS REALIDAD TUS IDEAS BRILLANTES!
-    </span>
-</div>
-
-<!-- DERECHA -->
-<div class="header-right">
-
-    <a href="#"
-       class="btn cotizar"
-       onclick="console.log('CLICK'); abrirModalCotizacion(); return false;">
-        Cotizar
-    </a>
-
-    <a href="#"
-       class="btn whatsapp"
-       onclick="enviarWhatsApp()">
-        WhatsApp
-    </a>
-
-    <button id="btnDarkMode" class="btn-dark">
-        🌙
-    </button>
-
-</div>
-
-</div> <!-- Cierra header-top -->
-        
-    <!-- MENÚ INFERIOR -->
-    <nav class="menu">
-    <a href="#inicio">Inicio</a>
-    <a href="#productos">Productos</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#" id="btnPoster">Poster</a>
-
-</nav>
-
-</header>
-<!-- ========================= -->
-<!-- CARRUSEL / HERO NEXIUM -->
-<!-- ========================= -->
-
-<section id="inicio" class="slider">
-
-    <div class="slides">
-
-        <div class="slide active">
-            <img src="imagenes/banner-1.jpg" alt="Banner 1">
-        </div>
-
-        <div class="slide">
-            <img src="imagenes/banner-2.jpg" alt="Banner 2">
-        </div>
-
-        <div class="slide">
-            <img src="imagenes/banner-3.jpg" alt="Banner 3">
-        </div>
-     
-</div>
-
-</section>
-    
-<!-- ========================= -->
-<!-- PRODUCTOS -->
-<!-- ========================= -->
-
-<section id="productos" class="productos-section">
-
-    <div class="contenedor">
-
-        <h2 class="titulo-seccion">
-    Nuestros Productos
-</h2>
-
-
-      <div class="productos-grid">
-
-    <!-- ========================= -->
-    <!-- TAZAS -->
-    <!-- ========================= -->
-
-    <div class="producto-card">
-
-        <h3>Tazas</h3>
-
-        <img class="card-portada"
-             src="imagenes/tazas/taza-1.jpeg"
-             alt="Tazas">
-
-       <button class="btn-card" type="button">
-    Ver Catálogo
-</button>
-
-        <div class="galeria">
-
-            <img src="imagenes/tazas/taza-1.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/tazas/taza-2.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/tazas/taza-3.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/tazas/taza-4.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/tazas/taza-5.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/tazas/taza-6.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/tazas/taza-7.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/tazas/taza-8.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/tazas/taza-9.jpeg" onclick="abrirVisor(this)">
-
-        </div>
-
+      <a class="header-left" href="#inicio" aria-label="NEXIUM, ir al inicio">
+        <img src="imagenes/logo.png" class="logo-img" alt="Símbolo de NEXIUM">
+        <span class="brand-lockup"><img src="imagenes/nombre.png" class="nombre-img" alt="NEXIUM"><small>Sublimación y promocionales</small></span>
+      </a>
+      <div class="header-center"><span class="eslogan"><small>Creatividad que deja huella</small><strong>Hacemos realidad tus ideas brillantes</strong></span></div>
+      <div class="header-right">
+        <a class="header-contact" href="tel:+525610066522"><span>Atención directa</span><strong>(56) 1006-6522</strong></a>
+        <a class="btn whatsapp" data-whatsapp href="https://wa.me/525610066522" target="_blank" rel="noopener"><span class="wa-dot">●</span> WhatsApp</a>
+        <button class="btn cotizar" type="button" data-open-quote>Cotizar proyecto</button>
+        <button id="btnDarkMode" class="btn-dark" type="button" aria-label="Activar modo oscuro" title="Cambiar tema">🌙</button>
+      </div>
     </div>
+    <nav class="menu" aria-label="Navegación principal">
+      <div class="menu-inner"><div class="nav-links"><a href="#inicio" class="active">Inicio</a><a href="#productos">Productos</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a><button id="btnPoster" type="button">Póster</button></div><span class="menu-note"><i></i> Cotizaciones personalizadas</span></div>
+    </nav>
+  </header>
 
-    <!-- ========================= -->
-    <!-- PLAYERAS -->
-    <!-- ========================= -->
+  <main>
+    <section id="inicio" class="slider" aria-label="Promociones destacadas">
+      <div class="slides">
+        <div class="slide active"><img src="imagenes/banner-1.jpg" alt="Promociones NEXIUM"></div>
+        <div class="slide"><img src="imagenes/banner-2.jpg" alt="Productos personalizados NEXIUM"></div>
+        <div class="slide"><img src="imagenes/banner-3.jpg" alt="Sublimación NEXIUM"></div>
+      </div>
+      <button class="slider-control prev-slide" type="button" aria-label="Banner anterior">‹</button>
+      <button class="slider-control next-slide" type="button" aria-label="Banner siguiente">›</button>
+      <div class="hero-copy">
+        <span class="eyebrow">Sublimación · Promocionales · Eventos</span>
+        <h1>Detalles únicos para ideas que merecen destacar</h1>
+        <p>Personalizamos productos con acabados cuidados para regalos, celebraciones y marcas.</p>
+        <div class="hero-actions"><a href="#productos" class="hero-primary">Explorar productos</a><button type="button" class="hero-secondary" data-open-quote>Solicitar cotización</button></div>
+      </div>
+    </section>
 
-    <div class="producto-card">
+    <section class="trust-strip" aria-label="Ventajas de NEXIUM">
+      <div class="trust-inner">
+        <div class="trust-item"><span class="trust-icon">✦</span><div><strong>Atención personalizada</strong><small>Te acompañamos desde la idea</small></div></div>
+        <div class="trust-item"><span class="trust-icon">◆</span><div><strong>Acabados que destacan</strong><small>Cuidamos cada detalle visual</small></div></div>
+        <div class="trust-item"><span class="trust-icon">✓</span><div><strong>Opciones para cada ocasión</strong><small>Regalos, eventos y empresas</small></div></div>
+      </div>
+    </section>
 
-        <h3>Playeras</h3>
-
-        <img class="card-portada"
-             src="imagenes/playeras/playera-1.jpeg"
-             alt="Playeras">
-
-       <button class="btn-card" type="button">
-    Ver Catálogo
-</button>
-
-        <div class="galeria">
-
-            <!-- ========================= -->
-    <!-- Playeras agregar el mismo codigo de abajo unicamente cambiar el numero playera-?-jpeg -->
-    <!-- ========================= -->
-
-            <img src="imagenes/playeras/playera-1.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/playeras/playera-2.jpeg" onclick="abrirVisor(this)">
-            
-
+    <section id="productos" class="productos-section">
+      <div class="contenedor">
+        <div class="section-label">Hecho para sorprender</div>
+        <h1 class="titulo-seccion">Nuestros Productos</h1>
+        <p class="instruccion">Convierte una idea, una fecha o una marca en un detalle memorable. Explora cada categoría y encuentra el punto de partida perfecto.</p>
+        <div id="galeria" class="productos-grid">
+          <article class="producto-card"><div class="card-heading"><span class="card-kicker">Personalizadas</span><h2>Tazas</h2><p>Diseños nítidos y llenos de color para regalos, equipos y campañas.</p></div><img class="card-portada" src="imagenes/tazas/taza-1.jpeg" alt="Tazas personalizadas"><div class="card-meta"><span>Diseño a tu medida</span><span>Acabado brillante</span></div><button class="btn-card" type="button" aria-expanded="false">Explorar catálogo</button><div class="galeria">
+            <img src="imagenes/tazas/taza-1.jpeg" alt="Taza personalizada 1"><img src="imagenes/tazas/taza-2.jpeg" alt="Taza personalizada 2"><img src="imagenes/tazas/taza-3.jpeg" alt="Taza personalizada 3"><img src="imagenes/tazas/taza-4.jpeg" alt="Taza personalizada 4"><img src="imagenes/tazas/taza-5.jpeg" alt="Taza personalizada 5"><img src="imagenes/tazas/taza-6.jpeg" alt="Taza personalizada 6"><img src="imagenes/tazas/taza-7.jpeg" alt="Taza personalizada 7"><img src="imagenes/tazas/taza-8.jpeg" alt="Taza personalizada 8"><img src="imagenes/tazas/taza-9.jpeg" alt="Taza personalizada 9"></div></article>
+          <article class="producto-card"><div class="card-heading"><span class="card-kicker">Tu estilo</span><h2>Playeras</h2><p>Prendas personalizadas para equipos, eventos y momentos especiales.</p></div><img class="card-portada" src="imagenes/playeras/playera-1.jpeg" alt="Playeras personalizadas"><div class="card-meta"><span>Color duradero</span><span>Gran definición</span></div><button class="btn-card" type="button" aria-expanded="false">Explorar catálogo</button><div class="galeria"><img src="imagenes/playeras/playera-1.jpeg" alt="Playera personalizada 1"><img src="imagenes/playeras/playera-2.jpeg" alt="Playera personalizada 2"></div></article>
+          <article class="producto-card"><div class="card-heading"><span class="card-kicker">Uso diario</span><h2>Termos</h2><p>Una opción práctica y elegante para obsequios personales o corporativos.</p></div><img class="card-portada" src="imagenes/termos/termo-1.jpeg" alt="Termos personalizados"><div class="card-meta"><span>Útiles</span><span>Memorables</span></div><button class="btn-card" type="button" aria-expanded="false">Explorar catálogo</button><div class="galeria"><img src="imagenes/termos/termo-1.jpeg" alt="Termo personalizado"></div></article>
+          <article class="producto-card"><div class="card-heading"><span class="card-kicker">Ideas versátiles</span><h2>Bolsas y Otros</h2><p>Soluciones creativas para regalar, promocionar o completar tu evento.</p></div><img class="card-portada" src="imagenes/bolsas/bolsa-1.jpeg" alt="Bolsas personalizadas"><div class="card-meta"><span>Varios estilos</span><span>Personalizables</span></div><button class="btn-card" type="button" aria-expanded="false">Explorar catálogo</button><div class="galeria">
+            <img src="imagenes/bolsas/bolsa-1.jpeg" alt="Bolsa personalizada 1"><img src="imagenes/bolsas/bolsa-2.jpeg" alt="Bolsa personalizada 2"><img src="imagenes/bolsas/bolsa-3.jpeg" alt="Bolsa personalizada 3"><img src="imagenes/bolsas/bolsa-4.jpeg" alt="Bolsa personalizada 4"><img src="imagenes/bolsas/bolsa-5.jpeg" alt="Bolsa personalizada 5"><img src="imagenes/bolsas/bolsa-6.jpeg" alt="Bolsa personalizada 6"><img src="imagenes/bolsas/bolsa-7.jpeg" alt="Bolsa personalizada 7"><img src="imagenes/bolsas/bolsa-8.jpeg" alt="Bolsa personalizada 8"><img src="imagenes/bolsas/bolsa-9.jpeg" alt="Bolsa personalizada 9"></div></article>
+          <article class="producto-card"><div class="card-heading"><span class="card-kicker">Celebraciones</span><h2>Decoración de Globos</h2><p>Composiciones con presencia para transformar cualquier celebración.</p></div><img class="card-portada" src="imagenes/globos/globo-1.jpeg" alt="Decoración con globos"><div class="card-meta"><span>Montajes creativos</span><span>A tu temática</span></div><button class="btn-card" type="button" aria-expanded="false">Explorar catálogo</button><div class="galeria">
+            <img src="imagenes/globos/globo-1.jpeg" alt="Decoración de globos 1"><img src="imagenes/globos/globo-2.jpeg" alt="Decoración de globos 2"><img src="imagenes/globos/globo-3.jpeg" alt="Decoración de globos 3"><img src="imagenes/globos/globo-4.jpeg" alt="Decoración de globos 4"><img src="imagenes/globos/globo-5.jpeg" alt="Decoración de globos 5"><img src="imagenes/globos/globo-6.jpeg" alt="Decoración de globos 6"><img src="imagenes/globos/globo-7.jpeg" alt="Decoración de globos 7"><img src="imagenes/globos/globo-8.jpeg" alt="Decoración de globos 8"><img src="imagenes/globos/globo-9.jpeg" alt="Decoración de globos 9"><img src="imagenes/globos/globo-10.jpeg" alt="Decoración de globos 10"><img src="imagenes/globos/globo-11.jpeg" alt="Decoración de globos 11"></div></article>
+          <article class="producto-card video-card"><div class="card-heading"><span class="card-kicker">Nuestro trabajo</span><h2>Conoce NEXIUM</h2><p>Mira una muestra de productos, detalles y proyectos que hemos realizado.</p></div><div class="video-cover"><img class="card-portada" src="video/video-1.jpeg" alt="Muestra de trabajos NEXIUM"><span class="play-mark" aria-hidden="true">▶</span></div><div class="card-meta"><span>Inspiración</span><span>Resultados reales</span></div><button id="btnVideo" class="btn-card" type="button">Reproducir video</button></article>
         </div>
+      </div>
+    </section>
 
-    </div>
-
-    <!-- ========================= -->
-    <!-- TERMOS -->
-    <!-- ========================= -->
-
-    <div class="producto-card">
-
-        <h3>Termos</h3>
-
-        <img class="card-portada"
-             src="imagenes/termos/termo-1.jpeg"
-             alt="Termos">
-
-        <button class="btn-card" type="button">
-    Ver Catálogo
-</button>
-
-        <div class="galeria">
-
-              <!-- ========================= -->
-    <!-- Playeras agregar el mismo codigo de abajo unicamente cambiar el numero termo-?-jpeg -->
-    <!-- ========================= -->
-
-            <img src="imagenes/termos/termo-1.jpeg" onclick="abrirVisor(this)">
-           
-
+    <section class="experience-section">
+      <div class="contenedor experience-grid">
+        <div class="experience-copy">
+          <span class="section-label dark-label">Tu idea, bien acompañada</span>
+          <h2>Personalizar debe sentirse fácil</h2>
+          <p>Cuéntanos qué necesitas y te ayudamos a elegir el producto, estilo y cantidad adecuados. Nuestro objetivo es que el resultado represente justo lo que imaginaste.</p>
+          <ul class="benefit-list">
+            <li><span>01</span><div><strong>Comparte tu idea</strong><small>Explícanos la ocasión, el diseño o la identidad que quieres comunicar.</small></div></li>
+            <li><span>02</span><div><strong>Recibe orientación</strong><small>Revisamos contigo las opciones disponibles y los detalles de tu pedido.</small></div></li>
+            <li><span>03</span><div><strong>Hazlo realidad</strong><small>Preparamos tu producto con atención en color, composición y acabado.</small></div></li>
+          </ul>
+          <button class="experience-cta" type="button" data-open-quote>Empezar mi cotización <span>→</span></button>
         </div>
-
-    </div>
-
-    <!-- ========================= -->
-    <!-- BOLSAS -->
-    <!-- ========================= -->
-
-    <div class="producto-card">
-
-        <h3>Bolsas y Otros</h3>
-
-        <img class="card-portada"
-             src="imagenes/bolsas/bolsa-1.jpeg"
-             alt="Bolsas">
-
-       <button class="btn-card" type="button">
-    Ver Catálogo
-</button>
-
-        <div class="galeria">
-
-            <img src="imagenes/bolsas/bolsa-1.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/bolsas/bolsa-2.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/bolsas/bolsa-3.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/bolsas/bolsa-4.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/bolsas/bolsa-5.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/bolsas/bolsa-6.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/bolsas/bolsa-7.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/bolsas/bolsa-8.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/bolsas/bolsa-9.jpeg" onclick="abrirVisor(this)">
-
+        <div class="experience-collage" aria-label="Muestra de trabajos personalizados">
+          <img class="collage-main" src="imagenes/bolsas/bolsa-3.jpeg" alt="Producto personalizado NEXIUM">
+          <img class="collage-small collage-one" src="imagenes/tazas/taza-6.jpeg" alt="Taza personalizada NEXIUM">
+          <img class="collage-small collage-two" src="imagenes/globos/globo-4.jpeg" alt="Decoración de globos NEXIUM">
+          <div class="collage-note"><strong>Diseños con intención</strong><span>para momentos que importan</span></div>
         </div>
-
-    </div>
-
-    <!-- ========================= -->
-    <!-- GLOBOS -->
-    <!-- ========================= -->
-
-    <div class="producto-card">
-
-        <h3>Decoración de Globos</h3>
-
-        <img class="card-portada"
-             src="imagenes/globos/globo-1.jpeg"
-             alt="Globos">
-
-        <button class="btn-card" type="button">
-    Ver Catálogo
-</button>
-
-        <div class="galeria">
-
-            <img src="imagenes/globos/globo-1.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/globos/globo-2.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/globos/globo-3.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/globos/globo-4.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/globos/globo-5.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/globos/globo-6.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/globos/globo-7.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/globos/globo-8.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/globos/globo-9.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/globos/globo-10.jpeg" onclick="abrirVisor(this)">
-            <img src="imagenes/globos/globo-11.jpeg" onclick="abrirVisor(this)">
-
-        </div>
-
-    </div>
-
- <!-- VIDEO -->
-<!-- VIDEO -->
-<div class="producto-card">
-
-    <h3>Video</h3>
-
-    <img
-        class="card-portada"
-        src="video/video-1.jpeg"
-        alt="Video">
-
-    <a
-        href="#"
-        class="btn-card"
-        onclick="abrirVideo(event)">
-        Ver Video
-    </a>
-
-</div>
-</div>         
-</div>
-        
-</div> <!-- contenedor -->
-
-</section> <!-- productos -->
-
-<!-- ========================= -->
-<!-- NEXIUM DESIGN STUDIO -->
-<!-- ========================= -->
-
-<section class="design-studio">
-
-    <div class="contenedor">
-
-        <button id="btnStudio" class="btn-studio">
-
-            ✨ Visualiza tu diseño en tiempo real
-
-        </button>
-
-    </div>
-
-</section>
-    
-<!-- ========================= -->
-<!-- CONTACTO -->
-<!-- ========================= -->
-
-<section id="contacto" class="reveal">
-
-    <div class="contenedor">
-
-        <div class="contacto-box">
-
-            <h2 class="titulo-seccion">
-                Contacto
-            </h2>
-
-            <div class="datos-contacto">
-
-                <p>📞 (56) 1006-6522</p>
-
-               <p>
-    <span class="icono-contacto">✉️</span>
-    <span class="correo">nexiumsublimacion@gmail.com</span>
-</p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-    
-    <footer>
-
-    <div class="contenedor">
-
-        <p>
-
-            © 2026 NEXIUM
-
-        </p>
-
-    </div>
-
-</footer>
-
-<!-- JS -->
-   
-<div id="modalCotizacion" class="modal">
-<div class="modal-content">
-
-       <span class="close" onclick="cerrarModalCotizacion()">&times;</span>
-
-        <h2>Solicita tu Cotización</h2>
-
-<form id="formCotizacion">
-
-    <input type="text" id="nombre" placeholder="Nombre" required>
-
-    <input type="tel" id="telefono" placeholder="Teléfono" required>
-
-    <input type="email" id="correo" placeholder="Correo" required>
-
-    <select id="producto" required>
-        <option value="">Producto</option>
-        <option value="Tazas">Tazas</option>
-        <option value="Termos">Termos</option>
-        <option value="Bolsas">Bolsas</option>
-    </select>
-
-    <input type="number" id="cantidad" placeholder="Cantidad" required>
-
-    <input type="date" id="fecha" required>
-
-    <textarea id="descripcion" placeholder="Descripción del pedido" rows="4"></textarea>
-
-    <div class="modal-buttons">
-
-        <button type="button" id="btnCotizar" onclick="enviarCotizacionCorreo()" disabled>
-    Solicitar Cotización
-</button>
-
-    </div>
-
-</form>
-
-    </div>
-
-</div>
-
-<!-- =========================
-VISOR DE IMÁGENES
-========================= -->
-
-<div id="visor" class="visor">
-
-    <span class="cerrar" onclick="cerrarVisor(event)">×</span>
-
-    <button class="prev" onclick="cambiarImagen(-1,event)">❮</button>
-
-    <img id="imgGrande">
-
-    <button class="next" onclick="cambiarImagen(1,event)">❯</button>
-
-</div>
-
-<!-- =========================
-VISOR DE VIDEO
-========================= -->
-
-<div id="visorVideo" class="visor">
-
-    <span class="cerrar" onclick="cerrarVideo(event)">×</span>
-
-    <video id="videoGrande" controls>
-        <source src="video/video-1.mp4" type="video/mp4">
-    </video>
-
-</div>
-
-   <!-- ========================= -->
-<!-- NEXIUM DESIGN STUDIO -->
-<!-- ========================= -->
-
-<!-- ========================= -->
-<!-- NEXIUM DESIGN STUDIO -->
-<!-- ========================= -->
-
-<div id="modalStudio" class="modal-studio">
-
-
-    <div class="studio-box">
-
-
-        <!-- CERRAR -->
-
-        <span id="cerrarStudio" class="cerrar-studio">
-            &times;
-        </span>
-
-
-
-        <!-- TITULO -->
-
-        <div class="studio-titulo">
-
-            <h2>
-                NEXIUM DESIGN STUDIO
-            </h2>
-
-        </div>
-
-
-
-       <!-- CONTENIDO PRINCIPAL -->
-
-        <div class="studio-contenido">
-
-
-
-            <!-- MENU IZQUIERDO -->
-
-            <aside class="studio-menu">
-
-
-                <button
-                    class="studio-item"
-                    data-producto="taza">
-
-                    ☕ Taza
-
-                </button>
-
-
-
-                <button
-                    class="studio-item"
-                    data-producto="playera">
-
-                    👕 Playera
-
-                </button>
-
-
-
-                <button
-                    class="studio-item"
-                    data-producto="termo">
-
-                    🥤 Termo
-
-                </button>
-
-
-
-                <hr>
-
-
-
-                <label 
-                for="subirDiseno" 
-                class="upload-box">
-
-
-                    <strong>
-                        Sube tu diseño
-                    </strong>
-
-
-                    <br>
-
-
-                    Formatos permitidos:
-
-
-                    <br>
-
-
-                    JPG • JPEG • PNG
-
-
-                </label>
-
-
-
-                <input
-                    type="file"
-                    id="subirDiseno"
-                    accept=".jpg,.jpeg,.png,image/jpeg,image/png"
-                    hidden>
-
-
-
-            </aside>
-
-
-
-
-
-
-
-            <!-- ZONA DE TRABAJO -->
-
-            <main class="studio-zona-derecha">
-
-
-
-                <div class="studio-preview">
-
-
-
-             <div class="preview-producto">
-
-
-    <!-- CONTENEDOR MOCKUP ENGINE -->
-
-    <div id="mockupContainer"></div>
-
-
-
-   <!-- TAZA 360 -->
-
-<img
-id="taza360"
-class="producto-base"
-src="configurador/productos/tazas/360/taza-01.png"
-alt="Taza 360">
-
-
-<!-- AREA IMPRESION -->
-
-<div
-id="areaImpresion"
-class="area-impresion">
-
-    <img
-    id="disenoUsuario"
-    class="diseno-usuario"
-    alt="Diseño del cliente">
-
-</div>
-
-
-</div>
-
-
-                </div>
-
-
-
-            </main>
-
-
-
-
-        </div>
-
-
-
-
-    </div>
-
-
-
-</div>
-
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-(function () {
-    emailjs.init("6IL4uM1rVoBl9qgrB");
-})();
-</script>
-    <script src="js/MockupEngine.js"></script>
-    <script src="js/scripts.js?v=999"></script>
-
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="contenedor cta-inner"><div><span>¿Ya tienes una idea?</span><h2>Hablemos de tu próximo proyecto</h2><p>Recibe atención directa y una cotización según lo que realmente necesitas.</p></div><div class="cta-buttons"><button class="cta-gold" type="button" data-open-quote>Solicitar cotización</button><a data-whatsapp href="https://wa.me/525610066522" target="_blank" rel="noopener">Conversar por WhatsApp</a></div></div>
+    </section>
+
+    <section id="contacto"><div class="contenedor"><div class="contacto-box"><h2>Contacto</h2><p>📞 <a href="tel:+525610066522">(56) 1006-6522</a></p><p>✉️ <a href="mailto:nexiumsublimacion@gmail.com">nexiumsublimacion@gmail.com</a></p><div class="contact-actions"><button class="btn cotizar" type="button" data-open-quote>Solicitar cotización</button><a class="btn whatsapp" data-whatsapp href="https://wa.me/525610066522" target="_blank" rel="noopener">Escribir por WhatsApp</a></div></div></div></section>
+  </main>
+  <footer><div class="footer-inner"><div class="footer-brand"><img src="imagenes/logo.png" alt="NEXIUM"><div><strong>NEXIUM Sublimación</strong><span>Hacemos realidad tus ideas brillantes.</span></div></div><div class="footer-links"><a href="#productos">Productos</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a></div><p>© 2026 NEXIUM</p></div></footer>
+
+  <div id="modalCotizacion" class="overlay" role="dialog" aria-modal="true" aria-labelledby="tituloCotizacion" hidden><div class="modal-content"><button class="close" type="button" data-close aria-label="Cerrar">×</button><h2 id="tituloCotizacion">Solicita tu Cotización</h2><form id="formCotizacion">
+    <label>Nombre<input type="text" id="nombre" name="nombre" autocomplete="name" required></label><label>Teléfono<input type="tel" id="telefono" name="telefono" autocomplete="tel" required></label><label>Correo<input type="email" id="correo" name="correo" autocomplete="email" required></label><label>Producto<select id="producto" name="producto" required><option value="">Selecciona un producto</option><option>Tazas</option><option>Playeras</option><option>Termos</option><option>Bolsas y otros</option><option>Decoración de globos</option></select></label><label>Cantidad<input type="number" id="cantidad" name="cantidad" min="1" required></label><label>Fecha requerida<input type="date" id="fecha" name="fecha" required></label><label>Descripción<textarea id="descripcion" name="descripcion" rows="4"></textarea></label><p id="formStatus" class="form-status" aria-live="polite"></p><button id="btnCotizar" class="submit" type="submit">Solicitar cotización</button>
+  </form></div></div>
+  <div id="visor" class="overlay visor" role="dialog" aria-modal="true" aria-label="Visor de imágenes" hidden><button class="close" type="button" data-close aria-label="Cerrar">×</button><button class="viewer-arrow viewer-prev" type="button" aria-label="Imagen anterior">‹</button><img id="imgGrande" alt="Vista ampliada"><button class="viewer-arrow viewer-next" type="button" aria-label="Imagen siguiente">›</button></div>
+  <div id="visorVideo" class="overlay visor" role="dialog" aria-modal="true" aria-label="Reproductor de video" hidden><button class="close" type="button" data-close aria-label="Cerrar">×</button><video id="videoGrande" controls preload="metadata" poster="video/video-1.jpeg"><source src="video/video-1.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video></div>
+  <div id="visorPoster" class="overlay visor" role="dialog" aria-modal="true" aria-label="Póster" hidden><button class="close" type="button" data-close aria-label="Cerrar">×</button><img src="imagenes/poster.jpg" alt="Póster NEXIUM"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
