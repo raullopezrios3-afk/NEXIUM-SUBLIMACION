@@ -171,6 +171,37 @@
   const whatsappMessage = '¡Hola! Me gustaría recibir información sobre los productos promocionales y servicios de personalización de NEXIUM Sublimación.';
   $$('[data-whatsapp]').forEach(link => link.href = `https://wa.me/525610066522?text=${encodeURIComponent(whatsappMessage)}`);
 
+  $$('[data-download-catalog]').forEach(link => link.addEventListener('click', async event => {
+    event.preventDefault();
+    if (link.dataset.loading === 'true') return;
+    const originalText = link.textContent;
+    link.dataset.loading = 'true';
+    link.textContent = 'Preparando PDF…';
+    try {
+      const parts = await Promise.all([1, 2, 3].map(async number => {
+        const response = await fetch(`catalogo/data/NEXIUM-Catalogo.part${number}.b64`);
+        if (!response.ok) throw new Error('No se pudo obtener el catálogo');
+        return response.text();
+      }));
+      const binary = atob(parts.join('').replace(/\s/g, ''));
+      const bytes = new Uint8Array(binary.length);
+      for (let index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
+      const url = URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' }));
+      const download = document.createElement('a');
+      download.href = url;
+      download.download = 'Catalogo-NEXIUM.pdf';
+      document.body.appendChild(download);
+      download.click();
+      download.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
+    } catch (_) {
+      alert('No fue posible descargar el catálogo. Intenta nuevamente.');
+    } finally {
+      link.dataset.loading = 'false';
+      link.textContent = originalText;
+    }
+  }));
+
   const themeButton = $('#btnDarkMode');
   const savedTheme = localStorage.getItem('nexium-theme');
   if (savedTheme === 'dark') document.body.classList.add('nexium-dark');
