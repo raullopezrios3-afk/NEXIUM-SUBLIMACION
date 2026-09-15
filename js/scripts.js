@@ -93,7 +93,7 @@
     src: `imagenes/${group.folder}/${group.file}-${index + 1}.jpeg`
   })));
   if (catalogGrid) {
-    catalogGrid.innerHTML = catalogProducts.map(product => `<article class="catalog-item" data-category="${product.key}"><button class="catalog-image" type="button" aria-label="Ampliar ${product.name} ${product.number}"><img src="${product.src}" alt="${product.name} ${product.number}" loading="lazy"><span class="catalog-zoom" aria-hidden="true">Ver detalle</span></button><div class="catalog-info"><span>${product.label}</span><strong>${product.name}</strong><button type="button" data-catalog-quote="${product.label}">Me interesa</button></div></article>`).join('');
+    catalogGrid.innerHTML = catalogProducts.map(product => `<article class="catalog-item" data-category="${product.key}"><button class="catalog-image" type="button" aria-label="Ampliar ${product.name} ${product.number}"><img src="${product.src}" alt="${product.name} ${product.number}" loading="lazy"><span class="catalog-zoom" aria-hidden="true">Ver detalle</span></button><div class="catalog-info"><span>${product.label}</span><strong>${product.name} ${product.number}</strong><label class="catalog-quantity">Cantidad<input type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Cantidad de ${product.name} ${product.number}"></label><button type="button" data-catalog-quote="${product.label}" data-product-name="${product.name} ${product.number}" data-product-image="${product.src}">Agregar a cotización</button></div></article>`).join('');
 
     $$('.catalog-image', catalogGrid).forEach(button => button.addEventListener('click', () => {
       const visibleImages = $$('.catalog-item:not([hidden]) img', catalogGrid);
@@ -106,8 +106,17 @@
     }));
     $$('[data-catalog-quote]', catalogGrid).forEach(button => button.addEventListener('click', () => {
       const product = button.dataset.catalogQuote;
+      const quantity = Math.max(1, Number($('.catalog-quantity input', button.closest('.catalog-item')).value) || 1);
       const option = $$('#producto option').find(item => item.textContent.toLowerCase().includes(product.split(' ')[0].toLowerCase()));
       if (option) $('#producto').value = option.value;
+      $('#cantidad').value = quantity;
+      $('#productoSeleccionado').value = `${button.dataset.productName} · Cantidad: ${quantity}`;
+      $('#imagenProducto').value = new URL(button.dataset.productImage, window.location.href).href;
+      $('#quoteProductImage').src = button.dataset.productImage;
+      $('#quoteProductImage').alt = button.dataset.productName;
+      $('#quoteProductName').textContent = button.dataset.productName;
+      $('#quoteProductQuantity').textContent = `${quantity} pieza${quantity === 1 ? '' : 's'}`;
+      $('#quoteSelection').hidden = false;
       openOverlay($('#modalCotizacion'));
     }));
   }
@@ -133,6 +142,44 @@
   $('.viewer-next')?.addEventListener('click', () => changeImage(1));
 
   $$('[data-open-quote]').forEach(button => button.addEventListener('click', () => openOverlay($('#modalCotizacion'))));
+  $('#clearQuoteSelection')?.addEventListener('click', () => {
+    $('#quoteSelection').hidden = true;
+    $('#productoSeleccionado').value = '';
+    $('#imagenProducto').value = '';
+  });
+
+  const fileInput = $('#archivoDiseno');
+  const filePreview = $('#filePreview');
+  const previewImage = $('#filePreviewImage');
+  let filePreviewUrl = '';
+  function clearAttachedFile() {
+    fileInput.value = '';
+    if (filePreviewUrl) URL.revokeObjectURL(filePreviewUrl);
+    filePreviewUrl = '';
+    previewImage.removeAttribute('src');
+    filePreview.hidden = true;
+    $('#filePrompt').textContent = 'Seleccionar archivo';
+    $('#fileName').textContent = 'También puedes arrastrarlo aquí';
+  }
+  fileInput?.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    if (!file) { clearAttachedFile(); return; }
+    if (file.size > 5 * 1024 * 1024) {
+      clearAttachedFile();
+      $('#formStatus').textContent = 'El archivo supera los 5 MB. Selecciona una imagen más ligera.';
+      return;
+    }
+    $('#formStatus').textContent = '';
+    $('#filePrompt').textContent = 'Diseño adjunto';
+    $('#fileName').textContent = file.name;
+    filePreview.hidden = !file.type.startsWith('image/');
+    if (file.type.startsWith('image/')) {
+      if (filePreviewUrl) URL.revokeObjectURL(filePreviewUrl);
+      filePreviewUrl = URL.createObjectURL(file);
+      previewImage.src = filePreviewUrl;
+    }
+  });
+  $('#removeFile')?.addEventListener('click', clearAttachedFile);
   $('#btnPoster')?.addEventListener('click', () => openOverlay($('#visorPoster')));
   $('#btnVideo')?.addEventListener('click', async () => { openOverlay($('#visorVideo')); try { await $('#videoGrande').play(); } catch (_) {} });
   overlays.forEach(overlay => {
@@ -187,14 +234,19 @@
     if (!form.reportValidity()) return;
     const submit = $('#btnCotizar');
     const status = $('#formStatus');
+    const description = $('#descripcion');
+    const originalDescription = description.value.trim();
+    const selectedDetails = $('#productoSeleccionado').value.trim();
+    const selectedImage = $('#imagenProducto').value.trim();
+    if (selectedDetails) description.value = [`Selección del catálogo: ${selectedDetails}`, `Imagen de referencia: ${selectedImage}`, originalDescription].filter(Boolean).join('\n\n');
     submit.disabled = true; status.textContent = 'Enviando…';
-    if (!window.emailjs) { status.textContent = 'No fue posible conectar con el servicio de correo. Escríbenos por WhatsApp.'; submit.disabled = false; return; }
+    if (!window.emailjs) { description.value = originalDescription; status.textContent = 'No fue posible conectar con el servicio de correo. Escríbenos por WhatsApp.'; submit.disabled = false; return; }
     try {
       emailjs.init({ publicKey: '6IL4uM1rVoBl9qgrB' });
-      await emailjs.send('service_e8slvmi', 'template_ams0res', Object.fromEntries(new FormData(form)));
+      await emailjs.sendForm('service_e8slvmi', 'template_ams0res', form);
       status.textContent = 'Solicitud enviada correctamente.';
-      form.reset(); setTimeout(() => closeOverlay($('#modalCotizacion')), 1200);
-    } catch (_) { status.textContent = 'No se pudo enviar. Intenta de nuevo o contáctanos por WhatsApp.'; }
+      form.reset(); clearAttachedFile(); $('#quoteSelection').hidden = true; setTimeout(() => closeOverlay($('#modalCotizacion')), 1200);
+    } catch (_) { description.value = originalDescription; status.textContent = 'No se pudo enviar. Intenta de nuevo o contáctanos por WhatsApp.'; }
     finally { submit.disabled = false; }
   });
 
