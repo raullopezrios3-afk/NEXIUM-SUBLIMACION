@@ -11,6 +11,8 @@
     if (!element) return;
     lastFocus = document.activeElement;
     element.hidden = false;
+    const scrollArea = $('.modal-content', element);
+    if (scrollArea) scrollArea.scrollTop = 0;
     document.body.classList.add('modal-open');
     $('.close', element)?.focus();
   }
