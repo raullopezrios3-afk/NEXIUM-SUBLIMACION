@@ -107,16 +107,7 @@
     $$('[data-catalog-quote]', catalogGrid).forEach(button => button.addEventListener('click', () => {
       const product = button.dataset.catalogQuote;
       const quantity = Math.max(1, Number($('.catalog-quantity input', button.closest('.catalog-item')).value) || 1);
-      const option = $$('#producto option').find(item => item.textContent.toLowerCase().includes(product.split(' ')[0].toLowerCase()));
-      if (option) $('#producto').value = option.value;
-      $('#cantidad').value = quantity;
-      $('#productoSeleccionado').value = `${button.dataset.productName} · Cantidad: ${quantity}`;
-      $('#imagenProducto').value = new URL(button.dataset.productImage, window.location.href).href;
-      $('#quoteProductImage').src = button.dataset.productImage;
-      $('#quoteProductImage').alt = button.dataset.productName;
-      $('#quoteProductName').textContent = button.dataset.productName;
-      $('#quoteProductQuantity').textContent = `${quantity} pieza${quantity === 1 ? '' : 's'}`;
-      $('#quoteSelection').hidden = false;
+      setQuoteProduct(product, button.dataset.productImage, button.dataset.productName, quantity);
       openOverlay($('#modalCotizacion'));
     }));
   }
@@ -142,10 +133,43 @@
   $('.viewer-next')?.addEventListener('click', () => changeImage(1));
 
   $$('[data-open-quote]').forEach(button => button.addEventListener('click', () => openOverlay($('#modalCotizacion'))));
+  function setQuoteProduct(product, image, displayName = product, quantity = 1) {
+    const option = $$('#producto option').find(item => item.value.toLowerCase() === product.toLowerCase() || item.textContent.toLowerCase().includes(product.split(' ')[0].toLowerCase()));
+    if (option) $('#producto').value = option.value;
+    $('#cantidad').value = quantity;
+    $('#productoSeleccionado').value = `${displayName} · Cantidad: ${quantity}`;
+    $('#imagenProducto').value = new URL(image, window.location.href).href;
+    $('#quoteProductImage').src = image;
+    $('#quoteProductImage').alt = displayName;
+    $('#quoteProductName').textContent = displayName;
+    $('#quoteProductQuantity').textContent = `${quantity} pieza${quantity === 1 ? '' : 's'}`;
+    $('#quoteSelection').hidden = false;
+    $$('[data-quote-product]').forEach(item => {
+      const selected = item.dataset.quoteProduct === option?.value;
+      item.classList.toggle('selected', selected);
+      item.setAttribute('aria-pressed', String(selected));
+      $('small', item).textContent = selected ? 'Elegido ✓' : 'Seleccionar';
+    });
+  }
+  $$('[data-quote-product]').forEach(button => button.addEventListener('click', () => setQuoteProduct(button.dataset.quoteProduct, button.dataset.quoteImage)));
+  $('#producto')?.addEventListener('change', event => {
+    const button = $$('[data-quote-product]').find(item => item.dataset.quoteProduct === event.target.value);
+    if (button) setQuoteProduct(button.dataset.quoteProduct, button.dataset.quoteImage, button.dataset.quoteProduct, Math.max(1, Number($('#cantidad').value) || 1));
+  });
+  $('#cantidad')?.addEventListener('input', event => {
+    const quantity = Math.max(1, Number(event.target.value) || 1);
+    if (!$('#quoteSelection').hidden) {
+      $('#quoteProductQuantity').textContent = `${quantity} pieza${quantity === 1 ? '' : 's'}`;
+      const name = $('#quoteProductName').textContent;
+      $('#productoSeleccionado').value = `${name} · Cantidad: ${quantity}`;
+    }
+  });
   $('#clearQuoteSelection')?.addEventListener('click', () => {
     $('#quoteSelection').hidden = true;
     $('#productoSeleccionado').value = '';
     $('#imagenProducto').value = '';
+    $('#producto').value = '';
+    $$('[data-quote-product]').forEach(item => { item.classList.remove('selected'); item.setAttribute('aria-pressed', 'false'); $('small', item).textContent = 'Seleccionar'; });
   });
 
   const fileInput = $('#archivoDiseno');
