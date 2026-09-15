@@ -78,6 +78,51 @@
     large.src = image.src; large.alt = image.alt;
     openOverlay($('#visor'));
   }));
+
+  const catalogGroups = [
+    { key: 'tazas', label: 'Tazas', name: 'Taza personalizada', folder: 'tazas', file: 'taza', total: 9 },
+    { key: 'playeras', label: 'Playeras', name: 'Playera personalizada', folder: 'playeras', file: 'playera', total: 2 },
+    { key: 'termos', label: 'Termos', name: 'Termo personalizado', folder: 'termos', file: 'termo', total: 1 },
+    { key: 'bolsas', label: 'Bolsas y otros', name: 'Bolsa personalizada', folder: 'bolsas', file: 'bolsa', total: 9 },
+    { key: 'globos', label: 'Decoración con globos', name: 'Decoración con globos', folder: 'globos', file: 'globo', total: 11 }
+  ];
+  const catalogGrid = $('#catalogGrid');
+  const catalogProducts = catalogGroups.flatMap(group => Array.from({ length: group.total }, (_, index) => ({
+    ...group,
+    number: index + 1,
+    src: `imagenes/${group.folder}/${group.file}-${index + 1}.jpeg`
+  })));
+  if (catalogGrid) {
+    catalogGrid.innerHTML = catalogProducts.map(product => `<article class="catalog-item" data-category="${product.key}"><button class="catalog-image" type="button" aria-label="Ampliar ${product.name} ${product.number}"><img src="${product.src}" alt="${product.name} ${product.number}" loading="lazy"><span class="catalog-zoom" aria-hidden="true">Ver detalle</span></button><div class="catalog-info"><span>${product.label}</span><strong>${product.name}</strong><button type="button" data-catalog-quote="${product.label}">Me interesa</button></div></article>`).join('');
+
+    $$('.catalog-image', catalogGrid).forEach(button => button.addEventListener('click', () => {
+      const visibleImages = $$('.catalog-item:not([hidden]) img', catalogGrid);
+      const image = $('img', button);
+      galleryImages = visibleImages;
+      galleryIndex = visibleImages.indexOf(image);
+      $('#imgGrande').src = image.src;
+      $('#imgGrande').alt = image.alt;
+      openOverlay($('#visor'));
+    }));
+    $$('[data-catalog-quote]', catalogGrid).forEach(button => button.addEventListener('click', () => {
+      const product = button.dataset.catalogQuote;
+      const option = $$('#producto option').find(item => item.textContent.toLowerCase().includes(product.split(' ')[0].toLowerCase()));
+      if (option) $('#producto').value = option.value;
+      openOverlay($('#modalCotizacion'));
+    }));
+  }
+
+  $$('[data-catalog-filter]').forEach(button => button.addEventListener('click', () => {
+    const filter = button.dataset.catalogFilter;
+    $$('[data-catalog-filter]').forEach(item => {
+      const selected = item === button;
+      item.classList.toggle('active', selected);
+      item.setAttribute('aria-pressed', String(selected));
+    });
+    $$('.catalog-item', catalogGrid).forEach(item => { item.hidden = filter !== 'todos' && item.dataset.category !== filter; });
+    const group = catalogGroups.find(item => item.key === filter);
+    $('#catalogStatus').textContent = filter === 'todos' ? `Mostrando ${catalogProducts.length} productos disponibles.` : `Mostrando ${group.total} opciones de ${group.label.toLowerCase()}.`;
+  }));
   function changeImage(direction) {
     if (!galleryImages.length) return;
     galleryIndex = (galleryIndex + direction + galleryImages.length) % galleryImages.length;
@@ -118,7 +163,7 @@
   backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   updateScrollUI();
 
-  const revealTargets = $$('.trust-item, .producto-card, .experience-copy, .experience-collage, .cta-inner, .contacto-box');
+  const revealTargets = $$('.trust-item, .producto-card, .catalog-heading, .catalog-filters, .catalog-item, .experience-copy, .experience-collage, .cta-inner, .contacto-box');
   revealTargets.forEach((element, index) => {
     element.classList.add('scroll-reveal');
     element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 70}ms`);
@@ -160,3 +205,4 @@
     if (open?.id === 'visor' && event.key === 'ArrowRight') changeImage(1);
   });
 })();
+
